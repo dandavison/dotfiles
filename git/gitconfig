@@ -1,0 +1,8 @@
+[user]
+        name = Dan Davison
+        email = davison@stats.ox.ac.uk
+
+[core]
+	excludesfile = ~/.gitignore
+[color]
+        ui = auto

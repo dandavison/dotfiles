@@ -1,0 +1,17 @@
+[retriever]
+type = SimplePOP3SSLRetriever
+server = pop.gmail.com
+username = dandavison0@gmail.com
+password = dandavison
+
+[destination]
+## type = Maildir
+## path = ~/email/new/
+type = MDA_external
+path = /usr/bin/procmail
+
+[options]
+verbose = 0
+read_all = false
+delete = false
+message_log = ~/.getmail-gmail.log

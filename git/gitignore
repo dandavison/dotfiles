@@ -1,0 +1,9 @@
+# ignore emacs temporary / backup files
+*~
+\#*#
+nogit-*
+*.pyc
+*.o
+*.elc
+zzz/
+.*

@@ -1,0 +1,174 @@
+## 2008-08-09
+
+## Switched to use getmail to get mail from markov.stats.ox.ac.uk imap
+## server. So `spoolfile', `mbox' variables now irrelevant.
+
+
+set realname="Dan Davison"
+set from="davison@stats.ox.ac.uk"
+set hostname=stats.ox.ac.uk
+set use_from=yes
+
+set mbox_type=Maildir
+set folder=~/email-mutt
+## set mbox="+in"
+set record="+a-new"
+set postponed="+postponed"
+
+## don't really understand issues regarding maildirs containing other maildirs etc
+## set mask="!^\\.[^.]"
+
+# set beep_new
+## It would be nice if it would beep only for new mail in a-new
+mailboxes a-new org ess r-devel emacs 
+## emacs ess emacs emacs-devel r-devel r-packages r-sig-mixed-models mutt evoldir
+## zzz php
+lists emacs-orgmode@gnu.org ess-help@stat.math.ethz.ch help-gnu-emacs@gnu.org emacs-devel@gnu.org \
+      r-help@r-project.org r-devel@r-project.org mutt-users@mutt.org \
+      evoldir@evol.biology.mcmaster.ca php-general@lists.php.net
+subscribe emacs-orgmode@gnu.org help-gnu-emacs@gnu.org emacs-devel@gnu.org \
+	  ess-help@stat.math.ethz.ch r-help@r-project.org r-devel@r-project.org \
+	  mutt-users@mutt.org evoldir@evol.biology.mcmaster.ca php-general@lists.php.net
+
+set arrow_cursor
+unset abort_nosubject			## allow emails with no subject
+unset abort_unmodified			## allow unmodified body
+set alias_file=~/.mutt/mutt-aliases
+set auto_tag				## apply next function to all tagged messages automatically
+unset collapse_unread			## don't collapse all-unread threads
+unset confirmappend			## don't ask permission to append messages to mailbox
+set delete				## don't ask permisson to delete messages
+set editor="emacs -Q -l ~/config/emacs/vanilla.el"
+set fast_reply				## don't ask for recipients / subject when replying
+set header_cache=~/.mutt-header-cache
+unset help
+set implicit_autoview		## view attachment as text http://www.fefe.de/muttfaq/faq.html
+set include				## don't ask whether to include message in reply
+set index_format="%H %Z %{%b %d} %F (%s)"  ## format index: {status date sender subject}
+unset mark_old				## don't mark unread mail in visited folders as old
+## think this is for caching messages stored remotely on imap
+## set message_cachedir=~/.mutt-message-cachedir 
+set move				## don't ask permisson to move messages
+set pager_stop=yes		## <page down> doesn't advance to next message when it hits EOF
+unset recall			## don't ask whether to recall postponed when composing new
+## (can you use unset with quadoption?)
+
+## set sendmail="$HOME/bin/sendmail.sh"
+## see ~/src/bin/sendmail.sh at which, on my laptop, /usr/bin/sendmail points
+set sendmail="ssh davison@gate.stats.ox.ac.uk /usr/sbin/sendmail $@"
+set sort=threads			## threads view
+set sort_aux=last-date-received		## last thread is that with most recent activity
+set sort_browser=alpha			## alphabetical sorting of directories
+unset wait_key				## don't wait for any keypress to continue e.g. after manual getmail
+
+## bind index G imap-fetch-mail
+## bind index <Tab> next-unread
+
+## http://mutt.blackfish.org.uk/collecting/
+## "-y" screen http://www.davep.org/mutt/muttrc/macros.html
+macro index g <shell-escape>'getmail-dan'<enter> 'Run getmail'
+macro generic G <shell-escape>'getmail-dan'<enter> 'Run getmail'
+macro index "y" <sync-mailbox><change-folder>?<toggle-mailboxes> 
+macro pager "y" <sync-mailbox><change-folder>?<toggle-mailboxes>
+
+## spam "X-Oxmail-Spam-Status: score=(-?[0-9]+\.[0-9]+)" "spam %1"
+## http://www.melonfire.com/community/columns/trog/print.php?id=98
+
+# Sorting:
+# (date-received, date-sent, from, mailbox-order, size, subject, threads, to, score)
+## (and everything with a prefixed "reverse-")
+# (sort_aux can be prefixed with "last-" to use last element in thread instead of first one)
+
+## headers http://www.mutt.org/doc/manual/manual-3.html#ss3.8
+ignore *
+unignore from date subject to cc
+# Specify the order of the headers to appear when displaying a message
+unhdr_order *				# forget the previous settings
+hdr_order from date subject to cc
+
+
+color normal default default
+color status red default
+color indicator brightblue default
+color tree magenta default
+color message red default
+color header blue default .
+color tilde default default
+color signature blue default
+color body cyan default "(ftp|http)://[^ ]+"
+
+color index blue default "~f . | ~t ."
+
+color index green default "~f mnoble | ~t mnoble"
+color index green default "~f 6098517620 | ~t 6098517620"
+
+color index magenta default "~f 'Martin Davison' | ~t 'Martin Davison'"
+color index magenta default "~f 'William Davison' | ~t 'William Davison'"
+color index magenta default "~f 'Fred Davison' | ~t 'Fred Davison'"
+color index magenta default "~f 'Ralston' | ~t 'Ralston'"
+color index magenta default "~f 'Martin Davison' | ~t 'Martin Davison'"
+
+color index cyan default "~f 'Coop' | ~t 'Coop'"
+color index cyan default "~f 'Pritchard' | ~t 'Pritchard'"
+color index cyan default "~f 'pritch' | ~t 'pritch'"
+color index cyan default "~f Andolfatto | ~t Andolfatto"
+color index cyan default "~f Przeworski | ~t Przeworski"
+
+color index red default "~f donnelly | ~t donnelly"
+color index red default "~f 'Director PA' | ~t 'Director PA'"
+color index red default "~f 'Fallon' | ~t 'Fallon'"
+color index red default "~f bodmer | ~t bodmer"
+color index red default "~f winney | ~t winney"
+color index red default "~f nicodemu | ~t nicodemu"
+color index red default "~f kristinn | ~t kristinn"
+color index red default "~f chikodi | ~t chikodi"
+color index red default "~f Royrvik | ~t Royrvik"
+color index red default "~f Marchini | ~t Marchini"
+color index red default "~f 'Chris Spencer' | ~t 'Chris Spencer'"
+color index red default "~f Niall | ~t Niall"
+color index red default "~f Damjan | ~t Damjan"
+
+color index yellow default "~f 'Austin .* Frank' | ~f 'Eric Schulte'"
+color index yellow default "~t 'Austin .* Frank' | ~t 'Eric Schulte'"
+
+## colours for quoted text from http://blog.kevinmeltzer.com/archives/000636.html
+color quoted    cyan default
+color quoted1   yellow default
+color quoted2   red default
+color quoted3   green default
+color quoted4   cyan default
+color quoted5   yellow default
+color quoted6   red default
+color quoted7   green default
+
+source ~/.mutt/mutt-aliases
+
+## unset status ## status isn't the right variable name apparently.
+
+
+
+set signature="~/.mutt/signature"
+
+## set sendmail='/usr/sbin/sendmail'
+## http://www.cs.bham.ac.uk/~axs/university-email-settings.html
+## set sendmail="/usr/bin/nbsmtp -D -s -U davison -P ist4qaw! \
+## -d stats.ox.ac.uk -h smtp.markov.stats.ox.ac.uk -f davison@stats.ox.ac.uk"
+## set sendmail='/usr/sbin/sendmail -oem -oi' ## this is the default
+
+## http://www.elho.net/mutt/maildir/
+## http://mutt.sourceforge.net/imap/
+
+# set spoolfile=imap://markov.stats.ox.ac.uk/INBOX
+# set imap_user=davison
+# set imap_pass=ist4qaw!
+# set connect_timeout=10
+# ## set mail_check=`expr 60 \* 60 \* 8`
+## check for mail every 8 hrs; mail checking seems to cause it to hang; can do manually with c!
+# set mail_check=60
+
+# Found this in my .emacs, don't know what it was doing there.
+
+# ;; muttrc -> mailrc
+# ;; alias \([a-z_-]+\) \([^<]+\)<\([^>]+\)>
+# ;; alias \1 "\2 <\3>"
+

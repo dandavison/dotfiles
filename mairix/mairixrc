@@ -1,0 +1,45 @@
+# mairixrc file for use with nnmairix and gnus
+
+# Set this to the directory where your maildir folders live
+base=~/Maildir/
+
+#######################################################################
+# You need to define at least one of maildir, mh and mbox. You probably don't
+# need to define all three!  You can use >1 line for any of these.
+
+# Set this to a list of maildir folders within 'base'.  3 dots at the end means
+# there are sub-folders within this folder.
+
+# This would be nice:
+# maildir=./...
+# but if mairix output is saved in there then mairix refuses to search
+# so use the following (and trim off terminal :)
+# ls ~/Maildir/ | grep -v '^zz' | perl -p -e 's,\n,/:,'
+maildir=INBOX/:old/:org/
+#maildir=2006/:2007/:2008/:a-new/:emacs/:emacs-devel/:ess/:evoldir/:gnus/:in/:mutt/:org/:org-eval/:out/:php/:postponed/:r-devel/:r-help/:r-packages/:r-sig-mixed-models/:snpdata/:spam/:webhits/:wtchg/
+omit=zz_mairix*
+# inbox:archive...
+# maildir=lists...
+
+# Set this to a list of MH folders within 'base'.  3 dots at the end means
+# there are sub-folders within this folder.
+# mh=mh_archive...
+
+# Set this to a list of mbox folders within 'base'.
+# mbox=mboxen/folder1:mboxen/folder2:mboxen/foobar
+
+#######################################################################
+# Set this to the folder within 'base' where you want the search mode
+# to write its output.
+# Dan: perhaps best not to set this so that manual mairix is impossible?
+# mfolder=zz_mairix-found-1
+
+# Set this if you want the format of mfolder to be mh or mbox (the default is
+# maildir).
+#
+# mformat=mh
+# mformat=mbox
+
+#######################################################################
+# Set this to the path where the index database file will be kept
+database=/home/dan/.mairix-database-gnus

@@ -1,0 +1,29 @@
+! gnome has taken care of making caps lock an extra control.
+! However i want to disable left shift, to teach me to use right shift.
+
+
+remove Shift   = Shift_L
+! remove lock = Caps_Lock
+! remove Control = Control_L
+
+! below are some entries i'd experimented with prior to running ubuntu/gnome
+! http://www.acm.uiuc.edu/workshops/cool_unix/xmodmap.html
+
+! Switch tab and right shift.
+! (Having my hand hovering on the LHS of the Fujitsu-Siemens Lifebook keyboard ends up with it aching because of hot air vent)
+! keysym Tab = Shift_R I can't deal with that yet
+remove shift = Shift_R
+keysym Shift_R = Tab
+
+! remove lock = Caps_Lock
+! keysym Caps_Lock = Alt_L
+
+! ! make Alt_L be Control_L
+! remove mod5 = Alt_L
+! keysym Alt_L = Control_L
+! add control = Alt_L
+
+! ! make "Alt_R" be Alt_L
+! remove ISO_Level3_Shift
+! keysym ISO_Level3_Shift = Alt_L
+! add mod5 = ISO_Level3_Shift
