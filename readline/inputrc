@@ -1,1 +1,125 @@
-inputrc_dan
+set blink-matching-paren on ## http://www.faqs.org/faqs/unix-faq/shell/bash/
+
+## http://www.caliban.org/bash/
+
+set show-all-if-ambiguous on
+
+## http://linuxart.com/log/archives/2005/10/13/super-useful-inputrc/
+
+## FOLLOWING SECTION IS WHAT I WAS USING ON FC5
+## I'm incorporating my stuff into the ubunut default file below
+
+## "\e[1~":  	beginning-of-line
+## "\e[4~":	end-of-line
+## "\e[5~":	beginning-of-history
+## "\e[6~":	end-of-history
+## "\e[3~":	delete-char
+## "\e[2~":	quoted-insert
+## "\e[5C":	forward-word			## Ctrl-Right
+## "\e[5D":	backward-word			## Ctrl-Left
+## "\e\e[C":	forward-word			## ?
+## "\e\e[D":	backward-word			## ?
+
+## "\e[5A":	history-search-backward		## Ctrl-Up
+## "\e[5B":	history-search-forward		## Ctrl-Down
+
+## "\e\e[5A":	history-search-backward		## Ctrl-Up
+## "\e\e[5B":	history-search-forward		## Ctrl-Down
+
+## "\ep":   	history-search-backward
+## "\en":   	history-search-forward
+
+
+## Alt		3
+## Ctrl		5
+## Ctrl-Alt	7
+
+## Up		A
+## Down		B
+## Right	C
+## Left		D
+
+######  END MY OLD SECTION
+
+## below is ubuntu gutsy 7.10 /etc/inputrc
+
+# /etc/inputrc - global inputrc for libreadline
+# See readline(3readline) and `info rluserman' for more information.
+
+# Be 8 bit clean.
+set input-meta on
+set output-meta on
+
+# To allow the use of 8bit-characters like the german umlauts, comment out
+# the line below. However this makes the meta key not work as a meta key,
+# which is annoying to those which don't need to type in 8-bit characters.
+
+# set convert-meta off
+
+# try to enable the application keypad when it is called.  Some systems
+# need this to enable the arrow keys.
+# set enable-keypad on
+
+# see /usr/share/doc/bash/inputrc.arrows for other codes of arrow keys
+
+# do not bell on tab-completion
+# set bell-style none
+# set bell-style visible
+
+# some defaults / modifications for the emacs mode
+$if mode=emacs
+
+# allow the use of the Home/End keys
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+
+# allow the use of the Delete/Insert keys
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# mappings for "page up" and "page down" to step to the beginning/end
+# of the history
+# "\e[5~": beginning-of-history
+# "\e[6~": end-of-history
+
+# alternate mappings for "page up" and "page down" to search the history
+# "\e[5~": history-search-backward
+# "\e[6~": history-search-forward
+
+# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+
+# dan 20080201: mappings for Ctrl-up-arrow (5A) and Ctrl-down-arrow (5B) for history search
+"\e[1;5A": history-search-backward
+"\e[1;5B": history-search-forward
+"\e[5A": history-search-backward
+"\e[5B": history-search-forward
+"\e\e[A": history-search-backward
+"\e\e[B": history-search-forward
+
+## dan 20080201 I want Ctrl-backspace to do backward delete word
+## "\e\e[3~": backward-delete-word
+
+
+
+$if term=rxvt
+"\e[8~": end-of-line
+"\eOc": forward-word
+"\eOd": backward-word
+$endif
+
+# for non RH/Debian xterm, can't hurt for RH/Debian xterm
+# "\eOH": beginning-of-line
+# "\eOF": end-of-line
+
+# for freebsd console
+# "\e[H": beginning-of-line
+# "\e[F": end-of-line
+
+$endif
