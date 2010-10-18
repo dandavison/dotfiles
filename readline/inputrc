@@ -103,10 +103,6 @@ $if mode=emacs
 "\e\e[A": history-search-backward
 "\e\e[B": history-search-forward
 
-## Make up and down do history search matching input
-"\e[A": history-search-backward
-"\e[B": history-search-backward
-
 ## dan 20080201 I want Ctrl-backspace to do backward delete word
 ## "\e\e[3~": backward-delete-word
 
