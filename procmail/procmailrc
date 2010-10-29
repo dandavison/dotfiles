@@ -56,11 +56,9 @@ yakuba/
 R-LinkedIn/
 
 :0:
-* ^To: davison
-email/
-
-:0:
-* ^cc: davison
+* ^(To|Cc): davison@stats\.ox\.ac\.uk
+stats/
+* ^(To|Cc): davison
 email/
 
 :0:
