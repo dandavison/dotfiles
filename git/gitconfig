@@ -1,6 +1,6 @@
 [user]
         name = Dan Davison
-        email = davison@stats.ox.ac.uk
+        email = dandavison7@gmail.com
 
 [core]
 	excludesfile = ~/.gitignore
