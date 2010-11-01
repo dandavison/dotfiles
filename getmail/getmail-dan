@@ -1,0 +1,8 @@
+#!/bin/bash
+
+getmail --new --verbose \
+    --rcfile=/home/dan/config/getmail/getmailrc-dandavison7 \
+    --rcfile=/home/dan/config/getmail/getmailrc-counsyl \
+    --rcfile=/home/dan/config/getmail/getmailrc-stats \
+    --rcfile=/home/dan/config/getmail/getmailrc-dandavison0 \
+    --rcfile=/home/dan/config/getmail/getmailrc-princeton
