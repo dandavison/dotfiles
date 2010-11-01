@@ -77,6 +77,10 @@ export arizona=ddavison@arizona.princeton.edu
 export cetus=ddavison@cetus.princeton.edu
 export trogon=martin@192.168.2.3
 
+export storage=davison@storage.counsyl.com
+export science3=davison@science3.counsyl.com
+
+
 ## http://linuxart.com/log/archives/2005/10/13/super-useful-inputrc/
 export INPUTRC=~/.inputrc
 ## export R_HOME=/usr/local/src/R/R-svn-trunk
