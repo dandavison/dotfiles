@@ -15,7 +15,7 @@ base=~/Maildir/
 # but if mairix output is saved in there then mairix refuses to search
 # so use the following (and trim off terminal :)
 # ls ~/Maildir/ | grep -v '^zz' | perl -p -e 's,\n,/:,'
-maildir=INBOX/:old/:org/
+maildir=email/
 #maildir=2006/:2007/:2008/:a-new/:emacs/:emacs-devel/:ess/:evoldir/:gnus/:in/:mutt/:org/:org-eval/:out/:php/:postponed/:r-devel/:r-help/:r-packages/:r-sig-mixed-models/:snpdata/:spam/:webhits/:wtchg/
 omit=zz_mairix*
 # inbox:archive...
