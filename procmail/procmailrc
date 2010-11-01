@@ -4,6 +4,9 @@ MAILDIR=$HOME/Maildir
 DEFAULT=$MAILDIR/email/
 
 :0:
+* (^To|^From): .*counsyl.*
+Counsyl/
+:0:
 * ^To: (eeb-all@Princeton\.EDU|Genomics-all@Princeton\.EDU)
 Princeton/
 :0:
@@ -54,6 +57,10 @@ yakuba/
 :0:
 * ^From: The R Project for Statistical Computing
 R-LinkedIn/
+
+:0:
+* ^To: .*stats\.ox\.ac\.uk
+stats/
 
 :0:
 * ^To: davison
