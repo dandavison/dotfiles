@@ -1,0 +1,6 @@
+application/vnd.ms-excel; /usr/bin/oocalc -o %s
+text/plain; /usr/bin/emacsclient  %s
+image/png; /usr/bin/gthumb %s
+application/pdf; /usr/bin/evince %s
+image/jpeg; /usr/bin/gthumb %s
+## text/html; elinks -dump -dump-charset iso-8859-15 -default-mime-type text/html %s; needsterminal; copiousoutput;
