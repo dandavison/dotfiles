@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export BROWSER=google-chrome
+export BROWSER=firefox
 export EDITOR=emacsclient
 
 # export PATH=$HOME/bin:${PATH%:$HOME/bin}:/sbin
