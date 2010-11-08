@@ -21,10 +21,7 @@ for link, target in targets.iteritems():
     link = os.path.expanduser(link)
     target = os.path.expanduser(target)
     
-    if os.path.exists(link):
-        newname = link + '-renamed'
-        print '%s moved to %s' % (link, newname) 
-        os.rename(link, newname)
+    if os.path.exists(link): os.unlink(link)
     try:
         os.symlink(target, link)
     except Exception, e:
