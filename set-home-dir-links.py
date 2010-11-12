@@ -16,6 +16,7 @@ targets['~/.mailrc'] = '~/config/email/mailrc'
 targets['~/.mairixrc'] = '~/config/mairix/mairixrc-gnus'
 targets['~/.mime-types'] = '~/config/mime.types'
 targets['~/.procmailrc'] = '~/config/procmailrc'
+targets['~/.Rprofile'] = '~/config/R/Rprofile.R'
 
 for link, target in targets.iteritems():
     link = os.path.expanduser(link)
