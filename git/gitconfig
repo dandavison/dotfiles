@@ -1,7 +1,3 @@
-[user]
-        name = Dan Davison
-        email = dandavison7@gmail.com
-
 [core]
 	excludesfile = ~/.gitignore
 [color]
