@@ -2,3 +2,6 @@
 	excludesfile = ~/.gitignore
 [color]
         ui = auto
+[user]
+        name = Dan Davison
+        email = dandavison7@gmail.com
