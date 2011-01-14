@@ -7,7 +7,7 @@ set show-all-if-ambiguous on
 ## http://linuxart.com/log/archives/2005/10/13/super-useful-inputrc/
 
 ## FOLLOWING SECTION IS WHAT I WAS USING ON FC5
-## I'm incorporating my stuff into the ubunut default file below
+## I'm incorporating my stuff into the ubuntu default file below
 
 ## "\e[1~":  	beginning-of-line
 ## "\e[4~":	end-of-line
