@@ -96,12 +96,13 @@ $if mode=emacs
 
 
 # dan 20080201: mappings for Ctrl-up-arrow (5A) and Ctrl-down-arrow (5B) for history search
-"\e[1;5A": history-search-backward
-"\e[1;5B": history-search-forward
+# "\e[1;5A": history-search-backward
+# "\e[1;5B": history-search-forward
 "\e[5A": history-search-backward
 "\e[5B": history-search-forward
-"\e\e[A": history-search-backward
-"\e\e[B": history-search-forward
+# "\e\e[A": history-search-backward
+# "\e\e[B": history-search-forward
+
 
 ## dan 20080201 I want Ctrl-backspace to do backward delete word
 ## "\e\e[3~": backward-delete-word
