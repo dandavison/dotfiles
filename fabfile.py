@@ -1,7 +1,5 @@
 import os
-from fabric import local
-from fabric import run
-from fabric import env
+from fabric.api import local, run, env
 
 env.hosts = ['analysis']
 
@@ -37,6 +35,6 @@ def validate_dotfiles():
         target = os.path.expanduser(target)
 
         if os.path.exists(link):
-            os.unlink(link)
+            run('rm ' + link)
 
-        os.symlink(target, link)
+        run('ln -s %s %s' % (target, link))
