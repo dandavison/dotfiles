@@ -1,4 +1,5 @@
-set blink-matching-paren on ## http://www.faqs.org/faqs/unix-faq/shell/bash/
+## http://www.faqs.org/faqs/unix-faq/shell/bash/
+set blink-matching-paren on
 
 ## http://www.caliban.org/bash/
 
