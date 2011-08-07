@@ -98,8 +98,12 @@ $if mode=emacs
 # dan 20080201: mappings for Ctrl-up-arrow (5A) and Ctrl-down-arrow (5B) for history search
 # "\e[1;5A": history-search-backward
 # "\e[1;5B": history-search-forward
+
+# Make up/down arrow do same as ctrl-up/down arrow
 "\e[5A": history-search-backward
+"\e[A": history-search-backward
 "\e[5B": history-search-forward
+"\e[B": history-search-forward
 # "\e\e[A": history-search-backward
 # "\e\e[B": history-search-forward
 
