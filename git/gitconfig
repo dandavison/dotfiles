@@ -5,3 +5,13 @@
 [user]
         name = Dan Davison
         email = dandavison7@gmail.com
+[alias]
+        log = l
+        show = s
+        diff = d
+        add = a
+        checkout = c
+        commit = co
+
+[diff "json"]
+	textconv = jsonpipe
