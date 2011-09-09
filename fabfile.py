@@ -5,7 +5,7 @@ env.hosts = ['analysis']
 
 REPOS = [('~/bin', 'git@github.com:dandavison/bin.git'),
          ('~/bin/counsyl', 'analysis:bin-counsyl'),
-         ('~/config', 'git@github.com:dandavison/config.git'),
+         ('~/config', 'analysis:config'),
          ('~/config/bash/bashrc', 'git@github.com:dandavison/bashrc.git'),
          ('~/config/emacs', 'git@github.com:dandavison/emacs-config.git')]
 
@@ -28,15 +28,11 @@ def set_links():
     targets['~/.bashrc'] = '~/config/bash/bashrc'
     targets['~/.dircolors'] = '~/config/dircolors/dircolors'
     targets['~/.emacs'] = '~/config/emacs/emacs-init.el'
-    targets['~/.emacs_bash'] = '~/config/emacs/emacs_bash'
     targets['~/.gitconfig'] = '~/config/git/gitconfig'
     targets['~/.gitignore'] = '~/config/git/gitignore'
-    targets['~/.inputrc'] = '~/config/readline/inputrc'
+    targets['~/.inputrc'] = '~/config/bash/bindings'
     targets['~/.mailcap'] = '~/config/mailcap'
-    targets['~/.mailrc'] = '~/config/email/mailrc'
     targets['~/.mairixrc'] = '~/config/mairix/mairixrc-gnus'
-    targets['~/.mime-types'] = '~/config/mime.types'
-    targets['~/.procmailrc'] = '~/config/procmailrc'
     targets['~/.Rprofile'] = '~/config/R/Rprofile.R'
 
     for link, target in targets.iteritems():
