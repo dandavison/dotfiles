@@ -119,6 +119,7 @@ c = get_config()
 
 # Set the color scheme (NoColor, Linux, or LightBG).
 # c.TerminalInteractiveShell.colors = 'LightBG'
+c.TerminalInteractiveShell.colors = 'Linux'
 
 # Autoindent IPython code entered interactively.
 # c.TerminalInteractiveShell.autoindent = True
@@ -128,12 +129,14 @@ c = get_config()
 
 #
 # c.TerminalInteractiveShell.prompt_in2 = '   .\\D.: '
+c.TerminalInteractiveShell.prompt_in2 = '... '
 
 #
 # c.TerminalInteractiveShell.separate_out = ''
 
 #
 # c.TerminalInteractiveShell.prompt_in1 = 'In [\\#]: '
+c.TerminalInteractiveShell.prompt_in1 = '>>> '
 
 # Enable deep (recursive) reloading by default. IPython can use the deep_reload
 # module which reloads changes in modules recursively (it replaces the reload()
@@ -231,6 +234,7 @@ c = get_config()
 
 #
 # c.TerminalInteractiveShell.prompt_out = 'Out[\\#]: '
+c.TerminalInteractiveShell.prompt_out = ''
 
 # Set the size of the output cache.  The default is 1000, you can change it
 # permanently in your config file.  Setting it to 0 completely disables the
