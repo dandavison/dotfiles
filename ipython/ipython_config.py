@@ -119,7 +119,7 @@ c = get_config()
 
 # Set the color scheme (NoColor, Linux, or LightBG).
 # c.TerminalInteractiveShell.colors = 'LightBG'
-c.TerminalInteractiveShell.colors = 'Linux'
+c.TerminalInteractiveShell.colors = 'NoColor'
 
 # Autoindent IPython code entered interactively.
 # c.TerminalInteractiveShell.autoindent = True
@@ -175,6 +175,7 @@ c.TerminalInteractiveShell.prompt_in1 = '>>> '
 
 # The part of the banner to be printed before the profile
 # c.TerminalInteractiveShell.banner1 = 'Python 2.7.2 (default, Aug  4 2011, 16:59:19) \nType "copyright", "credits" or "license" for more information.\n\nIPython 0.11 -- An enhanced Interactive Python.\n?         -> Introduction and overview of IPython\'s features.\n%quickref -> Quick reference.\nhelp      -> Python\'s own help system.\nobject?   -> Details about \'object\', use \'object??\' for extra details.\n'
+c.TerminalInteractiveShell.banner1 = ''
 
 #
 # c.TerminalInteractiveShell.readline_parse_and_bind = ['tab: complete', '"\\C-l": clear-screen', 'set show-all-if-ambiguous on', '"\\C-o": tab-insert', '"\\C-r": reverse-search-history', '"\\C-s": forward-search-history', '"\\C-p": history-search-backward', '"\\C-n": history-search-forward', '"\\e[A": history-search-backward', '"\\e[B": history-search-forward', '"\\C-k": kill-line', '"\\C-u": unix-line-discard']
@@ -234,7 +235,11 @@ c.TerminalInteractiveShell.prompt_in1 = '>>> '
 
 #
 # c.TerminalInteractiveShell.prompt_out = 'Out[\\#]: '
-c.TerminalInteractiveShell.prompt_out = ''
+
+# Setting this to '' effectively results in a value of ' ' being
+# used. Seems like an ipython bug. Perhaps this value is tested in a
+# boolean context somewhere when it should be compared to None?
+c.TerminalInteractiveShell.prompt_out = '    '
 
 # Set the size of the output cache.  The default is 1000, you can change it
 # permanently in your config file.  Setting it to 0 completely disables the
