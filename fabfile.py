@@ -1,12 +1,12 @@
 import os
-from fabric.api import local, run, env
+from fabric.api import local, run, env, settings
 
-env.hosts = ['analysis']
+env.hosts = ['storage'] # 'analysis'
 
 REPOS = [('~/bin', 'git@github.com:dandavison/bin.git'),
-         ('~/bin/counsyl', 'analysis:bin-counsyl'),
-         ('~/config', 'analysis:config'),
-         ('~/config/bash/bashrc', 'git@github.com:dandavison/bashrc.git'),
+         ('~/bin_counsyl', 'storage:bin_counsyl'),
+         ('~/config', 'storage:config'),
+         ('~/config/bash', 'git@github.com:dandavison/bashrc.git'),
          ('~/config/emacs', 'git@github.com:dandavison/emacs-config.git')]
 
 
@@ -18,8 +18,9 @@ def deploy(counsyl=False):
 def sync_repos():
     for dir, url in REPOS:
         local('cd %s && git push' % dir)
-        if run('test -d %s' % dir).failed:
-            run('git clone %s %s' % (url, dir))
+        with settings(warn_only=True):
+            if run('test -d %s' % dir).failed:
+                run('git clone %s %s' % (url, dir))
         run('cd %s && git pull' % dir)
 
 
@@ -37,7 +38,4 @@ def set_links():
 
     for link, target in targets.iteritems():
 
-        if run('test -f %s' % link).succeeded:
-            run('rm %s' % link)
-
-        run('ln -s %s %s' % (target, link))
+        run('ln -sf %s %s' % (target, link))
