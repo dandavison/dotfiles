@@ -319,3 +319,8 @@ c.TerminalInteractiveShell.prompt_out = '    '
 
 #
 # c.PlainTextFormatter.singleton_printers = {}
+
+try:
+    import unversioned_config.py
+except ImportError:
+    pass
