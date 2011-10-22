@@ -6,12 +6,6 @@
         name = Dan Davison
         email = dandavison7@gmail.com
 [alias]
-        log = l
-        show = s
-        diff = d
-        add = a
-        checkout = c
-        commit = co
-
+        merge = merge --no-ff
 [diff "json"]
 	textconv = jsonpipe
