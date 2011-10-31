@@ -320,6 +320,7 @@ c.TerminalInteractiveShell.prompt_out = '    '
 #
 # c.PlainTextFormatter.singleton_printers = {}
 
+from collections import Counter
 try:
     import unversioned_config.py
 except ImportError:
