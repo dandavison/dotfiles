@@ -7,5 +7,6 @@
         email = dandavison7@gmail.com
 [alias]
         merge = merge --no-ff
+	fixup = commit --amend -C HEAD
 [diff "json"]
 	textconv = jsonpipe
