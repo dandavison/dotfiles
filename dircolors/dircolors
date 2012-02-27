@@ -195,10 +195,10 @@ LINK 32
 .pl 34
 .html 34
 .css 34
+.js 34
 .php 34
 .el 34
 .Rnw 34
-.org 34
 # Other files
 .Robj 31
 .o 30
