@@ -205,3 +205,7 @@ LINK 32
 .so 31
 .elc 30
 .pyc 30
+
+.aux 30
+.toc 30
+.dvi 30
