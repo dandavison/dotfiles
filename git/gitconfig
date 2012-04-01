@@ -8,5 +8,6 @@
 [alias]
         merge = merge --no-ff
 	fixup = commit --amend -C HEAD
+	push = push --set-upstream
 [diff "json"]
 	textconv = jsonpipe
