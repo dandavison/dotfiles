@@ -1,7 +1,3 @@
-science/papers/sma_calling/img/
-science/papers/sma_calling/ampdata/
-science/papers/sma_calling/z/
-
 # ignore emacs temporary / backup files
 *~
 \#*#
