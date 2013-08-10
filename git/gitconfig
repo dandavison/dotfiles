@@ -1,13 +1,61 @@
 [core]
 	excludesfile = ~/.gitignore
+
 [color]
         ui = auto
+
 [user]
         name = Dan Davison
-        email = dandavison7@gmail.com
+        email = dan@counsyl.com
+
 [alias]
-        merge = merge --no-ff
+	blamestats = !~/git-utils/blamestats.py ${GIT_PREFIX:-.}
+	branch-by-date = !~/clib/git-utils/git-branch-by-date
+	contributors = !git log --format=format:"%an" | sort | uniq -c | sort -rn
 	fixup = commit --amend -C HEAD
 	push = push --set-upstream
+	log1 = log --pretty=oneline --abbrev-commit
+	logs = log --stat
+	ls = ls-files
+	merge = merge --no-edit
+	playback = !~/lib/python/git-playback/playback.py ${GIT_PREFIX:-.}
+	push = push -u
+	regraft = !~/clib/git-utils/git-regraft
+	squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
+	frob = !sh -c 'git commit -a --fixup HEAD && GIT_EDITOR=cat git rebase -i --autosquash HEAD~2'
+
 [diff "json"]
-	textconv = jsonpipe
+	textconv = /Users/dan/bin/jsonpipe
+
+[merge]
+	conflictstyle = diff3
+	renamelimit = 10000
+
+[push]
+	default = current
+
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
