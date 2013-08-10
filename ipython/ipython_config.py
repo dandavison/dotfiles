@@ -10,8 +10,8 @@ c.PromptManager.out_template = '    '
 c.TerminalInteractiveShell.banner1 = ''
 
 # (NoColor, Linux, LightBG)
-# c.TerminalInteractiveShell.colors = 'NoColor'
-# c.PromptManager.color_scheme = 'LightBG'
+c.TerminalInteractiveShell.colors = 'NoColor'
+# c.PromptManager.color_scheme = 'Linux'  # 'LightBG'
 
 c.InteractiveShellApp.extensions = [
     'autoreload',
@@ -20,5 +20,7 @@ c.InteractiveShellApp.extensions = [
 c.InteractiveShellApp.exec_lines = [
     'import sys',
     'import os',
-   'sys.path.append(os.path.expanduser("~"))',
+    'sys.path.append(os.path.expanduser("~"))',
 ]
+
+c.InteractiveShellApp.pylab_import_all = False
