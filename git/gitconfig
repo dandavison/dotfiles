@@ -60,3 +60,5 @@
 	changed = green
 	untracked = cyan
 
+[hub]
+	host = github.counsyl.com
