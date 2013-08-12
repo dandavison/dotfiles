@@ -2,11 +2,11 @@
 	excludesfile = ~/.gitignore
 
 [color]
-        ui = auto
+	ui = auto
 
 [user]
-        name = Dan Davison
-        email = dan@counsyl.com
+	name = Dan Davison
+	email = dan@counsyl.com
 
 [alias]
 	blamestats = !~/git-utils/blamestats.py ${GIT_PREFIX:-.}
@@ -22,6 +22,7 @@
 	push = push -u
 	regraft = !~/clib/git-utils/git-regraft
 	squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
+	grep-history = !f(){ git rev-list --all | xargs git grep $1 } ; f
 	frob = !sh -c 'git commit -a --fixup HEAD && GIT_EDITOR=cat git rebase -i --autosquash HEAD~2'
 
 [diff "json"]
@@ -35,27 +36,27 @@
 	default = current
 
 [color]
-    ui = auto
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    ui = true
-    pager = true
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
 
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
