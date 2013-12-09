@@ -33,6 +33,9 @@
 [diff "json"]
 	textconv = /Users/dan/bin/jsonpipe
 
+[diff "plist"]
+      textconv = PlistBuddy-Print
+
 [merge]
 	conflictstyle = diff3
 	renamelimit = 10000
