@@ -16,7 +16,8 @@
 	fixup = commit --amend -C HEAD
 	grep-history = "!f() { git rev-list --all | xargs git grep $1 } ; f"
 	head = rev-list -n1 HEAD
-        copy-head = !git head | tr -d '\n' | reattach-to-user-namespace pbcopy
+	copy-branch = !"f() { git checkout -b $1 && git checkout - } ; f"
+	copy-head = !git head | tr -d '\n' | reattach-to-user-namespace pbcopy
 	log = log --graph --color --decorate --date=relative --abbrev-commit
 	log1 = log --pretty=oneline --abbrev-commit
 	logs = log --stat
@@ -27,7 +28,7 @@
 	push = push -u
 	regraft = !~/clib/git-utils/git-regraft
 	squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
-        pushf = !git push origin :$(git rev-parse --abbrev-ref HEAD) && git push
+	pushf = !git push origin :$(git rev-parse --abbrev-ref HEAD) && git push
 
 [diff "json"]
 	textconv = /Users/dan/bin/jsonpipe
