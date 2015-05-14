@@ -1,5 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
+	editor = ~/bin/emacsclient
 
 [color]
 	ui = auto
@@ -40,6 +41,9 @@
 	conflictstyle = diff3
 	renamelimit = 10000
 
+[rebase]
+        autosquash = true
+
 [push]
 	default = current
 
@@ -70,5 +74,6 @@
 
 [hub]
 	host = github.counsyl.com
+
 [credential]
 	helper = osxkeychain
