@@ -35,7 +35,7 @@
 	textconv = /Users/dan/bin/jsonpipe
 
 [diff "plist"]
-      textconv = PlistBuddy-Print
+      textconv = plutil -convert xml1 -o -
 
 [merge]
 	conflictstyle = diff3
