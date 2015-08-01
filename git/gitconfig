@@ -1,6 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
-	editor = ~/bin/emacsclient
+	editor = emacsclient
 
 [color]
 	ui = auto
