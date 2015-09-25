@@ -37,6 +37,9 @@
 [diff "plist"]
       textconv = plutil -convert xml1 -o -
 
+[diff "docx"]
+    textconv = docx2txt
+
 [merge]
 	conflictstyle = diff3
 	renamelimit = 10000
