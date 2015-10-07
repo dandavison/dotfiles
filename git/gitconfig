@@ -19,14 +19,16 @@
 	head = rev-list -n1 HEAD
 	copy-branch = !"f() { git checkout -b $1 && git checkout - } ; f"
 	copy-head = !git head | tr -d '\n' | reattach-to-user-namespace pbcopy
-	log = log --graph --color --decorate --date=relative --abbrev-commit
-	log1 = log --pretty=oneline --abbrev-commit
-	logs = log --stat
+        log1 = log --format='%C(auto)%h %ad %ae%n%n    %s%n%n' --date relative
+        log5 = log --format='%C(red)%ad%C(reset) %ae %h%n%n    %s%n%n'
+	log2 = log --graph --color --decorate --date=relative --abbrev-commit
+	log3 = log --pretty=oneline --abbrev-commit
+	log4 = log --stat
 	ls = ls-files
 	merge = merge --no-edit
 	playback = !~/lib/python/git-playback/playback.py ${GIT_PREFIX:-.}
-	push = push --set-upstream
-	push = push -u
+	push1 = push --set-upstream
+	push2 = push -u
 	regraft = !~/clib/git-utils/git-regraft
 	squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
 	pushf = !git push origin :$(git rev-parse --abbrev-ref HEAD) && git push
