@@ -6,10 +6,12 @@
 	ui = auto
 
 [user]
-	name = Dan Davison
-	email = dan@counsyl.com
+    name = Dan Davison
+    email = (none)
 
 [alias]
+    set-email-public = config user.email "dandavison7@gmail.com"
+    set-email-counsyl = config user.email "dan@counsyl.com"
 	blamestats = !~/git-utils/blamestats.py ${GIT_PREFIX:-.}
 	branch-by-date = !~/clib/git-utils/git-branch-by-date
 	contributors = !git log --format=format:"%an" | sort | uniq -c | sort -rn
