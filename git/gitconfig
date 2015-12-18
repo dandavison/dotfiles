@@ -12,6 +12,7 @@
 [alias]
     set-email-public = config user.email "dandavison7@gmail.com"
     set-email-counsyl = config user.email "dan@counsyl.com"
+    url = config remote.origin.url
 	blamestats = !~/git-utils/blamestats.py ${GIT_PREFIX:-.}
 	branch-by-date = !~/clib/git-utils/git-branch-by-date
 	contributors = !git log --format=format:"%an" | sort | uniq -c | sort -rn
@@ -21,7 +22,7 @@
 	head = rev-list -n1 HEAD
 	copy-branch = !"f() { git checkout -b $1 && git checkout - } ; f"
 	copy-head = !git head | tr -d '\n' | reattach-to-user-namespace pbcopy
-        log1 = log --format='%C(auto)%h %ad %ae%n%n    %s%n%n' --date relative
+        log1 = log --format='%C(auto)%h %ad %ae%n%n    %s%n%n    %-b%n' --date relative
         log5 = log --format='%C(red)%ad%C(reset) %ae %h%n%n    %s%n%n'
 	log2 = log --graph --color --decorate --date=relative --abbrev-commit
 	log3 = log --pretty=oneline --abbrev-commit
