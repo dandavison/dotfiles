@@ -22,8 +22,8 @@
     head = rev-list -n1 HEAD
     copy-branch = !"f() { git checkout -b $1 && git checkout - } ; f"
     copy-head = !git head | tr -d '\n' | reattach-to-user-namespace pbcopy
-        log1 = log --format='%C(auto)%h %ad %ae%n%n    %s%n%n    %-b%n' --date relative
-        log5 = log --format='%C(red)%ad%C(reset) %ae %h%n%n    %s%n%n'
+    log1 = log --format='%C(auto)%h %ad %ae%n%n    %s%n%n    %-b%n' --date relative
+    log5 = log --format='%C(red)%ad%C(reset) %ae %h%n%n    %s%n%n'
     log2 = log --graph --color --decorate --date=relative --abbrev-commit
     log3 = log --pretty=oneline --abbrev-commit
     log4 = log --stat
