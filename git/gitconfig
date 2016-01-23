@@ -46,7 +46,6 @@
     textconv = docx2txt
 
 [merge]
-    conflictstyle = diff3
     renamelimit = 10000
 
 [rebase]
