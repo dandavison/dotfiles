@@ -1,6 +1,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = emacsclient
+	pager = diff-so-fancy | less --tabs=1,5 -R
 
 [color]
     ui = auto
@@ -22,18 +23,18 @@
     head = rev-list -n1 HEAD
     copy-branch = !"f() { git checkout -b $1 && git checkout - } ; f"
     copy-head = !git head | tr -d '\n' | reattach-to-user-namespace pbcopy
+
     log1 = log \
          --date relative \
          --format='%n\
 %C(magenta)-------------------------------------------------------------------------------%n\
-%C(magenta)%h %C(magenta)%ad %ae\
+%C(magenta)%h %C(magenta)%ad %ae%n\
 %n\
+    %C(blue)%s%n\
 %n\
-    %C(blue)%s\
-%n\
-%n\
-    %C(blue)%-b\
-%n'
+    %C(blue)%-b%n\
+'
+
     log5 = log --format='%C(red)%ad%C(reset) %ae %h%n%n    %s%n%n'
     log2 = log --graph --color --decorate --date=relative --abbrev-commit
     log3 = log --pretty=oneline --abbrev-commit
@@ -84,6 +85,7 @@
     frag = magenta bold
     old = red bold
     new = green bold
+    whitespace = red reverse
 
 [color "status"]
     added = yellow
