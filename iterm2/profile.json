@@ -1,0 +1,15 @@
+{
+  "Profiles": [
+    {
+      "Name": "0",
+      "Guid": "9AFE6E8D-84A5-49BC-91F0-2EBCC3EB3B35",
+      "Keyboard Map" : {
+        "0xd-0x100000" : {
+          "Text" : "0x1a 0x7a",
+          "Action" : 11,
+          "Description": "cmd-enter => tmux resize-pane -Z"
+        }
+      }
+    }
+  ]
+}
