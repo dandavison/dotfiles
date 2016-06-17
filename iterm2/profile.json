@@ -17,7 +17,7 @@
         "0xf701-0x300000": {
           "Text": "0x1a 0x1b 0x5b 0x42",
           "Action": 11,
-          "Description": "cmd-left => tmux select-pane -D"
+          "Description": "cmd-down => tmux select-pane -D"
         },
         "0xf702-0x300000": {
           "Text": "0x1a 0x1b 0x5b 0x44",
@@ -27,7 +27,7 @@
         "0xf703-0x300000": {
           "Text": "0x1a 0x1b 0x5b 0x43",
           "Action": 11,
-          "Description": "cmd-left => tmux select-pane -R."
+          "Description": "cmd-right => tmux select-pane -R"
         }
       }
     }
