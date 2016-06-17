@@ -28,6 +28,26 @@
           "Text": "0x1a 0x1b 0x5b 0x43",
           "Action": 11,
           "Description": "cmd-right => tmux select-pane -R"
+        },
+        "0xf702-0x320000": {
+          "Text": "0x1a 0x70",
+          "Action": 11,
+          "Description": "cmd-shift-left => tmux previous-window"
+        },
+        "0xf703-0x320000": {
+          "Text": "0x1a 0x6e",
+          "Action": 11,
+          "Description": "cmd-shift-right => tmux next-window"
+        },
+        "0x3f-0x120000": {
+          "Text": "0x1a 0x2f",
+          "Action": 11,
+          "Description": "cmd-shift-forwardslash => tmux choose-window"
+        },
+        "0x7c-0x120000": {
+          "Text": "0x1a 0x5c",
+          "Action": 11,
+          "Description": "cmd-shift-backslash => tmux choose-session"
         }
       }
     }
