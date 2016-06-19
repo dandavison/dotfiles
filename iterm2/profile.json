@@ -4,6 +4,26 @@
       "Name": "0",
       "Guid": "9AFE6E8D-84A5-49BC-91F0-2EBCC3EB3B35",
       "Keyboard Map": {
+        "0xf702-0x280000": {
+          "Text": "b",
+          "Action": 10,
+          "Description": "alt-left => send-escape-sequence b (readline backword-word)"
+        },
+        "0xf703-0x280000" : {
+          "Text" : "f",
+          "Action" : 10,
+          "Description": "alt-right => send-escape-sequence f (readline forward-word)"
+        },
+        "0xf701-0x280000" : {
+          "Text" : "[B",
+          "Action" : 10,
+          "Description": "alt-down => send-escape-sequence [B (readline history-search-forward custom binding)"
+        },
+        "0xf700-0x280000" : {
+          "Text" : "[A",
+          "Action" : 10,
+          "Description": "alt-up => send-escape-sequence [A (readline history-search-backward custom binding)"
+        },
         "0xd-0x100000": {
           "Text": "0x1a 0x7a",
           "Action": 11,
