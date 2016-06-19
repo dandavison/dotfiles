@@ -69,6 +69,10 @@
           "Action": 11,
           "Description": "cmd-shift-backslash => tmux choose-session"
         }
+      },
+      "Semantic History" : {
+        "text" : "\/Users\/dan\/bin\/parse-python-traceback-file-position \\1 \\4",
+        "action" : "command"
       }
     }
   ]
