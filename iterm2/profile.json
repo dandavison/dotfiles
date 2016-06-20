@@ -68,6 +68,26 @@
           "Text": "0x1a 0x5c",
           "Action": 11,
           "Description": "cmd-shift-backslash => tmux choose-session"
+        },
+        "0x5f-0x120000" : {
+          "Text" : "0x1a 0x22",
+          "Action" : 11,
+          "Description": "Split horizontally"
+        },
+        "0xf703-0x300000" : {
+          "Action" : 11,
+          "Text" : "0x1a 0x1b 0x5b 0x43",
+          "Description": "Pane right"
+        },
+        "0x7c-0x120000" : {
+          "Text" : "0x1a 0x25",
+          "Action" : 11,
+          "Description": "Split vertically"
+        },
+        "0x73-0x100000" : {
+          "Text" : "0x1a 0x5b",
+          "Action" : 11,
+          "Description": "Scroll mode"
         }
       },
       "Semantic History" : {
