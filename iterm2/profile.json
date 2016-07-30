@@ -93,7 +93,20 @@
       "Semantic History" : {
         "text" : "\/Users\/dan\/bin\/parse-python-traceback-file-position \\1 \\4",
         "action" : "command"
-      }
+      },
+      "Triggers" : [
+        {
+          "partial" : false,
+          "parameter" : "\/usr\/local\/bin\/terminal-notifier -title Alert -message \"Server is ready!\"",
+          "regex" : "Sass is watching for changes",
+          "action" : "ScriptTrigger"
+        },
+        {
+          "regex" : "^ipdb>",
+          "action" : "ScriptTrigger",
+          "parameter" : "\/usr\/local\/bin\/terminal-notifier -title Alert -message \"ipdb is ready!\""
+        }
+      ]
     }
   ]
 }
