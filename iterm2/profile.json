@@ -90,6 +90,20 @@
           "Description": "Scroll mode"
         }
       },
+      "Smart Selection Rules" : [
+        {
+          "notes" : "File path with following text",
+          "precision" : "very_low",
+          "regex" : "(\\~?\/?([[:letter:][:number:]._-]+\/+)+[[:letter:][:number:]._-]+\/?)([^ ]*)",
+          "actions" : [
+            {
+              "title" : "iterm2-dwim",
+              "action" : 2,
+              "parameter" : "\/usr\/local\/bin\/iterm2-dwim \\1 \\3"
+            }
+          ]
+        }
+      ],
       "Semantic History" : {
         "text" : "\/Users\/dan\/bin\/parse-python-traceback-file-position \\1 \\4",
         "action" : "command"
