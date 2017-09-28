@@ -105,7 +105,7 @@
         }
       ],
       "Semantic History" : {
-        "text" : "\/Users\/dan\/bin\/parse-python-traceback-file-position \\1 \\4",
+        "text" : "\/usr\/local\/bin\/iterm2-dwim \\1 \\4",
         "action" : "command"
       }
     }

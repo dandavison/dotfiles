@@ -201,7 +201,7 @@ LINK 32
 .Rnw 34
 # Other files
 .Robj 31
-.o 30
+# .o 30
 .so 31
 .elc 30
 .pyc 30
