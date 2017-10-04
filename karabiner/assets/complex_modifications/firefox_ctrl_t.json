@@ -1,8 +1,8 @@
 {
-  "title": "Use left_command+t to issue alt+t to override newtab behavior in firefox.",
+  "title": "Use left_command+t to issue alt+c to override newtab behavior in firefox.",
   "rules": [
     {
-      "description": "Use left_command+t to issue alt+t to override newtab behavior in firefox.",
+      "description": "Use left_command+t to issue alt+c to override newtab behavior in firefox.",
       "manipulators": [
         {
           "type": "basic",
@@ -16,7 +16,7 @@
           },
           "to": [
             {
-              "key_code": "t",
+              "key_code": "c",
               "modifiers": [
                 "left_option"
               ]
