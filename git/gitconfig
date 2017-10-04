@@ -107,4 +107,3 @@
     push2 = push -u
     regraft = !~/clib/git-utils/git-regraft
     squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
-    pushf = !git push origin :$(git rev-parse --abbrev-ref HEAD) && git push
