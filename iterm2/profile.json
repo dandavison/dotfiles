@@ -99,13 +99,13 @@
             {
               "title" : "iterm2-dwim",
               "action" : 2,
-              "parameter" : "\/usr\/local\/bin\/iterm2-dwim \\1 \\3"
+              "parameter" : "\/User\/dan\/bin\/iterm2-dwim \\1 \\3"
             }
           ]
         }
       ],
       "Semantic History" : {
-        "text" : "\/usr\/local\/bin\/iterm2-dwim \\1 \\4",
+        "text" : "\/User\/dan\/bin\/iterm2-dwim \\1 \\4",
         "action" : "command"
       }
     }
