@@ -190,6 +190,7 @@ LINK 32
 .cc 34
 .sh 34
 .tex 34
+.sty 34
 .lua 34
 .py 34
 .pl 34
