@@ -3,6 +3,9 @@
     editor = emacsclient  # editor = emacs -nw -q
     pager = diff-so-fancy | less --tabs=1,5 -R
 
+[diff-so-fancy]
+    markEmptyLines = false
+
 [color]
     ui = auto
 
@@ -60,6 +63,7 @@
 
 [hub]
     host = github.counsyl.com
+	host = github.counsyl.com
 
 [credential]
     helper = osxkeychain
@@ -83,18 +87,16 @@
     head = rev-list -n1 HEAD
     copy-branch = !"f() { git checkout -b $1 && git checkout - } ; f"
     copy-head = !git head | tr -d '\n' | reattach-to-user-namespace pbcopy
-
     log1 = log \
          --date relative \
          --format='%n\
-%C(magenta) ------------------------------------------------------------------------------%n\
-%C(magenta)%h %C(magenta)%ad %ae%n\
+%C(green) ------------------------------------------------------------------------------%n\
+%C(green)%h %C(green)%ad %ae%n\
 %n\
     %s%n\
 %n\
     %-b%n\
 '
-
     log5 = log --format='%C(red)%ad%C(reset) %ae %h%n%n    %s%n%n'
     log2 = log --graph --color --decorate --date=relative --abbrev-commit
     log3 = log --pretty=oneline --abbrev-commit
@@ -103,7 +105,7 @@
     merge = merge --no-edit
     playback = !~/lib/python/git-playback/playback.py ${GIT_PREFIX:-.}
     pull = pull --verbose
-    push1 = push --set-upstream
-    push2 = push -u
-    regraft = !~/clib/git-utils/git-regraft
+    rebase = !~/bin/git-rebase
     squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
+    delete-merged-master = "!f() { git branch --merged master | grep -v '^[\\* ] master$' | xargs -n 1 git branch -d; }; f"
+    delete-merged-current = "!f() { git branch --merged | grep -v \\* | grep -v master$ | xargs -n 1 git branch -d; }; f"
