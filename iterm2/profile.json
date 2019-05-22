@@ -24,7 +24,7 @@
           "Action" : 10,
           "Description": "alt-up => send-escape-sequence [A (readline history-search-backward custom binding)"
         },
-        "0x73-0x100000" : {
+        "0x91-0x100000" : {
           "Text" : "0x1a 0x5b",
           "Action" : 11,
           "Description": "Scroll mode"
