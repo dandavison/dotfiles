@@ -3,6 +3,37 @@
     editor = emacsclient  # editor = emacs -nw -q
     pager = delta | less -R
 
+[color]
+    ui = auto
+    pager = true
+    diff = false
+    status = auto
+    branch = auto
+    interactive = auto
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
 [diff-so-fancy]
     markEmptyLines = false
 
@@ -32,44 +63,12 @@
 [push]
     default = current
 
-[color]
-    ui = auto
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    ui = true
-    pager = false
-
-[color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
-
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
-
 [hub]
     host = github.counsyl.com
 	host = github.counsyl.com
 
 [credential]
     helper = osxkeychain
-
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
 
 [alias]
     set-email-public = config user.email "dandavison7@gmail.com"
