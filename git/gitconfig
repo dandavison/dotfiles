@@ -1,7 +1,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = emacsclient  # editor = emacs -nw -q
-    pager = delta | less -R
+	pager = delta | less -R
 
 [color]
     ui = auto
