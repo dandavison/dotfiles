@@ -6,7 +6,7 @@
 [color]
     ui = auto
     pager = true
-    diff = false
+    diff = true
     status = auto
     branch = auto
     interactive = auto
