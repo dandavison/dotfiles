@@ -35,14 +35,14 @@
           "Description": "cmd-enter => tmux resize-pane -Z"
         },
         "0xf700-0x300000": {
-          "Text": "0x1a 0x1b 0x5b 0x41",
+          "Text": "0x1a 0x1b 0x28",
           "Action": 11,
-          "Description": "cmd-up => tmux select-pane -U"
+          "Description": "cmd-up => tmux switch-client -p"
         },
         "0xf701-0x300000": {
-          "Text": "0x1a 0x1b 0x5b 0x42",
+          "Text": "0x1a 0x1b 0x29",
           "Action": 11,
-          "Description": "cmd-down => tmux select-pane -D"
+          "Description": "cmd-down => tmux switch-client -n"
         },
         "0xf702-0x300000": {
           "Text": "0x1a 0x1b 0x5b 0x44",
