@@ -1,7 +1,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = emacsclient  # editor = emacs -nw -q
-    pager = diff-so-fancy | less --tabs=1,5 -R
+    pager = delta | less -R
 
 [diff-so-fancy]
     markEmptyLines = false
@@ -39,7 +39,7 @@
     branch = auto
     interactive = auto
     ui = true
-    pager = true
+    pager = false
 
 [color "branch"]
     current = yellow reverse
