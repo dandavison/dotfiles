@@ -1,6 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
-    editor = emacsclient  # editor = emacs -nw -q
+    editor = emacsclient
 	pager = delta | less -R
 
 [color]
@@ -12,7 +12,7 @@
     interactive = auto
 
 [color "diff"]
-    meta = yellow bold
+    meta = blue bold
     frag = magenta bold
     old = red bold
     new = green bold
