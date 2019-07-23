@@ -1,7 +1,20 @@
+[user]
+    name = Dan Davison
+    email = dandavison7@gmail.com
+
 [core]
     excludesfile = ~/.gitignore
     editor = emacsclient
-	pager = delta | less -R
+	pager = delta --light
+    # pager = delta --dark --minus-color="#420000" --plus-color="#021F00" --plus-emph-color="#0a320a"
+    # pager = diff-so-fancy | less --tabs=1,5 -R
+    # pager = delta --plus-color="#015801" --minus-color="#4F0001"
+    # pager = delta --width=237 --plus-color="#012800" --minus-color="#340001" --dark
+    # pager = delta --light --width variable
+
+[diff-so-fancy]
+    markEmptyLines = false
+	changeHunkIndicators = true
 
 [color]
     ui = auto
@@ -12,7 +25,7 @@
     interactive = auto
 
 [color "diff"]
-    meta = blue bold
+    meta = "#FF0000"
     frag = magenta bold
     old = red bold
     new = green bold
@@ -25,21 +38,19 @@
 	newHighlight = green bold 22
 
 [color "branch"]
-    current = yellow reverse
-    local = yellow
+    current = blue reverse
+    local = blue
     remote = green
 
+[color "decorate"]
+    HEAD = cyan
+    branch = green
+    tag = blue bold
+
 [color "status"]
-    added = yellow
+    added = blue
     changed = green
     untracked = cyan
-
-[diff-so-fancy]
-    markEmptyLines = false
-
-[user]
-    name = Dan Davison
-    email = dandavison7@gmail.com
 
 [diff "json"]
     textconv = /Users/dan/bin/jsonpipe
@@ -62,6 +73,7 @@
 
 [push]
     default = current
+	followTags = true
 
 [hub]
     host = github.counsyl.com
