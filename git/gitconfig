@@ -16,42 +16,6 @@
     markEmptyLines = false
 	changeHunkIndicators = true
 
-[color]
-    ui = auto
-    pager = true
-    diff = true
-    status = auto
-    branch = auto
-    interactive = auto
-
-[color "diff"]
-    meta = "#FF0000"
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
-
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-
-[color "branch"]
-    current = blue reverse
-    local = blue
-    remote = green
-
-[color "decorate"]
-    HEAD = cyan
-    branch = green
-    tag = blue bold
-
-[color "status"]
-    added = blue
-    changed = green
-    untracked = cyan
-
 [diff "json"]
     textconv = /Users/dan/bin/jsonpipe
 
