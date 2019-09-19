@@ -5,9 +5,11 @@
 [core]
     excludesfile = ~/.gitignore
     editor = emacsclient
-	pager = delta --light
+    # pager = delta --light --max-line-distance=0.6 --width 100 --minus-emph-color="#ffb0b0"
+    # pager = delta --dark --max-line-distance=0.6 --width 100
+    # pager = delta --dark --plus-color="#002800" --plus-emph-color="#0E7C0E"
     # pager = delta --dark --minus-color="#420000" --plus-color="#021F00" --plus-emph-color="#0a320a"
-    # pager = diff-so-fancy | less --tabs=1,5 -R
+    pager = diff-so-fancy | less -R
     # pager = delta --plus-color="#015801" --minus-color="#4F0001"
     # pager = delta --width=237 --plus-color="#012800" --minus-color="#340001" --dark
     # pager = delta --light --width variable
