@@ -2,21 +2,31 @@
     name = Dan Davison
     email = dandavison7@gmail.com
 
+# [commit]
+#     cleanup = whitespace
+#     template = /dev/null
+
 [core]
     excludesfile = ~/.gitignore
     editor = emacsclient
-    # pager = delta --light --max-line-distance=0.6 --width 100 --minus-emph-color="#ffb0b0"
-    # pager = delta --dark --max-line-distance=0.6 --width 100
+    pager = /usr/local/bin/delta --max-line-distance=0.6  # --dark --24-bit-color=never --commit-style box --max-line-distance=0.6 # --file-style underline --hunk-style box --max-line-distance=0.8 # --plus-color=red --plus-emph-color=green-bright --minus-color=red --minus-emph-color=red-bright  # --max-line-distance=0.8
+    # pager = delta --theme='Solarized (light)' #| less -R --pattern '^(Date|added|deleted|modified|renamed): '
+    # pager = /usr/local/bin/delta --light # --max-line-distance=0.6 #--theme=none   # --width 100 --minus-emph-color="#ffb0b0"
+    # pager = delta # --max-line-distance=0.6 #--theme=none   # --width 100 --minus-emph-color="#ffb0b0"
+    # pager = delta --dark # --max-line-distance=0.6 --width 100
     # pager = delta --dark --plus-color="#002800" --plus-emph-color="#0E7C0E"
     # pager = delta --dark --minus-color="#420000" --plus-color="#021F00" --plus-emph-color="#0a320a"
-    pager = diff-so-fancy | less -R
+    # pager = diff-so-fancy | less -R
     # pager = delta --plus-color="#015801" --minus-color="#4F0001"
     # pager = delta --width=237 --plus-color="#012800" --minus-color="#340001" --dark
     # pager = delta --light --width variable
 
-[diff-so-fancy]
-    markEmptyLines = false
-	changeHunkIndicators = true
+# [interactive]
+#     diffFilter = delta --file-style plain  --hunk-style plain # --commit-style plain
+
+[diff]
+    colorMoved = zebra
+    # external = ~/src/misc/git_external_diff.sh
 
 [diff "json"]
     textconv = /Users/dan/bin/jsonpipe
@@ -41,12 +51,20 @@
     default = current
 	followTags = true
 
+[diff-so-fancy]
+    markEmptyLines = false
+	changeHunkIndicators = true
+
 [hub]
     host = github.counsyl.com
 	host = github.counsyl.com
 
 [credential]
     helper = osxkeychain
+
+# [stash]
+#     showStat = true
+#     showPatch = true
 
 [alias]
     set-email-public = config user.email "dandavison7@gmail.com"
@@ -56,7 +74,7 @@
     branch-by-date = !~/src/git-utils/git-branch-by-date
     contributors = !git log --format=format:"%an" | sort | uniq -c | sort -rn
     fetch-branch = "!f() { git fetch origin $1:$1 } ; f"
-    fixup = commit --amend -C HEAD
+    fixup = !"f() { git add . && git diff --cached && read && git commit --amend -C HEAD }; f"
     grep-history = "!f() { git rev-list --all | xargs git grep $1 } ; f"
     head = rev-list -n1 HEAD
     copy-branch = !"f() { git checkout -b $1 && git checkout - } ; f"
@@ -84,3 +102,8 @@
     delete-merged-master = "!f() { git branch --merged master | grep -v '^[\\* ] master$' | xargs -n 1 git branch -d; }; f"
     delete-merged-current = "!f() { git branch --merged | grep -v \\* | grep -v master$ | xargs -n 1 git branch -d; }; f"
     state = !"echo $(git rev-parse --abbrev-ref HEAD; git rev-parse HEAD; _diff=$(git diff; git diff --cached); [ -n \"$_diff\" ] && md5sum - <<< \"$_diff\")"
+    lp = "!git log --graph --color=always --format=\"%C(auto)%h%d %s %C(black)%C(bold)<%an> %cr%C(auto)\" \"$@\" \
+          | fzf --ansi -m --no-sort --reverse --tiebreak=index \
+          --preview \"(grep -o '[a-f0-9]\\{7\\}' | head -1 | xargs -I % sh -c 'git -c core.pager=cat show --color=never % | delta') <<< {}\" #"
+[color]
+	ui = true

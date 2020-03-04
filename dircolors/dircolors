@@ -55,7 +55,7 @@ TERM xterm-debian
 # Attribute codes:
 # 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
 # Text color codes:
-# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 34=cyan 37=white
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 NORMAL 00 # global default, although everything should be something.
@@ -136,14 +136,14 @@ EXEC 01;32
 .xwd 01;35
 .yuv 01;35
 # audio formats
-.aac 00;36
-.au 00;36
-.mid 00;36
-.midi 00;36
-.mka 00;36
+.aac 00;34
+.au 00;34
+.mid 00;34
+.midi 00;34
+.mka 00;34
 
 ## Entries written by set-look follow
-DIR 36;01
+DIR 34;01
 LINK 32
 # Application files
 .doc 31
