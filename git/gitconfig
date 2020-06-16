@@ -3,112 +3,13 @@
     email = dandavison7@gmail.com
     # useConfigOnly = true
 
+[color]
+	ui = true
+
 [core]
     excludesfile = ~/.gitignore
     editor = emacsclient
     pager = delta
-
-[delta]
-    presets = diff-so-fancy number
-    navigate = false
-
-
-[delta "misc"]
-    commit-decoration-style = bold box ul
-    file-style = bold 19 ul
-    file-decoration-style = none
-
-    word-diff-regex = "\\S+"
-    # word-diff-regex = "."
-    max-line-distance = 1.0
-
-[delta "number"]
-    number = true
-
-    number-minus-style = bold red
-    number-plus-style = bold 34
-    number-zero-style = dim
-
-    number-minus-format = "%ln┆ "
-    number-plus-format = "%ln│"
-    number-minus-format-style = dim
-    number-plus-format-style = dim
-
-
-[delta "number-zero-red-green-dim-in-zero-lines"]
-    number = true
-    number-left-style = dim red
-    number-minus-style = red
-    number-right-style = dim green
-    number-plus-style = green
-
-[delta "number-zero-red-green"]
-    number = true
-    number-left-style = red
-    number-right-style = green
-
-[delta "number-zero-red-green-no-color-in-zero-lines"]
-    number = true
-    number-minus-style = red
-    number-plus-style = green
-
-
-[delta "number-zero-red-green-gray-in-zero-lines"]
-    number = true
-    number-minus-style = red
-    number-zero-style = gray
-    number-plus-style = green
-
-
-[delta "number-zero-red-green-gray-in-zero-lines-II"]
-    number = true
-    number-minus-style = red
-    number-plus-style = green
-    number-left-style = gray
-    number-right-style = gray
-
-
-
-
-
-
-
-
-
-
-
-[delta "test-preset"]
-    number-plus-format-style = green
-
-[delta "my-diff-so-fancy"]
-    minus-style = red bold
-    minus-emph-style = red bold 52
-    zero-style = normal
-    plus-style = green bold
-    plus-emph-style = green bold 22
-    hunk-header-style = bold syntax
-    hunk-header-decoration-style = bold magenta box
-    file-style = bold yellow
-    file-decoration-style = bold yellow ul
-    commit-style = bold yellow
-
-[delta "light-on-dark"]
-    theme = OneHalfLight
-    minus-style = syntax auto
-    minus-emph-style = syntax auto
-    zero-style = syntax white
-    plus-style = syntax auto
-    plus-emph-style = syntax auto
-    hunk-header-style = syntax white
-    hunk-header-decoration-style = black box
-
-[delta "169-non-emph"]
-    minus-non-emph-style = red "#dddddd"
-    zero-style = dim syntax
-    plus-non-emph-style = syntax
-
-[color]
-	ui = true
 
 [color "diff"]
     old = red bold
@@ -123,6 +24,13 @@
     oldHighlight = red bold 52
     newNormal = green bold
     newHighlight = green bold 22
+
+[delta]
+    presets = diff-so-fancy decorations number  # coarse-word-diff
+    navigate = false
+
+[include]
+    path = ~/src/config/delta/presets.gitconfig
 
 [interactive]
     diffFilter = delta --minus-style 'red bold' --minus-emph-style 'red bold 52' --zero-style 'normal' --plus-style 'green bold' --plus-emph-style 'green bold 22' --hunk-header-style 'bold syntax' --hunk-header-decoration-style '' --file-style 'bold yellow' --file-decoration-style '' --commit-style 'bold yellow'
