@@ -3,6 +3,9 @@
     email = dandavison7@gmail.com
     # useConfigOnly = true
 
+[include]
+    path = ~/src/config/delta/delta.conf
+
 [color]
 	ui = true
 
@@ -10,37 +13,6 @@
     excludesfile = ~/.gitignore
     editor = emacsclient
     pager = delta
-
-[color "diff"]
-    old = red bold
-    new = green bold
-    commit = "#0e7c0e" bold
-    frag = red bold
-    meta = red
-    whitespace = red reverse
-
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-
-[delta]
-    presets = diff-so-fancy decorations number  # coarse-word-diff
-    navigate = false
-
-[include]
-    path = ~/src/config/delta/presets.gitconfig
-
-[interactive]
-    diffFilter = delta --minus-style 'red bold' --minus-emph-style 'red bold 52' --zero-style 'normal' --plus-style 'green bold' --plus-emph-style 'green bold 22' --hunk-header-style 'bold syntax' --hunk-header-decoration-style '' --file-style 'bold yellow' --file-decoration-style '' --commit-style 'bold yellow'
-
-[diff]
-    colorMoved = zebra
-	submodule = log
-    # noprefix = true
-    # external = ~/src/misc/git_external_diff.sh
-    mnemonicPrefix = true
 
 [diff-so-fancy]
     markEmptyLines = true
