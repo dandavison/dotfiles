@@ -3,16 +3,55 @@
     email = dandavison7@gmail.com
     # useConfigOnly = true
 
-[include]
-    path = ~/src/config/delta/delta.conf
-
-[color]
-	ui = true
-
 [core]
     excludesfile = ~/.gitignore
     editor = emacsclient
     pager = delta
+
+[color "diff"]
+     meta = bold yellow
+     frag = bold magenta
+#     commit = bold red
+#     context = normal
+#     func = normal
+#     old = normal
+#     new = normal
+#     whitespace = normal
+#     oldMoved = normal
+#     newMoved = normal
+#     oldMovedDimmed = normal
+#     oldMovedAlternative = normal
+#     oldMovedAlternativeDimmed = normal
+#     newMovedDimmed = normal
+#     newMovedAlternative = normal
+#     newMovedAlternativeDimmed = normal
+#     contextDimmed = normal
+#     oldDimmed = normal
+#     newDimmed = normal
+#     contextBold = normal
+#     oldBold = normal
+#     newBold = normal
+
+[delta]
+    light = true
+    # plus-color = green
+    features = line-numbers
+    # line-numbers-zero-style = "#5d5e5d"
+    # line-numbers-zero-style = "#444444"
+    # syntax-theme = Monokai Extended
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold 19 ul "#dddddd"
+    file-decoration-style = none
+
+[delta "my-line-numbers"]
+    line-numbers-left-format = "{nm:>4}┊"
+    line-numbers-right-format = "{np:>4}│ "
+
+
+# [include]
+#     path = ~/src/config/delta/delta.conf
 
 [diff-so-fancy]
     markEmptyLines = true
