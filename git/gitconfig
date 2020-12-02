@@ -1,30 +1,76 @@
+[core]
+	pager = delta
+    attributesfile = ~/src/config/git/gitattributes
+    excludesfile = ~/.gitignore
+    editor = emacsclient
+
+[delta]
+	light = true
+    # max-line-length = 20
+	hyperlinks = true
+    # hyperlinks-file-link-format = "http://localhost:5000/open/{path}?line-number={line_number}"
+    # hyperlinks-file-link-format = "emacs://{path}:{line}"
+    # hyperlinks-file-link-format = "file-line-column://{path}:{line}"
+	# hunk-header-style = omit
+	# line-numbers = false
+	# line-numbers = false
+	# side-by-side = true
+    # line-numbers = true
+    # line-numbers-left-format = "{nm:>3}⋮"
+    # line-numbers-right-format = "{np:>3}│ "
+    # features = line-numbers
+    # keep-plus-minus-markers = true
+	# hyperlinks = true
+
+
+[delta "magit-delta"]
+
+
+[delta "diff-filter"]
+    # Can leave empty, but optionally put diffFilter-only settings here
+
+# [interactive]
+#     diffFilter = bash -c 'delta --color-only | tee /tmp/delta-output.txt' #delta --color-only --features=diff-filter
+
+[diff]
+	colorMoved = dimmed-zebra
+	submodule = log
+	frag = red
+	# colorMovedWS = allow-indentation-change
+
+
 [user]
     name = Dan Davison
     email = dandavison7@gmail.com
     # useConfigOnly = true
 
-[core]
-    excludesfile = ~/.gitignore
-    editor = emacsclient
-    pager = delta
+[include]
+    # path = /Users/dan/src/config/delta/delta.conf
 
-[color "diff"]
-     meta = bold yellow
-     frag = bold magenta
-#     commit = bold red
-#     context = normal
-#     func = normal
-#     old = normal
-#     new = normal
-#     whitespace = normal
-#     oldMoved = normal
-#     newMoved = normal
+# [color "diff"]
+#     # Delta must still work correctly for whatever nonsense you put here!
+#     old = 3 # bold "#aabbcc" brightblack blink
+#     new = 4 # strike ul 22 "#ddeeff" dim
+
+    # oldMoved = bold brightmagenta "#ffe0e0"
+    # oldMovedAlternative = bold brightmagenta "#ffe0e0"
+    # newMoved = bold brightblue "#d0ffd0"
+    # newMovedAlternative = bold brightblue "#d0ffd0"
+
+
+
 #     oldMovedDimmed = normal
 #     oldMovedAlternative = normal
 #     oldMovedAlternativeDimmed = normal
 #     newMovedDimmed = normal
 #     newMovedAlternative = normal
 #     newMovedAlternativeDimmed = normal
+     meta = bold yellow
+     frag = bold magenta
+#     commit = bold red
+#     context = normal
+#     func = normal
+#     whitespace = normal
 #     contextDimmed = normal
 #     oldDimmed = normal
 #     newDimmed = normal
@@ -32,26 +78,11 @@
 #     oldBold = normal
 #     newBold = normal
 
-[delta]
-    light = true
-    # plus-color = green
-    features = line-numbers
-    # line-numbers-zero-style = "#5d5e5d"
-    # line-numbers-zero-style = "#444444"
-    # syntax-theme = Monokai Extended
-
-[delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold 19 ul "#dddddd"
-    file-decoration-style = none
-
-[delta "my-line-numbers"]
-    line-numbers-left-format = "{nm:>4}┊"
-    line-numbers-right-format = "{np:>4}│ "
-
-
-# [include]
-#     path = ~/src/config/delta/delta.conf
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 
 [diff-so-fancy]
     markEmptyLines = true
@@ -69,6 +100,7 @@
 [diff "pdf"]
     textconv = /Users/dan/src/1p/misc/pdftotext.sh
 
+
 # [commit]
 #     cleanup = whitespace
 #     template = /dev/null
@@ -84,9 +116,8 @@
     default = current
 	followTags = true
 
-[hub]
-    host = github.counsyl.com
-	host = github.counsyl.com
+[pull]
+	ff = only
 
 [credential]
     helper = osxkeychain
@@ -136,3 +167,5 @@
     lp = "!git log --graph --color=always --format=\"%C(auto)%h%d %s %C(black)%C(bold)<%an> %cr%C(auto)\" \"$@\" \
           | fzf --ansi -m --no-sort --reverse --tiebreak=index \
           --preview \"(grep -o '[a-f0-9]\\{7\\}' | head -1 | xargs -I % sh -c 'git -c core.pager=cat show --color=never % | delta') <<< {}\" #"
+[color "diff"]
+	frag = red
