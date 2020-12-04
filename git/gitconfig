@@ -6,8 +6,12 @@
 
 [delta]
 	light = true
+    # syntax-theme = gruvbox-light
+    # diff-so-fancy = true
+    keep-plus-minus-markers = true
+    whitespace-error-style = white red
     # max-line-length = 20
-	hyperlinks = true
+	# hyperlinks = true
     # hyperlinks-file-link-format = "http://localhost:5000/open/{path}?line-number={line_number}"
     # hyperlinks-file-link-format = "emacs://{path}:{line}"
     # hyperlinks-file-link-format = "file-line-column://{path}:{line}"
@@ -19,7 +23,6 @@
     # line-numbers-left-format = "{nm:>3}⋮"
     # line-numbers-right-format = "{np:>3}│ "
     # features = line-numbers
-    # keep-plus-minus-markers = true
 	# hyperlinks = true
 
 
