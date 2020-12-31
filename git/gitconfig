@@ -6,37 +6,57 @@
 
 [delta]
 	light = true
+    # dark = true
+    # color-only = true
+    # file-style = red
     # syntax-theme = gruvbox-light
     # diff-so-fancy = true
-    keep-plus-minus-markers = true
-    whitespace-error-style = white red
+    # keep-plus-minus-markers = true
+    # whitespace-error-style = white red
+    # width = 50
     # max-line-length = 20
 	# hyperlinks = true
     # hyperlinks-file-link-format = "http://localhost:5000/open/{path}?line-number={line_number}"
     # hyperlinks-file-link-format = "emacs://{path}:{line}"
     # hyperlinks-file-link-format = "file-line-column://{path}:{line}"
-	# hunk-header-style = omit
-	# line-numbers = false
-	# line-numbers = false
+    file-style = red omit
+	hunk-header-style = file line-number syntax
+	# hunk-header-decoration-style = blue box ul
+	line-numbers = true
 	# side-by-side = true
     # line-numbers = true
+    # features = no-line-numbers
     # line-numbers-left-format = "{nm:>3}⋮"
     # line-numbers-right-format = "{np:>3}│ "
-    # features = line-numbers
-	# hyperlinks = true
+	# hyperlinks = false
 
+# [delta]
+# #    line-numbers = true
+#     features = no-line-numbers
+
+[delta "my-light-mode"]
+    light = true
+    syntax-theme = GitHub
+
+[delta "my-dark-mode"]
+    dark = true
+    syntax-theme = Dracula
+
+[delta "no-line-numbers"]
+    line-numbers = false
 
 [delta "magit-delta"]
 
 
-[delta "diff-filter"]
+[interactive]
+    diffFilter = delta --color-only
     # Can leave empty, but optionally put diffFilter-only settings here
 
 # [interactive]
 #     diffFilter = bash -c 'delta --color-only | tee /tmp/delta-output.txt' #delta --color-only --features=diff-filter
 
 [diff]
-	colorMoved = dimmed-zebra
+	colorMoved = plain
 	submodule = log
 	frag = red
 	# colorMovedWS = allow-indentation-change
@@ -48,7 +68,7 @@
     # useConfigOnly = true
 
 [include]
-    # path = /Users/dan/src/config/delta/delta.conf
+    path = ~/src/delta/etc/themes.conf
 
 # [color "diff"]
 #     # Delta must still work correctly for whatever nonsense you put here!
@@ -68,8 +88,8 @@
 #     newMovedDimmed = normal
 #     newMovedAlternative = normal
 #     newMovedAlternativeDimmed = normal
-     meta = bold yellow
-     frag = bold magenta
+#     meta = bold yellow
+#     frag = bold magenta
 #     commit = bold red
 #     context = normal
 #     func = normal
