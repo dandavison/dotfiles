@@ -45,6 +45,22 @@
         "command": "workbench.action.focusActiveEditorGroup"
     },
     {
+        "key": "shift+.",// should be `>` key
+        "command": "editor.action.insertSnippet",
+        "args": {
+            "snippet": "<${1:${TM_SELECTED_TEXT}}>"
+        },
+        "when": "editorHasSelection"
+    },
+    {
+        "key": "shift+,",// should be `<` key
+        "command": "editor.action.insertSnippet",
+        "args": {
+            "snippet": "<${1:${TM_SELECTED_TEXT}}>"
+        },
+        "when": "editorHasSelection"
+    },
+    {
         "key": "ctrl+x d",
         "command": "workbench.action.tasks.runTask",
         "args": "emacs-dired"
