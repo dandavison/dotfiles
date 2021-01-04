@@ -4,56 +4,14 @@
     excludesfile = ~/.gitignore
     editor = emacsclient
 
+[include]
+    path = ~/src/delta/themes.gitconfig
+
 [delta]
-	light = true
-    # dark = true
-    # color-only = true
-    # file-style = red
-    # syntax-theme = gruvbox-light
-    # diff-so-fancy = true
-    # keep-plus-minus-markers = true
-    # whitespace-error-style = white red
-    # width = 50
-    # max-line-length = 20
-	# hyperlinks = true
-    # hyperlinks-file-link-format = "http://localhost:5000/open/{path}?line-number={line_number}"
-    # hyperlinks-file-link-format = "emacs://{path}:{line}"
-    # hyperlinks-file-link-format = "file-line-column://{path}:{line}"
-    file-style = red omit
-	hunk-header-style = file line-number syntax
-	# hunk-header-decoration-style = blue box ul
-	line-numbers = true
-	# side-by-side = true
-    # line-numbers = true
-    # features = no-line-numbers
-    # line-numbers-left-format = "{nm:>3}⋮"
-    # line-numbers-right-format = "{np:>3}│ "
-	# hyperlinks = false
-
-# [delta]
-# #    line-numbers = true
-#     features = no-line-numbers
-
-[delta "my-light-mode"]
-    light = true
-    syntax-theme = GitHub
-
-[delta "my-dark-mode"]
-    dark = true
-    syntax-theme = Dracula
-
-[delta "no-line-numbers"]
-    line-numbers = false
-
-[delta "magit-delta"]
-
+    features = hoopoe
 
 [interactive]
     diffFilter = delta --color-only
-    # Can leave empty, but optionally put diffFilter-only settings here
-
-# [interactive]
-#     diffFilter = bash -c 'delta --color-only | tee /tmp/delta-output.txt' #delta --color-only --features=diff-filter
 
 [diff]
 	colorMoved = plain
@@ -66,67 +24,6 @@
     name = Dan Davison
     email = dandavison7@gmail.com
     # useConfigOnly = true
-
-[include]
-    path = ~/src/delta/etc/themes.conf
-
-# [color "diff"]
-#     # Delta must still work correctly for whatever nonsense you put here!
-#     old = 3 # bold "#aabbcc" brightblack blink
-#     new = 4 # strike ul 22 "#ddeeff" dim
-
-    # oldMoved = bold brightmagenta "#ffe0e0"
-    # oldMovedAlternative = bold brightmagenta "#ffe0e0"
-    # newMoved = bold brightblue "#d0ffd0"
-    # newMovedAlternative = bold brightblue "#d0ffd0"
-
-
-
-#     oldMovedDimmed = normal
-#     oldMovedAlternative = normal
-#     oldMovedAlternativeDimmed = normal
-#     newMovedDimmed = normal
-#     newMovedAlternative = normal
-#     newMovedAlternativeDimmed = normal
-#     meta = bold yellow
-#     frag = bold magenta
-#     commit = bold red
-#     context = normal
-#     func = normal
-#     whitespace = normal
-#     contextDimmed = normal
-#     oldDimmed = normal
-#     newDimmed = normal
-#     contextBold = normal
-#     oldBold = normal
-#     newBold = normal
-
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-
-[diff-so-fancy]
-    markEmptyLines = true
-	changeHunkIndicators = true
-
-[diff "json"]
-    textconv = /Users/dan/bin/jsonpipe
-
-[diff "plist"]
-    textconv = plutil -convert xml1 -o -
-
-[diff "docx"]
-    textconv = docx2txt
-
-[diff "pdf"]
-    textconv = /Users/dan/src/1p/misc/pdftotext.sh
-
-
-# [commit]
-#     cleanup = whitespace
-#     template = /dev/null
 
 [merge]
     renamelimit = 10000
@@ -144,10 +41,6 @@
 
 [credential]
     helper = osxkeychain
-
-# [stash]
-#     showStat = true
-#     showPatch = true
 
 [advice]
     detachedHead = False
