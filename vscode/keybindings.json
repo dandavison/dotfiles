@@ -1,0 +1,62 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "cmd+;",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+/",
+        "command": "-editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "shift+cmd+-",
+        "command": "workbench.action.closePanel"
+    },
+    {
+        "key": "cmd+down",
+        "command": "workbench.action.focusPanel"
+    },
+    {
+        "key": "cmd+up",
+        "command": "workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
+    },
+    {
+        "key": "cmd+k e",
+        "command": "-workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
+    },
+    {
+        "key": "cmd+down",
+        "command": "terminal.focus"
+    },
+    {
+        "key": "cmd+up",
+        "command": "workbench.scm.focus"
+    },
+    {
+        "key": "cmd+up",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "ctrl+x d",
+        "command": "workbench.action.tasks.runTask",
+        "args": "emacs-dired"
+    },
+    {
+        "key": "cmd+g",
+        "command": "workbench.action.tasks.runTask",
+        "args": "emacs-magit-status"
+    },
+    {
+        "key": "cmd+o",
+        "command": "workbench.action.tasks.runTask",
+        "args": "emacs"
+    }
+]

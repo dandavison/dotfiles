@@ -1,0 +1,36 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.olean": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Default Light+",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "none",
+    "window.nativeFullScreen": false,
+    "diffEditor.renderSideBySide": true,
+    "workbench.statusBar.visible": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.cursorBlinking": "solid",
+    "editor.formatOnPaste": true,
+    "editor.renderLineHighlight": "none",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur"
+    },
+    "editor.lightbulb.enabled": false,
+    "editor.rulers": [],
+    "scm.diffDecorationsGutterVisibility": "hover"
+}
