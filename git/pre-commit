@@ -1,0 +1,3 @@
+#!/bin/sh
+# For every ipynb file in the git index, add a Python representation
+/Users/dan/tmp/virtualenvs/misc/bin/jupytext --from ipynb --to .ipynb.py:light --pre-commit
