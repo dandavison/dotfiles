@@ -32,5 +32,8 @@
     },
     "editor.lightbulb.enabled": false,
     "editor.rulers": [],
-    "scm.diffDecorationsGutterVisibility": "hover"
+    "scm.diffDecorationsGutterVisibility": "hover",
+    "editor.renderIndentGuides": false,
+    "zenMode.restore": true,
+    "emacs-mcx.strictEmacsMove": true
 }

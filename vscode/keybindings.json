@@ -19,30 +19,17 @@
         "command": "workbench.action.closePanel"
     },
     {
-        "key": "cmd+down",
-        "command": "workbench.action.focusPanel"
-    },
-    {
-        "key": "cmd+up",
-        "command": "workbench.files.action.focusOpenEditorsView",
-        "when": "workbench.explorer.openEditorsView.active"
-    },
-    {
         "key": "cmd+k e",
         "command": "-workbench.files.action.focusOpenEditorsView",
         "when": "workbench.explorer.openEditorsView.active"
     },
     {
-        "key": "cmd+down",
-        "command": "terminal.focus"
+        "key": "cmd+left",
+        "command": "workbench.action.navigateLeft"
     },
     {
-        "key": "cmd+up",
-        "command": "workbench.scm.focus"
-    },
-    {
-        "key": "cmd+up",
-        "command": "workbench.action.focusActiveEditorGroup"
+        "key": "cmd+right",
+        "command": "workbench.action.navigateRight"
     },
     {
         "key": "shift+.",// should be `>` key
@@ -66,7 +53,7 @@
         "args": "emacs-dired"
     },
     {
-        "key": "cmd+g",
+        "key": "ctrl+c g",
         "command": "workbench.action.tasks.runTask",
         "args": "emacs-magit-status"
     },
@@ -74,5 +61,30 @@
         "key": "cmd+o",
         "command": "workbench.action.tasks.runTask",
         "args": "emacs"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "cmd+f",
+        "command": "-actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+c b",
+        "command": "workbench.action.openNextRecentlyUsedEditor",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "alt+.",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     }
 ]
