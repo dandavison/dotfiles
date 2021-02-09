@@ -1,5 +1,5 @@
 [core]
-	pager = delta
+    pager = delta
     attributesfile = ~/src/config/git/gitattributes
     excludesfile = ~/.gitignore
     editor = emacsclient
@@ -8,7 +8,7 @@
     path = ~/src/delta/themes.gitconfig
 
 [delta]
-    features = hoopoe
+    side-by-side = true
 
 [interactive]
     diffFilter = delta --color-only

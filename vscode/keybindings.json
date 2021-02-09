@@ -89,5 +89,9 @@
         "key": "f12",
         "command": "-editor.action.revealDefinition",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+u",
+        "command": "workbench.action.files.revert"
     }
 ]
