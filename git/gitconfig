@@ -46,6 +46,7 @@
     detachedHead = False
 
 [alias]
+    fixup = commit --amend -C HEAD
     set-email-public = config user.email "dandavison7@gmail.com"
     set-email-counsyl = config user.email "dan@counsyl.com"
     url = config remote.origin.url

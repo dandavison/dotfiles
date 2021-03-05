@@ -17,7 +17,7 @@
     "editor.renderWhitespace": "none",
     "window.nativeFullScreen": false,
     "diffEditor.renderSideBySide": true,
-    "workbench.statusBar.visible": true,
+    "workbench.statusBar.visible": false,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.cursorBlinking": "solid",
@@ -39,6 +39,18 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.quickSuggestions": null,
-    "editor.quickSuggestionsDelay": 100
+    "editor.quickSuggestions":   false,
+    "editor.quickSuggestionsDelay": 10000,
+    "workbench.activityBar.visible": false,
+    "zenMode.centerLayout": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "zenMode.hideLineNumbers": false,
+    "editor.occurrencesHighlight": false,
+    "editor.lineNumbers": "off",
+    "editor.snippetSuggestions": "none",
+    "editor.parameterHints.enabled": false,
+    "editor.suggest.showTypeParameters": false,
+    "prettier.proseWrap": "always"
 }

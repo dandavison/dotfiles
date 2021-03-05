@@ -93,5 +93,9 @@
     {
         "key": "cmd+u",
         "command": "workbench.action.files.revert"
+    },
+    {
+        "key": "ctrl+c e",
+        "command": "editor.emmet.action.wrapWithAbbreviation"
     }
 ]
