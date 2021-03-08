@@ -1,4 +1,5 @@
 [core]
+    # pager = sed 's/\t/├──┤/g' | delta
     pager = delta
     attributesfile = ~/src/config/git/gitattributes
     excludesfile = ~/.gitignore
@@ -8,7 +9,8 @@
     path = ~/src/delta/themes.gitconfig
 
 [delta]
-    side-by-side = true
+    # side-by-side = true
+    navigate = true
 
 [interactive]
     diffFilter = delta --color-only
@@ -19,6 +21,8 @@
 	frag = red
 	# colorMovedWS = allow-indentation-change
 
+[diff "prettier"]
+    textconv = prettier
 
 [user]
     name = Dan Davison

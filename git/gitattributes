@@ -21,3 +21,4 @@
 *.rs    diff=rust
 *.lisp  diff=lisp
 *.el    diff=lisp
+# *.js    diff=prettier
