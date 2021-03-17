@@ -7,6 +7,12 @@
         "**/.DS_Store": true,
         "**/*.olean": true
     },
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -24,8 +30,15 @@
     "editor.formatOnPaste": true,
     "editor.renderLineHighlight": "none",
     "editor.scrollbar.verticalScrollbarSize": 0,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSaveMode": "file"
     },
     "[vue]": {
         "editor.defaultFormatter": "octref.vetur"
@@ -52,5 +65,23 @@
     "editor.snippetSuggestions": "none",
     "editor.parameterHints.enabled": false,
     "editor.suggest.showTypeParameters": false,
-    "prettier.proseWrap": "always"
+    "prettier.proseWrap": "always",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "python.formatting.provider": "black",
+    "editor.renderIndentGuides": false,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyArgs": [
+        "--ignore-missing-imports",
+        "--check-untyped-defs",
+        "--strict"
+    ]
 }
