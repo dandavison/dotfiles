@@ -59,6 +59,17 @@
   },
   "prettier.proseWrap": "always",
   "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyArgs": [
+    "--ignore-missing-imports",
+    "--follow-imports=silent",
+    "--check-untyped-defs",
+    "--strict"
+  ],
+  "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintUseMinimalCheckers": false,
   "scm.diffDecorationsGutterVisibility": "hover",
   "window.nativeFullScreen": false,
   "window.zoomLevel": 1,
