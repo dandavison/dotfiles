@@ -31,6 +31,42 @@
     "command": "workbench.action.navigateRight"
   },
   {
+    "key": "cmd+down",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+up",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.closePanel",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+/",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+/",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.togglePanel"
+      ]
+    },
+    "when": "terminalFocus"
+  },
+  {
     "key": "shift+.",
     "command": "editor.action.insertSnippet",
     "args": {
@@ -102,5 +138,25 @@
     "key": "cmd+s",
     "command": "removeSecondaryCursors",
     "when": "editorHasMultipleSelections && textInputFocus"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "toggleSuggestionDetails",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "-toggleSuggestionDetails",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalProcessSupported"
   }
 ]
