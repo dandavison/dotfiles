@@ -38,12 +38,12 @@
   {
     "key": "cmd+up",
     "command": "workbench.action.focusFirstEditorGroup",
-    "when": "terminalFocus"
+    "when": "panelFocus"
   },
   {
     "key": "cmd+enter",
     "command": "workbench.action.toggleMaximizedPanel",
-    "when": "terminalFocus"
+    "when": "panelFocus"
   },
   {
     "key": "cmd+enter",
@@ -64,7 +64,7 @@
         "workbench.action.togglePanel"
       ]
     },
-    "when": "terminalFocus"
+    "when": "panelFocus"
   },
   {
     "key": "shift+.",
