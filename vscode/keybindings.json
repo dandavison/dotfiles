@@ -47,7 +47,14 @@
   },
   {
     "key": "cmd+enter",
-    "command": "workbench.action.closePanel",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.closePanel",
+        "workbench.action.closeSidebar",
+        "workbench.action.closeEditorsInOtherGroups"
+      ]
+    },
     "when": "editorFocus"
   },
   {
