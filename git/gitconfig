@@ -9,8 +9,19 @@
     path = ~/src/delta/themes.gitconfig
 
 [delta]
-    # side-by-side = true
+    # side-by-side-wrapped = true
     navigate = true
+    features = hoopoe
+
+
+[delta "hoopoe"]
+    # author: https://github.com/dandavison
+    light = true
+    file-style = omit
+    commit-decoration-style = bold ol
+    hunk-header-style = file line-number syntax
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
 
 [interactive]
     diffFilter = delta --color-only
