@@ -1,101 +1,106 @@
 [
-    {
-        "key": "cmd+;",
-        "command": "editor.action.commentLine",
-        "when": "editorTextFocus && !editorReadonly"
+  {
+    "key": "cmd+;",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+/",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "shift+cmd+-",
+    "command": "workbench.action.closePanel"
+  },
+  {
+    "key": "cmd+k e",
+    "command": "-workbench.files.action.focusOpenEditorsView",
+    "when": "workbench.explorer.openEditorsView.active"
+  },
+  {
+    "key": "cmd+left",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "cmd+right",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "shift+.",
+    "command": "editor.action.insertSnippet",
+    "args": {
+      "snippet": "<${1:${TM_SELECTED_TEXT}}>"
     },
-    {
-        "key": "cmd+/",
-        "command": "-editor.action.commentLine",
-        "when": "editorTextFocus && !editorReadonly"
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "shift+,",
+    "command": "editor.action.insertSnippet",
+    "args": {
+      "snippet": "<${1:${TM_SELECTED_TEXT}}>"
     },
-    {
-        "key": "ctrl+enter",
-        "command": "workbench.action.toggleMaximizedPanel"
-    },
-    {
-        "key": "shift+cmd+-",
-        "command": "workbench.action.closePanel"
-    },
-    {
-        "key": "cmd+k e",
-        "command": "-workbench.files.action.focusOpenEditorsView",
-        "when": "workbench.explorer.openEditorsView.active"
-    },
-    {
-        "key": "cmd+left",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        "key": "cmd+right",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "shift+.",
-        "command": "editor.action.insertSnippet",
-        "args": {
-            "snippet": "<${1:${TM_SELECTED_TEXT}}>"
-        },
-        "when": "editorHasSelection"
-    },
-    {
-        "key": "shift+,",
-        "command": "editor.action.insertSnippet",
-        "args": {
-            "snippet": "<${1:${TM_SELECTED_TEXT}}>"
-        },
-        "when": "editorHasSelection"
-    },
-    {
-        "key": "ctrl+x b",
-        "command": "workbench.action.quickOpenLeastRecentlyUsedEditor"
-    },
-    {
-        "key": "ctrl+x d",
-        "command": "workbench.action.tasks.runTask",
-        "args": "emacs-dired"
-    },
-    {
-        "key": "ctrl+c g",
-        "command": "workbench.action.tasks.runTask",
-        "args": "emacs-magit-status"
-    },
-    {
-        "key": "cmd+o",
-        "command": "workbench.action.tasks.runTask",
-        "args": "emacs"
-    },
-    {
-        "key": "ctrl+s",
-        "command": "actions.find",
-        "when": "editorFocus || editorIsOpen"
-    },
-    {
-        "key": "cmd+f",
-        "command": "-actions.find",
-        "when": "editorFocus || editorIsOpen"
-    },
-    {
-        "key": "ctrl+c b",
-        "command": "workbench.action.openNextRecentlyUsedEditor",
-        "when": "editorFocus || editorIsOpen"
-    },
-    {
-        "key": "alt+.",
-        "command": "editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
-        "key": "f12",
-        "command": "-editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
-        "key": "cmd+u",
-        "command": "workbench.action.files.revert"
-    },
-    {
-        "key": "ctrl+c e",
-        "command": "editor.emmet.action.wrapWithAbbreviation"
-    }
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "ctrl+x b",
+    "command": "workbench.action.quickOpenLeastRecentlyUsedEditor"
+  },
+  {
+    "key": "ctrl+x d",
+    "command": "workbench.action.tasks.runTask",
+    "args": "emacs-dired"
+  },
+  {
+    "key": "ctrl+c g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "emacs-magit-status"
+  },
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.tasks.runTask",
+    "args": "emacs"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "actions.find",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "cmd+f",
+    "command": "-actions.find",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "ctrl+c b",
+    "command": "workbench.action.openNextRecentlyUsedEditor",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "alt+.",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "cmd+u",
+    "command": "workbench.action.files.revert"
+  },
+  {
+    "key": "ctrl+c e",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "cmd+s",
+    "command": "removeSecondaryCursors",
+    "when": "editorHasMultipleSelections && textInputFocus"
+  }
 ]

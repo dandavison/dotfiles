@@ -18,26 +18,20 @@
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"
   },
-  "breadcrumbs.enabled": false,
   "diffEditor.renderSideBySide": true,
   "editor.cursorBlinking": "solid",
-  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.formatOnType": true,
   "editor.lightbulb.enabled": false,
-  "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.parameterHints.enabled": false,
-  "editor.quickSuggestions": false,
-  "editor.quickSuggestionsDelay": 10000,
-  "editor.renderIndentGuides": false,
+  "editor.quickSuggestions": true,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
   "editor.rulers": [],
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.snippetSuggestions": "none",
-  "editor.suggest.showTypeParameters": false,
+  "editor.suggest.showTypeParameters": true,
   "editor.tabCompletion": "on",
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
@@ -50,30 +44,28 @@
     "**/templates/**/*.html": "django-html"
   },
   "files.exclude": {
-    "**/*.olean": true,
-    "**/.DS_Store": true,
     "**/.git": true,
-    "**/.hg": true,
     "**/.svn": true,
-    "**/CVS": true
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.olean": true
   },
   "prettier.proseWrap": "always",
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true,
   "python.linting.mypyArgs": [
     "--ignore-missing-imports",
     "--follow-imports=silent",
-    "--check-untyped-defs",
-    "--strict"
+    "--check-untyped-defs"
   ],
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": true,
   "python.linting.pylintUseMinimalCheckers": false,
+  "python.linting.pylintArgs": ["--load-plugins"],
   "scm.diffDecorationsGutterVisibility": "hover",
   "window.nativeFullScreen": false,
   "window.zoomLevel": 1,
-  "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Default Light+",
   "workbench.editorAssociations": [
     {
@@ -81,8 +73,28 @@
       "viewType": "jupyter.notebook.ipynb"
     }
   ],
-  "workbench.statusBar.visible": false,
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
-  "zenMode.restore": true
+  "zenMode.restore": true,
+  "editor.folding": false,
+  "python.languageServer": "Jedi",
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "zenMode.hideStatusBar": false,
+  "rust-analyzer.inlayHints.enable": false,
+  "editor.lineNumbers": "off",
+  "python.analysis.typeCheckingMode": "basic",
+  "breadcrumbs.enabled": false,
+  "settingsSync.ignoredExtensions": [
+    "esbenp.prettier-vscode"
+  ],
+  "prettier.documentSelectors": [
+    "*.ts"
+  ],
+  "workbench.sideBar.location": "right",
+  "terminal.external.osxExec": "iTerm 2.app"
 }
