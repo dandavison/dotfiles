@@ -37,7 +37,13 @@
   },
   {
     "key": "cmd+up",
-    "command": "workbench.action.focusFirstEditorGroup",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.closePanel"
+      ]
+    },
     "when": "panelFocus"
   },
   {
@@ -165,5 +171,39 @@
     "key": "shift+cmd+]",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "editor.unfoldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "cmd+k cmd+]",
+    "command": "-editor.unfoldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "alt+tab",
+    "command": "editor.foldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "cmd+k cmd+[",
+    "command": "-editor.foldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "f5",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.debug.start",
+        "workbench.action.closeSidebar"
+      ]
+    }
   }
 ]
