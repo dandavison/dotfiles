@@ -66,7 +66,6 @@
   "scm.diffDecorationsGutterVisibility": "hover",
   "window.nativeFullScreen": false,
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Default Light+",
   "workbench.editorAssociations": [
     {
       "filenamePattern": "*.ipynb",
@@ -76,8 +75,7 @@
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.restore": true,
-  "editor.folding": false,
-  "python.languageServer": "Jedi",
+  "python.languageServer": "Pylance",
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
@@ -96,5 +94,9 @@
     "*.ts"
   ],
   "workbench.sideBar.location": "right",
-  "terminal.external.osxExec": "iTerm 2.app"
+  "terminal.external.osxExec": "iTerm 2.app",
+  "workbench.activityBar.visible": false,
+  "terminal.integrated.rendererType": "experimentalWebgl",
+  "workbench.colorTheme": "Default Light+",
+  "debug.toolBarLocation": "hidden"
 }
