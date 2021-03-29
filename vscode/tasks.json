@@ -26,7 +26,7 @@
     {
       "label": "emacs-magit-status",
       "type": "shell",
-      "command": "~/src/emacs-config/bin/emacs-magit-status",
+      "command": "~/devenv/emacs-config/bin/emacs-magit-status",
       "presentation": {
         "reveal": "never"
       }
