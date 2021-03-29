@@ -105,6 +105,10 @@
     "args": "emacs-dired"
   },
   {
+    "key": "ctrl+x z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
     "key": "ctrl+x g",
     "command": "workbench.action.tasks.runTask",
     "args": "emacs-magit-status"
