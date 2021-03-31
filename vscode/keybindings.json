@@ -100,16 +100,28 @@
     "command": "workbench.action.quickOpenLeastRecentlyUsedEditor"
   },
   {
+    "key": "ctrl+x v",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+  },
+  {
     "key": "ctrl+x d",
     "command": "workbench.action.tasks.runTask",
     "args": "emacs-dired"
+  },
+  {
+    "key": "ctrl+x ctrl+f",
+    "command": "workbench.action.quickOpen"
   },
   {
     "key": "ctrl+x z",
     "command": "workbench.action.toggleZenMode"
   },
   {
-    "key": "ctrl+x g",
+    "key": "cmd+n",
+    "command": "magit.status"
+  },
+  {
+    "key": "ctrl+x G",
     "command": "workbench.action.tasks.runTask",
     "args": "emacs-magit-status"
   },
