@@ -33,11 +33,7 @@
       "siteId": "aa0e015a-6c18-44d1-806f-12425f81877c"
     }
   ],
-  "bracket-pair-colorizer-2.colors": [
-    "DarkGreen",
-    "DarkRed",
-    "DarkBlue"
-  ],
+  "bracket-pair-colorizer-2.colors": ["DarkGreen", "DarkRed", "DarkBlue"],
   "breadcrumbs.enabled": false,
   "debug.toolBarLocation": "hidden",
   "diffEditor.renderSideBySide": true,
@@ -80,9 +76,7 @@
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
-  "prettier.documentSelectors": [
-    "*.ts"
-  ],
+  "prettier.documentSelectors": ["*.ts"],
   "prettier.proseWrap": "always",
   "python.analysis.typeCheckingMode": "basic",
   "python.formatting.provider": "black",
@@ -94,17 +88,13 @@
     "--check-untyped-defs"
   ],
   "python.linting.mypyEnabled": true,
-  "python.linting.pylintArgs": [
-    "--load-plugins"
-  ],
+  "python.linting.pylintArgs": ["--load-plugins"],
   "python.linting.pylintEnabled": true,
   "python.linting.pylintUseMinimalCheckers": false,
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "rust-analyzer.inlayHints.enable": false,
   "scm.diffDecorationsGutterVisibility": "hover",
-  "settingsSync.ignoredExtensions": [
-    "esbenp.prettier-vscode"
-  ],
+  "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
   "terminal.external.osxExec": "iTerm 2.app",
   "terminal.integrated.rendererType": "experimentalWebgl",
   "todo-tree.general.tags": [
