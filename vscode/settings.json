@@ -8,6 +8,9 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[python]": {
     "editor.formatOnPaste": false,
     "editor.formatOnSaveMode": "file"
@@ -18,20 +21,43 @@
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"
   },
+  "atlascode.bitbucket.enabled": false,
+  "atlascode.jira.enabled": true,
+  "atlascode.jira.jqlList": [
+    {
+      "enabled": true,
+      "id": "6d23e0f3-a0af-41f1-b8f5-1ead4fdb5f1f",
+      "monitor": true,
+      "name": "My mygn Issues",
+      "query": "assignee = currentUser() AND resolution = Unresolved NOT status = DONE ORDER BY lastViewed DESC",
+      "siteId": "aa0e015a-6c18-44d1-806f-12425f81877c"
+    }
+  ],
+  "bracket-pair-colorizer-2.colors": [
+    "DarkGreen",
+    "DarkRed",
+    "DarkBlue"
+  ],
+  "breadcrumbs.enabled": false,
+  "debug.toolBarLocation": "hidden",
   "diffEditor.renderSideBySide": true,
   "editor.cursorBlinking": "solid",
   "editor.formatOnSave": true,
   "editor.lightbulb.enabled": false,
+  "editor.lineNumbers": "off",
+  "editor.matchBrackets": "near",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestions": true,
+  "editor.renderIndentGuides": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
   "editor.rulers": [],
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.snippetSuggestions": "none",
   "editor.suggest.showTypeParameters": true,
+  "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
@@ -44,16 +70,23 @@
     "**/templates/**/*.html": "django-html"
   },
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
     "**/*.olean": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
     "out": false
   },
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "prettier.documentSelectors": [
+    "*.ts"
+  ],
   "prettier.proseWrap": "always",
+  "python.analysis.typeCheckingMode": "basic",
   "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
   "python.linting.enabled": true,
   "python.linting.mypyArgs": [
     "--ignore-missing-imports",
@@ -61,60 +94,19 @@
     "--check-untyped-defs"
   ],
   "python.linting.mypyEnabled": true,
+  "python.linting.pylintArgs": [
+    "--load-plugins"
+  ],
   "python.linting.pylintEnabled": true,
   "python.linting.pylintUseMinimalCheckers": false,
-  "python.linting.pylintArgs": ["--load-plugins"],
-  "scm.diffDecorationsGutterVisibility": "hover",
-  "window.nativeFullScreen": false,
-  "window.zoomLevel": 1,
-  "workbench.editorAssociations": [
-    {
-      "filenamePattern": "*.ipynb",
-      "viewType": "jupyter.notebook.ipynb"
-    }
-  ],
-  "zenMode.centerLayout": false,
-  "zenMode.hideLineNumbers": false,
-  "zenMode.restore": true,
-  "python.languageServer": "Pylance",
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "zenMode.hideStatusBar": false,
   "rust-analyzer.inlayHints.enable": false,
-  "editor.lineNumbers": "off",
-  "python.analysis.typeCheckingMode": "basic",
-  "breadcrumbs.enabled": false,
-  "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
-  "prettier.documentSelectors": ["*.ts"],
-  "workbench.sideBar.location": "right",
-  "terminal.external.osxExec": "iTerm 2.app",
-  "workbench.activityBar.visible": false,
-  "terminal.integrated.rendererType": "experimentalWebgl",
-  "workbench.colorTheme": "Default Light+",
-  "debug.toolBarLocation": "hidden",
-  "editor.renderIndentGuides": false,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "todo-tree.tree.showScanModeButton": false,
-  "yaml.schemas": {
-    "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
-  "atlascode.jira.enabled": true,
-  "atlascode.bitbucket.enabled": false,
-  "atlascode.jira.jqlList": [
-    {
-      "id": "6d23e0f3-a0af-41f1-b8f5-1ead4fdb5f1f",
-      "enabled": true,
-      "name": "My mygn Issues",
-      "query": "assignee = currentUser() AND resolution = Unresolved NOT status = DONE ORDER BY lastViewed DESC",
-      "siteId": "aa0e015a-6c18-44d1-806f-12425f81877c",
-      "monitor": true
-    }
+  "scm.diffDecorationsGutterVisibility": "hover",
+  "settingsSync.ignoredExtensions": [
+    "esbenp.prettier-vscode"
   ],
+  "terminal.external.osxExec": "iTerm 2.app",
+  "terminal.integrated.rendererType": "experimentalWebgl",
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -125,10 +117,24 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "bracket-pair-colorizer-2.colors": [
-    "DarkGreen",
-    "DarkRed",
-    "DarkBlue"
+  "todo-tree.tree.showScanModeButton": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.nativeFullScreen": false,
+  "window.zoomLevel": 1,
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Default Light+",
+  "workbench.editorAssociations": [
+    {
+      "filenamePattern": "*.ipynb",
+      "viewType": "jupyter.notebook.ipynb"
+    }
   ],
-  "editor.matchBrackets": "near"
+  "workbench.sideBar.location": "right",
+  "yaml.schemas": {
+    "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.restore": true
 }
