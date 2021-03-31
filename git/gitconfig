@@ -10,9 +10,11 @@
 
 [delta]
     # side-by-side-wrapped = true
-    navigate = true
-    features = hoopoe
+    # navigate = true
     # features = coracias-caudatus
+    # dark = true
+    # features = collared-trogon
+    # syntax-theme = Dracula
     # line-numbers = false
 
 [interactive]
