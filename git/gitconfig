@@ -14,11 +14,14 @@
     # features = coracias-caudatus
     # dark = true
     # features = collared-trogon
-    # syntax-theme = Dracula
+    theme = Hoopoe
     # line-numbers = false
 
 [interactive]
     diffFilter = delta --color-only
+
+[commit]
+    status = false
 
 [diff]
 	colorMoved = plain
@@ -48,11 +51,16 @@
 [pull]
 	ff = only
 
+[status]
+    short = true
+    aheadBehind = false
+    hints = false
+
 [credential]
     helper = osxkeychain
 
 [advice]
-    detachedHead = False
+    detachedHead = false
 
 [alias]
     blamestats = !~/git-utils/blamestats.py ${GIT_PREFIX:-.}
