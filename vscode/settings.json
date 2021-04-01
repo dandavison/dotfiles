@@ -35,10 +35,8 @@
   ],
   "bracket-pair-colorizer-2.colors": ["DarkGreen", "DarkRed", "DarkBlue"],
   "breadcrumbs.enabled": false,
-  "debug.toolBarLocation": "hidden",
   "diffEditor.renderSideBySide": true,
   "editor.cursorBlinking": "solid",
-  "editor.formatOnSave": true,
   "editor.lightbulb.enabled": false,
   "editor.lineNumbers": "off",
   "editor.matchBrackets": "near",
@@ -46,7 +44,6 @@
   "editor.occurrencesHighlight": false,
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestions": true,
-  "editor.renderIndentGuides": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
   "editor.rulers": [],
@@ -111,7 +108,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.nativeFullScreen": false,
   "window.zoomLevel": 1,
-  "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Default Light+",
   "workbench.editorAssociations": [
     {
@@ -126,5 +122,7 @@
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
-  "zenMode.restore": true
+  "zenMode.restore": true,
+  "window.closeWhenEmpty": true,
+  "editor.formatOnSave": true
 }
