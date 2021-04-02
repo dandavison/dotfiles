@@ -47,8 +47,12 @@
     "command": "workbench.action.navigateLeft"
   },
   {
-    "key": "cmd+n",
+    "key": "cmd+m",
     "command": "magit.status"
+  },
+  {
+    "key": "cmd+n",
+    "command": "newFile.createNewFile"
   },
   {
     "key": "cmd+o",
@@ -60,15 +64,49 @@
     "command": "workbench.action.navigateRight"
   },
   {
-    "key": "cmd+up",
+    "key": "cmd+s",
     "command": "extension.multiCommand.execute",
     "args": {
       "sequence": [
-        "workbench.action.focusFirstEditorGroup",
-        "workbench.action.closePanel"
+        "hideSuggestWidget",
+        "removeSecondaryCursors",
+        "workbench.action.files.save"
       ]
     },
-    "when": "panelFocus"
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+up",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "panelFocus && !panelMaximized"
+  },
+  {
+    "key": "cmd+up",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "panelFocus && panelMaximized"
+  },
+  {
+    "key": "cmd+q",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "cmd+q",
+    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "emacs-mcx.paredit.killSexp",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "editor.unfoldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+x ctrl+f",
+    "command": "workbench.action.quickOpen"
   },
   {
     "key": "ctrl+enter",
