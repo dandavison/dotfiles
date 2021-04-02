@@ -77,7 +77,7 @@
   "prettier.proseWrap": "always",
   "python.analysis.typeCheckingMode": "basic",
   "python.formatting.provider": "black",
-  "python.languageServer": "Pylance",
+  "python.languageServer": "Microsoft",
   "python.linting.enabled": true,
   "python.linting.mypyArgs": [
     "--ignore-missing-imports",
@@ -124,5 +124,9 @@
   "zenMode.hideStatusBar": false,
   "zenMode.restore": true,
   "window.closeWhenEmpty": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "magit.quick-switch-enabled": true,
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": false,
+  "python.autoComplete.showAdvancedMembers": false
 }
