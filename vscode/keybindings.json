@@ -56,8 +56,7 @@
   },
   {
     "key": "cmd+o",
-    "command": "workbench.action.tasks.runTask",
-    "args": "emacs"
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   },
   {
     "key": "cmd+right",
@@ -83,6 +82,17 @@
   {
     "key": "cmd+up",
     "command": "workbench.action.focusFirstEditorGroup",
+    "when": "panelFocus && !panelMaximized"
+  },
+  {
+    "key": "cmd+up",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.closePanel"
+      ]
+    },
     "when": "panelFocus && panelMaximized"
   },
   {
@@ -101,19 +111,29 @@
   },
   {
     "key": "ctrl+tab",
-    "command": "editor.unfoldRecursively",
+    "command": "editor.toggleFold",
     "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+x e",
+    "command": "workbench.action.tasks.runTask",
+    "args": "emacs"
   },
   {
     "key": "ctrl+x ctrl+f",
     "command": "workbench.action.quickOpen"
   },
   {
+    "key": "ctrl+x g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "emacs-magit-status"
+  },
+  {
     "key": "ctrl+enter",
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "f5",
+    "key": "ctrl+x ctrl+d",
     "command": "extension.multiCommand.execute",
     "args": {
       "sequence": [
@@ -121,6 +141,11 @@
         "workbench.action.closeSidebar"
       ]
     }
+  },
+  {
+    "key": "ctrl+x shift+ctrl+D",
+    "command": "workbench.action.debug.stop",
+    "when": "inDebugMode && !focusedSessionIsAttach"
   },
   {
     "key": "shift+cmd+[",
