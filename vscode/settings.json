@@ -48,7 +48,6 @@
   "editor.renderWhitespace": "none",
   "editor.rulers": [],
   "editor.scrollbar.verticalScrollbarSize": 0,
-  "editor.snippetSuggestions": "none",
   "editor.suggest.showTypeParameters": true,
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
@@ -78,7 +77,6 @@
   "prettier.proseWrap": "always",
   "python.analysis.typeCheckingMode": "basic",
   "python.formatting.provider": "black",
-  "python.languageServer": "Pylance",
   "python.linting.enabled": true,
   "python.linting.mypyArgs": [
     "--ignore-missing-imports",
@@ -86,7 +84,7 @@
     "--check-untyped-defs"
   ],
   "python.linting.mypyEnabled": true,
-  "python.linting.pylintArgs": ["--load-plugins"],
+  "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
   "python.linting.pylintEnabled": true,
   "python.linting.pylintUseMinimalCheckers": false,
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
@@ -123,13 +121,15 @@
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
   "zenMode.restore": true,
-  "window.closeWhenEmpty": true,
   "editor.formatOnSave": true,
   "magit.quick-switch-enabled": true,
   "workbench.statusBar.visible": true,
   "workbench.activityBar.visible": false,
   "python.autoComplete.showAdvancedMembers": false,
   "editor.foldingHighlight": false,
-  "workbench.colorTheme": "GitHub Light",
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.suggest.localityBonus": true,
+  "python.languageServer": "Microsoft",
+  "workbench.iconTheme": "Monokai Classic Icons",
+  "workbench.colorTheme": "Default Light+"
 }

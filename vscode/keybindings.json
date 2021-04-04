@@ -1,5 +1,10 @@
 [
   {
+    "key": "cmd+;",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
     "key": "cmd+/",
     "command": "-editor.action.commentLine",
     "when": "editorTextFocus && !editorReadonly"
@@ -30,12 +35,13 @@
     "command": "extension.multiCommand.execute",
     "args": {
       "sequence": [
+        "search.action.clearSearchResults",
         "workbench.action.closePanel",
         "workbench.action.closeSidebar",
         "workbench.action.closeEditorsInOtherGroups"
       ]
     },
-    "when": "editorFocus"
+    "when": "editorFocus || searchInputBoxFocus"
   },
   {
     "key": "cmd+enter",
@@ -51,12 +57,12 @@
     "command": "magit.status"
   },
   {
-    "key": "cmd+n",
+    "key": "cmd+o",
     "command": "newFile.createNewFile"
   },
   {
-    "key": "cmd+o",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+    "key": "cmd+n",
+    "command": "workbench.action.quickOpen"
   },
   {
     "key": "cmd+right",

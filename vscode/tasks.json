@@ -12,15 +12,15 @@
       "type": "shell",
       "command": "emacsclient -n ${file}",
       "presentation": {
-        "reveal": "never"
-      },
+        "reveal": "silent"
+      }
     },
     {
       "label": "emacs-dired",
       "type": "shell",
       "command": "emacsclient -n ${fileDirname}",
       "presentation": {
-        "reveal": "never"
+        "reveal": "silent"
       }
     },
     {
@@ -28,7 +28,7 @@
       "type": "shell",
       "command": "~/devenv/emacs-config/bin/emacs-magit-status",
       "presentation": {
-        "reveal": "never"
+        "reveal": "silent"
       }
     }
   ]
