@@ -13,8 +13,7 @@
     # navigate = true
     # features = coracias-caudatus
     # dark = true
-    # features = collared-trogon
-    theme = Hoopoe
+    features = hoopoe
     # line-numbers = false
 
 [interactive]
