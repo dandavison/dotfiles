@@ -1,0 +1,7 @@
+mkdir ~/dotfiles/vscode
+
+mv "~/Library/Application Support/Code/User/keybindings.json" ~/dotfiles/vscode/keybindings
+ln -s ~/dotfiles/vscode/keybindings "~/Library/Application Support/Code/User/keybindings.json"
+
+mv "~/Library/Application Support/Code/User/settings.json" ~/dotfiles/vscode/settings
+ln -s ~/dotfiles/vscode/settings "~/Library/Application Support/Code/User/settings.json"
