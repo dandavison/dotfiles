@@ -36,8 +36,8 @@
     "args": {
       "sequence": [
         "search.action.clearSearchResults",
-        "workbench.action.closePanel",
         "workbench.action.closeSidebar",
+        "workbench.action.closePanel",
         "workbench.action.closeEditorsInOtherGroups"
       ]
     },
