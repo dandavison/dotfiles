@@ -1,5 +1,40 @@
 [
   {
+    "key": "alt+tab",
+    "command": "editor.foldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "cmd+alt+left",
+    "command": "workbench.panel.repl.view.focus",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+alt+left",
+    "command": "workbench.panel.output.focus",
+    "when": "inDebugRepl"
+  },
+  {
+    "key": "cmd+alt+left",
+    "command": "workbench.action.problems.focus",
+    "when": "inOutput"
+  },
+  {
+    "key": "cmd+alt+right",
+    "command": "workbench.panel.output.focus",
+    "when": "problemFocus"
+  },
+  {
+    "key": "cmd+alt+right",
+    "command": "workbench.panel.repl.view.focus",
+    "when": "inOutput"
+  },
+  {
+    "key": "cmd+alt+right",
+    "command": "terminal.focus",
+    "when": "inDebugRepl"
+  },
+  {
     "key": "cmd+;",
     "command": "editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly"
