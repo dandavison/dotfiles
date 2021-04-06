@@ -70,7 +70,6 @@
     "command": "extension.multiCommand.execute",
     "args": {
       "sequence": [
-        "search.action.clearSearchResults",
         "workbench.action.closeSidebar",
         "workbench.action.closePanel",
         "workbench.action.closeEditorsInOtherGroups"
@@ -152,7 +151,7 @@
   },
   {
     "key": "ctrl+tab",
-    "command": "editor.toggleFold",
+    "command": "editor.unfoldRecursively",
     "when": "editorTextFocus && foldingEnabled"
   },
   {
@@ -228,5 +227,15 @@
     "key": "ctrl+up",
     "command": "goToPreviousReference",
     "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "alt+.",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "-editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
