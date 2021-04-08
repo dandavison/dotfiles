@@ -1,36 +1,41 @@
 [
   {
+    "key": "alt+;",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd && !editorReadonly"
+  },
+  {
     "key": "alt+tab",
     "command": "editor.foldRecursively",
     "when": "editorTextFocus && foldingEnabled"
   },
   {
-    "key": "cmd+alt+left",
+    "key": "ctrl+home",
     "command": "workbench.panel.repl.view.focus",
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+alt+left",
+    "key": "ctrl+home",
     "command": "workbench.panel.output.focus",
     "when": "inDebugRepl"
   },
   {
-    "key": "cmd+alt+left",
+    "key": "ctrl+home",
     "command": "workbench.action.problems.focus",
     "when": "inOutput"
   },
   {
-    "key": "cmd+alt+right",
+    "key": "ctrl+end",
     "command": "workbench.panel.output.focus",
-    "when": "problemFocus"
+    "when": "problemFocus || problemsView || problemsFilterFocus"
   },
   {
-    "key": "cmd+alt+right",
+    "key": "ctrl+end",
     "command": "workbench.panel.repl.view.focus",
     "when": "inOutput"
   },
   {
-    "key": "cmd+alt+right",
+    "key": "ctrl+end",
     "command": "terminal.focus",
     "when": "inDebugRepl"
   },
@@ -57,8 +62,14 @@
   },
   {
     "key": "cmd+/",
-    "command": "workbench.action.toggleMaximizedPanel",
-    "when": "editorFocus"
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.focusPanel",
+        "workbench.action.toggleMaximizedPanel"
+      ]
+    },
+    "when": "!panelFocus"
   },
   {
     "key": "cmd+down",
@@ -75,7 +86,7 @@
         "workbench.action.closeEditorsInOtherGroups"
       ]
     },
-    "when": "editorFocus || searchInputBoxFocus"
+    "when": "!panelFocus"
   },
   {
     "key": "cmd+enter",
@@ -143,6 +154,11 @@
     "key": "cmd+q",
     "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
     "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+c l",
+    "command": "settings.cycle.lineNumbers",
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+k",
@@ -237,5 +253,14 @@
     "key": "cmd+enter",
     "command": "-editor.action.insertLineAfter",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+x z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "ctrl+x z",
+    "command": "-workbench.action.toggleZenMode",
+    "when": "!terminalFocus"
   }
 ]

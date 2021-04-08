@@ -13,7 +13,10 @@
     # navigate = true
     # features = coracias-caudatus
     # dark = true
+    # features = collared-trogon
+    # commit-decoration-style = blue ol
     features = hoopoe
+    commit-regex = "^[0-9a-f]{7}.? "
     # line-numbers = false
 
 [interactive]
@@ -61,6 +64,9 @@
 [advice]
     detachedHead = false
 
+# [format]
+# 	pretty = %C(magenta)%h %C(cyan)%cd %C(auto)%d%Creset %s
+
 [alias]
     blamestats = !~/git-utils/blamestats.py ${GIT_PREFIX:-.}
     branch-by-date = !~/devenv/misc/git-branch-by-date
@@ -93,6 +99,7 @@
     lp = "!git log --graph --color=always --format=\"%C(auto)%h%d %s %C(black)%C(bold)<%an> %cr%C(auto)\" \"$@\" \
           | fzf --ansi -m --no-sort --reverse --tiebreak=index \
           --preview \"(grep -o '[a-f0-9]\\{7\\}' | head -1 | xargs -I % sh -c 'git -c core.pager=cat show --color=never % | delta') <<< {}\" #"
+    log6 = log --date=format:'%a %Y-%m-%d %k:%M' --color=always --format='%n%C(green)%ad %C(blue)%an <%ae> %C(auto)%h%d%n%n %s%n%w(0,2,2)%+b%C(reset)' --compact-summary
     ls = ls-files
     merge = merge --no-edit
     playback = !~/lib/python/git-playback/playback.py ${GIT_PREFIX:-.}

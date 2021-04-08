@@ -38,7 +38,6 @@
   "diffEditor.renderSideBySide": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
-  "editor.formatOnSave": true,
   "editor.lightbulb.enabled": false,
   "editor.matchBrackets": "near",
   "editor.minimap.enabled": false,
@@ -64,12 +63,12 @@
     "**/templates/**/*.html": "django-html"
   },
   "files.exclude": {
-    "**/*.olean": true,
-    "**/.DS_Store": true,
     "**/.git": true,
-    "**/.hg": true,
     "**/.svn": true,
+    "**/.hg": true,
     "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.olean": true,
     "docs/_book": true,
     "out": false
   },
@@ -79,6 +78,9 @@
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.hovers.enabled": false,
   "magit.quick-switch-enabled": true,
+  "magit.hide-status-sections": [     
+    "recent commits", "unpulled", "unpushed", "unmerged", "stashes"
+  ],
   "prettier.documentSelectors": ["*.ts"],
   "prettier.proseWrap": "always",
   "python.analysis.typeCheckingMode": "basic",
@@ -91,9 +93,9 @@
     "--follow-imports=silent",
     "--check-untyped-defs"
   ],
-  "python.linting.mypyEnabled": false,
+  "python.linting.mypyEnabled": true,
   "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
-  "python.linting.pylintEnabled": true,
+  "python.linting.pylintEnabled": false,
   "python.linting.pylintUseMinimalCheckers": false,
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "rust-analyzer.inlayHints.enable": false,
@@ -126,6 +128,20 @@
     }
   ],
   "scm.diffDecorationsGutterVisibility": "hover",
+  "settings.cycle": [
+    {
+      "id": "lineNumbers",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "search.showLineNumbers": true
+        },
+        {
+          "search.showLineNumbers": false
+        }
+      ]
+    }
+  ],
   "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
   "terminal.external.osxExec": "iTerm 2.app",
   "terminal.integrated.rendererType": "experimentalWebgl",
@@ -146,21 +162,24 @@
   "window.nativeFullScreen": false,
   "window.zoomLevel": 1,
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Default Light+",
   "workbench.editorAssociations": [
     {
       "filenamePattern": "*.ipynb",
       "viewType": "jupyter.notebook.ipynb"
     }
   ],
-  "workbench.iconTheme": "Monokai Classic Icons",
   "workbench.sideBar.location": "right",
-  "workbench.statusBar.visible": true,
   "yaml.schemas": {
     "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
-  "zenMode.hideStatusBar": false,
-  "zenMode.restore": true
+  "zenMode.restore": true,
+  "search.showLineNumbers": false,
+  "python.linting.flake8Enabled": true,
+  "explorer.confirmDelete": false,
+  "editor.lineNumbers": "off",
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Default Light+",
+  "workbench.statusBar.visible": false
 }
