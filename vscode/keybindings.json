@@ -66,10 +66,20 @@
     "args": {
       "sequence": [
         "workbench.action.focusPanel",
+      ]
+    },
+    "when": "!panelFocus && panelMaximized"
+  },
+  {
+    "key": "cmd+/",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.focusPanel",
         "workbench.action.toggleMaximizedPanel"
       ]
     },
-    "when": "!panelFocus"
+    "when": "!panelFocus && !panelMaximized"
   },
   {
     "key": "cmd+down",
