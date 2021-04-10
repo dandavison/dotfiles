@@ -34,7 +34,7 @@
     }
   ],
   "bracket-pair-colorizer-2.colors": ["DarkGreen", "DarkRed", "DarkBlue"],
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   "diffEditor.renderSideBySide": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
@@ -68,6 +68,9 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
+    "**/__pycache__": true,
+    "**/.*": true,
+    "**/.*_cache": true,
     "**/*.olean": true,
     "docs/_book": true,
     "out": false
@@ -78,8 +81,12 @@
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.hovers.enabled": false,
   "magit.quick-switch-enabled": true,
-  "magit.hide-status-sections": [     
-    "recent commits", "unpulled", "unpushed", "unmerged", "stashes"
+  "magit.hide-status-sections": [
+    "recent commits",
+    "unpulled",
+    "unpushed",
+    "unmerged",
+    "stashes"
   ],
   "prettier.documentSelectors": ["*.ts"],
   "prettier.proseWrap": "always",
@@ -87,7 +94,6 @@
   "python.autoComplete.showAdvancedMembers": false,
   "python.formatting.provider": "black",
   "python.languageServer": "Microsoft",
-  "python.linting.enabled": true,
   "python.linting.mypyArgs": [
     "--ignore-missing-imports",
     "--follow-imports=silent",
@@ -97,7 +103,6 @@
   "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
   "python.linting.pylintEnabled": false,
   "python.linting.pylintUseMinimalCheckers": false,
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "rust-analyzer.inlayHints.enable": false,
   "saveEditorLayout.list": [
     {
@@ -179,7 +184,15 @@
   "python.linting.flake8Enabled": true,
   "explorer.confirmDelete": false,
   "editor.lineNumbers": "off",
-  "editor.formatOnSave": true,
   "workbench.colorTheme": "Default Light+",
-  "workbench.statusBar.visible": false
+  "workbench.tree.indent": 33,
+  "editor.renderIndentGuides": false,
+  "python.testing.unittestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "breadcrumbs.symbolPath": "off",
+  "explorer.confirmDragAndDrop": false,
+  "kite.codefinder.enableLineDecoration": false,
+  "editor.formatOnSave": true,
+  "zenMode.hideStatusBar": false
 }

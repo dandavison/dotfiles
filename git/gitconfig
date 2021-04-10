@@ -58,6 +58,9 @@
     aheadBehind = false
     hints = false
 
+[init]
+    defaultBranch = main
+
 [credential]
     helper = osxkeychain
 

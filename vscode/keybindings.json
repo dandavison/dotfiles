@@ -161,7 +161,7 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+k",
+    "key": "alt+k",
     "command": "emacs-mcx.paredit.killSexp",
     "when": "editorTextFocus"
   },
