@@ -39,7 +39,7 @@
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
   "editor.lightbulb.enabled": false,
-  "editor.matchBrackets": "near",
+  "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.parameterHints.enabled": false,
@@ -139,10 +139,32 @@
       "overrideWorkspaceSettings": true,
       "values": [
         {
-          "search.showLineNumbers": true
+          "editor.lineNumbers": true
         },
         {
-          "search.showLineNumbers": false
+          "editor.lineNumbers": false
+        }
+      ]
+    },
+    {
+      "id": "zen",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "editor.matchBrackets": "never",
+          "workbench.colorCustomizations": {
+            "editorError.foreground": "#00000000",
+            "editorWarning.foreground": "#00000000",
+            "editorInfo.foreground": "#00000000"
+          }
+        },
+        {
+          "editor.matchBrackets": "always",
+          "workbench.colorCustomizations": {
+            "editorError.foreground": "red",
+            "editorWarning.foreground": "orange",
+            "editorInfo.foreground": "blue"
+          }
         }
       ]
     }
@@ -183,7 +205,7 @@
   "search.showLineNumbers": false,
   "python.linting.flake8Enabled": true,
   "explorer.confirmDelete": false,
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": false,
   "workbench.colorTheme": "Default Light+",
   "workbench.tree.indent": 33,
   "editor.renderIndentGuides": false,
@@ -194,5 +216,11 @@
   "explorer.confirmDragAndDrop": false,
   "kite.codefinder.enableLineDecoration": false,
   "editor.formatOnSave": true,
-  "zenMode.hideStatusBar": false
+  "debug.toolBarLocation": "docked",
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "red",
+    "editorWarning.foreground": "orange",
+    "editorInfo.foreground": "blue"
+  },
+  "python.testing.autoTestDiscoverOnSaveEnabled": false
 }

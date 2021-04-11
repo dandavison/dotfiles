@@ -64,9 +64,7 @@
     "key": "cmd+/",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": [
-        "workbench.action.focusPanel",
-      ]
+      "sequence": ["workbench.action.focusPanel"]
     },
     "when": "!panelFocus && panelMaximized"
   },
@@ -166,14 +164,13 @@
     "when": "inEditorsPicker && inQuickOpen"
   },
   {
-    "key": "ctrl+c l",
-    "command": "settings.cycle.lineNumbers",
-    "when": "editorFocus"
-  },
-  {
     "key": "alt+k",
     "command": "emacs-mcx.paredit.killSexp",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.toggleMaximizedPanel"
   },
   {
     "key": "ctrl+tab",
@@ -195,8 +192,9 @@
     "args": "emacs-magit-status"
   },
   {
-    "key": "ctrl+enter",
-    "command": "workbench.action.toggleMaximizedPanel"
+    "key": "ctrl+x l",
+    "command": "settings.cycle.lineNumbers",
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+x ctrl+d",
@@ -212,6 +210,16 @@
     "key": "ctrl+x shift+ctrl+D",
     "command": "workbench.action.debug.stop",
     "when": "inDebugMode && !focusedSessionIsAttach"
+  },
+  {
+    "key": "ctrl+x shift+z",
+    "command": "settings.cycle.zen",
+    "when": "editorFocus"
+  },
+  {
+    "key": "f12",
+    "command": "settings.cycle.zen",
+    "when": "editorFocus"
   },
   {
     "key": "shift+cmd+[",
