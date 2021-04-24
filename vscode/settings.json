@@ -73,7 +73,8 @@
     "**/.*_cache": true,
     "**/*.olean": true,
     "docs/_book": true,
-    "out": false
+    "out": false,
+    "**/staticfiles": true
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
@@ -94,11 +95,7 @@
   "python.autoComplete.showAdvancedMembers": false,
   "python.formatting.provider": "black",
   "python.languageServer": "Microsoft",
-  "python.linting.mypyArgs": [
-    "--ignore-missing-imports",
-    "--follow-imports=silent",
-    "--check-untyped-defs"
-  ],
+  "python.linting.mypyArgs": ["--check-untyped-defs"],
   "python.linting.mypyEnabled": true,
   "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
   "python.linting.pylintEnabled": false,
@@ -188,7 +185,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.nativeFullScreen": false,
   "window.zoomLevel": 1,
-  "workbench.activityBar.visible": false,
   "workbench.editorAssociations": [
     {
       "filenamePattern": "*.ipynb",
@@ -203,24 +199,29 @@
   "zenMode.hideLineNumbers": false,
   "zenMode.restore": true,
   "search.showLineNumbers": false,
-  "python.linting.flake8Enabled": true,
   "explorer.confirmDelete": false,
   "editor.lineNumbers": false,
   "workbench.colorTheme": "Default Light+",
   "workbench.tree.indent": 33,
-  "editor.renderIndentGuides": false,
   "python.testing.unittestEnabled": false,
   "python.testing.nosetestsEnabled": false,
   "python.testing.pytestEnabled": true,
   "breadcrumbs.symbolPath": "off",
   "explorer.confirmDragAndDrop": false,
   "kite.codefinder.enableLineDecoration": false,
-  "editor.formatOnSave": true,
-  "debug.toolBarLocation": "docked",
   "workbench.colorCustomizations": {
     "editorError.foreground": "red",
     "editorWarning.foreground": "orange",
     "editorInfo.foreground": "blue"
   },
-  "python.testing.autoTestDiscoverOnSaveEnabled": false
+  "editor.formatOnSave": true,
+  "workbench.activityBar.visible": false,
+  "terminal.explorerKind": "external",
+  "python.linting.enabled": true,
+  "zenMode.hideStatusBar": false,
+  "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "python.testing.promptToConfigure": false,
+  "python.envFile": "${workspaceFolder}/.env.dev",
+  "python.linting.flake8Enabled": true
 }
