@@ -1,48 +1,23 @@
 [
   {
+    "key": "alt+.",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
     "key": "alt+;",
     "command": "editor.action.commentLine",
     "when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd && !editorReadonly"
   },
   {
+    "key": "alt+k",
+    "command": "emacs-mcx.paredit.killSexp",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "alt+tab",
     "command": "editor.foldRecursively",
     "when": "editorTextFocus && foldingEnabled"
-  },
-  {
-    "key": "ctrl+home",
-    "command": "workbench.panel.repl.view.focus",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+home",
-    "command": "workbench.panel.output.focus",
-    "when": "inDebugRepl"
-  },
-  {
-    "key": "ctrl+home",
-    "command": "workbench.action.problems.focus",
-    "when": "inOutput"
-  },
-  {
-    "key": "ctrl+end",
-    "command": "workbench.panel.output.focus",
-    "when": "problemFocus || problemsView || problemsFilterFocus"
-  },
-  {
-    "key": "ctrl+end",
-    "command": "workbench.panel.repl.view.focus",
-    "when": "inOutput"
-  },
-  {
-    "key": "ctrl+end",
-    "command": "terminal.focus",
-    "when": "inDebugRepl"
-  },
-  {
-    "key": "cmd+;",
-    "command": "editor.action.blockComment",
-    "when": "editorTextFocus && !editorReadonly"
   },
   {
     "key": "cmd+/",
@@ -69,9 +44,24 @@
     "when": "!panelFocus"
   },
   {
+    "key": "cmd+;",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+\\",
+    "command": "editor.toggleFold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
     "key": "cmd+down",
     "command": "workbench.action.terminal.focus",
     "when": "editorFocus"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "-editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
     "key": "cmd+enter",
@@ -91,6 +81,11 @@
     "when": "panelFocus"
   },
   {
+    "key": "cmd+k cmd+l",
+    "command": "-editor.toggleFold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
     "key": "cmd+left",
     "command": "workbench.action.navigateLeft"
   },
@@ -99,12 +94,21 @@
     "command": "magit.status"
   },
   {
+    "key": "cmd+n",
+    "command": "workbench.action.quickOpen"
+  },
+  {
     "key": "cmd+o",
     "command": "newFile.createNewFile"
   },
   {
-    "key": "cmd+n",
-    "command": "workbench.action.quickOpen"
+    "key": "cmd+q",
+    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "cmd+q",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
   },
   {
     "key": "cmd+right",
@@ -134,22 +138,53 @@
     "when": "panelFocus"
   },
   {
-    "key": "cmd+q",
-    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+    "key": "ctrl+down",
+    "command": "goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
   },
   {
-    "key": "cmd+q",
-    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
+    "key": "ctrl+down",
+    "command": "references-view.next",
+    "when": "reference-list.hasResult && references-view.canNavigate"
   },
   {
-    "key": "alt+k",
-    "command": "emacs-mcx.paredit.killSexp",
-    "when": "editorTextFocus"
+    "key": "ctrl+down",
+    "command": "search.action.focusNextSearchResult",
+    "when": "hasSearchResult || inSearchEditor"
+  },
+  {
+    "key": "ctrl+end",
+    "command": "terminal.focus",
+    "when": "inDebugRepl"
+  },
+  {
+    "key": "ctrl+end",
+    "command": "workbench.panel.output.focus",
+    "when": "problemFocus || problemsView || problemsFilterFocus"
+  },
+  {
+    "key": "ctrl+end",
+    "command": "workbench.panel.repl.view.focus",
+    "when": "inOutput"
   },
   {
     "key": "ctrl+enter",
     "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+home",
+    "command": "workbench.action.problems.focus",
+    "when": "inOutput"
+  },
+  {
+    "key": "ctrl+home",
+    "command": "workbench.panel.output.focus",
+    "when": "inDebugRepl"
+  },
+  {
+    "key": "ctrl+home",
+    "command": "workbench.panel.repl.view.focus",
+    "when": "terminalFocus"
   },
   {
     "key": "ctrl+tab",
@@ -157,23 +192,19 @@
     "when": "editorTextFocus && foldingEnabled"
   },
   {
-    "key": "ctrl+x e",
-    "command": "workbench.action.tasks.runTask",
-    "args": "emacs"
+    "key": "ctrl+up",
+    "command": "goToPreviousReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
   },
   {
-    "key": "ctrl+x ctrl+f",
-    "command": "workbench.action.quickOpen"
+    "key": "ctrl+up",
+    "command": "references-view.prev",
+    "when": "reference-list.hasResult && references-view.canNavigate"
   },
   {
-    "key": "ctrl+x g",
-    "command": "workbench.action.tasks.runTask",
-    "args": "emacs-magit-status"
-  },
-  {
-    "key": "ctrl+x l",
-    "command": "settings.cycle.lineNumbers",
-    "when": "editorFocus"
+    "key": "ctrl+up",
+    "command": "search.action.focusPreviousSearchResult",
+    "when": "hasSearchResult || inSearchEditor"
   },
   {
     "key": "ctrl+x ctrl+d",
@@ -186,6 +217,35 @@
     }
   },
   {
+    "key": "ctrl+x ctrl+f",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+x d",
+    "command": "extension.dired.open",
+    "when": "editorTextFocus && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+x e",
+    "command": "workbench.action.tasks.runTask",
+    "args": "emacs"
+  },
+  {
+    "key": "ctrl+x f",
+    "command": "-extension.dired.open",
+    "when": "editorTextFocus && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+x g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "emacs-magit-status"
+  },
+  {
+    "key": "ctrl+x l",
+    "command": "settings.cycle.lineNumbers",
+    "when": "editorFocus"
+  },
+  {
     "key": "ctrl+x shift+ctrl+D",
     "command": "workbench.action.debug.stop",
     "when": "inDebugMode && !focusedSessionIsAttach"
@@ -194,6 +254,15 @@
     "key": "ctrl+x shift+z",
     "command": "settings.cycle.zen",
     "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+x z",
+    "command": "-workbench.action.toggleZenMode",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+x z",
+    "command": "workbench.action.toggleZenMode"
   },
   {
     "key": "enter",
@@ -222,76 +291,6 @@
     "key": "shift+cmd+]",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus && terminalProcessSupported"
-  },
-  // Search result navigation (default bindings: f4 and shift+f4)
-  {
-    "key": "ctrl+down",
-    "command": "references-view.next",
-    "when": "reference-list.hasResult && references-view.canNavigate"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "search.action.focusNextSearchResult",
-    "when": "hasSearchResult || inSearchEditor"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "goToNextReference",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "references-view.prev",
-    "when": "reference-list.hasResult && references-view.canNavigate"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "search.action.focusPreviousSearchResult",
-    "when": "hasSearchResult || inSearchEditor"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "goToPreviousReference",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-  {
-    "key": "alt+.",
-    "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "cmd+enter",
-    "command": "-editor.action.insertLineAfter",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+x z",
-    "command": "workbench.action.toggleZenMode"
-  },
-  {
-    "key": "ctrl+x z",
-    "command": "-workbench.action.toggleZenMode",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "ctrl+x d",
-    "command": "extension.dired.open",
-    "when": "editorTextFocus && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+x f",
-    "command": "-extension.dired.open",
-    "when": "editorTextFocus && !inDebugRepl"
-  },
-  {
-    "key": "cmd+\\",
-    "command": "editor.toggleFold",
-    "when": "editorTextFocus && foldingEnabled"
-  },
-  {
-    "key": "cmd+k cmd+l",
-    "command": "-editor.toggleFold",
-    "when": "editorTextFocus && foldingEnabled"
   },
   {
     "key": "shift+enter",
