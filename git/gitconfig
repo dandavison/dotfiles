@@ -1,23 +1,41 @@
 [core]
     # pager = sed 's/\t/├──┤/g' | delta
-    pager = delta
+    # pager = sd '^( ?)backend/' '${1}./' | sd '^( ?)ui/' '${1}../ui/' | delta
+    # pager = delta
+    pager = echo core-pager
+    # pager = env | grep GIT_CONFIG_PARAMETERS
     attributesfile = ~/devenv/config/git/gitattributes
     excludesfile = ~/.gitignore
     editor = emacsclient
+
+[pager]
+    help = echo help-pager
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 
 [include]
     path = ~/devenv/delta/themes.gitconfig
 
 [delta]
-    # side-by-side-wrapped = true
-    # navigate = true
-    # features = coracias-caudatus
-    # dark = true
-    # features = collared-trogon
-    # commit-decoration-style = blue ol
+    navigate = true
+    relative-paths = true
+    hyperlinks = true
     features = hoopoe
-    commit-regex = "^[0-9a-f]{7}.? "
-    # line-numbers = false
+    diff-stat-align-width = 77
+    # syntax-theme = ansi
+    commit-decoration-style = blue box
+    # side-by-side = true
+    max-line-distance = 1.0
+
+    # file-modified-label = "Δ"
+    # syntax-theme = dracula
+    # side-by-side = true
+    # true-color = always
+    # inline-hint-style = reverse blue black
+    # side-by-side-wrap-symbol = "|"
+    # commit-regex = "^[0-9a-f]{7}.? "
 
 [interactive]
     diffFilter = delta --color-only

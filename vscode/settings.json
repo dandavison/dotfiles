@@ -89,8 +89,9 @@
     "unmerged",
     "stashes"
   ],
-  "prettier.documentSelectors": ["*.ts"],
-  "prettier.proseWrap": "always",
+  "prettier.documentSelectors": [
+    "*.ts"
+  ],
   "python.analysis.typeCheckingMode": "basic",
   "python.autoComplete.showAdvancedMembers": false,
   "python.formatting.provider": "black",
@@ -132,6 +133,18 @@
   "scm.diffDecorationsGutterVisibility": "hover",
   "settings.cycle": [
     {
+      "id": "indentGuides",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "editor.renderIndentGuides": true
+        },
+        {
+          "editor.renderIndentGuides": false
+        }
+      ]
+    },
+    {
       "id": "lineNumbers",
       "overrideWorkspaceSettings": true,
       "values": [
@@ -140,6 +153,18 @@
         },
         {
           "editor.lineNumbers": false
+        }
+      ]
+    },
+    {
+      "id": "matchParens",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "editor.matchBrackets": false
+        },
+        {
+          "editor.matchBrackets": true
         }
       ]
     },
@@ -223,5 +248,10 @@
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "python.testing.promptToConfigure": false,
   "python.envFile": "${workspaceFolder}/.env.dev",
-  "python.linting.flake8Enabled": true
+  "python.linting.flake8Enabled": true,
+  "editor.renderIndentGuides": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "workbench.statusBar.visible": true
 }

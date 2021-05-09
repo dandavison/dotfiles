@@ -103,12 +103,13 @@
   },
   {
     "key": "cmd+q",
-    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
+    "when": "!inEditorsPicker && !inQuickOpen"
   },
   {
     "key": "cmd+q",
-    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
   },
   {
     "key": "cmd+right",
@@ -241,8 +242,18 @@
     "args": "emacs-magit-status"
   },
   {
+    "key": "ctrl+x i",
+    "command": "settings.cycle.indentGuides",
+    "when": "editorFocus"
+  },
+  {
     "key": "ctrl+x l",
     "command": "settings.cycle.lineNumbers",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+x p",
+    "command": "settings.cycle.matchParens",
     "when": "editorFocus"
   },
   {
