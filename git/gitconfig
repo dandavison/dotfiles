@@ -2,7 +2,8 @@
     # pager = sed 's/\t/├──┤/g' | delta
     # pager = sd '^( ?)backend/' '${1}./' | sd '^( ?)ui/' '${1}../ui/' | delta
     # pager = delta
-    pager = echo core-pager
+    # pager = echo core-pager
+    # pager = git-split-diffs --color | less -RFX
     # pager = env | grep GIT_CONFIG_PARAMETERS
     attributesfile = ~/devenv/config/git/gitattributes
     excludesfile = ~/.gitignore
@@ -21,13 +22,15 @@
 [delta]
     navigate = true
     relative-paths = true
-    hyperlinks = true
-    features = hoopoe
-    diff-stat-align-width = 77
-    # syntax-theme = ansi
+    # hyperlinks = true
+    features = hoopoe whole-line-emph-light
     commit-decoration-style = blue box
+    diff-stat-align-width = 77
+    width = variable
+    # syntax-theme = ansi
     # side-by-side = true
-    max-line-distance = 1.0
+    # line-numbers = true
+    # max-line-distance = 1.0
 
     # file-modified-label = "Δ"
     # syntax-theme = dracula
@@ -36,6 +39,19 @@
     # inline-hint-style = reverse blue black
     # side-by-side-wrap-symbol = "|"
     # commit-regex = "^[0-9a-f]{7}.? "
+
+[delta "whole-line-emph-light"]
+    minus-style                   = normal "#ffc0c0"
+    minus-non-emph-style          = normal "#ffe0e0"
+    minus-emph-style              = normal "#ffc0c0"
+
+    plus-style                    = syntax "#a0efa0"
+    plus-non-emph-style           = syntax "#d0ffd0"
+    plus-emph-style               = syntax "#a0efa0"
+
+
+[split-diffs]
+    theme-name = github-light
 
 [interactive]
     diffFilter = delta --color-only
