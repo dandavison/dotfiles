@@ -1,5 +1,16 @@
 [
   {
+    "key": "alt+,",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "editor.action.addSelectionToNextFindMatch",
+        "workbench.action.findInFiles"
+      ]
+    },
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
     "key": "alt+.",
     "command": "editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
@@ -54,11 +65,6 @@
     "when": "editorTextFocus && foldingEnabled"
   },
   {
-    "key": "cmd+down",
-    "command": "workbench.action.terminal.focus",
-    "when": "editorFocus"
-  },
-  {
     "key": "cmd+enter",
     "command": "-editor.action.insertLineAfter",
     "when": "editorTextFocus && !editorReadonly"
@@ -88,6 +94,14 @@
   {
     "key": "cmd+left",
     "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "cmd+down",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "cmd+up",
+    "command": "workbench.action.navigateUp"
   },
   {
     "key": "cmd+m",
@@ -126,17 +140,6 @@
       ]
     },
     "when": "editorFocus"
-  },
-  {
-    "key": "cmd+up",
-    "command": "extension.multiCommand.execute",
-    "args": {
-      "sequence": [
-        "workbench.action.focusFirstEditorGroup",
-        "workbench.action.togglePanel"
-      ]
-    },
-    "when": "panelFocus"
   },
   {
     "key": "ctrl+down",
@@ -206,16 +209,6 @@
     "key": "ctrl+up",
     "command": "search.action.focusPreviousSearchResult",
     "when": "hasSearchResult || inSearchEditor"
-  },
-  {
-    "key": "ctrl+x ctrl+d",
-    "command": "extension.multiCommand.execute",
-    "args": {
-      "sequence": [
-        "workbench.action.debug.start",
-        "workbench.action.closeSidebar"
-      ]
-    }
   },
   {
     "key": "ctrl+x ctrl+f",
@@ -327,5 +320,13 @@
     "key": "cmd+k cmd+j",
     "command": "-editor.unfoldAll",
     "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack"
   }
 ]

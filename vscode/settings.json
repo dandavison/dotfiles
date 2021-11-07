@@ -1,19 +1,8 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[python]": {
     "editor.formatOnPaste": false,
-    "editor.formatOnSaveMode": "file"
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "ms-python.python"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -34,7 +23,6 @@
     }
   ],
   "bracket-pair-colorizer-2.colors": ["DarkGreen", "DarkRed", "DarkBlue"],
-  "breadcrumbs.enabled": true,
   "diffEditor.renderSideBySide": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
@@ -46,14 +34,11 @@
   "editor.quickSuggestions": true,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
-  "editor.rulers": [
-  
-  ],
+  "editor.rulers": [],
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.suggest.localityBonus": true,
   "editor.suggest.showTypeParameters": true,
   "editor.suggestSelection": "first",
-  "editor.tabCompletion": "on",
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
     "django-html": "html"
@@ -70,13 +55,19 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
+    "**/Thumbs.db": true,
     "**/__pycache__": true,
     "**/.*": true,
     "**/.*_cache": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/*.class": true,
     "**/*.olean": true,
+    "**/staticfiles": true,
     "docs/_book": true,
-    "out": false,
-    "**/staticfiles": true
+    "out": false
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
@@ -95,9 +86,8 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.autoComplete.showAdvancedMembers": false,
   "python.formatting.provider": "black",
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Pylance",
   "python.linting.mypyArgs": ["--check-untyped-defs"],
-  "python.linting.mypyEnabled": true,
   "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
   "python.linting.pylintEnabled": false,
   "python.linting.pylintUseMinimalCheckers": false,
@@ -210,16 +200,12 @@
   "vetur.validation.interpolation": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.nativeFullScreen": false,
-  "window.zoomLevel": 1,
-  "workbench.editorAssociations": [
-    {
-      "filenamePattern": "*.ipynb",
-      "viewType": "jupyter.notebook.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
   "workbench.sideBar.location": "right",
   "yaml.schemas": {
-    "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
@@ -227,7 +213,6 @@
   "search.showLineNumbers": false,
   "explorer.confirmDelete": false,
   "editor.lineNumbers": false,
-  "workbench.colorTheme": "Default Light+",
   "workbench.tree.indent": 33,
   "python.testing.unittestEnabled": false,
   "python.testing.nosetestsEnabled": false,
@@ -244,7 +229,6 @@
   "workbench.activityBar.visible": false,
   "terminal.explorerKind": "external",
   "python.linting.enabled": true,
-  "zenMode.hideStatusBar": false,
   "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "python.testing.promptToConfigure": false,
@@ -252,8 +236,46 @@
   "python.linting.flake8Enabled": true,
   "editor.renderIndentGuides": false,
   "eslint.alwaysShowStatus": true,
-  "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
   "workbench.statusBar.visible": true,
-  "editor.overviewRulerBorder": false
+  "editor.overviewRulerBorder": false,
+  "python.formatting.blackArgs": ["--fast"],
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "terminal.integrated.tabs.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.inlineSuggest.enabled": true,
+  "workbench.startupEditor": "none",
+  "eslint.format.enable": true,
+  "prettier.singleQuote": true,
+  "workbench.panel.opensMaximized": "always",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "settings.cycle.logLevel": "log",
+  "[sql]": {
+    "editor.defaultFormatter": "ms-ossdata.vscode-postgresql"
+  },
+  "redhat.telemetry.enabled": false,
+  "window.zoomLevel": 1,
+  "python.defaultInterpreterPath": "/Users/dan/.pyenv/shims/python",
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false,
+    "python": false
+  },
+  "pylance.insidersChannel": "daily",
+  "editor.bracketPairColorization.enabled": true,
+  "atlascode.jira.lastCreateSiteAndProject": {
+    "siteId": "aa0e015a-6c18-44d1-806f-12425f81877c",
+    "projectKey": "ACI"
+  },
+  "zenMode.hideStatusBar": false,
+  "autoDocstring.generateDocstringOnEnter": false,
+  "workbench.colorTheme": "Default Light+"
 }
