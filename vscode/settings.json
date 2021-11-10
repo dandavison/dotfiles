@@ -24,7 +24,7 @@
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
-  "editor.lineNumbers": false,
+  "editor.lineNumbers": "off",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
@@ -234,9 +234,9 @@
   "window.zoomLevel": 1,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
+    "editorError.foreground": "#F00",
+    "editorInfo.foreground": "#00F",
+    "editorWarning.foreground": "#F70"
   },
   "workbench.colorTheme": "Default Light+",
   "workbench.editorAssociations": {
