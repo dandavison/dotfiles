@@ -1,8 +1,14 @@
 {
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
     "editor.formatOnPaste": false,
-    "editor.formatOnSaveMode": "file",
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.formatOnSaveMode": "file"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "ms-ossdata.vscode-postgresql"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -10,17 +16,23 @@
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"
   },
+  "breadcrumbs.symbolPath": "off",
   "diffEditor.renderSideBySide": true,
+  "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
+  "editor.lineNumbers": false,
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
+  "editor.overviewRulerBorder": false,
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestions": {
-    "other": true,
     "comments": false,
+    "other": true,
     "strings": false
   },
   "editor.renderLineHighlight": "none",
@@ -30,12 +42,16 @@
   "editor.suggest.localityBonus": true,
   "editor.suggest.showTypeParameters": true,
   "editor.suggestSelection": "first",
-  "editor.bracketPairColorization.enabled": true,
   "editor.wordBasedSuggestions": false,
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
     "django-html": "html"
   },
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "files.associations": {
     "**/*.html": "html",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
@@ -43,31 +59,44 @@
     "**/templates/**/*.html": "django-html"
   },
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/__pycache__": true,
-    "**/.*": true,
-    "**/.*_cache": true,
-    "**/.classpath": true,
-    "**/.factorypath": true,
-    "**/.project": true,
-    "**/.settings": true,
     "**/*.class": true,
     "**/*.olean": true,
+    "**/.*": true,
+    "**/.*_cache": true,
+    "**/.DS_Store": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/Thumbs.db": true,
+    "**/__pycache__": true,
     "**/staticfiles": true,
     "docs/_book": true,
     "out": false
+  },
+  "files.watcherExclude": {
+    "**/.ammonite": true,
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "markdown": false,
+    "plaintext": false,
+    "python": false,
+    "scala": false,
+    "yaml": false
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.hovers.enabled": false,
-  "magit.quick-switch-enabled": true,
+  "java.project.importOnFirstTimeStartup": "automatic",
   "magit.hide-status-sections": [
     "recent commits",
     "unpulled",
@@ -75,16 +104,34 @@
     "unmerged",
     "stashes"
   ],
+  "magit.quick-switch-enabled": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
   "prettier.documentSelectors": ["*.ts"],
+  "prettier.singleQuote": true,
+  "pylance.insidersChannel": "daily",
   "python.analysis.typeCheckingMode": "basic",
+  "python.defaultInterpreterPath": "/Users/dan/.pyenv/shims/python",
+  "python.envFile": "${workspaceFolder}/.env.dev",
+  "python.formatting.blackArgs": ["--fast"],
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
   "python.linting.mypyArgs": ["--check-untyped-defs"],
+  "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
   "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
   "python.linting.pylintEnabled": false,
-  "rust-analyzer.inlayHints.enable": false,
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "python.testing.promptToConfigure": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "redhat.telemetry.enabled": false,
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
+  "rust-analyzer.inlayHints.enable": false,
   "saveEditorLayout.list": [
     {
       "documents": [
@@ -114,6 +161,8 @@
     }
   ],
   "scm.diffDecorationsGutterVisibility": "hover",
+  "search.showLineNumbers": false,
+  "security.workspace.trust.untrustedFiles": "open",
   "settings.cycle": [
     {
       "id": "indentGuides",
@@ -159,99 +208,50 @@
           "editor.matchBrackets": "never",
           "workbench.colorCustomizations": {
             "editorError.foreground": "#00000000",
-            "editorWarning.foreground": "#00000000",
-            "editorInfo.foreground": "#00000000"
+            "editorInfo.foreground": "#00000000",
+            "editorWarning.foreground": "#00000000"
           }
         },
         {
           "editor.matchBrackets": "always",
           "workbench.colorCustomizations": {
             "editorError.foreground": "red",
-            "editorWarning.foreground": "orange",
-            "editorInfo.foreground": "blue"
+            "editorInfo.foreground": "blue",
+            "editorWarning.foreground": "orange"
           }
         }
       ]
     }
   ],
+  "settings.cycle.logLevel": "log",
   "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
+  "terminal.explorerKind": "external",
   "terminal.external.osxExec": "iTerm 2.app",
+  "terminal.integrated.tabs.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vetur.validation.interpolation": false,
   "window.nativeFullScreen": false,
+  "window.zoomLevel": 1,
+  "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
+  },
+  "workbench.colorTheme": "Default Light+",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
+  "workbench.panel.opensMaximized": "always",
   "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": true,
+  "workbench.tree.indent": 33,
   "yaml.schemas": {
     "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
-  "zenMode.restore": true,
-  "search.showLineNumbers": false,
-  "explorer.confirmDelete": false,
-  "editor.lineNumbers": false,
-  "workbench.tree.indent": 33,
-  "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true,
-  "breadcrumbs.symbolPath": "off",
-  "explorer.confirmDragAndDrop": false,
-  "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorWarning.foreground": "orange",
-    "editorInfo.foreground": "blue"
-  },
-  "editor.formatOnSave": true,
-  "workbench.activityBar.visible": false,
-  "terminal.explorerKind": "external",
-  "python.linting.enabled": true,
-  "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "python.testing.promptToConfigure": false,
-  "python.envFile": "${workspaceFolder}/.env.dev",
-  "python.linting.flake8Enabled": true,
-  "eslint.alwaysShowStatus": true,
-  "eslint.lintTask.enable": true,
-  "workbench.statusBar.visible": true,
-  "editor.overviewRulerBorder": false,
-  "python.formatting.blackArgs": ["--fast"],
-  "java.project.importOnFirstTimeStartup": "automatic",
-  "notebook.cellToolbarLocation": {
-    "default": "right",
-    "jupyter-notebook": "left"
-  },
-  "terminal.integrated.tabs.enabled": false,
-  "security.workspace.trust.untrustedFiles": "open",
-  "editor.inlineSuggest.enabled": true,
-  "workbench.startupEditor": "none",
-  "eslint.format.enable": true,
-  "prettier.singleQuote": true,
-  "workbench.panel.opensMaximized": "always",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "settings.cycle.logLevel": "log",
-  "[sql]": {
-    "editor.defaultFormatter": "ms-ossdata.vscode-postgresql"
-  },
-  "redhat.telemetry.enabled": false,
-  "window.zoomLevel": 1,
-  "python.defaultInterpreterPath": "/Users/dan/.pyenv/shims/python",
-  "github.copilot.enable": {
-    "*": false,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": false,
-    "python": false,
-    "scala": false
-  },
-  "pylance.insidersChannel": "daily",
   "zenMode.hideStatusBar": false,
-  "workbench.colorTheme": "Default Light+",
-  "files.watcherExclude": {
-    "**/.bloop": true,
-    "**/.metals": true,
-    "**/.ammonite": true
-  }
+  "zenMode.restore": true
 }
