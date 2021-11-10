@@ -1,8 +1,8 @@
 [core]
     # pager = sed 's/\t/├──┤/g' | delta
     # pager = sd '^( ?)backend/' '${1}./' | sd '^( ?)ui/' '${1}../ui/' | delta
-    # pager = delta
     # pager = echo core-pager
+    # pager = diff-so-fancy | less --tabs=4 -RFX
     # pager = git-split-diffs --color | less -RFX
     # pager = env | grep GIT_CONFIG_PARAMETERS
     attributesfile = ~/devenv/config/git/gitattributes
@@ -10,7 +10,7 @@
     editor = emacsclient
 
 [pager]
-    help = echo help-pager
+    blame = delta
     diff = delta
     log = delta
     reflog = delta
@@ -19,49 +19,66 @@
 [include]
     path = ~/devenv/delta/themes.gitconfig
 
-[delta]
-    navigate = true
-    relative-paths = true
-    # hyperlinks = true
-    features = hoopoe whole-line-emph-light
-    commit-decoration-style = blue box
-    diff-stat-align-width = 77
-    width = variable
-    # syntax-theme = ansi
-    # side-by-side = true
-    # line-numbers = true
-    # max-line-distance = 1.0
+[interactive]
+    diffFilter = delta --color-only
 
-    # file-modified-label = "Δ"
-    # syntax-theme = dracula
+[delta]
+    # syntax-theme = Visual Studio Dark+
+    features = decorations
+    light = true
+    navigate = true
+    hyperlinks = true
     # side-by-side = true
-    # true-color = always
-    # inline-hint-style = reverse blue black
-    # side-by-side-wrap-symbol = "|"
-    # commit-regex = "^[0-9a-f]{7}.? "
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta "word-diff"]
+    minus-style = raw
+    minus-non-emph-style = raw
+    minus-emph-style = raw
+    plus-style = raw
+    plus-non-emph-style = raw
+    plus-emph-style = raw
 
 [delta "whole-line-emph-light"]
-    minus-style                   = normal "#ffc0c0"
-    minus-non-emph-style          = normal "#ffe0e0"
-    minus-emph-style              = normal "#ffc0c0"
+    minus-style                   = normal "#ffe0e0"
+    minus-non-emph-style          = normal
+    minus-emph-style              = normal "#ffe0e0"
 
-    plus-style                    = syntax "#a0efa0"
-    plus-non-emph-style           = syntax "#d0ffd0"
-    plus-emph-style               = syntax "#a0efa0"
+    plus-style                    = syntax "#d0ffd0"
+    plus-non-emph-style           = syntax
+    plus-emph-style               = syntax "#d0ffd0"
 
 
 [split-diffs]
     theme-name = github-light
 
-[interactive]
-    diffFilter = delta --color-only
-
 [commit]
     status = false
 
+# [color "diff"]
+# 	frag = red
+
+# [blame]
+#     coloring = highlightRecent
+
+
 [diff]
 	colorMoved = plain
-	submodule = log
+	submodule = short # log # short # diff # short # log # short
 	frag = red
 	# colorMovedWS = allow-indentation-change
 
@@ -105,6 +122,7 @@
 # 	pretty = %C(magenta)%h %C(cyan)%cd %C(auto)%d%Creset %s
 
 [alias]
+    bat	= !sh -c 'git -c pager.show=\"bat --file-name='$1'\" show '$*
     blamestats = !~/git-utils/blamestats.py ${GIT_PREFIX:-.}
     branch-by-date = !~/devenv/misc/git-branch-by-date
     contributors = !git log --format=format:"%an" | sort | uniq -c | sort -rn
@@ -144,6 +162,5 @@
     rebase = !~/bin/git-rebase
     squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
     state = !"echo $(git rev-parse --abbrev-ref HEAD; git rev-parse HEAD; _diff=$(git diff; git diff --cached); [ -n \"$_diff\" ] && md5sum - <<< \"$_diff\")"
-
-[color "diff"]
-	frag = red
+[github]
+	user = dandavison
