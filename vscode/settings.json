@@ -10,19 +10,6 @@
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"
   },
-  "atlascode.bitbucket.enabled": false,
-  "atlascode.jira.enabled": true,
-  "atlascode.jira.jqlList": [
-    {
-      "enabled": true,
-      "id": "6d23e0f3-a0af-41f1-b8f5-1ead4fdb5f1f",
-      "monitor": true,
-      "name": "My mygn Issues",
-      "query": "assignee = currentUser() AND resolution = Unresolved NOT status = DONE ORDER BY lastViewed DESC",
-      "siteId": "aa0e015a-6c18-44d1-806f-12425f81877c"
-    }
-  ],
-  "bracket-pair-colorizer-2.colors": ["DarkGreen", "DarkRed", "DarkBlue"],
   "diffEditor.renderSideBySide": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
@@ -31,7 +18,11 @@
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.parameterHints.enabled": false,
-  "editor.quickSuggestions": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
   "editor.rulers": [],
@@ -39,6 +30,8 @@
   "editor.suggest.localityBonus": true,
   "editor.suggest.showTypeParameters": true,
   "editor.suggestSelection": "first",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.wordBasedSuggestions": false,
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
     "django-html": "html"
@@ -84,15 +77,14 @@
   ],
   "prettier.documentSelectors": ["*.ts"],
   "python.analysis.typeCheckingMode": "basic",
-  "python.autoComplete.showAdvancedMembers": false,
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.linting.mypyArgs": ["--check-untyped-defs"],
   "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
   "python.linting.pylintEnabled": false,
-  "python.linting.pylintUseMinimalCheckers": false,
   "rust-analyzer.inlayHints.enable": false,
   "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
   "saveEditorLayout.list": [
     {
       "documents": [
@@ -184,21 +176,8 @@
   ],
   "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
   "terminal.external.osxExec": "iTerm 2.app",
-  "terminal.integrated.rendererType": "experimentalWebgl",
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]"
-  ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "todo-tree.tree.showScanModeButton": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vetur.validation.interpolation": false,
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.nativeFullScreen": false,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
@@ -215,11 +194,9 @@
   "editor.lineNumbers": false,
   "workbench.tree.indent": 33,
   "python.testing.unittestEnabled": false,
-  "python.testing.nosetestsEnabled": false,
   "python.testing.pytestEnabled": true,
   "breadcrumbs.symbolPath": "off",
   "explorer.confirmDragAndDrop": false,
-  "kite.codefinder.enableLineDecoration": false,
   "workbench.colorCustomizations": {
     "editorError.foreground": "red",
     "editorWarning.foreground": "orange",
@@ -234,7 +211,6 @@
   "python.testing.promptToConfigure": false,
   "python.envFile": "${workspaceFolder}/.env.dev",
   "python.linting.flake8Enabled": true,
-  "editor.renderIndentGuides": false,
   "eslint.alwaysShowStatus": true,
   "eslint.lintTask.enable": true,
   "workbench.statusBar.visible": true,
@@ -267,15 +243,15 @@
     "yaml": false,
     "plaintext": false,
     "markdown": false,
-    "python": false
+    "python": false,
+    "scala": false
   },
   "pylance.insidersChannel": "daily",
-  "editor.bracketPairColorization.enabled": true,
-  "atlascode.jira.lastCreateSiteAndProject": {
-    "siteId": "aa0e015a-6c18-44d1-806f-12425f81877c",
-    "projectKey": "ACI"
-  },
   "zenMode.hideStatusBar": false,
-  "autoDocstring.generateDocstringOnEnter": false,
-  "workbench.colorTheme": "Default Light+"
+  "workbench.colorTheme": "Default Light+",
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  }
 }
