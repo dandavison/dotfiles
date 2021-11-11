@@ -215,6 +215,11 @@
     "command": "workbench.action.quickOpen"
   },
   {
+    "key": "ctrl+x b",
+    "command": "bracketLens.toggleMuteAll",
+    "when": "editorFocus"
+  },
+  {
     "key": "ctrl+x d",
     "command": "extension.dired.open",
     "when": "editorTextFocus && !inDebugRepl"
@@ -246,7 +251,7 @@
   },
   {
     "key": "ctrl+x p",
-    "command": "settings.cycle.matchParens",
+    "command": "settings.cycle.copilot",
     "when": "editorFocus"
   },
   {
@@ -328,5 +333,19 @@
   {
     "key": "ctrl+-",
     "command": "-workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+u",
+    "command": "workbench.action.files.revert"
   }
 ]
