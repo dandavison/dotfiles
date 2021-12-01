@@ -24,8 +24,7 @@
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
-  "editor.lineNumbers": "off",
-  "editor.matchBrackets": "always",
+  "editor.lineNumbers": false,
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.overviewRulerBorder": false,
@@ -58,20 +57,20 @@
     "**/templates/**/*.html": "django-html"
   },
   "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
     "**/*.class": true,
     "**/*.olean": true,
     "**/.*": true,
     "**/.*_cache": true,
-    "**/.DS_Store": true,
     "**/.classpath": true,
     "**/.factorypath": true,
-    "**/.git": true,
-    "**/.hg": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.svn": true,
-    "**/CVS": true,
-    "**/Thumbs.db": true,
     "**/__pycache__": true,
     "**/staticfiles": true,
     "docs/_book": true,
@@ -212,6 +211,7 @@
       "overrideWorkspaceSettings": true,
       "values": [
         {
+          "dan.ZenPlus": true,
           "editor.matchBrackets": "never",
           "workbench.colorCustomizations": {
             "editorError.foreground": "#00000000",
@@ -220,6 +220,7 @@
           }
         },
         {
+          "dan.ZenPlus": false,
           "editor.matchBrackets": "always",
           "workbench.colorCustomizations": {
             "editorError.foreground": "red",
@@ -240,11 +241,6 @@
   "window.nativeFullScreen": false,
   "window.zoomLevel": 1,
   "workbench.activityBar.visible": false,
-  "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
-  },
   "workbench.colorTheme": "Default Light+",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
@@ -300,5 +296,18 @@
       "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').matchBrackets === 'never' ? '$(circle-slash)' : '$(circle-large-outline)'"
     }
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
+  },
+  "security.workspace.trust.startupPrompt": "never",
+  "task.saveBeforeRun": "never",
+  "editor.matchBrackets": "always",
+  "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
+  "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
+  "editor.gotoLocation.multipleReferences": "gotoAndPeek",
+  "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
+  "rewrap.wrappingColumn": 100
 }
