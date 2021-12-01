@@ -1,49 +1,93 @@
 [core]
-    # pager = sed 's/\t/├──┤/g' | delta
-    # pager = sd '^( ?)backend/' '${1}./' | sd '^( ?)ui/' '${1}../ui/' | delta
-    # pager = echo core-pager
-    # pager = diff-so-fancy | less --tabs=4 -RFX
-    # pager = git-split-diffs --color | less -RFX
-    # pager = env | grep GIT_CONFIG_PARAMETERS
+    pager = delta
     attributesfile = ~/devenv/config/git/gitattributes
     excludesfile = ~/.gitignore
     editor = emacsclient
 
-[pager]
-    blame = delta
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
-
 [include]
-    path = ~/devenv/delta/themes.gitconfig
+    path = ~/src/delta/themes.gitconfig
 
 [interactive]
     diffFilter = delta --color-only
 
 [delta]
-    # syntax-theme = Visual Studio Dark+
-    features = decorations
     light = true
-    navigate = true
-    hyperlinks = true
-    # side-by-side = true
-
-[delta "interactive"]
+    features = decorations  # hoopoe2 my-color-moved-theme consistent-color-semantics navigate
     keep-plus-minus-markers = false
+    # side-by-side = false
+
+[delta "my-color-moved-theme"]
+    git-moved-from-style = bold purple
+    git-moved-to-style = bold cyan
+    map-styles = "my-color-moved-theme.git-moved-from-style => red #cccccc, \
+                  my-color-moved-theme.git-moved-to-style => syntax #cccccc"
+
+[delta "consistent-color-semantics"]
+    # All added/removed content is styled the same, regardless of
+    # whether there is unchanged content on the same line.
+    minus-style = minus-emph-style
+    plus-style = plus-emph-style
+
+[delta "hoopoe2"]
+    light = true
+
+    pink = "#ffe0e0"
+    dark-pink = "#ffc0c0"
+    green = "#d0ffd0"
+    dark-green = "#a0efa0"
+
+    minus-emph-style = normal hoopoe2.pink
+    minus-non-emph-style = strike
+    plus-emph-style = syntax hoopoe2.green
+    plus-non-emph-style = syntax ul
+
+
+[delta "hoopoe-ul"]
+    light = true
+    pink = "#ffe0e0"
+    dark-pink = "#ffc0c0"
+    green = "#d0ffd0"
+    dark-green = "#a0efa0"
+
+    minus-emph-style = syntax github-theme.pink
+    minus-non-emph-style = normal ul # github-theme.pink-style
+    plus-emph-style = syntax github-theme.green
+    plus-non-emph-style = syntax ul # github-theme.green-style
+
+    minus-style = minus-emph-style  # this is the difference;
+    plus-style = plus-emph-style  # by default these are equal to *-non-emph
+
+
+    # minus-style = normal "#ffe0e0"
+    # plus-style = syntax "#d0ffd0"
+
+[delta "solarized-dark"]
+    syntax-theme = Solarized (dark)
+    pink-color = lightpink
+    blue-color = lightskyblue
+    minus-style = normal solarized-dark.pink-color
+    plus-style = syntax solarized-dark.blue-color
+    minus-emph-style = minus-style
+    plus-emph-style = plus-style
+    minus-non-emph-style = normal ul
+    plus-non-emph-style = syntax ul
 
 [delta "decorations"]
     commit-decoration-style = blue ol
     commit-style = raw
-    file-style = omit
+    file-style = omit blue
     hunk-header-decoration-style = blue box
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
+    # grep-match-style = syntax "#ffffaa"
+    # grep-match-file-style = "#00008b"
+    # grep-match-line-number-style = "#067a00"
+    # grep-match-file-style = cyan # "#ffc0cb"
+    # grep-match-style = syntax "#444444"
+    # grep-match-file-style = cyan
+    # grep-match-line-number-style = blue
 
-[interactive]
-    diffFilter = delta --color-only
 
 [delta "word-diff"]
     minus-style = raw
@@ -53,31 +97,17 @@
     plus-non-emph-style = raw
     plus-emph-style = raw
 
-[delta "whole-line-emph-light"]
-    minus-style                   = normal "#ffe0e0"
-    minus-non-emph-style          = normal
-    minus-emph-style              = normal "#ffe0e0"
-
-    plus-style                    = syntax "#d0ffd0"
-    plus-non-emph-style           = syntax
-    plus-emph-style               = syntax "#d0ffd0"
-
-
-[split-diffs]
-    theme-name = github-light
-
 [commit]
     status = false
 
 # [color "diff"]
 # 	frag = red
 
-# [blame]
-#     coloring = highlightRecent
-
+[blame]
+    coloring = highlightRecent
 
 [diff]
-	colorMoved = plain
+	# colorMoved = true
 	submodule = short # log # short # diff # short # log # short
 	frag = red
 	# colorMovedWS = allow-indentation-change
