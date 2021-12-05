@@ -1,131 +1,41 @@
-[core]
-    pager = delta
-    attributesfile = ~/devenv/config/git/gitattributes
-    excludesfile = ~/.gitignore
-    editor = emacsclient
-
-[include]
-    path = ~/src/delta/themes.gitconfig
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    light = true
-    features = decorations  # hoopoe2 my-color-moved-theme consistent-color-semantics navigate
-    keep-plus-minus-markers = false
-    # side-by-side = false
-
-[delta "my-color-moved-theme"]
-    git-moved-from-style = bold purple
-    git-moved-to-style = bold cyan
-    map-styles = "my-color-moved-theme.git-moved-from-style => red #cccccc, \
-                  my-color-moved-theme.git-moved-to-style => syntax #cccccc"
-
-[delta "consistent-color-semantics"]
-    # All added/removed content is styled the same, regardless of
-    # whether there is unchanged content on the same line.
-    minus-style = minus-emph-style
-    plus-style = plus-emph-style
-
-[delta "hoopoe2"]
-    light = true
-
-    pink = "#ffe0e0"
-    dark-pink = "#ffc0c0"
-    green = "#d0ffd0"
-    dark-green = "#a0efa0"
-
-    minus-emph-style = normal hoopoe2.pink
-    minus-non-emph-style = strike
-    plus-emph-style = syntax hoopoe2.green
-    plus-non-emph-style = syntax ul
-
-
-[delta "hoopoe-ul"]
-    light = true
-    pink = "#ffe0e0"
-    dark-pink = "#ffc0c0"
-    green = "#d0ffd0"
-    dark-green = "#a0efa0"
-
-    minus-emph-style = syntax github-theme.pink
-    minus-non-emph-style = normal ul # github-theme.pink-style
-    plus-emph-style = syntax github-theme.green
-    plus-non-emph-style = syntax ul # github-theme.green-style
-
-    minus-style = minus-emph-style  # this is the difference;
-    plus-style = plus-emph-style  # by default these are equal to *-non-emph
-
-
-    # minus-style = normal "#ffe0e0"
-    # plus-style = syntax "#d0ffd0"
-
-[delta "solarized-dark"]
-    syntax-theme = Solarized (dark)
-    pink-color = lightpink
-    blue-color = lightskyblue
-    minus-style = normal solarized-dark.pink-color
-    plus-style = syntax solarized-dark.blue-color
-    minus-emph-style = minus-style
-    plus-emph-style = plus-style
-    minus-non-emph-style = normal ul
-    plus-non-emph-style = syntax ul
-
-[delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit blue
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
-    hunk-header-style = file line-number syntax
-    # grep-match-style = syntax "#ffffaa"
-    # grep-match-file-style = "#00008b"
-    # grep-match-line-number-style = "#067a00"
-    # grep-match-file-style = cyan # "#ffc0cb"
-    # grep-match-style = syntax "#444444"
-    # grep-match-file-style = cyan
-    # grep-match-line-number-style = blue
-
-
-[delta "word-diff"]
-    minus-style = raw
-    minus-non-emph-style = raw
-    minus-emph-style = raw
-    plus-style = raw
-    plus-non-emph-style = raw
-    plus-emph-style = raw
-
-[commit]
-    status = false
-
-# [color "diff"]
-# 	frag = red
+[advice]
+    detachedHead = false
 
 [blame]
     coloring = highlightRecent
 
-[diff]
-	# colorMoved = true
-	submodule = short # log # short # diff # short # log # short
+[color "diff"]
 	frag = red
-	# colorMovedWS = allow-indentation-change
 
-[diff "prettier"]
-    textconv = prettier
+[commit]
+    status = false
 
-[user]
-    name = Dan Davison
-    email = dandavison7@gmail.com
-    # useConfigOnly = true
+[core]
+    # attributesfile = ~/devenv/dotfiles/git/gitattributes
+    editor = emacsclient
+    excludesfile = ~/.gitignore
+
+[credential]
+    helper = osxkeychain
+
+[diff]
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
+	frag = red
+	submodule = short
+
+[github]
+	user = dandavison
+
+[include]
+    path = ~/devenv/dotfiles/git/delta.gitconfig
+
+[init]
+    defaultBranch = main
 
 [merge]
-    renamelimit = 10000
     conflictstyle = diff3
-
-[rebase]
-    autosquash = true
+    renamelimit = 10000
 
 [push]
     default = current
@@ -134,63 +44,24 @@
 [pull]
 	ff = only
 
+[rebase]
+    autosquash = true
+
 [status]
-    short = true
     aheadBehind = false
     hints = false
+    short = true
 
-[init]
-    defaultBranch = main
-
-[credential]
-    helper = osxkeychain
-
-[advice]
-    detachedHead = false
-
-# [format]
-# 	pretty = %C(magenta)%h %C(cyan)%cd %C(auto)%d%Creset %s
+[user]
+    email = dandavison7@gmail.com
+    name = Dan Davison
+    # useConfigOnly = true
 
 [alias]
-    bat	= !sh -c 'git -c pager.show=\"bat --file-name='$1'\" show '$*
-    blamestats = !~/git-utils/blamestats.py ${GIT_PREFIX:-.}
-    branch-by-date = !~/devenv/misc/git-branch-by-date
-    contributors = !git log --format=format:"%an" | sort | uniq -c | sort -rn
-    copy-branch = !"f() { git checkout -b $1 && git checkout - } ; f"
-    copy-head = !git head | tr -d '\n' | reattach-to-user-namespace pbcopy
-    delete-merged-current = "!f() { git branch --merged | grep -v \\* | grep -v master$ | xargs -n 1 git branch -d; }; f"
-    delete-merged-master = "!f() { git branch --merged master | grep -v '^[\\* ] master$' | xargs -n 1 git branch -d; }; f"
-    fetch-branch = "!f() { git fetch origin $1:$1 } ; f"
     fixup = commit --amend -C HEAD
-    grep-history = "!f() { git rev-list --all | xargs git grep $1 } ; f"
     head = rev-list -n1 HEAD
-    set-email-counsyl = config user.email "dan@counsyl.com"
-    set-email-public = config user.email "dandavison7@gmail.com"
-    url = config remote.origin.url
-    log1 = log \
-         --date relative \
-         --format='%n\
-%C(green) ------------------------------------------------------------------------------%n\
-%C(green)%h %C(green)%ad %ae%n\
-%n\
-    %s%n\
-%n\
-    %-b%n\
-'
-    log2 = log --graph --color --decorate --date=relative --abbrev-commit
-    log3 = log --pretty=oneline --abbrev-commit
-    log4 = log --stat
-    log5 = log --format='%C(red)%ad%C(reset) %ae %h%n%n    %s%n%n'
-    lp = "!git log --graph --color=always --format=\"%C(auto)%h%d %s %C(black)%C(bold)<%an> %cr%C(auto)\" \"$@\" \
-          | fzf --ansi -m --no-sort --reverse --tiebreak=index \
-          --preview \"(grep -o '[a-f0-9]\\{7\\}' | head -1 | xargs -I % sh -c 'git -c core.pager=cat show --color=never % | delta') <<< {}\" #"
-    log6 = log --date=format:'%a %Y-%m-%d %k:%M' --color=always --format='%n%C(green)%ad %C(blue)%an <%ae> %C(auto)%h%d%n%n %s%n%w(0,2,2)%+b%C(reset)' --compact-summary
+    logd = log --decorate
     ls = ls-files
     merge = merge --no-edit
-    playback = !~/lib/python/git-playback/playback.py ${GIT_PREFIX:-.}
-    pull = pull --verbose
-    rebase = !~/bin/git-rebase
     squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
-    state = !"echo $(git rev-parse --abbrev-ref HEAD; git rev-parse HEAD; _diff=$(git diff; git diff --cached); [ -n \"$_diff\" ] && md5sum - <<< \"$_diff\")"
-[github]
-	user = dandavison
+
