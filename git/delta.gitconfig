@@ -5,9 +5,15 @@
     diffFilter = delta --color-only
 
 [delta]
-    # light = true
-    # features = hoopoe2 decorations my-color-moved-theme consistent-color-semantics navigate # hoopoe2
-    # side-by-side = true
+    features = dan-light decorations my-color-moved-theme consistent-color-semantics navigate
+    side-by-side = false
+
+[delta "dan-light"]
+    light = true
+    features = hoopoe2
+
+[delta "dan-dark"]
+    dark = true
 
 [include]
     path = ~/src/delta/themes.gitconfig
@@ -15,8 +21,8 @@
 [delta "my-color-moved-theme"]
     git-moved-from-style = bold purple
     git-moved-to-style = bold cyan
-    map-styles = "my-color-moved-theme.git-moved-from-style => red #cccccc, \
-                  my-color-moved-theme.git-moved-to-style => syntax #cccccc"
+    map-styles = "my-color-moved-theme.git-moved-from-style => normal hoopoe2.dark-pink strike, \
+                  my-color-moved-theme.git-moved-to-style => syntax hoopoe2.dark-green ul"
 
 [delta "decorations"]
     commit-decoration-style = blue ol
@@ -88,4 +94,3 @@
     plus-style = raw
     plus-non-emph-style = raw
     plus-emph-style = raw
-
