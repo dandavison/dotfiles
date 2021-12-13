@@ -681,6 +681,7 @@
       },
       "Semantic History": {
         "action": "command",
+        "editor": "com.microsoft.VSCode",
         "text": "/Users/ddavison/.local/bin/iterm2-dwim \\1 \\4"
       },
       "Send Bell Alert": false,
