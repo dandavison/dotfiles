@@ -6,7 +6,10 @@
 
 [delta]
     features = dan-light decorations my-color-moved-theme consistent-color-semantics navigate
-    side-by-side = false
+    width = variable
+    relative-paths = true
+    hyperlinks = true
+    hyperlinks-file-link-format = "file-line://{path}:{line}"
 
 [delta "dan-light"]
     light = true

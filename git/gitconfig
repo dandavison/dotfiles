@@ -15,9 +15,6 @@
     editor = emacsclient
     excludesfile = ~/.gitignore
 
-[credential]
-    helper = osxkeychain
-
 [diff]
 	colorMoved = default
 	colorMovedWS = allow-indentation-change
@@ -64,4 +61,3 @@
     ls = ls-files
     merge = merge --no-edit
     squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
-

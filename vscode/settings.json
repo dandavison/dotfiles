@@ -107,7 +107,6 @@
   "prettier.singleQuote": true,
   "pylance.insidersChannel": "daily",
   "python.analysis.typeCheckingMode": "basic",
-  "python.defaultInterpreterPath": "/Users/dan/.pyenv/shims/python",
   "python.envFile": "${workspaceFolder}/.env.dev",
   "python.formatting.blackArgs": ["--fast"],
   "python.formatting.provider": "black",
@@ -309,5 +308,9 @@
   "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
   "editor.gotoLocation.multipleReferences": "gotoAndPeek",
   "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
-  "rewrap.wrappingColumn": 100
+  "rewrap.wrappingColumn": 100,
+  "security.workspace.trust.banner": "never",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
