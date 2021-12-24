@@ -1,4 +1,7 @@
 {
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -16,15 +19,23 @@
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"
   },
+  "alt-editor.args": "--line {line} --column {column} {filename}",
+  "alt-editor.binary": "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea",
   "breadcrumbs.symbolPath": "off",
   "diffEditor.renderSideBySide": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
   "editor.formatOnSave": true,
+  "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
+  "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
+  "editor.gotoLocation.multipleReferences": "gotoAndPeek",
+  "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
+  "editor.guides.indentation": false,
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
   "editor.lineNumbers": "off",
+  "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.overviewRulerBorder": false,
@@ -42,6 +53,7 @@
   "editor.suggest.showTypeParameters": true,
   "editor.suggestSelection": "first",
   "editor.wordBasedSuggestions": false,
+  "editor.wordSeparators": "_`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
     "django-html": "html"
@@ -52,25 +64,26 @@
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
     "**/*.html": "html",
+    "**/*.strato": "scala",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "**/templates/**/*": "django-txt",
     "**/templates/**/*.html": "django-html"
   },
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
     "**/*.class": true,
     "**/*.olean": true,
     "**/.*": true,
     "**/.*_cache": true,
+    "**/.DS_Store": true,
     "**/.classpath": true,
     "**/.factorypath": true,
+    "**/.git": true,
+    "**/.hg": true,
     "**/.project": true,
     "**/.settings": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/Thumbs.db": true,
     "**/__pycache__": true,
     "**/staticfiles": true,
     "docs/_book": true,
@@ -122,9 +135,12 @@
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
+  "rewrap.wrappingColumn": 100,
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
   "rust-analyzer.inlayHints.enable": false,
+  "rust-analyzer.inlayHints.maxLength": null,
+  "rust-client.updateOnStartup": true,
   "saveEditorLayout.list": [
     {
       "documents": [
@@ -155,6 +171,8 @@
   ],
   "scm.diffDecorationsGutterVisibility": "hover",
   "search.showLineNumbers": false,
+  "security.workspace.trust.banner": "never",
+  "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.untrustedFiles": "open",
   "settings.cycle": [
     {
@@ -232,6 +250,44 @@
   ],
   "settings.cycle.logLevel": "log",
   "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
+  "sourcegraph.url": "https://sourcegraph.twitter.biz/",
+  "statusbar_command.commands": [
+    {
+      "alignment": "right",
+      "command": "workbench.action.openWorkspaceSettings",
+      "id": "sbc_settings",
+      "name": "settings",
+      "priority": -1000,
+      "text": "$(gear)",
+      "tooltip": "workspace settings"
+    },
+    {
+      "alignment": "right",
+      "command": "workbench.action.terminal.toggleTerminal",
+      "id": "sbc_terminal",
+      "name": "Terminal",
+      "priority": 1000,
+      "text": "$(terminal)",
+      "tooltip": "Terminal"
+    },
+    {
+      "alignment": "right",
+      "command": "github.copilot.toggleCopilot",
+      "id": "sbc.copilot",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('github.copilot.inlineSuggest').enable ? '$(github)' : '$(circle-large-outline)'",
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
+      "text": "Github Copilot"
+    },
+    {
+      "alignment": "right",
+      "command": "dan.zen",
+      "id": "sbc.zen",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').matchBrackets === 'never' ? '$(circle-slash)' : '$(circle-large-outline)'",
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
+      "text": "Zen Squiggles"
+    }
+  ],
+  "task.saveBeforeRun": "never",
   "terminal.explorerKind": "external",
   "terminal.external.osxExec": "iTerm 2.app",
   "terminal.integrated.tabs.enabled": false,
@@ -240,7 +296,13 @@
   "window.nativeFullScreen": false,
   "window.zoomLevel": 1,
   "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
+  },
   "workbench.colorTheme": "GitHub Light",
+  "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
@@ -254,65 +316,5 @@
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
-  "zenMode.restore": true,
-  "editor.guides.indentation": false,
-  "rust-analyzer.inlayHints.maxLength": null,
-  "alt-editor.binary": "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea",
-  "alt-editor.args": "--line {line} --column {column} {filename}",
-  "editor.wordSeparators": "_`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
-  "statusbar_command.commands": [
-    {
-      "text": "$(gear)",
-      "tooltip": "workspace settings",
-      "id": "sbc_settings",
-      "name": "settings",
-      "priority": -1000,
-      "alignment": "right",
-      "command": "workbench.action.openWorkspaceSettings"
-    },
-    {
-      "text": "$(terminal)",
-      "tooltip": "Terminal",
-      "id": "sbc_terminal",
-      "name": "Terminal",
-      "alignment": "right",
-      "priority": 1000,
-      "command": "workbench.action.terminal.toggleTerminal"
-    },
-    {
-      "alignment": "right",
-      "command": "github.copilot.toggleCopilot",
-      "id": "sbc.copilot",
-      "text": "Github Copilot",
-      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
-      "script": "statusBarItem.text = vscode.workspace.getConfiguration('github.copilot.inlineSuggest').enable ? '$(github)' : '$(circle-large-outline)'"
-    },
-    {
-      "alignment": "right",
-      "command": "dan.zen",
-      "id": "sbc.zen",
-      "text": "Zen Squiggles",
-      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
-      "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').matchBrackets === 'never' ? '$(circle-slash)' : '$(circle-large-outline)'"
-    }
-  ],
-  "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
-  },
-  "security.workspace.trust.startupPrompt": "never",
-  "task.saveBeforeRun": "never",
-  "editor.matchBrackets": "always",
-  "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
-  "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
-  "editor.gotoLocation.multipleReferences": "gotoAndPeek",
-  "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
-  "rewrap.wrappingColumn": 100,
-  "security.workspace.trust.banner": "never",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "rust-client.updateOnStartup": true,
-  "workbench.editor.untitled.hint": "hidden"
+  "zenMode.restore": true
 }
