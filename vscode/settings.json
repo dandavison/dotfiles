@@ -224,6 +224,18 @@
       ]
     },
     {
+      "id": "rust-analyzer-inlay-hints",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "rust-analyzer.inlayHints.enable": false
+        },
+        {
+          "rust-analyzer.inlayHints.enable": true
+        }
+      ]
+    },
+    {
       "id": "zen",
       "overrideWorkspaceSettings": true,
       "values": [
@@ -277,6 +289,13 @@
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('github.copilot.inlineSuggest').enable ? '$(github)' : '$(circle-large-outline)'",
       "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Github Copilot"
+    },
+    {
+      "alignment": "right",
+      "id": "sbc.rust-analyzer-inlay-hints",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('rust-analyzer.inlayHints').enable ? '$(extensions-info-message)' : '$(circle-large-outline)'",
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
+      "text": "rust-analyzer inlay hints"
     },
     {
       "alignment": "right",

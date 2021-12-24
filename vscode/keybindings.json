@@ -255,6 +255,11 @@
     "when": "editorFocus"
   },
   {
+    "key": "ctrl+x r",
+    "command": "settings.cycle.rust-analyzer-inlay-hints",
+    "when": "editorFocus"
+  },
+  {
     "key": "ctrl+x shift+ctrl+D",
     "command": "workbench.action.debug.stop",
     "when": "inDebugMode && !focusedSessionIsAttach"
