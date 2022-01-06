@@ -97,7 +97,7 @@
   "github.copilot.enable": {
     "*": true
   },
-  "github.copilot.inlineSuggest.enable": true,
+  "github.copilot.inlineSuggest.enable": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
@@ -105,6 +105,9 @@
   "gitlens.hovers.enabled": false,
   "java.project.importOnFirstTimeStartup": "automatic",
   "magit.hide-status-sections": [
+    "issues",
+    "pull requests",
+    "untracked",
     "recent commits",
     "unpulled",
     "unpushed",
@@ -286,14 +289,14 @@
       "alignment": "right",
       "command": "github.copilot.toggleCopilot",
       "id": "sbc.copilot",
-      "script": "statusBarItem.text = vscode.workspace.getConfiguration('github.copilot.inlineSuggest').enable ? '$(github)' : '$(circle-large-outline)'",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('github.copilot.inlineSuggest').enable ? '$(github)' : ''",
       "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Github Copilot"
     },
     {
       "alignment": "right",
       "id": "sbc.rust-analyzer-inlay-hints",
-      "script": "statusBarItem.text = vscode.workspace.getConfiguration('rust-analyzer.inlayHints').enable ? '$(extensions-info-message)' : '$(circle-large-outline)'",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('rust-analyzer.inlayHints').enable ? '$(extensions-info-message)' : ''",
       "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "rust-analyzer inlay hints"
     },
@@ -301,7 +304,7 @@
       "alignment": "right",
       "command": "dan.zen",
       "id": "sbc.zen",
-      "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').matchBrackets === 'never' ? '$(circle-slash)' : '$(circle-large-outline)'",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').matchBrackets === 'never' ? '$(circle-slash)' : ''",
       "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Zen Squiggles"
     }
@@ -320,7 +323,7 @@
     "editorInfo.foreground": "blue",
     "editorWarning.foreground": "orange"
   },
-  "workbench.colorTheme": "GitHub Light",
+  "workbench.colorTheme": "Default Light+",
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"

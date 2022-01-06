@@ -1,5 +1,10 @@
 [
   {
+    "key": "alt+/",
+    "command": "actions.find",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "alt+,",
     "command": "extension.multiCommand.execute",
     "args": {
@@ -56,8 +61,8 @@
   },
   {
     "key": "cmd+;",
-    "command": "editor.action.blockComment",
-    "when": "editorTextFocus && !editorReadonly"
+    "command": "highlight.selectedWords",
+    "when": "editorTextFocus"
   },
   {
     "key": "cmd+\\",
@@ -352,5 +357,17 @@
   {
     "key": "cmd+u",
     "command": "workbench.action.files.revert"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "extension.search"
+  },
+  {
+    "key": "alt+q",
+    "command": "-extension.search"
+  },
+  {
+    "key": "alt+u",
+    "command": "editor.action.transformToUppercase"
   }
 ]
