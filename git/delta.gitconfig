@@ -5,11 +5,12 @@
     diffFilter = delta --color-only
 
 [delta]
-    features = dan-light decorations my-color-moved-theme consistent-color-semantics navigate
-    width = variable
-    relative-paths = true
-    hyperlinks = true
-    hyperlinks-file-link-format = "file-line://{path}:{line}"
+   features = decorations navigate chtenb-light # my-color-moved-theme # consistent-color-semantics
+   # width = variable
+   # relative-paths = true
+   hyperlinks = true
+   hyperlinks-file-link-format = "file-line://{path}:{line}"
+   diff-stat-align-width = 50
 
 [delta "dan-light"]
     light = true
@@ -17,6 +18,7 @@
 
 [delta "dan-dark"]
     dark = true
+    features = solarized-dark
 
 [include]
     path = ~/src/delta/themes.gitconfig
@@ -35,6 +37,11 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
+
+[delta "blame"]
+    blame-separator-style = red
+    blame-code-style=syntax
+    blame-format= {author:<15.14}
 
 [delta "consistent-color-semantics"]
     # All added/removed content is styled the same, regardless of
@@ -71,14 +78,14 @@
 
 [delta "solarized-dark"]
     syntax-theme = Solarized (dark)
-    pink-color = lightpink
-    blue-color = lightskyblue
-    minus-style = normal solarized-dark.pink-color
-    plus-style = syntax solarized-dark.blue-color
-    minus-emph-style = minus-style
-    plus-emph-style = plus-style
-    minus-non-emph-style = normal ul
-    plus-non-emph-style = syntax ul
+    # pink-color = lightpink
+    # blue-color = lightskyblue
+    # minus-style = normal solarized-dark.pink-color
+    # plus-style = syntax solarized-dark.blue-color
+    # minus-emph-style = minus-style
+    # plus-emph-style = plus-style
+    # minus-non-emph-style = normal ul
+    # plus-non-emph-style = syntax ul
 
 [delta "grep"]
     # grep-match-style = syntax "#ffffaa"

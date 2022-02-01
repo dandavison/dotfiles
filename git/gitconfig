@@ -2,10 +2,10 @@
     detachedHead = false
 
 [blame]
-    coloring = highlightRecent
+    # coloring = highlightRecent
 
 [color "diff"]
-	frag = red
+    frag = red
 
 [commit]
     status = false
@@ -16,13 +16,20 @@
     excludesfile = ~/.gitignore
 
 [diff]
-	colorMoved = default
-	colorMovedWS = allow-indentation-change
-	frag = red
-	submodule = short
+    colorMoved = default
+    colorMovedWS = allow-indentation-change
+    frag = red
+    submodule = short
+    tool = difftastic
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
 
 [github]
-	user = dandavison
+    user = dandavison
 
 [include]
     path = ~/devenv/dotfiles/git/delta.gitconfig
@@ -36,10 +43,9 @@
 
 [push]
     default = current
-	followTags = true
 
 [pull]
-	ff = only
+    ff = only
 
 [rebase]
     autosquash = true
@@ -50,14 +56,12 @@
     short = true
 
 [user]
-    email = dandavison7@gmail.com
-    name = Dan Davison
-    # useConfigOnly = true
+    useConfigOnly = true
 
 [alias]
     fixup = commit --amend -C HEAD
     head = rev-list -n1 HEAD
     logd = log --decorate
-    ls = ls-files
-    merge = merge --no-edit
-    squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
+	ls = ls-files
+	# merge = merge --no-edit
+	# squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
