@@ -407,7 +407,7 @@
   "command-runner.terminal.autoClear": false,
   "command-runner.terminal.autoFocus": false,
   "command-runner.commands": {
-    "magit": "(cd ${fileDirname} && emacs-magit-status)",
+    "magit": "(cd ${fileDirname}; emacs-magit-status)",
   },
   "[toml]": {
     "editor.defaultFormatter": "bodil.prettier-toml"

@@ -411,7 +411,7 @@
       "Character Encoding": 4,
       "Close Sessions On End": true,
       "Columns": 80,
-      "Command": "zsh",
+      "Command": "/Users/ddavison/bin/nu",
       "Cursor Boost": 0,
       "Cursor Color": {
         "Alpha Component": 1,
