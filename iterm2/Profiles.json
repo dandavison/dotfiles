@@ -521,7 +521,12 @@
       "HotKey Window Floats": true,
       "HotKey Window Reopens On Activation": false,
       "Idle Code": 0,
-      "Jobs to Ignore": ["rlogin", "ssh", "slogin", "telnet"],
+      "Jobs to Ignore": [
+        "rlogin",
+        "ssh",
+        "slogin",
+        "telnet"
+      ],
       "Keyboard Map": {
         "0x3f-0x120000": {
           "Action": 11,
@@ -762,7 +767,9 @@
         "Green Component": 0.2984687089920044,
         "Red Component": 0.2788150906562805
       },
-      "Tags": ["Dynamic"],
+      "Tags": [
+        "Dynamic"
+      ],
       "Terminal Type": "xterm-256color",
       "Thin Strokes": 4,
       "Title Components": 3,

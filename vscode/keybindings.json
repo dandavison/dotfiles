@@ -1,10 +1,5 @@
 [
   {
-    "key": "alt+/",
-    "command": "actions.find",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "alt+,",
     "command": "extension.multiCommand.execute",
     "args": {
@@ -36,12 +31,17 @@
     "when": "editorTextFocus && foldingEnabled"
   },
   {
+    "key": "alt+backspace",
+    "command": "deleteWordLeft",
+    "when": "terminalFocus"
+  },
+  {
     "key": "cmd+/",
     "command": "-editor.action.commentLine",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "cmd+/",
+    "key": "cmd+'",
     "command": "extension.multiCommand.execute",
     "args": {
       "sequence": [
@@ -52,10 +52,12 @@
     "when": "panelFocus"
   },
   {
-    "key": "cmd+/",
+    "key": "cmd+'",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": ["workbench.action.focusPanel"]
+      "sequence": [
+        "workbench.action.focusPanel"
+      ]
     },
     "when": "!panelFocus"
   },
@@ -292,7 +294,10 @@
     "key": "enter",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": ["list.select", "workbench.action.keepEditor"]
+      "sequence": [
+        "list.select",
+        "workbench.action.keepEditor"
+      ]
     },
     "when": "listFocus"
   },
@@ -327,7 +332,7 @@
     "when": "editorTextFocus && foldingEnabled"
   },
   {
-    "key": "cmd+u",
+    "key": "ctrl+shift+tab",
     "command": "editor.unfoldAll",
     "when": "editorTextFocus && foldingEnabled"
   },
@@ -335,10 +340,6 @@
     "key": "cmd+k cmd+j",
     "command": "-editor.unfoldAll",
     "when": "editorTextFocus && foldingEnabled"
-  },
-  {
-    "key": "alt+j",
-    "command": "workbench.action.navigateBack"
   },
   {
     "key": "ctrl+-",
@@ -367,7 +368,93 @@
     "command": "-extension.search"
   },
   {
-    "key": "alt+u",
+    "key": "alt+y",
     "command": "editor.action.transformToUppercase"
+  },
+  {
+    "key": "shift+cmd+;",
+    "command": "copyRelativeFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "shift+alt+cmd+c",
+    "command": "-copyRelativeFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "cmd+backspace",
+    "command": "alt-editor.openFile",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+e",
+    "command": "-alt-editor.openFile",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "shift+cmd+right",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "alt+h",
+    "command": "highlightwords.addHighlight"
+  },
+  {
+    "key": "cmd+m",
+    "command": "command-runner.run",
+    "args": {
+      "command": "magit"
+    }
+  },
+  {
+    "key": "shift+alt+h",
+    "command": "highlightwords.removeAllHighlights"
+  },
+  {
+    "key": "cmd+,",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+k cmd+i",
+    "command": "-editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+o",
+    "command": "sourcegraph.openInBrowser"
+  },
+  {
+    "key": "shift+cmd+down",
+    "command": "outline.focus"
+    //    "when": "workbench.explorer.folderView.active"
+  },
+  {
+    "key": "cmd+k e",
+    "command": "-workbench.files.action.focusOpenEditorsView",
+    "when": "workbench.explorer.openEditorsView.active"
+  },
+  {
+    "key": "shift+cmd+up",
+    "command": "workbench.explorer.fileView.focus"
+    //  "when": "workbench.explorer.outlineView.active"
+  },
+  {
+    "key": "alt+/",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd"
+  },
+  {
+    "key": "alt+/",
+    "command": "-toggleSuggestionDetails",
+    "when": "editorTextFocus && suggestWidgetVisible && !config.emacs-mcx.useMetaPrefixMacCmd"
   }
 ]

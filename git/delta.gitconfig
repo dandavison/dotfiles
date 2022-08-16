@@ -1,15 +1,19 @@
 [core]
-    pager = delta
+    pager = delta --light
 
 [interactive]
     diffFilter = delta --color-only
 
 [delta]
-   features = decorations navigate chtenb-light # my-color-moved-theme # consistent-color-semantics
+   line-numbers-minus-style = minus-emph-style
+   line-numbers-plus-style = plus-emph-style
+   line-numbers-left-style = omit
+   line-numbers-right-style = omit
+   features = decorations navigate chtenb-light my-color-moved-theme-2 # consistent-color-semantics
    # width = variable
-   # relative-paths = true
+   relative-paths = true
    hyperlinks = true
-   hyperlinks-file-link-format = "file-line://{path}:{line}"
+   hyperlinks-file-link-format = "file-line-column://{path}:{line}"
    diff-stat-align-width = 50
 
 [delta "dan-light"]
@@ -28,6 +32,14 @@
     git-moved-to-style = bold cyan
     map-styles = "my-color-moved-theme.git-moved-from-style => normal hoopoe2.dark-pink strike, \
                   my-color-moved-theme.git-moved-to-style => syntax hoopoe2.dark-green ul"
+
+[delta "my-color-moved-theme-2"]
+    pink = "#ffe0e0"
+    green = "#d0ffd0"
+    git-moved-from-style = bold purple
+    git-moved-to-style = bold cyan
+    map-styles = "my-color-moved-theme.git-moved-from-style => normal my-color-moved-theme-2.pink ul, \
+                  my-color-moved-theme.git-moved-to-style => syntax my-color-moved-theme-2.green ul"
 
 [delta "decorations"]
     commit-decoration-style = blue ol
