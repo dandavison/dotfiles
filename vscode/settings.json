@@ -271,8 +271,9 @@
       "alignment": "left",
       "scriptFile": "/Users/ddavison/src/devenv/dotfiles/vscode/statusbar_commands/bsp-status.js",
       "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration",
-        "vscode.window.onDidChangeActiveTextEditor"
+        "vscode.workspace.onDidSaveTextDocument",
+        "vscode.window.onDidChangeActiveTextEditor",
+        "vscode.workspace.onDidChangeConfiguration"
       ],
       "id": "sbc.bsp-status",
       "name": "BSP status",
