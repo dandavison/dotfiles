@@ -396,7 +396,7 @@
     "command": "-workbench.action.navigateForward"
   },
   {
-    "key": "alt+j",
+    "key": "shift+cmd+left",
     "command": "workbench.action.navigateBack"
   },
   {

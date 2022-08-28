@@ -60,14 +60,15 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
+    // "**/*.aurora": "python",
     "**/*.gitconfig": "toml",
     "**/*.strato": "scala",
     "**/*.html": "html",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "**/templates/**/*": "django-txt",
     "**/templates/**/*.html": "django-html",
-    "BUILD": "python",
-    "BUILD.bazel": "python",
+    // "BUILD": "python",
+    // "BUILD.bazel": "python",
     "config": "toml"
   },
   "files.exclude": {
@@ -273,9 +274,9 @@
         "vscode.workspace.onDidChangeConfiguration",
         "vscode.window.onDidChangeActiveTextEditor"
       ],
-      "id":  "sbc.bsp-status",
+      "id": "sbc.bsp-status",
       "name": "BSP status",
-      "text": "<BSP status>",
+      "text": "<BSP status>"
     },
     {
       "alignment": "right",
@@ -407,7 +408,7 @@
   "command-runner.terminal.autoClear": false,
   "command-runner.terminal.autoFocus": false,
   "command-runner.commands": {
-    "magit": "(cd ${fileDirname}; emacs-magit-status)",
+    "magit": "(cd ${fileDirname}; emacs-magit-status)"
   },
   "[toml]": {
     "editor.defaultFormatter": "bodil.prettier-toml"
@@ -428,7 +429,6 @@
   "yaml.schemas": {
     "file:///Users/ddavison/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
-  "editor.formatOnSave": true,
   "workbench.colorTheme": "Default Light+",
   "python.venvPath": "~/tmp/virtualenvs",
   "python.linting.flake8Args": [
