@@ -437,5 +437,9 @@
     "200"
   ],
   "window.zoomLevel": 1,
-  "git.mergeEditor": false
+  "git.mergeEditor": false,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
