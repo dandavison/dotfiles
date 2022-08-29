@@ -160,6 +160,18 @@
   "security.workspace.trust.untrustedFiles": "open",
   "settings.cycle": [
     {
+      "id": "formatOnSave",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "editor.formatOnSave": true
+        },
+        {
+          "editor.formatOnSave": false
+        }
+      ]
+    },
+    {
       "id": "indentGuides",
       "overrideWorkspaceSettings": true,
       "values": [
@@ -278,6 +290,15 @@
       "id": "sbc.bsp-status",
       "name": "BSP status",
       "text": "<BSP status>"
+    },
+    {
+      "alignment": "right",
+      "id": "formatOnSave",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').formatOnSave ? '⚡': ''",
+      "scriptEvents": [
+        "vscode.workspace.onDidChangeConfiguration"
+      ],
+      "text": "Format on save"
     },
     {
       "alignment": "right",

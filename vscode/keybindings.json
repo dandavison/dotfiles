@@ -242,6 +242,11 @@
     "when": "editorTextFocus && !inDebugRepl"
   },
   {
+    "key": "ctrl+x f",
+    "command": "settings.cycle.formatOnSave",
+    "when": "editorFocus"
+  },
+  {
     "key": "ctrl+x g",
     "command": "workbench.action.tasks.runTask",
     "args": "emacs-magit-status"
