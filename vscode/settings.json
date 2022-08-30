@@ -3,7 +3,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
@@ -32,7 +32,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
   "editor.lineNumbers": "off",
-  "editor.matchBrackets": "always",
+  "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.overviewRulerBorder": false,
@@ -60,15 +60,15 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
-    // "**/*.aurora": "python",
+    "**/*.aurora": "python",
     "**/*.gitconfig": "toml",
     "**/*.strato": "scala",
     "**/*.html": "html",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "**/templates/**/*": "django-txt",
     "**/templates/**/*.html": "django-html",
-    // "BUILD": "python",
-    // "BUILD.bazel": "python",
+    "BUILD": "python",
+    "BUILD.bazel": "python",
     "config": "toml"
   },
   "files.exclude": {
@@ -121,29 +121,18 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "prettier.documentSelectors": [
-    "*.ts"
-  ],
+  "prettier.documentSelectors": ["*.ts"],
   "prettier.singleQuote": true,
   "python.analysis.typeCheckingMode": "basic",
   "python.envFile": "${workspaceFolder}/.env.dev",
-  "python.formatting.blackArgs": [
-    "--fast",
-    "--line-length",
-    "99"
-  ],
+  "python.formatting.blackArgs": ["--fast", "--line-length", "99"],
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.mypyArgs": [
-    "--check-untyped-defs"
-  ],
+  "python.linting.mypyArgs": ["--check-untyped-defs"],
   "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
-  "python.linting.pylintArgs": [
-    "--load-plugins",
-    "--rcfile=.pylintrc"
-  ],
+  "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
   "python.linting.pylintEnabled": false,
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "python.testing.promptToConfigure": false,
@@ -257,9 +246,7 @@
     }
   ],
   "settings.cycle.logLevel": "log",
-  "settingsSync.ignoredExtensions": [
-    "esbenp.prettier-vscode"
-  ],
+  "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
   "statusbar_command.commands": [
     {
       "alignment": "right",
@@ -289,15 +276,13 @@
       ],
       "id": "sbc.bsp-status",
       "name": "BSP status",
-      "text": "<BSP status>"
+      "text": "<BSP status 2>"
     },
     {
       "alignment": "right",
       "id": "formatOnSave",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').formatOnSave ? '⚡': ''",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Format on save"
     },
     {
@@ -305,18 +290,14 @@
       "command": "github.copilot.toggleCopilot",
       "id": "sbc.copilot",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('github.copilot.inlineSuggest').enable ? '$(github)' : ''",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Github Copilot"
     },
     {
       "alignment": "right",
       "id": "sbc.rust-analyzer-inlay-hints",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('rust-analyzer.inlayHints').enable ? '$(extensions-info-message)' : ''",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "rust-analyzer inlay hints"
     },
     {
@@ -324,9 +305,7 @@
       "command": "dan.zen",
       "id": "sbc.zen",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').matchBrackets === 'never' ? '$(circle-slash)' : ''",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Zen Squiggles"
     }
   ],
@@ -336,9 +315,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
+    "editorError.foreground": "#00000000",
+    "editorInfo.foreground": "#00000000",
+    "editorWarning.foreground": "#00000000"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
@@ -351,15 +330,8 @@
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.restore": true,
-  "metals.serverProperties": [
-    "-Xmx20G",
-    "-XX:MaxInlineLevel=20",
-    "-XX:+UseParallelGC",
-    "-Dmetals.statistics=all"
-  ],
-  "timeline.excludeSources": [
-    "git-history"
-  ],
+  "metals.serverProperties": ["-Xmx20G", "-XX:MaxInlineLevel=20", "-XX:+UseParallelGC", "-Dmetals.statistics=all"],
+  "timeline.excludeSources": ["git-history"],
   "editor.guides.indentation": false,
   "sourcegraph.remoteUrlReplacements": {
     "git.twitter.biz": "git.twitter.biz/ro"
@@ -453,13 +425,10 @@
   },
   "workbench.colorTheme": "Default Light+",
   "python.venvPath": "~/tmp/virtualenvs",
-  "python.linting.flake8Args": [
-    "--max-line-length",
-    "200"
-  ],
+  "python.linting.flake8Args": ["--max-line-length", "200"],
   "window.zoomLevel": 1,
   "git.mergeEditor": false,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   }
