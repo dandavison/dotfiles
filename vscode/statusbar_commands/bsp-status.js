@@ -1,9 +1,10 @@
-const { existsSync, readlinkSync } = require('fs');
+const { access, readlink } = require('fs/promises');
+const { constants, existsSync } = require('fs');
 const { basename, dirname, join } = require('node:path');
-const { spawnSync } = require('node:child_process');
+const { spawn } = require('node:child_process');
 
-function getBuild(repoRoot) {
-    return basename(dirname(readlinkSync(repoRoot + '/' + '.bloop')))
+async function getBuild(repoRoot) {
+    return basename(dirname(await readlink(repoRoot + '/' + '.bloop')))
 };
 
 function getRepoRoot(path) {
@@ -11,9 +12,9 @@ function getRepoRoot(path) {
     return match && match[1];
 }
 
-function getBspStatus(path, repoRoot) {
+async function getBspStatus(path, repoRoot) {
     log(`Searching for BUILD file for path: ${path}`)
-    let dir = getProjectDir(path)
+    let dir = await getProjectDir(path)
     if (!dir) {
         log(`Warning: no BUILD file for path: ${path}`)
         return '[ No BUILD file ]'
@@ -22,17 +23,18 @@ function getBspStatus(path, repoRoot) {
 
     let relativeDir = dir.replace(new RegExp(`^${repoRoot}/`), '')
     let bloopProject = `${relativeDir}:${basename(dir)}`
-    let result = spawnSync('bloop', ['compile', '--no-color', '--config-dir', join(repoRoot, '.bloop'), bloopProject])
-    if (result.status == 0) {
+    let result = spawn('bloop', ['compile', '--no-color', '--config-dir', join(repoRoot, '.bloop'), bloopProject])
+    let stderr = await readAll(result.stderr);
+    if (stderr.length == 0) {
         log(`🟢 Compiled bloop project: ${bloopProject}`)
         return '🟢'
     } else {
-        let stderr = result.stderr.toString();
+        log(`stderr: ${stderr}`)
         if (stderr.match(new RegExp(`No projects named '${bloopProject}' were found `))) {
             return `[ project not in build: ${bloopProject} ]`
         } else {
             log(`🔴 Error compiling bloop project: ${bloopProject}:\n${indent(stderr)}`)
-            return `🔴 ${truncate(stderr, 100, '…')}`
+            return `🔴 ${stderr.slice(0, 50)}`
         }
     }
 }
@@ -52,7 +54,7 @@ function truncate(s, n, suffix) {
     }
 }
 
-function getProjectDir(path) {
+async function getProjectDir(path) {
     // Return enclosing dir containing BUILD file
     let dir = dirname(path);
     if (existsSync(join(dir, "BUILD")) || existsSync(join(dir, "BUILD.bazel"))) {
@@ -62,13 +64,27 @@ function getProjectDir(path) {
     }
 }
 
+// TODO
+// async function exists(path) {
+//     return await access(path, constants.F_OK, (err) => !err)
+// }
+
+async function readAll(asyncIter) {
+    let data = "";
+    for await (const chunk of asyncIter) {
+        data += chunk;
+    }
+    return data
+}
+
+statusBarItem.text = '🟠'
 let path = vscode.window.activeTextEditor?.document.uri.path;
 let repoRoot = path ? getRepoRoot(path) : null;
 if (repoRoot) {
     let checkout = basename(repoRoot)
-    let build = getBuild(repoRoot)
-    let bspStatus = getBspStatus(path, repoRoot)
+    let build = await getBuild(repoRoot)
+    let bspStatus = await getBspStatus(path, repoRoot)
     statusBarItem.text = `${checkout} ${build} ${bspStatus}`;
 } else {
-    statusBarItem.text = `${vscode.workspace.name} [ non-BSP xxxxyyzzz ]`;
+    statusBarItem.text = `${vscode.workspace.name} [ non-BSP ]`;
 }
