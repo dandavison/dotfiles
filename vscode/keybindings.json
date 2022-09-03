@@ -471,5 +471,15 @@
     "key": "shift+cmd+[",
     "command": "workbench.action.previousPanelView",
     "when": "panelFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "emacs-mcx.paredit.killSexp",
+    "when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "-emacs-mcx.paredit.killSexp",
+    "when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd"
   }
 ]

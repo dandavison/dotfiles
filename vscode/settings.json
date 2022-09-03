@@ -32,7 +32,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
   "editor.lineNumbers": "off",
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.overviewRulerBorder": false,
@@ -67,8 +67,8 @@
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "**/templates/**/*": "django-txt",
     "**/templates/**/*.html": "django-html",
-    "BUILD": "python",
-    "BUILD.bazel": "python",
+    // "BUILD": "python",
+    // "BUILD.bazel": "python",
     "config": "toml"
   },
   "files.exclude": {
@@ -129,7 +129,6 @@
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true,
   "python.linting.mypyArgs": ["--check-untyped-defs"],
   "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
   "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
@@ -143,7 +142,7 @@
   // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
   "rust-analyzer.inlayHints.maxLength": null,
   "scm.diffDecorationsGutterVisibility": "hover",
-  "search.showLineNumbers": false,
+  "search.showLineNumbers": true,
   "security.workspace.trust.banner": "always",
   "security.workspace.trust.startupPrompt": "always",
   "security.workspace.trust.untrustedFiles": "open",
@@ -226,6 +225,7 @@
       "values": [
         {
           "dan.ZenPlus": true,
+          "errorLens.enabled": false,
           "editor.matchBrackets": "never",
           "workbench.colorCustomizations": {
             "editorError.foreground": "#00000000",
@@ -235,6 +235,7 @@
         },
         {
           "dan.ZenPlus": false,
+          "errorLens.enabled": true,
           "editor.matchBrackets": "always",
           "workbench.colorCustomizations": {
             "editorError.foreground": "red",
@@ -276,7 +277,7 @@
       ],
       "id": "sbc.bsp-status",
       "name": "BSP status",
-      "text": "<BSP status 2>"
+      "text": "<BSP status>"
     },
     {
       "alignment": "right",
@@ -315,9 +316,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "#00000000",
-    "editorInfo.foreground": "#00000000",
-    "editorWarning.foreground": "#00000000"
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
@@ -331,7 +332,6 @@
   "zenMode.hideLineNumbers": false,
   "zenMode.restore": true,
   "metals.serverProperties": ["-Xmx20G", "-XX:MaxInlineLevel=20", "-XX:+UseParallelGC", "-Dmetals.statistics=all"],
-  "timeline.excludeSources": ["git-history"],
   "editor.guides.indentation": false,
   "sourcegraph.remoteUrlReplacements": {
     "git.twitter.biz": "git.twitter.biz/ro"
@@ -423,7 +423,6 @@
   "yaml.schemas": {
     "file:///Users/ddavison/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
-  "workbench.colorTheme": "Default Light+",
   "python.venvPath": "~/tmp/virtualenvs",
   "python.linting.flake8Args": ["--max-line-length", "200"],
   "window.zoomLevel": 1,
@@ -431,5 +430,9 @@
   "editor.formatOnSave": false,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  },
+  "workbench.colorTheme": "Default Light+",
+  "editor.suggest.showInlineDetails": false,
+  "editor.codeLens": false,
+  "errorLens.enabled": true
 }
