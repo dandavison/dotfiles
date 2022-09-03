@@ -23,19 +23,50 @@ async function getBspStatus(path, repoRoot) {
 
     let relativeDir = dir.replace(new RegExp(`^${repoRoot}/`), '')
     let bloopProject = `${relativeDir}:${basename(dir)}`
+    let compiled = await compile(repoRoot, bloopProject)
+    let status = compiled ? '🟢': '🔴'
+    if (compiled && isTest(path)) {
+        let testsPassed = await runTests(repoRoot, bloopProject)
+        status += ' '
+        status += testsPassed === null ? '❗': (testsPassed ? '🟢': '🔴')
+    }
+    return status
+}
+
+async function compile(repoRoot, bloopProject) {
     let result = spawn('bloop', ['compile', '--no-color', '--config-dir', join(repoRoot, '.bloop'), bloopProject])
     let stderr = await readAll(result.stderr);
     if (stderr.length == 0) {
         log(`🟢 Compiled bloop project: ${bloopProject}`)
-        return '🟢'
+        return true
     } else {
-        log(`stderr: ${stderr}`)
         if (stderr.match(new RegExp(`No projects named '${bloopProject}' were found `))) {
             return `[ project not in build: ${bloopProject} ]`
         } else {
             log(`🔴 Error compiling bloop project: ${bloopProject}:\n${indent(stderr)}`)
-            return `🔴 ${stderr.slice(0, 50)}`
+            return false
         }
+    }
+}
+
+function isTest(path) {
+    return path.endsWith("Test.scala")
+}
+
+async function runTests(repoRoot, bloopProject) {
+    let result = spawn('bloop', ['test', '--no-color', '--config-dir', join(repoRoot, '.bloop'), bloopProject])
+    let stderr = await readAll(result.stderr);
+    if (stderr.length !== 0) {
+        log(`Error: failed to run tests in bloop project: ${bloopProject}:\n${indent(stderr)}`)
+        return null
+    }
+    let stdout = await readAll(result.stdout);
+    if (!!stdout.match(/All tests in .+ passed/)) { // TODO! Acquire the exit status of the child process async/await
+        log(`🟢 Tests passed in bloop project: ${bloopProject}`)
+        return true
+    } else {
+        log(`🔴 Tests failed in bloop project: ${bloopProject}:\n${indent(stdout)}`)
+        return false
     }
 }
 
