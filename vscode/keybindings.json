@@ -3,10 +3,7 @@
     "key": "alt+,",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": [
-        "editor.action.addSelectionToNextFindMatch",
-        "workbench.action.findInFiles"
-      ]
+      "sequence": ["editor.action.addSelectionToNextFindMatch", "workbench.action.findInFiles"]
     },
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
@@ -44,10 +41,7 @@
     "key": "cmd+'",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": [
-        "workbench.action.focusFirstEditorGroup",
-        "workbench.action.togglePanel"
-      ]
+      "sequence": ["workbench.action.focusFirstEditorGroup", "workbench.action.togglePanel"]
     },
     "when": "panelFocus"
   },
@@ -55,9 +49,7 @@
     "key": "cmd+'",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": [
-        "workbench.action.focusPanel"
-      ]
+      "sequence": ["workbench.action.focusPanel"]
     },
     "when": "!panelFocus"
   },
@@ -140,11 +132,7 @@
     "key": "cmd+s",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": [
-        "hideSuggestWidget",
-        "removeSecondaryCursors",
-        "workbench.action.files.save"
-      ]
+      "sequence": ["hideSuggestWidget", "removeSecondaryCursors", "workbench.action.files.save"]
     },
     "when": "editorFocus"
   },
@@ -277,7 +265,7 @@
     "when": "inDebugMode && !focusedSessionIsAttach"
   },
   {
-    "key": "ctrl+x shift+z",
+    "key": "cmd+a",
     "command": "settings.cycle.zen",
     "when": "editorFocus"
   },
@@ -299,10 +287,7 @@
     "key": "enter",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": [
-        "list.select",
-        "workbench.action.keepEditor"
-      ]
+      "sequence": ["list.select", "workbench.action.keepEditor"]
     },
     "when": "listFocus"
   },
@@ -481,5 +466,32 @@
     "key": "ctrl+alt+k",
     "command": "-emacs-mcx.paredit.killSexp",
     "when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "emacs-mcx.paredit.pareditKill"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.output.action.clearOutput"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+m",
+    "command": "process.magitStatus"
   }
 ]

@@ -226,7 +226,7 @@
         {
           "dan.ZenPlus": true,
           "errorLens.enabled": false,
-          "editor.matchBrackets": "never",
+          // "editor.matchBrackets": "never",
           "workbench.colorCustomizations": {
             "editorError.foreground": "#00000000",
             "editorInfo.foreground": "#00000000",
@@ -236,7 +236,7 @@
         {
           "dan.ZenPlus": false,
           "errorLens.enabled": true,
-          "editor.matchBrackets": "always",
+          // "editor.matchBrackets": "always",
           "workbench.colorCustomizations": {
             "editorError.foreground": "red",
             "editorInfo.foreground": "blue",
@@ -249,6 +249,13 @@
   "settings.cycle.logLevel": "log",
   "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
   "statusbar_command.commands": [
+    {
+      "alignment": "right",
+      "id": "document-offset",
+      "script": "statusBarItem.text = vscode.window.activeTextEditor.document.offsetAt(vscode.window.activeTextEditor.selection.active)",
+      "scriptEvents": ["vscode.workspace.onDidSaveTextDocument", "vscode.window.onDidChangeActiveTextEditor"],
+      "text": "Document offset"
+    },
     {
       "alignment": "right",
       "command": "workbench.action.openWorkspaceSettings",
@@ -316,9 +323,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
+    "editorError.foreground": "#00000000",
+    "editorInfo.foreground": "#00000000",
+    "editorWarning.foreground": "#00000000"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
@@ -399,11 +406,6 @@
   "git.autorefresh": false,
   // "git.path": "/Users/ddavison/src/misc/git-wrapper.sh",
   "git.enabled": false,
-  "command-runner.terminal.autoClear": false,
-  "command-runner.terminal.autoFocus": false,
-  "command-runner.commands": {
-    "magit": "(cd ${fileDirname}; emacs-magit-status)"
-  },
   "[toml]": {
     "editor.defaultFormatter": "bodil.prettier-toml"
   },
@@ -427,12 +429,16 @@
   "python.linting.flake8Args": ["--max-line-length", "200"],
   "window.zoomLevel": 1,
   "git.mergeEditor": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "workbench.colorTheme": "Default Light+",
   "editor.suggest.showInlineDetails": false,
   "editor.codeLens": false,
-  "errorLens.enabled": true
+  "errorLens.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "errorLens.delay": 1000,
+  "zenMode.silentNotifications": false,
+  "redhat.telemetry.enabled": false
 }
