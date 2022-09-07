@@ -24,11 +24,11 @@ async function getBspStatus(path, repoRoot) {
     let relativeDir = dir.replace(new RegExp(`^${repoRoot}/`), '')
     let bloopProject = `${relativeDir}:${basename(dir)}`
     let compiled = await compile(repoRoot, bloopProject)
-    let status = compiled ? '🟢': '🔴'
+    let status = compiled ? '🟢' : '🔴'
     if (compiled && isTest(path)) {
         let testsPassed = await runTests(repoRoot, bloopProject)
         status += ' '
-        status += testsPassed === null ? '❗': (testsPassed ? '🟢': '🔴')
+        status += testsPassed === null ? '❗' : (testsPassed ? '🟢' : '🔴')
     }
     return status
 }
@@ -62,6 +62,7 @@ async function runTests(repoRoot, bloopProject) {
     }
     let stdout = await readAll(result.stdout);
     if (!!stdout.match(/All tests in .+ passed/)) { // TODO! Acquire the exit status of the child process async/await
+        log(`${indent(stdout)}`)
         log(`🟢 Tests passed in bloop project: ${bloopProject}`)
         return true
     } else {

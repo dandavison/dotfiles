@@ -312,7 +312,7 @@
       "alignment": "right",
       "command": "dan.zen",
       "id": "sbc.zen",
-      "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').matchBrackets === 'never' ? '$(circle-slash)' : ''",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('errorLens').enabled ? '' : '$(circle-slash)'",
       "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Zen Squiggles"
     }
@@ -436,7 +436,7 @@
   "workbench.colorTheme": "Default Light+",
   "editor.suggest.showInlineDetails": false,
   "editor.codeLens": false,
-  "errorLens.enabled": false,
+  "errorLens.enabled": true,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 1000,
   "zenMode.silentNotifications": false,
