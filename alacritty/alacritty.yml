@@ -896,35 +896,33 @@ key_bindings:
   # Highlight window damage information.
   #highlight_damage: false
 colors:
-  # COLORSCHEME: base16-classic-light.yml
+  # COLORSCHEME: iTerm2 light
   primary:
-    background: '0xf5f5f5'
-    foreground: '0x303030'
+    background: '0xfffefe'
+    foreground: '0x000000'
 
-  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xf5f5f5'
-    cursor: '0x303030'
+   text: CellBackground
+   cursor: CellForeground
 
   # Normal colors
   normal:
-    black: '0xf5f5f5'
-    red: '0xac4142'
-    green: '0x90a959'
-    yellow: '0xf4bf75'
-    blue: '0x6a9fb5'
-    magenta: '0xaa759f'
-    cyan: '0x75b5aa'
-    white: '0x303030'
+    black: '0x000000'
+    red: '0xc91b00'
+    green: '0x066c06'
+    yellow: '0xe55611'
+    blue: '0x0225c7'
+    magenta: '0xc930c7'
+    cyan: '0x0073c7'
+    white: '0xc7c7c7'
 
   # Bright colors
   bright:
-    black: '0xb0b0b0'
-    red: '0xd28445'
-    green: '0xe0e0e0'
-    yellow: '0xd0d0d0'
-    blue: '0x505050'
-    magenta: '0x202020'
-    cyan: '0x8f5536'
-    white: '0x151515'
-
+    black: '0x4c4c4c'
+    red: '0xff6d67'
+    green: '0x5ff967'
+    yellow: '0xfe9a67'
+    blue: '0x6871ff'
+    magenta: '0xff76ff'
+    cyan: '0x5ffdff'
+    white: '0x6b6868'
