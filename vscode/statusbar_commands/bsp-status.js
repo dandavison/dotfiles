@@ -115,7 +115,7 @@ let repoRoot = path ? getRepoRoot(path) : null;
 if (repoRoot) {
     let checkout = basename(repoRoot)
     let build = await getBuild(repoRoot)
-    let bspStatus = await getBspStatus(path, repoRoot)
+    let bspStatus = '-' // await getBspStatus(path, repoRoot)
     statusBarItem.text = `${checkout} ${build} ${bspStatus}`;
 } else {
     statusBarItem.text = `${vscode.workspace.name} [ non-BSP ]`;

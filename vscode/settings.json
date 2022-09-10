@@ -323,9 +323,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "#00000000",
-    "editorInfo.foreground": "#00000000",
-    "editorWarning.foreground": "#00000000"
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
@@ -340,12 +340,12 @@
   "zenMode.restore": true,
   "metals.serverProperties": ["-Xmx20G", "-XX:MaxInlineLevel=20", "-XX:+UseParallelGC", "-Dmetals.statistics=all"],
   "editor.guides.indentation": false,
-  "sourcegraph.remoteUrlReplacements": {
-    "git.twitter.biz": "git.twitter.biz/ro"
-  },
-  "sourcegraph.url": "https://sourcegraph.twitter.biz/",
-  "sourcegraph.defaultBranch": "master",
-  "sourcegraph.accessToken": "d1cf061dd09549be54371f3d1ccbe786099454e6",
+  // "sourcegraph.remoteUrlReplacements": {
+  //   "git.twitter.biz": "git.twitter.biz/ro"
+  // },
+  // "sourcegraph.url": "https://sourcegraph.twitter.biz/",
+  // "sourcegraph.defaultBranch": "master",
+  // "sourcegraph.accessToken": "d1cf061dd09549be54371f3d1ccbe786099454e6",
   "highlightwords.box": {
     "light": false,
     "dark": true
@@ -429,16 +429,21 @@
   "python.linting.flake8Args": ["--max-line-length", "200"],
   "window.zoomLevel": 1,
   "git.mergeEditor": false,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "workbench.colorTheme": "Default Light+",
   "editor.suggest.showInlineDetails": false,
-  "editor.codeLens": false,
+  "editor.codeLens": true,
   "errorLens.enabled": true,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 1000,
   "zenMode.silentNotifications": false,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "errorLens.messageMaxChars": 9999,
+  "errorLens.scrollbarHackEnabled": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }
