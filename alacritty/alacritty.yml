@@ -772,17 +772,20 @@ shell:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
-  - {key: Up, mods: Command, chars: "\x1a\x1b\x5b\x41"}    # tmux select-panel -U
-  - {key: Down, mods: Command, chars: "\x1a\x1b\x5b\x42"}  # tmux select-panel -D
-  - {key: Right, mods: Command, chars: "\x1a\x1b\x5b\x43"} # tmux select-panel -R
-  - {key: Left, mods: Command, chars: "\x1a\x1b\x5b\x44"}  # tmux select-panel -L
-  - {key: Return, mods: Command, chars: "\x1a\x7a"}        # tmux resize-pane -Z
-  - {key: R, mods: Command|Shift, chars: "\x1a\x6e"}       # tmux next-window
-  - {key: L, mods: Command|Shift, chars: "\x1a\x70"}       # tmux previous-window
-  - {key: S, mods: Command, chars: "\x1a\x5b"}             # tmux scroll mode
-  - {key: W, mods: Command, chars: "\x1ax"}                # tmux kill-pane
-
+  - {key: Down, mods: Command, chars: "\x1a\x1b[B"}        # tmux select-pane -D
+  - {key: Left, mods: Command, chars: "\x1a\x1b[D"}        # tmux select-pane -L
+  - {key: Left, mods: Command|Shift, chars: "\x1ap"}       # tmux previous-window
+  - {key: N, mods: Command, chars: "\x1ac"}                # tmux new-window
+  - {key: Return, mods: Command, chars: "\x1az"}           # tmux resize-pane -Z
+  - {key: Right, mods: Command, chars: "\x1a\x1b[C"}       # tmux select-pane -R
+  - {key: Right, mods: Command|Shift, chars: "\x1an"}      # tmux next-window
+  - {key: S, mods: Command, chars: "\x1a["}                # tmux scroll mode
   - {key: Slash, mods: Command, action: ToggleSimpleFullscreen}
+  - {key: Up, mods: Command, chars: "\x1a\x1b[A"}          # tmux select-pane -U
+  - {key: W, mods: Command, chars: "\x1ax"}                # tmux kill-pane
+  - {key: Minus, mods: Command|Shift, chars: "\x1a\""}     # tmux horizontal split
+  - {key: Equals, mods: Command|Shift, chars: "\x1a%"}     # tmux vertical split
+  - {key: Backslash, mods: Command|Shift, chars: "\x1a\\"} # tmux choose window
 
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
