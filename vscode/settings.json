@@ -226,6 +226,8 @@
         {
           "dan.ZenPlus": true,
           "errorLens.enabled": false,
+          "rust-analyzer.inlayHints.enable": false,
+          "rust-analyzer.hover.actions.enable": false,
           // "editor.matchBrackets": "never",
           "workbench.colorCustomizations": {
             "editorError.foreground": "#00000000",
@@ -236,6 +238,8 @@
         {
           "dan.ZenPlus": false,
           "errorLens.enabled": true,
+          "rust-analyzer.inlayHints.enable": true,
+          "rust-analyzer.hover.actions.enable": true,
           // "editor.matchBrackets": "always",
           "workbench.colorCustomizations": {
             "editorError.foreground": "red",
@@ -323,17 +327,16 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
+    "editorError.foreground": "#00000000",
+    "editorInfo.foreground": "#00000000",
+    "editorWarning.foreground": "#00000000"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "workbench.panel.opensMaximized": "always",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.indent": 33,
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
@@ -413,13 +416,12 @@
   "editor.suggest.showStatusBar": true,
   "metals.javaHome": "/opt/twitter_mde/package/TwitterJDK11/current/Contents/Home",
   "workbench.activityBar.visible": false,
-  "zenMode.hideStatusBar": false,
   "prettier.printWidth": 120,
   "diffEditor.codeLens": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
   "rust-analyzer.hover.documentation.enable": false,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "rust-analyzer.inlayHints.typeHints.enable": false,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
   "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
   "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
   "yaml.schemas": {
@@ -429,14 +431,14 @@
   "python.linting.flake8Args": ["--max-line-length", "200"],
   "window.zoomLevel": 1,
   "git.mergeEditor": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "workbench.colorTheme": "Default Light+",
   "editor.suggest.showInlineDetails": false,
   "editor.codeLens": true,
-  "errorLens.enabled": true,
+  "errorLens.enabled": false,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 1000,
   "zenMode.silentNotifications": false,
@@ -445,5 +447,13 @@
   "errorLens.scrollbarHackEnabled": true,
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "gitlens.advanced.messages": {
+    "suppressGitDisabledWarning": true,
+    "suppressGitMissingWarning": true
+  },
+  "zenMode.hideStatusBar": false,
+  "debug.inlineValues": "off",
+  "python.terminal.activateEnvironment": false,
+  "editor.inlayHints.enabled": "offUnlessPressed"
 }
