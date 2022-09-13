@@ -786,6 +786,7 @@ key_bindings:
   - {key: Minus, mods: Command|Shift, chars: "\x1a\""}     # tmux horizontal split
   - {key: Equals, mods: Command|Shift, chars: "\x1a%"}     # tmux vertical split
   - {key: Backslash, mods: Command|Shift, chars: "\x1a\\"} # tmux choose window
+  - {key: Return, mods: Command|Shift, action: ToggleSimpleFullscreen}
 
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
