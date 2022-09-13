@@ -343,12 +343,12 @@
   "zenMode.restore": true,
   "metals.serverProperties": ["-Xmx20G", "-XX:MaxInlineLevel=20", "-XX:+UseParallelGC", "-Dmetals.statistics=all"],
   "editor.guides.indentation": false,
-  // "sourcegraph.remoteUrlReplacements": {
-  //   "git.twitter.biz": "git.twitter.biz/ro"
-  // },
-  // "sourcegraph.url": "https://sourcegraph.twitter.biz/",
-  // "sourcegraph.defaultBranch": "master",
-  // "sourcegraph.accessToken": "d1cf061dd09549be54371f3d1ccbe786099454e6",
+  "sourcegraph.remoteUrlReplacements": {
+    "git.twitter.biz": "git.twitter.biz/ro"
+  },
+  "sourcegraph.url": "https://sourcegraph.twitter.biz/",
+  "sourcegraph.defaultBranch": "master",
+  "sourcegraph.accessToken": "d1cf061dd09549be54371f3d1ccbe786099454e6",
   "highlightwords.box": {
     "light": false,
     "dark": true
@@ -429,7 +429,6 @@
   },
   "python.venvPath": "~/tmp/virtualenvs",
   "python.linting.flake8Args": ["--max-line-length", "200"],
-  "window.zoomLevel": 1,
   "git.mergeEditor": false,
   "editor.formatOnSave": true,
   "[javascript]": {
@@ -452,8 +451,10 @@
     "suppressGitDisabledWarning": true,
     "suppressGitMissingWarning": true
   },
-  "zenMode.hideStatusBar": false,
   "debug.inlineValues": "off",
   "python.terminal.activateEnvironment": false,
-  "editor.inlayHints.enabled": "offUnlessPressed"
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "window.zoomLevel": 1,
+  "editor.scrollbar.horizontal": "hidden",
+  "debug.onTaskErrors": "showErrors"
 }

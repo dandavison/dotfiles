@@ -505,5 +505,20 @@
   {
     "key": "ctrl+c f",
     "command": "process.openFolders"
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.action.showCommands",
+    "when": "!config.emacs-mcx.useMetaPrefixMacCmd"
+  },
+  {
+    "key": "alt+x",
+    "command": "-workbench.action.showCommands",
+    "when": "!config.emacs-mcx.useMetaPrefixMacCmd"
+  },
+  {
+    "key": "alt+'",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorTextFocus"
   }
 ]
