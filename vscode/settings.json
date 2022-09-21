@@ -16,9 +16,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
-  },
   "alt-editor.args": "--line {line} --column {column} {filename}",
   "alt-editor.binary": "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea",
   "diffEditor.renderSideBySide": true,
@@ -32,7 +29,6 @@
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
   "editor.lineNumbers": "off",
-  "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.overviewRulerBorder": false,
@@ -42,7 +38,6 @@
     "other": true,
     "strings": false
   },
-  "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
   "editor.rulers": [],
   "editor.scrollbar.verticalScrollbarSize": 0,
@@ -188,10 +183,10 @@
       "overrideWorkspaceSettings": true,
       "values": [
         {
-          "editor.matchBrackets": false
+          "editor.matchBrackets": "never"
         },
         {
-          "editor.matchBrackets": true
+          "editor.matchBrackets": "always"
         }
       ]
     },
@@ -228,7 +223,8 @@
           "errorLens.enabled": false,
           "rust-analyzer.inlayHints.enable": false,
           "rust-analyzer.hover.actions.enable": false,
-          // "editor.matchBrackets": "never",
+          "editor.matchBrackets": "never",
+          "bracketLens.mode": "none",
           "workbench.colorCustomizations": {
             "editorError.foreground": "#00000000",
             "editorInfo.foreground": "#00000000",
@@ -240,7 +236,8 @@
           "errorLens.enabled": true,
           "rust-analyzer.inlayHints.enable": true,
           "rust-analyzer.hover.actions.enable": true,
-          // "editor.matchBrackets": "always",
+          "editor.matchBrackets": "always",
+          "bracketLens.mode": "auto",
           "workbench.colorCustomizations": {
             "editorError.foreground": "red",
             "editorInfo.foreground": "blue",
@@ -327,9 +324,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "#00000000",
-    "editorInfo.foreground": "#00000000",
-    "editorWarning.foreground": "#00000000"
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
@@ -419,34 +416,30 @@
   "prettier.printWidth": 120,
   "diffEditor.codeLens": true,
   "terminal.integrated.enableMultiLinePasteWarning": false,
-  "rust-analyzer.hover.documentation.enable": false,
-  "rust-analyzer.inlayHints.parameterHints.enable": false,
-  "rust-analyzer.inlayHints.typeHints.enable": false,
-  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
-  "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+  // "rust-analyzer.hover.documentation.enable": false,
+  // "rust-analyzer.inlayHints.parameterHints.enable": false,
+  // "rust-analyzer.inlayHints.typeHints.enable": false,
+  // "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+  // "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
   "yaml.schemas": {
     "file:///Users/ddavison/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "python.venvPath": "~/tmp/virtualenvs",
   "python.linting.flake8Args": ["--max-line-length", "200"],
   "git.mergeEditor": false,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "workbench.colorTheme": "Default Light+",
   "editor.suggest.showInlineDetails": false,
   "editor.codeLens": true,
-  "errorLens.enabled": false,
+  "errorLens.enabled": true,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 1000,
   "zenMode.silentNotifications": false,
   "redhat.telemetry.enabled": false,
   "errorLens.messageMaxChars": 9999,
   "errorLens.scrollbarHackEnabled": true,
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
   "gitlens.advanced.messages": {
     "suppressGitDisabledWarning": true,
     "suppressGitMissingWarning": true
@@ -454,7 +447,19 @@
   "debug.inlineValues": "off",
   "python.terminal.activateEnvironment": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
-  "window.zoomLevel": 1,
   "editor.scrollbar.horizontal": "hidden",
-  "debug.onTaskErrors": "showErrors"
+  "debug.onTaskErrors": "showErrors",
+  "workbench.colorTheme": "Default Light+",
+  "rust-analyzer.hover.actions.enable": true,
+  "editor.renderLineHighlight": "none",
+  "editor.matchBrackets": "always",
+  "zenMode.hideStatusBar": false,
+  "editor.wordWrapColumn": 777777,
+  "css.colorDecorators.enable": true,
+  "window.zoomLevel": 1,
+  "bracketLens.line": "none",
+  "bracketLens.mode": "none",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

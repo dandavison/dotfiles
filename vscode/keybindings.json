@@ -372,11 +372,6 @@
     "when": "!editorFocus"
   },
   {
-    "key": "cmd+backspace",
-    "command": "alt-editor.openFile",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "shift+alt+e",
     "command": "-alt-editor.openFile",
     "when": "editorTextFocus"
@@ -495,7 +490,7 @@
     "command": "process.magitStatus"
   },
   {
-    "key": "shift+cmd+a",
+    "key": "cmd+a",
     "command": "editor.action.selectAll"
   },
   {
@@ -520,5 +515,14 @@
     "key": "alt+'",
     "command": "editor.action.triggerSuggest",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+=",
+    "command": "workbench.action.splitEditorRight",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "shift+cmd+-",
+    "command": "workbench.action.splitEditorUp"
   }
 ]
