@@ -36,7 +36,7 @@
   "editor.quickSuggestions": {
     "comments": false,
     "other": true,
-    "strings": false
+    "strings": true
   },
   "editor.renderWhitespace": "none",
   "editor.rulers": [],
@@ -324,9 +324,19 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
+    // "editorError.foreground": "red",
+    // "editorInfo.foreground": "blue",
+    // "editorWarning.foreground": "orange",
+    "editor.selectionHighlightBackground": "#94a9d4",
+    "editor.findMatchHighlightBackground": "#94a9d4",
+    "editor.rangeHighlightBackground": "#94a9d4",
+    "editor.findRangeHighlightBackground": "#94a9d4",
+    "editor.selectionBackground": "#3063c9",
+    "editor.findMatchBackground": "#3063c9",
+    "editor.rangeHighlightBorder": "#ff0000",
+    "editor.findRangeHighlightBorder": "#ff0000",
+    "editor.selectionHighlightBorder": "#ff0000",
+    "editor.findMatchBorder": "#ff0000"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
