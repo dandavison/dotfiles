@@ -237,7 +237,6 @@
           "rust-analyzer.inlayHints.enable": true,
           "rust-analyzer.hover.actions.enable": true,
           "editor.matchBrackets": "always",
-          "bracketLens.mode": "auto",
           "workbench.colorCustomizations": {
             "editorError.foreground": "red",
             "editorInfo.foreground": "blue",

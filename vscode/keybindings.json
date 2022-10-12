@@ -265,17 +265,17 @@
     "when": "inDebugMode && !focusedSessionIsAttach"
   },
   {
-    "key": "ctrl+c z",
+    "key": "ctrl+x z",
     "command": "settings.cycle.zen",
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+x z",
+    "key": "ctrl+x shift+z",
     "command": "-workbench.action.toggleZenMode",
     "when": "!terminalFocus"
   },
   {
-    "key": "ctrl+x z",
+    "key": "ctrl+x shift+z",
     "command": "workbench.action.toggleZenMode"
   },
   {
@@ -290,11 +290,6 @@
       "sequence": ["list.select", "workbench.action.keepEditor"]
     },
     "when": "listFocus"
-  },
-  {
-    "key": "f12",
-    "command": "settings.cycle.zen",
-    "when": "editorFocus"
   },
   {
     "key": "shift+cmd+[",
