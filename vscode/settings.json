@@ -132,7 +132,7 @@
   "python.testing.promptToConfigure": false,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
-  "rewrap.wrappingColumn": 100,
+  "rewrap.wrappingColumn": 80,
   // "rust-analyzer.checkOnSave.command": "clippy",
   // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
   "rust-analyzer.inlayHints.maxLength": null,
@@ -253,7 +253,10 @@
       "alignment": "right",
       "id": "document-offset",
       "script": "statusBarItem.text = vscode.window.activeTextEditor.document.offsetAt(vscode.window.activeTextEditor.selection.active)",
-      "scriptEvents": ["vscode.workspace.onDidSaveTextDocument", "vscode.window.onDidChangeActiveTextEditor"],
+      "scriptEvents": [
+        "vscode.workspace.onDidSaveTextDocument",
+        "vscode.window.onDidChangeActiveTextEditor"
+      ],
       "text": "Document offset"
     },
     {
@@ -323,19 +326,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    // "editorError.foreground": "red",
-    // "editorInfo.foreground": "blue",
-    // "editorWarning.foreground": "orange",
-    "editor.selectionHighlightBackground": "#94a9d4",
-    "editor.findMatchHighlightBackground": "#94a9d4",
-    "editor.rangeHighlightBackground": "#94a9d4",
-    "editor.findRangeHighlightBackground": "#94a9d4",
-    "editor.selectionBackground": "#3063c9",
-    "editor.findMatchBackground": "#3063c9",
-    "editor.rangeHighlightBorder": "#ff0000",
-    "editor.findRangeHighlightBorder": "#ff0000",
-    "editor.selectionHighlightBorder": "#ff0000",
-    "editor.findMatchBorder": "#ff0000"
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
@@ -347,7 +340,12 @@
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.restore": true,
-  "metals.serverProperties": ["-Xmx20G", "-XX:MaxInlineLevel=20", "-XX:+UseParallelGC", "-Dmetals.statistics=all"],
+  "metals.serverProperties": [
+    "-Xmx20G",
+    "-XX:MaxInlineLevel=20",
+    "-XX:+UseParallelGC",
+    "-Dmetals.statistics=all"
+  ],
   "editor.guides.indentation": false,
   "sourcegraph.remoteUrlReplacements": {
     "git.twitter.biz": "git.twitter.biz/ro"
@@ -422,7 +420,6 @@
   "editor.suggest.showStatusBar": true,
   "metals.javaHome": "/opt/twitter_mde/package/TwitterJDK11/current/Contents/Home",
   "workbench.activityBar.visible": false,
-  "prettier.printWidth": 120,
   "diffEditor.codeLens": true,
   "terminal.integrated.enableMultiLinePasteWarning": false,
   // "rust-analyzer.hover.documentation.enable": false,
@@ -436,7 +433,7 @@
   "python.venvPath": "~/tmp/virtualenvs",
   "python.linting.flake8Args": ["--max-line-length", "200"],
   "git.mergeEditor": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -470,5 +467,9 @@
   "bracketLens.mode": "none",
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   }
 }

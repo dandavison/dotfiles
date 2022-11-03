@@ -20,7 +20,6 @@
     colorMovedWS = allow-indentation-change
     frag = red
     submodule = short
-    tool = difftastic
 
 [difftool]
     prompt = false

@@ -8,12 +8,13 @@ hs.hotkey.bind({"cmd"}, "/", function()
   end
 end)
 
-hs.hotkey.bind({"ctrl"}, "v", function()
+hs.hotkey.bind({"ctrl"}, " ", function()
   local alacritty = hs.application.find('alacritty')
   if not alacritty:isFrontmost() then
     hs.application.launchOrFocus("/Applications/Alacritty.app")
+    hs.eventtap.keyStroke({}, "v", alacritty)
+  else
+    hs.eventtap.keyStroke({"ctrl"}, " ", alacritty)
   end
-  -- Send key stroke 'v' followed by Enter to current application
-  hs.eventtap.keyStroke({}, "v", alacritty)
   hs.eventtap.keyStroke({}, "return", alacritty)
 end)

@@ -4,6 +4,9 @@
 [interactive]
     diffFilter = delta --color-only
 
+[add.interactive]
+    useBuiltin = false # required for git 2.37.0
+
 [delta]
    line-numbers-minus-style = minus-emph-style
    line-numbers-plus-style = plus-emph-style

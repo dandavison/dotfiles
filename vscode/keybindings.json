@@ -3,7 +3,10 @@
     "key": "alt+,",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": ["editor.action.addSelectionToNextFindMatch", "workbench.action.findInFiles"]
+      "sequence": [
+        "editor.action.addSelectionToNextFindMatch",
+        "workbench.action.findInFiles"
+      ]
     },
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
@@ -41,7 +44,10 @@
     "key": "cmd+'",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": ["workbench.action.focusFirstEditorGroup", "workbench.action.togglePanel"]
+      "sequence": [
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.togglePanel"
+      ]
     },
     "when": "panelFocus"
   },
@@ -132,7 +138,11 @@
     "key": "cmd+s",
     "command": "extension.multiCommand.execute",
     "args": {
-      "sequence": ["hideSuggestWidget", "removeSecondaryCursors", "workbench.action.files.save"]
+      "sequence": [
+        "hideSuggestWidget",
+        "removeSecondaryCursors",
+        "workbench.action.files.save"
+      ]
     },
     "when": "editorFocus"
   },
@@ -353,7 +363,7 @@
     "command": "-extension.search"
   },
   {
-    "key": "alt+y",
+    "key": "shift+alt+u",
     "command": "editor.action.transformToUppercase"
   },
   {
