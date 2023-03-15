@@ -12,10 +12,9 @@ cursor:
   style:
     shape: Beam
 shell:
-  program: /opt/homebrew/bin/bash
-  # program: /Users/ddavison/bin/nu
-  # args:
-  #   - attach
+  program: /Users/ddavison/bin/tmux
+#  args:
+#    - attach
 key_bindings:
   - { key: Down, mods: Command, chars: "\x1a\x1b[B" } # tmux select-pane -D
   - { key: Left, mods: Command, chars: "\x1a\x1b[D" } # tmux select-pane -L
@@ -33,8 +32,10 @@ key_bindings:
   - { key: Backslash, mods: Command|Shift, chars: "\x1a\\" } # tmux choose window
   - { key: Return, mods: Command|Shift, action: ToggleSimpleFullscreen }
   - { key: Comma, mods: Command, chars: "\x1aj" } # tmux-jump
-  - { key: X, mods: Alt, chars: "\x1bx" }
   - { key: R, mods: Alt, chars: "\x1br" }
+  - { key: V, mods: Alt, chars: "\x1bv" }
+  - { key: X, mods: Alt, chars: "\x1bx" }
+  - { key: Z, mods: Alt, chars: "\x1bz" }
   - { key: Period, mods: Alt, chars: "\x1b." }
 colors:
   primary:
