@@ -37,6 +37,13 @@ key_bindings:
   - { key: X, mods: Alt, chars: "\x1bx" }
   - { key: Z, mods: Alt, chars: "\x1bz" }
   - { key: Period, mods: Alt, chars: "\x1b." }
+hints:
+  enabled:
+    - hyperlinks: true
+      command: open
+      binding:
+        mods: Command
+        key: Period
 colors:
   primary:
     background: '0xfffefe'
