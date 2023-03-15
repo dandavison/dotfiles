@@ -30,8 +30,6 @@
   "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
-  "editor.lineNumbers": "off",
-  "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.overviewRulerBorder": false,
   "editor.parameterHints.enabled": false,
@@ -69,22 +67,23 @@
     "config": "toml"
   },
   "files.exclude": {
-    "**/*.class": true,
-    "**/*.olean": true,
+    "*.egg-info": true,
+    "**/__pycache__": true,
     "**/.*": true,
     "**/.*_cache": true,
-    "**/.DS_Store": true,
     "**/.classpath": true,
+    "**/.DS_Store": true,
     "**/.factorypath": true,
     "**/.git": true,
     "**/.hg": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.svn": true,
+    "**/*.class": true,
+    "**/*.olean": true,
     "**/CVS": true,
-    "**/Thumbs.db": true,
-    "**/__pycache__": true,
     "**/staticfiles": true,
+    "**/Thumbs.db": true,
     "docs/_book": true,
     "out": false
   },
@@ -137,7 +136,7 @@
   "rewrap.wrappingColumn": 80,
   // "rust-analyzer.checkOnSave.command": "clippy",
   // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
-  "rust-analyzer.inlayHints.maxLength": null,
+  // "rust-analyzer.inlayHints.maxLength": null,
   "scm.diffDecorationsGutterVisibility": "hover",
   "search.showLineNumbers": true,
   "security.workspace.trust.banner": "always",
@@ -221,6 +220,18 @@
       "overrideWorkspaceSettings": true,
       "values": [
         {
+          "dan.ZenPlus": false,
+          "errorLens.enabled": true,
+          "rust-analyzer.inlayHints.enable": true,
+          "rust-analyzer.hover.actions.enable": true,
+          "editor.matchBrackets": "always",
+          "workbench.colorCustomizations": {
+            "editorError.foreground": "red",
+            "editorInfo.foreground": "blue",
+            "editorWarning.foreground": "orange"
+          }
+        },
+        {
           "dan.ZenPlus": true,
           "errorLens.enabled": false,
           "rust-analyzer.inlayHints.enable": false,
@@ -231,18 +242,6 @@
             "editorError.foreground": "#00000000",
             "editorInfo.foreground": "#00000000",
             "editorWarning.foreground": "#00000000"
-          }
-        },
-        {
-          "dan.ZenPlus": false,
-          "errorLens.enabled": true,
-          "rust-analyzer.inlayHints.enable": true,
-          "rust-analyzer.hover.actions.enable": true,
-          "editor.matchBrackets": "always",
-          "workbench.colorCustomizations": {
-            "editorError.foreground": "red",
-            "editorInfo.foreground": "blue",
-            "editorWarning.foreground": "orange"
           }
         }
       ]
@@ -279,18 +278,18 @@
       "text": "$(terminal)",
       "tooltip": "Terminal"
     },
-    {
-      "alignment": "left",
-      "scriptFile": "/Users/ddavison/src/devenv/dotfiles/vscode/statusbar_commands/bsp-status.js",
-      "scriptEvents": [
-        "vscode.workspace.onDidSaveTextDocument",
-        "vscode.window.onDidChangeActiveTextEditor",
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
-      "id": "sbc.bsp-status",
-      "name": "BSP status",
-      "text": "<BSP status>"
-    },
+    // {
+    //   "alignment": "left",
+    //   "scriptFile": "/Users/ddavison/src/devenv/dotfiles/vscode/statusbar_commands/bsp-status.js",
+    //   "scriptEvents": [
+    //     "vscode.workspace.onDidSaveTextDocument",
+    //     "vscode.window.onDidChangeActiveTextEditor",
+    //     "vscode.workspace.onDidChangeConfiguration"
+    //   ],
+    //   "id": "sbc.bsp-status",
+    //   "name": "BSP status",
+    //   "text": "<BSP status>"
+    // },
     {
       "alignment": "right",
       "id": "formatOnSave",
@@ -434,7 +433,6 @@
   "python.venvPath": "~/tmp/virtualenvs",
   "python.linting.flake8Args": ["--max-line-length", "200"],
   "git.mergeEditor": false,
-  "editor.formatOnSave": true,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -471,8 +469,12 @@
   },
   "testing.saveBeforeTest": false,
   "metals.superMethodLensesEnabled": false,
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Visual Studio Light",
+  "editor.matchBrackets": "always",
+  "editor.lineNumbers": "off",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
   "window.zoomLevel": 1,
-  "editor.matchBrackets": "always"
+  "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"]
   // "editor.quickSuggestionsDelay": 500
 }

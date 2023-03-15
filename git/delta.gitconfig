@@ -17,7 +17,8 @@
    relative-paths = true
    hyperlinks = true
    hyperlinks-file-link-format = "file-line-column://{path}:{line}"
-   diff-stat-align-width = 50
+   diff-stat-align-width = 150
+
 
 [delta "dan-light"]
     light = true
