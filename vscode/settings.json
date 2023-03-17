@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnPaste": false,
     "editor.formatOnSaveMode": "file",
     "editor.acceptSuggestionOnCommitCharacter": false
@@ -323,13 +323,17 @@
   ],
   "task.saveBeforeRun": "never",
   "terminal.explorerKind": "external",
-  "terminal.external.osxExec": "iTerm 2.app",
+  "terminal.integrated.profiles.osx": {
+    "nushell": {
+      "path": "/Users/ddavison/bin/nu"
+    }
+  },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
+    "editorError.foreground": "#F00",
+    "editorInfo.foreground": "#00F",
+    "editorWarning.foreground": "#FFA500"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
@@ -475,6 +479,7 @@
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "window.zoomLevel": 1,
-  "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"]
+  "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
+  "terminal.integrated.defaultProfile.osx": "Nushell"
   // "editor.quickSuggestionsDelay": 500
 }
