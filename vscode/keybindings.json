@@ -177,10 +177,6 @@
     "when": "inOutput"
   },
   {
-    "key": "ctrl+enter",
-    "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
     "key": "ctrl+home",
     "command": "workbench.action.problems.focus",
     "when": "inOutput"
@@ -539,5 +535,15 @@
     "key": "cmd+k shift+alt+cmd+c",
     "command": "-copyRelativeFilePath",
     "when": "editorFocus"
+  },
+  {
+    "key": "right",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
   }
 ]
