@@ -1,0 +1,8 @@
+---
+name: Devenv
+windows:
+  - tabs:
+      - layout:
+          cwd: /Users/ddavison/src/devenv
+          commands:
+            - exec: code .

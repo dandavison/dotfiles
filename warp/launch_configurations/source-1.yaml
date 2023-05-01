@@ -1,0 +1,8 @@
+---
+name: Source-1
+windows:
+  - tabs:
+      - layout:
+          cwd: /Users/ddavison/workspace/source-1
+          commands:
+            - exec: code .

@@ -1,0 +1,8 @@
+---
+name: Delta
+windows:
+  - tabs:
+      - layout:
+          cwd: /Users/ddavison/src/delta
+          commands:
+            - exec: code .
