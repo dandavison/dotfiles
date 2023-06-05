@@ -35,11 +35,11 @@
     "command": "deleteWordLeft",
     "when": "terminalFocus"
   },
-  {
-    "key": "cmd+/",
-    "command": "-editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
-  },
+  // {
+  //   "key": "cmd+/",
+  //   "command": "-editor.action.commentLine",
+  //   "when": "editorTextFocus && !editorReadonly"
+  // },
   {
     "key": "cmd+'",
     "command": "extension.multiCommand.execute",
@@ -545,11 +545,6 @@
     "key": "tab",
     "command": "-editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
-  },
-  {
-    "key": "shift+alt+.",
-    "command": "editor.action.goToReferences",
-    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   },
   {
     "key": "shift+f12",

@@ -7,7 +7,16 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-    "base_keymap": "VSCode",
-    "buffer_font_size": 15,
-    "theme": "One Light"
+  "show_copilot_suggestions": false,
+  "languages": {
+    "Rust": {
+      "show_copilot_suggestions": false
+    },
+    "Python": {
+      "show_copilot_suggestions": false
+    }
+  },
+  "base_keymap": "VSCode",
+  "buffer_font_size": 15,
+  "theme": "One Light"
 }

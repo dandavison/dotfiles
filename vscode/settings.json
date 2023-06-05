@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "ms-python.python",
     "editor.formatOnPaste": false,
     "editor.formatOnSaveMode": "file",
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -332,9 +332,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "#00000000",
-    "editorInfo.foreground": "#00000000",
-    "editorWarning.foreground": "#00000000"
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
   },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
@@ -442,7 +442,7 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "editor.suggest.showInlineDetails": false,
-  "errorLens.enabled": false,
+  "errorLens.enabled": true,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 500,
   "zenMode.silentNotifications": false,
@@ -458,7 +458,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.scrollbar.horizontal": "hidden",
   "debug.onTaskErrors": "showErrors",
-  "rust-analyzer.hover.actions.enable": false,
+  "rust-analyzer.hover.actions.enable": true,
   "editor.renderLineHighlight": "none",
   "zenMode.hideStatusBar": false,
   "editor.wordWrapColumn": 777777,
@@ -475,7 +475,7 @@
   "testing.saveBeforeTest": false,
   "metals.superMethodLensesEnabled": false,
   "workbench.colorTheme": "Default Light+",
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": "always",
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
