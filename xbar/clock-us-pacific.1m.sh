@@ -1,1 +1,3 @@
-clocks/clock-us-pacific.1m.sh
+#!/bin/bash
+zone="America/Los_Angeles"
+echo " SF $(TZ=$zone date +'%H:%M')"
