@@ -3,6 +3,6 @@ name: Delta
 windows:
   - tabs:
       - layout:
-          cwd: /Users/ddavison/src/delta
+          cwd: /Users/dan/src/delta
           commands:
             - exec: code .

@@ -3,6 +3,6 @@ name: Devenv
 windows:
   - tabs:
       - layout:
-          cwd: /Users/ddavison/src/devenv
+          cwd: /Users/dan/src/devenv
           commands:
             - exec: code .

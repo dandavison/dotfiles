@@ -281,7 +281,7 @@
     },
     // {
     //   "alignment": "left",
-    //   "scriptFile": "/Users/ddavison/src/devenv/dotfiles/vscode/statusbar_commands/bsp-status.js",
+    //   "scriptFile": "/Users/dan/src/devenv/dotfiles/vscode/statusbar_commands/bsp-status.js",
     //   "scriptEvents": [
     //     "vscode.workspace.onDidSaveTextDocument",
     //     "vscode.window.onDidChangeActiveTextEditor",
@@ -326,7 +326,7 @@
   "terminal.explorerKind": "external",
   "terminal.integrated.profiles.osx": {
     "nushell": {
-      "path": "/Users/ddavison/bin/nu"
+      "path": "/Users/dan/bin/nu"
     }
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -416,7 +416,7 @@
   ],
   "git.ignoreUntrackedDirFiles": true,
   "git.autorefresh": false,
-  // "git.path": "/Users/ddavison/src/misc/git-wrapper.sh",
+  // "git.path": "/Users/dan/src/misc/git-wrapper.sh",
   "git.enabled": false,
   "[toml]": {
     "editor.defaultFormatter": "bodil.prettier-toml"
@@ -433,7 +433,7 @@
   // "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
   // "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
   "yaml.schemas": {
-    "file:///Users/ddavison/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "python.venvPath": "~/tmp/virtualenvs",
   "python.linting.flake8Args": ["--max-line-length", "200"],

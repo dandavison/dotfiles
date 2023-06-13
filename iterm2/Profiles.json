@@ -411,7 +411,7 @@
       "Character Encoding": 4,
       "Close Sessions On End": true,
       "Columns": 80,
-      "Command": "/Users/ddavison/bin/nu",
+      "Command": "/Users/dan/bin/nu",
       "Cursor Boost": 0,
       "Cursor Color": {
         "Alpha Component": 1,
@@ -482,7 +482,7 @@
       "Default Bookmark": "No",
       "Description": "Default",
       "Disable Window Resizing": true,
-      "Dynamic Profile Filename": "/Users/ddavison/Library/Application Support/iTerm2/DynamicProfiles/profile.json",
+      "Dynamic Profile Filename": "/Users/dan/Library/Application Support/iTerm2/DynamicProfiles/profile.json",
       "Flashing Bell": false,
       "Foreground Color": {
         "Alpha Component": 1,
@@ -687,7 +687,7 @@
       "Semantic History": {
         "action": "command",
         "editor": "com.microsoft.VSCode",
-        "text": "/Users/ddavison/.local/bin/iterm2-dwim \\1 \\4"
+        "text": "/Users/dan/.local/bin/iterm2-dwim \\1 \\4"
       },
       "Send Bell Alert": false,
       "Send Code When Idle": false,
