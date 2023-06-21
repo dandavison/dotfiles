@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnPaste": false,
     "editor.formatOnSaveMode": "file",
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -16,7 +16,7 @@
     "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.acceptSuggestionOnCommitCharacter": false
   },
   "alt-editor.args": "--line {line} --column {column} {filename}",
@@ -123,7 +123,7 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.envFile": "${workspaceFolder}/.env.dev",
   "python.formatting.blackArgs": ["--fast", "--line-length", "99"],
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "none",
   "python.languageServer": "Pylance",
   "python.linting.enabled": true,
   "python.linting.mypyArgs": ["--check-untyped-defs"],
@@ -474,17 +474,18 @@
   },
   "testing.saveBeforeTest": false,
   "metals.superMethodLensesEnabled": false,
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Default Light Modern",
   "editor.matchBrackets": "always",
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
   "terminal.integrated.defaultProfile.osx": "Nushell",
-  "window.zoomLevel": 1,
   "cody.serverEndpoint": "https://sourcegraph.com",
   "cody.experimental.suggestions": true,
   "cody.codebase": "github.com/dandavison/delta",
   "cody.debug": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 1,
+  "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"]
   // "editor.quickSuggestionsDelay": 500
 }
