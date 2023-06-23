@@ -470,7 +470,7 @@
   },
   "go.toolsManagement.autoUpdate": true,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "testing.saveBeforeTest": false,
   "metals.superMethodLensesEnabled": false,

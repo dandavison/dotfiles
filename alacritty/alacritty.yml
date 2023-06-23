@@ -42,16 +42,11 @@ key_bindings:
   - { key: Period, mods: Alt, chars: "\x1b." }
 hints:
   enabled:
-  # - regex: '[0-9abcdef]{40}'
-  #   action: Paste
-  #   binding:
-  #     mods: Command
-  #     key: Semicolon
-  - hyperlinks: true
-    command: open
-    binding:
-      mods: Command
-      key: Period
+    - hyperlinks: true
+      command: open
+      binding:
+        mods: Command
+        key: Period
 colors:
   primary:
     background: '0xfffefe'

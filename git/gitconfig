@@ -31,7 +31,7 @@
     user = dandavison
 
 [include]
-    path = ~/src/devenv/dotfiles/git/delta.gitconfig
+    path = ~/src/devenv/dotfiles/delta/delta.gitconfig
 
 [init]
     defaultBranch = main
