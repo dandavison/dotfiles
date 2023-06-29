@@ -42,8 +42,12 @@ key_bindings:
   - { key: Period, mods: Alt, chars: "\x1b." }
 hints:
   enabled:
-    - hyperlinks: true
+    - regex: "(https:|http:|file:|file-line-column:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
       command: open
+      mouse:
+        enabled: true
+        mods: Command
+      hyperlinks: true
       binding:
         mods: Command
         key: Period
