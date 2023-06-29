@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "ms-python.python",
     "editor.formatOnPaste": false,
     "editor.formatOnSaveMode": "file",
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -16,8 +16,9 @@
     "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features",
-    "editor.acceptSuggestionOnCommitCharacter": false
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "typescript.preferences.quoteStyle": "double"
   },
   "alt-editor.args": "--line {line} --column {column} {filename}",
   "alt-editor.binary": "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea",
@@ -68,23 +69,23 @@
     "config": "toml"
   },
   "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
     "*.egg-info": true,
     "**/__pycache__": true,
     "**/.*": true,
     "**/.*_cache": true,
     "**/.classpath": true,
-    "**/.DS_Store": true,
     "**/.factorypath": true,
-    "**/.git": true,
-    "**/.hg": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.svn": true,
     "**/*.class": true,
     "**/*.olean": true,
-    "**/CVS": true,
     "**/staticfiles": true,
-    "**/Thumbs.db": true,
     "docs/_book": true,
     "out": false
   },
@@ -324,11 +325,6 @@
   ],
   "task.saveBeforeRun": "never",
   "terminal.explorerKind": "external",
-  "terminal.integrated.profiles.osx": {
-    "nushell": {
-      "path": "/Users/dan/bin/nu"
-    }
-  },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
   "workbench.colorCustomizations": {
@@ -424,7 +420,6 @@
   "liveshare.anonymousGuestApproval": "accept",
   "editor.suggest.showStatusBar": true,
   "metals.javaHome": "/opt/twitter_mde/package/TwitterJDK11/current/Contents/Home",
-  "workbench.activityBar.visible": false,
   "diffEditor.codeLens": true,
   "terminal.integrated.enableMultiLinePasteWarning": false,
   // "rust-analyzer.hover.documentation.enable": false,
@@ -479,13 +474,23 @@
   "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
-  "terminal.integrated.defaultProfile.osx": "Nushell",
   "cody.serverEndpoint": "https://sourcegraph.com",
   "cody.experimental.suggestions": true,
   "cody.codebase": "github.com/dandavison/delta",
   "cody.debug": true,
   "editor.formatOnSave": true,
   "window.zoomLevel": 1,
-  "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"]
+  "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
+  "CodeGPT.model": "gpt-4",
+  "workbench.activityBar.visible": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "Cargo.toml": "Cargo.lock",
+    "*.ts": "${capture}.typegen.ts",
+    "*.tsx": "${capture}.typegen.ts",
+    "*.mts": "${capture}.typegen.ts",
+    "*.cts": "${capture}.typegen.ts"
+  }
+
   // "editor.quickSuggestionsDelay": 500
 }
