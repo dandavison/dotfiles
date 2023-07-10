@@ -555,5 +555,9 @@
     "key": "shift+f12",
     "command": "-goToPreviousReference",
     "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "hipdot-vs-code-url-scheme-grabber.copyMarkdownLink"
   }
 ]

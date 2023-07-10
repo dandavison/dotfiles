@@ -124,7 +124,7 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.envFile": "${workspaceFolder}/.env.dev",
   "python.formatting.blackArgs": ["--fast", "--line-length", "99"],
-  "python.formatting.provider": "none",
+  "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.linting.enabled": true,
   "python.linting.mypyArgs": ["--check-untyped-defs"],
@@ -459,7 +459,7 @@
   "editor.wordWrapColumn": 777777,
   "css.colorDecorators.enable": true,
   "bracketLens.line": "none",
-  "bracketLens.mode": "none",
+  "bracketLens.mode": "auto",
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -469,7 +469,6 @@
   },
   "testing.saveBeforeTest": false,
   "metals.superMethodLensesEnabled": false,
-  "workbench.colorTheme": "Default Light Modern",
   "editor.matchBrackets": "always",
   "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
@@ -479,7 +478,6 @@
   "cody.codebase": "github.com/dandavison/delta",
   "cody.debug": true,
   "editor.formatOnSave": true,
-  "window.zoomLevel": 1,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
   "CodeGPT.model": "gpt-4",
   "workbench.activityBar.visible": false,
@@ -490,6 +488,19 @@
     "*.tsx": "${capture}.typegen.ts",
     "*.mts": "${capture}.typegen.ts",
     "*.cts": "${capture}.typegen.ts"
+  },
+  "diffEditor.experimental.collapseUnchangedRegions": true,
+  "hipdotUrlSchemeGrabber.useVSCodeInsiders": true,
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "workbench.colorTheme": "Default Light Modern",
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   }
 
   // "editor.quickSuggestionsDelay": 500
