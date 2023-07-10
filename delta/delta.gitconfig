@@ -4,34 +4,16 @@
 [interactive]
     diffFilter = delta --color-only
 
-[add.interactive]
-    useBuiltin = false # required for git 2.37.0
-
 [include]
     path = /Users/dan/src/delta/themes.gitconfig
 
 [delta]
-   # line-numbers-minus-style = minus-emph-style
-   # line-numbers-plus-style = plus-emph-style
-   # line-numbers-left-style = omit
-   # line-numbers-right-style = omit
-   features = decorations navigate # my-color-moved-theme-2 # consistent-color-semantics
+   features = decorations navigate
    width = variable
-   # # relative-paths = true
    hyperlinks = true
-   # hyperlinks-file-link-format = "file-line-column://{path}:{line}"
+   wrap-max-lines = 0
+   relative-paths = true
    hyperlinks-file-link-format = "vscode-insiders://file/{path}:{line}"
-   # diff-stat-align-width = 80
-   # grep-output-type = ripgrep
-   # grep-separator-symbol = keep
-   # grep-output-type = ripgrep
-   # grep-header-decoration-style = green box
-   grep-file-style = red
-   # hunk-header-decoration-style = green box
-   # grep-file-style = blue
-   # grep-header-style = blue
-   # grep-header-file-style = green
-   # grep-line-number-style = "green"
 
 [delta "decorations"]
     commit-decoration-style = blue ol
@@ -41,109 +23,4 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
-
-[delta "my-light-theme-settings"]
-    light = true
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit blue
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
-    hunk-header-style = file line-number syntax
-
-
-# [delta "dan-light"]
-#     light = true
-#     features = hoopoe2
-
-# [delta "dan-dark"]
-#     dark = true
-#     features = solarized-dark
-
-# [include]
-#     path = ~/src/delta/themes.gitconfig
-
-[delta "my-color-moved-theme"]
-    git-moved-from-style = bold purple
-    git-moved-to-style = bold cyan
-    map-styles = "my-color-moved-theme.git-moved-from-style => normal hoopoe2.dark-pink strike, \
-                  my-color-moved-theme.git-moved-to-style => syntax hoopoe2.dark-green ul"
-
-[delta "my-color-moved-theme-2"]
-    pink = "#ffe0e0"
-    green = "#d0ffd0"
-    git-moved-from-style = bold purple
-    git-moved-to-style = bold cyan
-    map-styles = "my-color-moved-theme.git-moved-from-style => normal my-color-moved-theme-2.pink ul, \
-                  my-color-moved-theme.git-moved-to-style => syntax my-color-moved-theme-2.green ul"
-
-
-
-
-[delta "blame"]
-    blame-separator-style = red
-    blame-code-style=syntax
-    blame-format= {author:<15.14}
-
-[delta "consistent-color-semantics"]
-    # All added/removed content is styled the same, regardless of
-    # whether there is unchanged content on the same line.
-    minus-style = minus-emph-style
-    plus-style = plus-emph-style
-
-[delta "hoopoe2"]
-    light = true
-
-    pink = "#ffe0e0"
-    dark-pink = "#ffc0c0"
-    green = "#d0ffd0"
-    dark-green = "#a0efa0"
-
-    minus-emph-style = normal hoopoe2.dark-pink
-    minus-non-emph-style = normal hoopoe2.pink
-    plus-emph-style = syntax hoopoe2.dark-green
-    plus-non-emph-style = syntax hoopoe2.green
-
-
-[delta "hoopoe-ul"]
-    light = true
-
-    pink = "#ffe0e0"
-    dark-pink = "#ffc0c0"
-    green = "#d0ffd0"
-    dark-green = "#a0efa0"
-
-    minus-emph-style = normal hoopoe2.pink
-    minus-non-emph-style = ul
-    plus-emph-style = syntax hoopoe2.green
-    plus-non-emph-style = syntax ul
-
-[delta "solarized-dark"]
-    syntax-theme = Solarized (dark)
-    # pink-color = lightpink
-    # blue-color = lightskyblue
-    # minus-style = normal solarized-dark.pink-color
-    # plus-style = syntax solarized-dark.blue-color
-    # minus-emph-style = minus-style
-    # plus-emph-style = plus-style
-    # minus-non-emph-style = normal ul
-    # plus-non-emph-style = syntax ul
-
-[delta "grep"]
-    # grep-match-style = syntax "#ffffaa"
-    # grep-match-file-style = "#00008b"
-    # grep-match-line-number-style = "#067a00"
-    # grep-match-file-style = cyan # "#ffc0cb"
-    # grep-match-style = syntax "#444444"
-    # grep-match-file-style = cyan
-    # grep-match-line-number-style = blue
-
-
-[delta "word-diff"]
-    minus-style = raw
-    minus-non-emph-style = raw
-    minus-emph-style = raw
-    plus-style = raw
-    plus-non-emph-style = raw
-    plus-emph-style = raw
+    grep-file-style = red
