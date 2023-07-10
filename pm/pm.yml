@@ -1,28 +1,50 @@
 - name: dotfiles
   dir: ~/src/devenv/dotfiles
+- name: vscode-process
+  dir: ~/src/vscode-process
 - name: src
   dir: ~/src
-- name: pm
-  dir: ~/src/pm
-- name: temporal-sdk-python
-  dir: ~/tmp/3p/temporalio/sdk-python
-- name: delta
-  dir: ~/src/delta
-- name: fos
-  dir: ~/tmp/3p/fos-next
-- name: temporal-log-view
-  dir: ~/tmp/3p/temporalio/temporal-log-view
+- name: temporal-sdk-core
+  dir: /Users/dan/tmp/3p/temporalio/sdk-python/temporalio/bridge/sdk-core
+- name: swimlanesio-links
+  dir: ~/src/swimlanesio-links
 - name: shell-config
   dir: ~/src/devenv/shell-config
+- name: delta
+  dir: ~/src/delta
+- name: temporal-notes
+  dir: /Users/dan/tmp/3p/temporalio/notes
+- name: temporal-sdk-python
+  dir: /Users/dan/tmp/3p/temporalio/sdk-python
 - name: temporal-python-demo
-  dir: ~/tmp/3p/temporalio/python-demo
-- name: temporal-docker-compose
-  dir: ~/tmp/3p/temporalio/docker-compose
-- name: temporal-docker-builds
-  dir: ~/tmp/3p/temporalio/docker-builds
-- name: bin
-  dir: ~/src/devenv/bin
+  dir: /Users/dan/tmp/3p/temporalio/python-demo
+- name: temporal-sdk-python-bridge
+  dir: /Users/dan/tmp/3p/temporalio/sdk-python/temporalio/bridge
+- name: mathematics
+  dir: ~/src/mathematics
+- name: temporal-sdk-dotnet
+  dir: /Users/dan/tmp/3p/temporalio/sdk-dotnet
+- name: temporal-sdk-dotnet-bridge
+  dir: /Users/dan/tmp/3p/temporalio/sdk-dotnet/src/Temporalio/Bridge
+- name: temporal-sdk-typescript
+  dir: /Users/dan/tmp/3p/temporalio/sdk-typescript
+- name: fos
+  dir: ~/tmp/3p/fos-next
+- name: temporal-sdk-typescript-bridge
+  dir: /Users/dan/tmp/3p/temporalio/sdk-typescript/packages/core-bridge
+- name: temporal-server
+  dir: /Users/dan/tmp/3p/temporalio/docker-builds/temporal
 - name: misc-python
   dir: ~/src/misc-python
+- name: bin
+  dir: ~/src/devenv/bin
+- name: temporal-log-view
+  dir: /Users/dan/tmp/3p/temporalio/temporal-log-view
+- name: pm
+  dir: ~/src/pm
+- name: temporal-docker-compose
+  dir: /Users/dan/tmp/3p/temporalio/docker-compose
+- name: temporal-docker-builds
+  dir: /Users/dan/tmp/3p/temporalio/docker-builds
 - name: nushell-config
   dir: ~/src/devenv/nushell
