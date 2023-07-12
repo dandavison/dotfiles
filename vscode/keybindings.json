@@ -464,9 +464,9 @@
     "when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd"
   },
   {
-    "key": "shift+cmd+r",
+    "key": "cmd+r",
     "command": "workbench.action.reloadWindow",
-    "when": "isDevelopment"
+    "when": "editorFocus"
   },
   {
     "key": "cmd+r",
@@ -558,6 +558,16 @@
   },
   {
     "key": "shift+cmd+l",
-    "command": "hipdot-vs-code-url-scheme-grabber.copyMarkdownLink"
+    "command": "process.copyGithubUrl"
+  },
+  {
+    "key": "shift+f12",
+    "command": "references-view.findReferences",
+    "when": "editorHasReferenceProvider"
+  },
+  {
+    "key": "cmd+l",
+    "command": "settings.cycle.lineNumbers",
+    "when": "editorFocus"
   }
 ]

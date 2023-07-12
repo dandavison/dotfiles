@@ -26,10 +26,10 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
-  "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
-  "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
-  "editor.gotoLocation.multipleReferences": "gotoAndPeek",
-  "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
   "editor.occurrencesHighlight": false,
@@ -349,11 +349,6 @@
     "-Dmetals.statistics=all"
   ],
   "editor.guides.indentation": false,
-  "sourcegraph.remoteUrlReplacements": {
-    "git.twitter.biz": "git.twitter.biz/ro"
-  },
-  "sourcegraph.url": "https://sourcegraph.twitter.biz/",
-  "sourcegraph.defaultBranch": "master",
   "highlightwords.box": {
     "light": false,
     "dark": true
@@ -419,7 +414,6 @@
   },
   "liveshare.anonymousGuestApproval": "accept",
   "editor.suggest.showStatusBar": true,
-  "metals.javaHome": "/opt/twitter_mde/package/TwitterJDK11/current/Contents/Home",
   "diffEditor.codeLens": true,
   "terminal.integrated.enableMultiLinePasteWarning": false,
   // "rust-analyzer.hover.documentation.enable": false,
@@ -468,15 +462,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "testing.saveBeforeTest": false,
-  "metals.superMethodLensesEnabled": false,
   "editor.matchBrackets": "always",
   "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
-  "cody.serverEndpoint": "https://sourcegraph.com",
-  "cody.experimental.suggestions": true,
-  "cody.codebase": "github.com/dandavison/delta",
-  "cody.debug": true,
   "editor.formatOnSave": true,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
   "CodeGPT.model": "gpt-4",
@@ -501,7 +490,8 @@
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "editor.gotoLocation.multipleImplementations": "goto"
 
   // "editor.quickSuggestionsDelay": 500
 }
