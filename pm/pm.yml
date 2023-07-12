@@ -1,50 +1,50 @@
-- name: dotfiles
-  dir: ~/src/devenv/dotfiles
-- name: vscode-process
-  dir: ~/src/vscode-process
-- name: src
-  dir: ~/src
+- name: devenv
+  dir: ~/src/devenv
+- name: temporal-notes
+  dir: /Users/dan/src/temporalio/notes
 - name: temporal-sdk-core
-  dir: /Users/dan/tmp/3p/temporalio/sdk-python/temporalio/bridge/sdk-core
+  dir: /Users/dan/src/temporalio/sdk-python/temporalio/bridge/sdk-core
 - name: swimlanesio-links
   dir: ~/src/swimlanesio-links
-- name: shell-config
-  dir: ~/src/devenv/shell-config
+- name: vscode-process
+  dir: ~/src/vscode-process
+- name: temporal-sdk-python
+  dir: /Users/dan/src/temporalio/sdk-python
+- name: temporal-sdk-python-bridge
+  dir: /Users/dan/src/temporalio/sdk-python/temporalio/bridge
 - name: delta
   dir: ~/src/delta
-- name: temporal-notes
-  dir: /Users/dan/tmp/3p/temporalio/notes
-- name: temporal-sdk-python
-  dir: /Users/dan/tmp/3p/temporalio/sdk-python
+- name: src
+  dir: ~/src
+- name: shell-config
+  dir: ~/src/devenv/shell-config
 - name: temporal-python-demo
-  dir: /Users/dan/tmp/3p/temporalio/python-demo
-- name: temporal-sdk-python-bridge
-  dir: /Users/dan/tmp/3p/temporalio/sdk-python/temporalio/bridge
+  dir: /Users/dan/src/temporalio/python-demo
 - name: mathematics
   dir: ~/src/mathematics
 - name: temporal-sdk-dotnet
-  dir: /Users/dan/tmp/3p/temporalio/sdk-dotnet
+  dir: /Users/dan/src/temporalio/sdk-dotnet
 - name: temporal-sdk-dotnet-bridge
-  dir: /Users/dan/tmp/3p/temporalio/sdk-dotnet/src/Temporalio/Bridge
+  dir: /Users/dan/src/temporalio/sdk-dotnet/src/Temporalio/Bridge
 - name: temporal-sdk-typescript
-  dir: /Users/dan/tmp/3p/temporalio/sdk-typescript
+  dir: /Users/dan/src/temporalio/sdk-typescript
 - name: fos
   dir: ~/tmp/3p/fos-next
 - name: temporal-sdk-typescript-bridge
-  dir: /Users/dan/tmp/3p/temporalio/sdk-typescript/packages/core-bridge
+  dir: /Users/dan/src/temporalio/sdk-typescript/packages/core-bridge
 - name: temporal-server
-  dir: /Users/dan/tmp/3p/temporalio/docker-builds/temporal
+  dir: /Users/dan/src/temporalio/docker-builds/temporal
 - name: misc-python
   dir: ~/src/misc-python
 - name: bin
   dir: ~/src/devenv/bin
 - name: temporal-log-view
-  dir: /Users/dan/tmp/3p/temporalio/temporal-log-view
+  dir: /Users/dan/src/temporalio/temporal-log-view
 - name: pm
   dir: ~/src/pm
 - name: temporal-docker-compose
-  dir: /Users/dan/tmp/3p/temporalio/docker-compose
+  dir: /Users/dan/src/temporalio/docker-compose
 - name: temporal-docker-builds
-  dir: /Users/dan/tmp/3p/temporalio/docker-builds
+  dir: /Users/dan/src/temporalio/docker-builds
 - name: nushell-config
   dir: ~/src/devenv/nushell
