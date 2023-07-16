@@ -1,4 +1,5 @@
 {
+  "java.settings.url": "/Users/dan/src/devenv/dotfiles/eclipse/settings.prefs",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -6,12 +7,28 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
-    "editor.formatOnPaste": false,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
+  "isort.args": ["--profile", "black"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.envFile": "${workspaceFolder}/.env.dev",
+  "python.languageServer": "Pylance",
+  "python.linting.enabled": true,
+  "python.linting.mypyArgs": ["--check-untyped-defs"],
+  "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
+  "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
+  "python.linting.pylintEnabled": false,
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "python.testing.promptToConfigure": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
   "[sql]": {
     "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
   },
@@ -121,19 +138,6 @@
   },
   "prettier.documentSelectors": ["*.ts"],
   "prettier.singleQuote": true,
-  "python.analysis.typeCheckingMode": "basic",
-  "python.envFile": "${workspaceFolder}/.env.dev",
-  "python.formatting.blackArgs": ["--fast", "--line-length", "99"],
-  "python.languageServer": "Pylance",
-  "python.linting.enabled": true,
-  "python.linting.mypyArgs": ["--check-untyped-defs"],
-  "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
-  "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
-  "python.linting.pylintEnabled": false,
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "python.testing.promptToConfigure": false,
-  "python.testing.pytestEnabled": true,
-  "python.testing.unittestEnabled": false,
   "rewrap.wrappingColumn": 80,
   // "rust-analyzer.checkOnSave.command": "clippy",
   // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
@@ -463,7 +467,6 @@
   "testing.saveBeforeTest": false,
   "editor.matchBrackets": "always",
   "editor.lineNumbers": "off",
-  "editor.minimap.enabled": false,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
   "editor.formatOnSave": true,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
@@ -489,7 +492,16 @@
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "editor.gotoLocation.multipleImplementations": "goto"
-
-  // "editor.quickSuggestionsDelay": 500
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "isort.check": true,
+  "editor.minimap.enabled": false,
+  "spotlessGradle.format.enable": true,
+  "spotlessGradle.diagnostics.enable": true,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "java.format.onType.enabled": false,
+  "java.format.comments.enabled": false,
+  "java.format.enabled": false,
+  "rust-analyzer.hover.memoryLayout.enable": false
 }

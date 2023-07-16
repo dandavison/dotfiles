@@ -569,5 +569,10 @@
     "key": "cmd+l",
     "command": "settings.cycle.lineNumbers",
     "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+'",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]
