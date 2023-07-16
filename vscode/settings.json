@@ -124,7 +124,6 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.envFile": "${workspaceFolder}/.env.dev",
   "python.formatting.blackArgs": ["--fast", "--line-length", "99"],
-  "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.linting.enabled": true,
   "python.linting.mypyArgs": ["--check-untyped-defs"],
@@ -453,7 +452,7 @@
   "editor.wordWrapColumn": 777777,
   "css.colorDecorators.enable": true,
   "bracketLens.line": "none",
-  "bracketLens.mode": "auto",
+  "bracketLens.mode": "manual",
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -480,7 +479,6 @@
   },
   "diffEditor.experimental.collapseUnchangedRegions": true,
   "hipdotUrlSchemeGrabber.useVSCodeInsiders": true,
-  "editor.defaultFormatter": "ms-python.black-formatter",
   "workbench.colorTheme": "Default Light Modern",
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"

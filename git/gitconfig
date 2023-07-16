@@ -64,5 +64,6 @@
     head = rev-list -n1 HEAD
     logd = log --decorate
 	ls = ls-files
+    clone = clone --recursive
 	# merge = merge --no-edit
 	# squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
