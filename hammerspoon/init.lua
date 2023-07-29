@@ -1,3 +1,5 @@
+require("hs.ipc")
+
 -- https://github.com/alacritty/alacritty/issues/862#issuecomment-616873890
 hs.hotkey.bind({ "cmd" }, "'", function()
     local alacritty = hs.application.find('alacritty')

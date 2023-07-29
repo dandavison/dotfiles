@@ -434,7 +434,7 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "editor.suggest.showInlineDetails": false,
-  "errorLens.enabled": true,
+  "errorLens.enabled": false,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 500,
   "zenMode.silentNotifications": false,
@@ -503,5 +503,10 @@
   "java.format.onType.enabled": false,
   "java.format.comments.enabled": false,
   "java.format.enabled": false,
-  "rust-analyzer.hover.memoryLayout.enable": false
+  "rust-analyzer.hover.memoryLayout.enable": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "lldb.library": "/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native"
 }

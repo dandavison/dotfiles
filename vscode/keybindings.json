@@ -488,7 +488,7 @@
   },
   {
     "key": "cmd+m",
-    "command": "process.magitStatus"
+    "command": "etc.magitStatus"
   },
   {
     "key": "cmd+a",
@@ -500,7 +500,7 @@
   },
   {
     "key": "ctrl+c f",
-    "command": "process.openFolders"
+    "command": "etc.openFolders"
   },
   {
     "key": "alt+x",
@@ -557,10 +557,6 @@
     "when": "inReferenceSearchEditor || referenceSearchVisible"
   },
   {
-    "key": "shift+cmd+l",
-    "command": "process.copyGithubUrl"
-  },
-  {
     "key": "shift+f12",
     "command": "references-view.findReferences",
     "when": "editorHasReferenceProvider"
@@ -574,5 +570,14 @@
     "key": "shift+cmd+'",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "etc.copyGithubUrl"
+  },
+  {
+    "key": "shift+=",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
   }
 ]

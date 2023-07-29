@@ -12,7 +12,7 @@
    width = variable
    hyperlinks = true
    relative-paths = true
-   hyperlinks-file-link-format = "vscode-insiders://file/{path}:{line}"
+   hyperlinks-file-link-format = "http://o/file/{path}:{line}"
 
 [delta "decorations"]
     commit-decoration-style = blue ol
