@@ -9,3 +9,7 @@ hs.hotkey.bind({ "cmd" }, "'", function()
         hs.application.launchOrFocus("/Applications/Alacritty.app")
     end
 end)
+
+hs.hotkey.bind({ "cmd" }, "space", function()
+    hs.application.launchOrFocus("/Applications/Wormhole.app")
+end)
