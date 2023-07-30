@@ -8,5 +8,11 @@
     "prefix": "pdb",
     "body": ["import pdb", "pdb.set_trace()"],
     "description": "pdb.set_trace()"
+  },
+
+  "if __name__": {
+    "prefix": "if __name__",
+    "body": ["if __name__ == \"__main__\""],
+    "description": "if __name__ == \"__main__\""
   }
 }
