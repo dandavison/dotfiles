@@ -1,5 +1,8 @@
 {
   "java.settings.url": "/Users/dan/src/devenv/dotfiles/eclipse/settings.prefs",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -16,19 +19,6 @@
       "source.organizeImports": true
     }
   },
-  "isort.args": ["--profile", "black"],
-  "python.analysis.typeCheckingMode": "basic",
-  "python.envFile": "${workspaceFolder}/.env.dev",
-  "python.languageServer": "Pylance",
-  "python.linting.enabled": true,
-  "python.linting.mypyArgs": ["--check-untyped-defs"],
-  "python.linting.mypyPath": "/Users/dan/src/owldock/backend/.venv/bin/mypy",
-  "python.linting.pylintArgs": ["--load-plugins", "--rcfile=.pylintrc"],
-  "python.linting.pylintEnabled": false,
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "python.testing.promptToConfigure": false,
-  "python.testing.pytestEnabled": true,
-  "python.testing.unittestEnabled": false,
   "[sql]": {
     "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
   },
@@ -37,16 +27,48 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "typescript.preferences.quoteStyle": "double"
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "yaml.schemas": {
+    "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  // "[yaml]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "isort.args": ["--profile", "black"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.envFile": "${workspaceFolder}/.env.dev",
+  "python.languageServer": "Pylance",
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "python.testing.promptToConfigure": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
   "alt-editor.args": "--line {line} --column {column} {filename}",
   "alt-editor.binary": "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea",
   "diffEditor.renderSideBySide": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
-  "editor.gotoLocation.multipleDeclarations": "goto",
-  "editor.gotoLocation.multipleDefinitions": "goto",
-  "editor.gotoLocation.multipleReferences": "goto",
-  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
+  "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
+  "editor.gotoLocation.multipleReferences": "gotoAndPeek",
+  "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
   "editor.occurrencesHighlight": false,
@@ -94,7 +116,7 @@
     "**/Thumbs.db": true,
     "*.egg-info": true,
     "**/__pycache__": true,
-    "**/.*": true,
+    // "**/.*": true,
     "**/.*_cache": true,
     "**/.classpath": true,
     "**/.factorypath": true,
@@ -330,11 +352,6 @@
   "terminal.explorerKind": "external",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
-  "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
-  },
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
@@ -411,10 +428,7 @@
   "git.ignoreUntrackedDirFiles": true,
   "git.autorefresh": false,
   // "git.path": "/Users/dan/src/misc/git-wrapper.sh",
-  "git.enabled": false,
-  "[toml]": {
-    "editor.defaultFormatter": "bodil.prettier-toml"
-  },
+  "git.enabled": true,
   "liveshare.anonymousGuestApproval": "accept",
   "editor.suggest.showStatusBar": true,
   "diffEditor.codeLens": true,
@@ -424,17 +438,9 @@
   // "rust-analyzer.inlayHints.typeHints.enable": false,
   // "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
   // "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
-  "yaml.schemas": {
-    "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
-  "python.venvPath": "~/tmp/virtualenvs",
-  "python.linting.flake8Args": ["--max-line-length", "200"],
   "git.mergeEditor": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
   "editor.suggest.showInlineDetails": false,
-  "errorLens.enabled": false,
+  "errorLens.enabled": true,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 500,
   "zenMode.silentNotifications": false,
@@ -457,13 +463,7 @@
   "css.colorDecorators.enable": true,
   "bracketLens.line": "none",
   "bracketLens.mode": "manual",
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "go.toolsManagement.autoUpdate": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "testing.saveBeforeTest": false,
   "editor.matchBrackets": "always",
   "editor.lineNumbers": "off",
@@ -483,30 +483,15 @@
   "diffEditor.experimental.collapseUnchangedRegions": true,
   "hipdotUrlSchemeGrabber.useVSCodeInsiders": true,
   "workbench.colorTheme": "Default Light Modern",
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
   "editor.gotoLocation.multipleImplementations": "goto",
   "isort.check": true,
   "editor.minimap.enabled": false,
   "spotlessGradle.format.enable": true,
   "spotlessGradle.diagnostics.enable": true,
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
   "java.format.onType.enabled": false,
   "java.format.comments.enabled": false,
   "java.format.enabled": false,
   "rust-analyzer.hover.memoryLayout.enable": false,
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "lldb.library": "/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
   "lldb.launch.expressions": "native"
 }
