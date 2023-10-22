@@ -401,7 +401,7 @@
     }
   },
   {
-    "key": "shift+alt+h",
+    "key": "alt+cmd+h",
     "command": "highlightwords.removeAllHighlights"
   },
   {
@@ -573,11 +573,23 @@
   },
   {
     "key": "shift+cmd+l",
+    "command": "etc.copyGithubMarkdownUrl"
+  },
+  {
+    "key": "alt+cmd+l",
     "command": "etc.copyGithubUrl"
   },
   {
     "key": "shift+=",
     "command": "explorer.newFile",
     "when": "explorerViewletFocus"
+  },
+  {
+    "key": "shift+cmd+.",
+    "command": "references-view.findImplementations"
+  },
+  {
+    "key": "shift+alt+h",
+    "command": "highlightwords.addRegExpHighlight"
   }
 ]

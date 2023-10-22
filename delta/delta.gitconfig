@@ -12,7 +12,7 @@
    width = variable
    hyperlinks = true
    relative-paths = true
-   hyperlinks-file-link-format = "http://o/file/{path}:{line}"
+   hyperlinks-file-link-format = "http://o/file/{path}:{line}?land-in=editor"
 
 [delta "decorations"]
     commit-decoration-style = blue ol

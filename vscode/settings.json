@@ -9,6 +9,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[go]": { "editor.codeActionsOnSave": { "source.organizeImports": false } },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
@@ -25,10 +26,13 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.acceptSuggestionOnCommitCharacter": false,
-    "typescript.preferences.quoteStyle": "double"
+    "typescript.preferences.quoteStyle": "double",
+    "editor.indentSize": 2
   },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.indentSize": 2
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -65,6 +69,7 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
   "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
   "editor.gotoLocation.multipleReferences": "gotoAndPeek",
@@ -352,7 +357,6 @@
   "terminal.explorerKind": "external",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.nativeFullScreen": false,
-  "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
@@ -440,7 +444,7 @@
   // "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
   "git.mergeEditor": false,
   "editor.suggest.showInlineDetails": false,
-  "errorLens.enabled": true,
+  "errorLens.enabled": false,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 500,
   "zenMode.silentNotifications": false,
@@ -456,7 +460,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.scrollbar.horizontal": "hidden",
   "debug.onTaskErrors": "showErrors",
-  "rust-analyzer.hover.actions.enable": true,
+  "rust-analyzer.hover.actions.enable": false,
   "editor.renderLineHighlight": "none",
   "zenMode.hideStatusBar": false,
   "editor.wordWrapColumn": 777777,
@@ -465,10 +469,9 @@
   "bracketLens.mode": "manual",
   "go.toolsManagement.autoUpdate": true,
   "testing.saveBeforeTest": false,
-  "editor.matchBrackets": "always",
+  "editor.matchBrackets": "never",
   "editor.lineNumbers": "off",
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
-  "editor.formatOnSave": true,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
   "CodeGPT.model": "gpt-4",
   "workbench.activityBar.visible": false,
@@ -480,9 +483,8 @@
     "*.mts": "${capture}.typegen.ts",
     "*.cts": "${capture}.typegen.ts"
   },
-  "diffEditor.experimental.collapseUnchangedRegions": true,
   "hipdotUrlSchemeGrabber.useVSCodeInsiders": true,
-  "workbench.colorTheme": "Default Light Modern",
+  "workbench.colorTheme": "Github Light Theme",
   "editor.gotoLocation.multipleImplementations": "goto",
   "isort.check": true,
   "editor.minimap.enabled": false,
@@ -493,5 +495,28 @@
   "java.format.enabled": false,
   "rust-analyzer.hover.memoryLayout.enable": false,
   "lldb.library": "/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
-  "lldb.launch.expressions": "native"
+  "lldb.launch.expressions": "native",
+  "window.zoomLevel": 0.5,
+  "git.openRepositoryInParentFolders": "never",
+  "git.autoRepositoryDetection": false,
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workspaceInStatusBar.displayFolderIcon": false,
+  "workspaceInStatusBar.alignment": "left",
+  "workspaceInStatusBar.priority": -1,
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "#00000000",
+    "editorInfo.foreground": "#00000000",
+    "editorWarning.foreground": "#00000000"
+  },
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "workbench.editor.empty.hint": "hidden",
+  "markdown.preview.markEditorSelection": false,
+  "editor.trimAutoWhitespace": false,
+  "rust-analyzer.cargo.autoreload": false,
+  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+  "security.promptForLocalFileProtocolHandling": false,
+  "outline.collapseItems": "alwaysCollapse"
 }

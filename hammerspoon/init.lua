@@ -15,13 +15,13 @@ hs.hotkey.bind({ "cmd" }, "space", function()
 end)
 
 hs.hotkey.bind({ "cmd", "control" }, "left", function()
-    hs.http.get("http://o/previous-project/", nil)
+    hs.http.get("http://wormhole/previous-project/", nil)
 end)
 
 hs.hotkey.bind({ "cmd", "control" }, "right", function()
-    hs.http.get("http://o/previous-project/", nil)
+    hs.http.get("http://wormhole/previous-project/", nil)
 end)
 
-hs.hotkey.bind({ "cmd", "shift" }, "g", function()
-    hs.application.launchOrFocus("/Applications/Firefox.app")
-end)
+-- hs.hotkey.bind({ "cmd", "shift" }, "c", function()
+--     hs.application.launchOrFocus("/Applications/Firefox.app")
+-- end)

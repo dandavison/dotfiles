@@ -14,12 +14,14 @@
     # attributesfile = ~/devenv/dotfiles/git/gitattributes
     editor = emacsclient
     excludesfile = ~/.gitignore
+    default-branch = main
 
 [diff]
     colorMoved = default
     colorMovedWS = allow-indentation-change
     frag = red
     submodule = short
+    # context = 999999
 
 [difftool]
     prompt = false
@@ -35,6 +37,9 @@
 
 [init]
     defaultBranch = main
+
+[log]
+    decorate = true
 
 [merge]
     conflictstyle = diff3
@@ -67,3 +72,5 @@
     clone = clone --recursive
 	# merge = merge --no-edit
 	# squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
+[url "git@github.com:"]
+	insteadOf = https://github.com/

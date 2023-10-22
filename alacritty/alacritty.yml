@@ -21,11 +21,9 @@ shell:
 key_bindings:
   - { key: Down, mods: Command, chars: "\x1a\x1b[B" } # tmux select-pane -D
   - { key: Left, mods: Command, chars: "\x1a\x1b[D" } # tmux select-pane -L
-  - { key: Left, mods: Command|Shift, chars: "\x1ap" } # tmux previous-window
   - { key: N, mods: Command, chars: "\x1ac" } # tmux new-window
   - { key: Return, mods: Command, chars: "\x1az" } # tmux resize-pane -Z
   - { key: Right, mods: Command, chars: "\x1a\x1b[C" } # tmux select-pane -R
-  - { key: Right, mods: Command|Shift, chars: "\x1an" } # tmux next-window
   - { key: S, mods: Command, chars: "\x1a[" } # tmux scroll mode
   - { key: Slash, mods: Command, action: ToggleSimpleFullscreen }
   - { key: Up, mods: Command, chars: "\x1a\x1b[A" } # tmux select-pane -U

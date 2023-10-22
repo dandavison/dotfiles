@@ -28,8 +28,8 @@ auto_sync = false
 
 ## which search mode to use
 ## possible values: prefix, fulltext, fuzzy, skim
-# search_mode = "fuzzy"
 search_mode = "prefix"
+# This seems to override command line invocations?
 
 ## which filter mode to use
 ## possible values: global, host, session, directory
