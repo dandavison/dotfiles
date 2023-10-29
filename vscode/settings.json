@@ -444,7 +444,7 @@
   // "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
   "git.mergeEditor": false,
   "editor.suggest.showInlineDetails": false,
-  "errorLens.enabled": false,
+  "errorLens.enabled": true,
   "extensions.ignoreRecommendations": true,
   "errorLens.delay": 500,
   "zenMode.silentNotifications": false,
@@ -460,7 +460,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.scrollbar.horizontal": "hidden",
   "debug.onTaskErrors": "showErrors",
-  "rust-analyzer.hover.actions.enable": false,
+  "rust-analyzer.hover.actions.enable": true,
   "editor.renderLineHighlight": "none",
   "zenMode.hideStatusBar": false,
   "editor.wordWrapColumn": 777777,
@@ -469,7 +469,7 @@
   "bracketLens.mode": "manual",
   "go.toolsManagement.autoUpdate": true,
   "testing.saveBeforeTest": false,
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": "always",
   "editor.lineNumbers": "off",
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
@@ -507,9 +507,9 @@
   "workspaceInStatusBar.alignment": "left",
   "workspaceInStatusBar.priority": -1,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "#00000000",
-    "editorInfo.foreground": "#00000000",
-    "editorWarning.foreground": "#00000000"
+    "editorError.foreground": "red",
+    "editorInfo.foreground": "blue",
+    "editorWarning.foreground": "orange"
   },
   "diffEditor.hideUnchangedRegions.enabled": true,
   "workbench.editor.empty.hint": "hidden",
@@ -518,5 +518,8 @@
   "rust-analyzer.cargo.autoreload": false,
   "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
   "security.promptForLocalFileProtocolHandling": false,
-  "outline.collapseItems": "alwaysCollapse"
+  "outline.collapseItems": "alwaysCollapse",
+  "workbench.editor.showTabs": "single",
+  "zenMode.fullScreen": true,
+  "zenMode.showTabs": "single"
 }
