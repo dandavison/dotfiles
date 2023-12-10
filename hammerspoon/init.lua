@@ -15,11 +15,11 @@ hs.hotkey.bind({ "cmd" }, "space", function()
 end)
 
 hs.hotkey.bind({ "cmd", "control" }, "left", function()
-    hs.http.get("http://wormhole/previous-project/", nil)
+    hs.http.get("http://wormhole:7117/previous-project/", nil)
 end)
 
 hs.hotkey.bind({ "cmd", "control" }, "right", function()
-    hs.http.get("http://wormhole/previous-project/", nil)
+    hs.http.get("http://wormhole:7117/previous-project/", nil)
 end)
 
 -- hs.hotkey.bind({ "cmd", "shift" }, "c", function()

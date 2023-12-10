@@ -318,7 +318,7 @@
     "when": "editorTextFocus && foldingEnabled"
   },
   {
-    "key": "ctrl+shift+tab",
+    "key": "shift+alt+tab",
     "command": "editor.unfoldAll",
     "when": "editorTextFocus && foldingEnabled"
   },
@@ -586,5 +586,20 @@
   {
     "key": "shift+alt+h",
     "command": "highlightwords.addRegExpHighlight"
+  },
+  {
+    "key": "shift+cmd+left",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "alt+down",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "alt+up",
+    "command": "references-view.findReferences",
+    "when": "editorHasReferenceProvider"
   }
 ]

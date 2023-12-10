@@ -9,7 +9,11 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[go]": { "editor.codeActionsOnSave": { "source.organizeImports": false } },
+  "[go]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    }
+  },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
@@ -17,8 +21,12 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
+      "source.organizeImports": "explicit"
+    },
+    "editor.wordBasedSuggestions": "off"
+  },
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportWildcardImportFromLibrary": "none"
   },
   "[sql]": {
     "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
@@ -76,7 +84,7 @@
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": false,
-  "editor.occurrencesHighlight": false,
+  "editor.occurrencesHighlight": "off",
   "editor.overviewRulerBorder": false,
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestions": {
@@ -90,7 +98,7 @@
   "editor.suggest.localityBonus": true,
   "editor.suggest.showTypeParameters": true,
   "editor.suggestSelection": "first",
-  "editor.wordBasedSuggestions": false,
+  "editor.wordBasedSuggestions": "off",
   "editor.wordSeparators": "_`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
@@ -466,7 +474,7 @@
   "editor.wordWrapColumn": 777777,
   "css.colorDecorators.enable": true,
   "bracketLens.line": "none",
-  "bracketLens.mode": "manual",
+  "bracketLens.mode": "none",
   "go.toolsManagement.autoUpdate": true,
   "testing.saveBeforeTest": false,
   "editor.matchBrackets": "always",
@@ -523,5 +531,6 @@
   "zenMode.showTabs": "single",
   "workbench.activityBar.location": "hidden",
   "cSpell.enabled": false,
-  "editor.renderControlCharacters": false
+  "editor.renderControlCharacters": false,
+  "githubPullRequests.remotes": ["origin"]
 }

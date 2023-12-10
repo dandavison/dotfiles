@@ -1,6 +1,9 @@
 [core]
     pager = delta
 
+[pager]
+    log = rg -v '^    <!-- ' | delta  # or less
+
 [interactive]
     diffFilter = delta --color-only
 

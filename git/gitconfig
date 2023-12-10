@@ -6,6 +6,8 @@
 
 [color "diff"]
     frag = red
+    # oldMoved = red
+    # newMoved = green
 
 [commit]
     status = false
@@ -17,8 +19,8 @@
     default-branch = main
 
 [diff]
-    colorMoved = default
-    colorMovedWS = allow-indentation-change
+    # colorMoved = default
+    # colorMovedWS = allow-indentation-change
     frag = red
     submodule = short
     # context = 999999
@@ -74,3 +76,5 @@
 	# squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[protocol "file"]
+	allowed = true
