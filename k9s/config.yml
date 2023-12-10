@@ -20,6 +20,7 @@ k9s:
   currentCluster: kind-kind
   clusters:
     kind-kind:
+      skin: gruvbox-light
       namespace:
         active: all
         lockFavorites: false
