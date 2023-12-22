@@ -601,5 +601,13 @@
     "key": "alt+up",
     "command": "references-view.findReferences",
     "when": "editorHasReferenceProvider"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "manim-sideview.renderNewScene"
+  },
+  {
+    "key": "ctrl+' c",
+    "command": "-manim-sideview.renderNewScene"
   }
 ]

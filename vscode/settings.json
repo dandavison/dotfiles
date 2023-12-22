@@ -57,12 +57,9 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "yaml.schemas": {
-    "file:///Users/dan/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // "[yaml]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
   "isort.args": ["--profile", "black"],
   "python.analysis.typeCheckingMode": "basic",
   "python.envFile": "${workspaceFolder}/.env.dev",
@@ -109,16 +106,12 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
-    "**/*.aurora": "python",
     "**/*.gitconfig": "toml",
-    "**/*.strato": "scala",
     "**/*.html": "html",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
-    "**/templates/**/*": "django-txt",
-    "**/templates/**/*.html": "django-html",
-    // "BUILD": "python",
-    // "BUILD.bazel": "python",
-    "config": "toml"
+    "config": "toml",
+    "**/*.yaml": "yaml",
+    "*.yaml": "yaml"
   },
   "files.exclude": {
     "**/.git": true,
@@ -444,7 +437,7 @@
   "liveshare.anonymousGuestApproval": "accept",
   "editor.suggest.showStatusBar": true,
   "diffEditor.codeLens": true,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   // "rust-analyzer.hover.documentation.enable": false,
   // "rust-analyzer.inlayHints.parameterHints.enable": false,
   // "rust-analyzer.inlayHints.typeHints.enable": false,
@@ -512,13 +505,15 @@
   },
   "workspaceInStatusBar.displayFolderIcon": false,
   "workspaceInStatusBar.alignment": "left",
-  "workspaceInStatusBar.priority": -1,
+  "workspaceInStatusBar.priority": 0,
   "workbench.colorCustomizations": {
-    "editorError.foreground": "red",
-    "editorInfo.foreground": "blue",
-    "editorWarning.foreground": "orange"
+    "editorError.foreground": "#FF0000",
+    "editorInfo.foreground": "#0000FF",
+    "editorWarning.foreground": "#FFA500",
+    "scrollbar.shadow": "#282C34",
+    "editorGroup.border": "#282C34",
+    "sideBar.border": "#282C34"
   },
-  "diffEditor.hideUnchangedRegions.enabled": true,
   "workbench.editor.empty.hint": "hidden",
   "markdown.preview.markEditorSelection": false,
   "editor.trimAutoWhitespace": false,
@@ -532,5 +527,12 @@
   "workbench.activityBar.location": "hidden",
   "cSpell.enabled": false,
   "editor.renderControlCharacters": false,
-  "githubPullRequests.remotes": ["origin"]
+  "githubPullRequests.remotes": ["origin"],
+  "manim-sideview.previewLooping": false,
+  "manim-sideview.focusOutputOnRun": false,
+  "manim-sideview.outputToTerminal": true,
+  "manim-sideview.previewAutoPlay": false,
+  "manim-sideview.runOnSave": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.hideUnchangedRegions.enabled": true
 }

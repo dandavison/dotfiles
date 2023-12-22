@@ -20,13 +20,19 @@ k9s:
   currentCluster: kind-kind
   clusters:
     kind-kind:
-      skin: gruvbox-light
       namespace:
-        active: all
+        active: 9c883b96
         lockFavorites: false
         favorites:
-          - all
-          - default
+        - 9c883b96
+        - 2c5baa93
+        - 498d4aa7
+        - 523b3629
+        - 1faa4225
+        - 7a45eb28
+        - 436d8290
+        - f4f7206b
+        - e65b5b7f
       view:
         active: po
       featureGates:
