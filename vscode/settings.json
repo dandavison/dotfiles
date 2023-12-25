@@ -142,7 +142,6 @@
   "github.copilot.enable": {
     "*": true
   },
-  "github.copilot.inlineSuggest.enable": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
@@ -221,18 +220,6 @@
         },
         {
           "editor.matchBrackets": "always"
-        }
-      ]
-    },
-    {
-      "id": "copilot",
-      "overrideWorkspaceSettings": true,
-      "values": [
-        {
-          "github.copilot.inlineSuggest.enable": false
-        },
-        {
-          "github.copilot.inlineSuggest.enable": true
         }
       ]
     },
@@ -329,14 +316,6 @@
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').formatOnSave ? '⚡': ''",
       "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Format on save"
-    },
-    {
-      "alignment": "right",
-      "command": "github.copilot.toggleCopilot",
-      "id": "sbc.copilot",
-      "script": "statusBarItem.text = vscode.workspace.getConfiguration('github.copilot.inlineSuggest').enable ? '$(github)' : ''",
-      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
-      "text": "Github Copilot"
     },
     {
       "alignment": "right",
