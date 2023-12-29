@@ -80,7 +80,7 @@
   "editor.gotoLocation.multipleReferences": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.inlineSuggest.enabled": true,
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.occurrencesHighlight": "off",
   "editor.overviewRulerBorder": false,
   "editor.parameterHints.enabled": false,
@@ -140,7 +140,10 @@
     "**/.metals": true
   },
   "github.copilot.enable": {
-    "*": true
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
@@ -513,5 +516,13 @@
   "manim-sideview.previewAutoPlay": false,
   "manim-sideview.runOnSave": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.hideUnchangedRegions.enabled": true
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "output.smartScroll.enabled": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.autoSearchPaths": false,
+  "python.analysis.completeFunctionParens": true
 }

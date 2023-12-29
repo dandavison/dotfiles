@@ -604,5 +604,9 @@
   {
     "key": "ctrl+' c",
     "command": "-manim-sideview.renderNewScene"
+  },
+  {
+    "key": "cmd+p",
+    "command": "github.copilot.toggleCopilot"
   }
 ]
