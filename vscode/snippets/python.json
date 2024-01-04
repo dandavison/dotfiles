@@ -7,7 +7,7 @@
 
   "if __name__": {
     "prefix": "if __name__",
-    "body": ["if __name__ == \"__main__\""],
+    "body": ["if __name__ == \"__main__\":", "    $0"],
     "description": "if __name__ == \"__main__\""
   }
 }

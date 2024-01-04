@@ -14,6 +14,9 @@
       "source.organizeImports": "never"
     }
   },
+  "go.alternateTools": {
+    "customFormatter": "/Users/dan/go/bin/golines"
+  },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
@@ -26,6 +29,7 @@
     "editor.wordBasedSuggestions": "off"
   },
   "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnusedImport": "error",
     "reportWildcardImportFromLibrary": "none"
   },
   "[sql]": {
@@ -58,6 +62,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "isort.args": ["--profile", "black"],
@@ -122,7 +127,7 @@
     "**/Thumbs.db": true,
     "*.egg-info": true,
     "**/__pycache__": true,
-    // "**/.*": true,
+    "**/.*": true,
     "**/.*_cache": true,
     "**/.classpath": true,
     "**/.factorypath": true,
@@ -522,7 +527,10 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "editor.stickyScroll.enabled": false,
   "python.analysis.autoImportCompletions": true,
+  "python.analysis.indexing": true,
+  "python.analysis.packageIndexDepths": [
+    { "name": "manim", "depth": 777, "includeAllSymbols": true }
+  ],
   "python.analysis.autoFormatStrings": true,
-  "python.analysis.autoSearchPaths": false,
-  "python.analysis.completeFunctionParens": true
+  "python.analysis.autoSearchPaths": false
 }

@@ -56,6 +56,9 @@
 [rebase]
     autosquash = true
 
+[clone]
+    recursive = true
+
 [status]
     aheadBehind = false
     hints = false

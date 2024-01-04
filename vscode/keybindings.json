@@ -608,5 +608,9 @@
   {
     "key": "cmd+p",
     "command": "github.copilot.toggleCopilot"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "workbench.action.terminal.kill"
   }
 ]
