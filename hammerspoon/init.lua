@@ -22,6 +22,17 @@ hs.hotkey.bind({ "cmd", "control" }, "right", function()
     hs.http.get("http://wormhole:7117/previous-project/", nil)
 end)
 
+hs.eventtap.new({ hs.eventtap.event.types.swipe }, function(event)
+    if event:getType() == hs.eventtap.event.types.swipe then
+        local trackpadEvent = event:rawTable()
+        if trackpadEvent and trackpadEvent.y > 0 then
+            hs.http.get("http://wormhole:7117/previous-project/", nil)
+        elseif trackpadEvent and trackpadEvent.y < 0 then
+            hs.http.get("http://wormhole:7117/previous-project/", nil)
+        end
+    end
+end):start()
+
 -- hs.hotkey.bind({ "cmd", "shift" }, "c", function()
 --     hs.application.launchOrFocus("/Applications/Firefox.app")
 -- end)
