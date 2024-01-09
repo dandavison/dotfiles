@@ -9,6 +9,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "css.colorDecorators.enable": true,
+  "debug.console.acceptSuggestionOnEnter": "on",
   "debug.inlineValues": "off",
   "debug.onTaskErrors": "showErrors",
   "diffEditor.codeLens": true,
@@ -54,8 +55,8 @@
   "editor.suggestSelection": "first",
   "editor.trimAutoWhitespace": false,
   "editor.wordBasedSuggestions": "off",
-  "editor.wordSeparators": "_`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "editor.wordWrapColumn": 777777,
+  "editor.wordSeparators": "_`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
     "django-html": "html"
@@ -255,7 +256,7 @@
   "prettier.singleQuote": true,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnSaveMode": "file",
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.formatOnType": true,

@@ -256,7 +256,7 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+x shift+ctrl+D",
+    "key": "shift+cmd+s",
     "command": "workbench.action.debug.stop",
     "when": "inDebugMode && !focusedSessionIsAttach"
   },
@@ -503,7 +503,7 @@
     "when": "!config.emacs-mcx.useMetaPrefixMacCmd"
   },
   {
-    "key": "alt+'",
+    "key": "cmd+.",
     "command": "editor.action.triggerSuggest",
     "when": "editorTextFocus"
   },
@@ -612,5 +612,20 @@
   {
     "key": "ctrl+d",
     "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+enter",
+    "command": "interactive.acceptChanges",
+    "when": "inlineChatHasProvider && inlineChatVisible && !inlineChatDocumentChanged || inlineChatHasProvider && inlineChatVisible && config.inlineChat.mode != 'preview'"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "-interactive.acceptChanges",
+    "when": "inlineChatHasProvider && inlineChatVisible && !inlineChatDocumentChanged || inlineChatHasProvider && inlineChatVisible && config.inlineChat.mode != 'preview'"
   }
 ]
