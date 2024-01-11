@@ -256,7 +256,7 @@
   "prettier.singleQuote": true,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.formatOnType": true,
@@ -508,7 +508,8 @@
   "zenMode.hideStatusBar": false,
   "zenMode.restore": true,
   "zenMode.showTabs": "single",
-  "zenMode.silentNotifications": false
+  "zenMode.silentNotifications": false,
+  "githubPullRequests.pullBranch": "never"
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],

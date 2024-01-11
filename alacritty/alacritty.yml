@@ -2,7 +2,7 @@ window:
   padding:
     x: 7
     y: 7
-  startup_mode: SimpleFullScreen
+  startup_mode: SimpleFullscreen
 font:
   normal:
     family: Monaco
