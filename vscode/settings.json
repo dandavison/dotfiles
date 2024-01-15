@@ -85,7 +85,8 @@
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "config": "toml",
     "**/*.yaml": "yaml",
-    "*.yaml": "yaml"
+    "*.yaml": "yaml",
+    "*.jq": "jq"
   },
   "files.exclude": {
     "**/.git": true,
@@ -96,7 +97,7 @@
     "**/Thumbs.db": true,
     "*.egg-info": true,
     "**/__pycache__": true,
-    "**/.*": true,
+    // "**/.*": true,
     "**/.*_cache": true,
     "**/.classpath": true,
     "**/.factorypath": true,
@@ -377,9 +378,12 @@
           "rust-analyzer.hover.actions.enable": true,
           "editor.matchBrackets": "always",
           "workbench.colorCustomizations": {
-            "editorError.foreground": "red",
-            "editorInfo.foreground": "blue",
-            "editorWarning.foreground": "orange"
+            "editorError.foreground": "#FF0000",
+            "editorInfo.foreground": "#0000FF",
+            "editorWarning.foreground": "#FFA500",
+            "scrollbar.shadow": "#282C34",
+            "editorGroup.border": "#282C34",
+            "sideBar.border": "#282C34"
           }
         },
         {
@@ -392,7 +396,10 @@
           "workbench.colorCustomizations": {
             "editorError.foreground": "#00000000",
             "editorInfo.foreground": "#00000000",
-            "editorWarning.foreground": "#00000000"
+            "editorWarning.foreground": "#00000000",
+            "scrollbar.shadow": "#282C34",
+            "editorGroup.border": "#282C34",
+            "sideBar.border": "#282C34"
           }
         }
       ]
