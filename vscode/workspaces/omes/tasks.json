@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run scenario",
+      "type": "shell",
+      "command": "go run ./cmd run-scenario --scenario fuzzer_example --run-id 1234 --duration 30s --option kitchen-sink-gen=/Users/dan/src/temporalio/omes/ksg",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
