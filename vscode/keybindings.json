@@ -87,11 +87,6 @@
     "when": "!panelFocus"
   },
   {
-    "key": "cmd+enter",
-    "command": "workbench.action.toggleMaximizedPanel",
-    "when": "panelFocus"
-  },
-  {
     "key": "cmd+k cmd+l",
     "command": "-editor.toggleFold",
     "when": "editorTextFocus && foldingEnabled"
@@ -637,5 +632,14 @@
     "key": "ctrl+up",
     "command": "list.focusUp",
     "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "etc.gitBlame"
   }
 ]
