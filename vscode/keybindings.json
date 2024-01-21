@@ -635,11 +635,14 @@
   },
   {
     "key": "cmd+enter",
-    "command": "workbench.action.toggleMaximizeEditorGroup",
-    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+    "command": "etc.zoomPane"
   },
   {
     "key": "shift+cmd+b",
     "command": "etc.gitBlame"
+  },
+  {
+    "key": "shift+cmd+enter",
+    "command": "workbench.action.toggleMaximizedPanel"
   }
 ]

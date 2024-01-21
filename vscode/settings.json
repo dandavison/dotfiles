@@ -31,7 +31,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": "off",
   "editor.lineNumbers": "off",
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
   "editor.overviewRulerBorder": false,
@@ -144,44 +144,61 @@
     "customFormatter": "/Users/dan/go/bin/golines"
   },
   "go.toolsManagement.autoUpdate": true,
-  "highlight.configuration.colors": [
-    {
-      "light": "#F5B041",
-      "dark": "#F5B041"
-    },
-    {
-      "light": "#FF9933",
-      "dark": "#FF9933"
-    },
-    {
-      "light": "#85C1E9",
-      "dark": "#85C1E9"
-    },
-    {
-      "light": "#CD6155",
-      "dark": "#CD6155"
-    },
-    {
-      "light": "#AF7AC5",
-      "dark": "#AF7AC5"
-    },
-    {
-      "light": "#48C9B0",
-      "dark": "#48C9B0"
-    },
-    {
-      "light": "#52BE80",
-      "dark": "#52BE80"
-    },
-    {
-      "light": "#F4D03F",
-      "dark": "#F4D03F"
-    }
-  ],
   "highlightwords.box": {
     "light": false,
     "dark": true
   },
+  "highlightwords.showSidebar": true,
+  "highlightwords.colors": [
+    {
+      "light": "#fad1e8", // pink
+      "dark": "#fad1e8"
+    },
+    {
+      "light": "#bff7cf", // green
+      "dark": "#bff7cf"
+    },
+    {
+      "light": "#c7eaf9", // blue
+      "dark": "#c7eaf9"
+    },
+    {
+      "light": "#fef680", // yellow
+      "dark": "#fef680"
+    }
+    // {
+    //   "light": "#b3d9ff",
+    //   "dark": "cyan"
+    // },
+    // {
+    //   "light": "#e6ffb3",
+    //   "dark": "pink"
+    // },
+    // {
+    //   "light": "#b3b3ff",
+    //   "dark": "lightgreen"
+    // },
+    // {
+    //   "light": "#ffd9b3",
+    //   "dark": "magenta"
+    // },
+    // {
+    //   "light": "#ffb3ff",
+    //   "dark": "cornflowerblue"
+    // },
+    // {
+    //   "light": "#b3ffb3",
+    //   "dark": "orange"
+    // },
+    // {
+    //   "light": "#ffff80",
+    //   "dark": "green"
+    // },
+    // {
+    //   "light": "#d1e0e0",
+    //   "dark": "red"
+    // }
+  ],
   "hipdotUrlSchemeGrabber.useVSCodeInsiders": true,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
