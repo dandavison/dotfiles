@@ -6,6 +6,9 @@
 [github]
     user = dandavison
 
+[includeIf "gitdir:~/src/temporalio/"]
+    path = ~/src/temporalio/.gitconfig
+
 [advice]
     detachedHead = false
 
