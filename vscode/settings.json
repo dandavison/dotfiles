@@ -533,6 +533,7 @@
   "zenMode.showTabs": "single",
   "zenMode.silentNotifications": false,
   "githubPullRequests.pullBranch": "never"
+  "terminal.integrated.showLinkHover": false,
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
