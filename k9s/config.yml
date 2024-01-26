@@ -21,11 +21,14 @@ k9s:
   clusters:
     kind-kind:
       namespace:
-        active: ns-993caafe
+        active: ns-a13d93f7
         lockFavorites: false
         favorites:
-        - ns-993caafe
-        - ns-193a218e
+        - ns-a13d93f7
+        - ns-646ed6c3
+        - ns-b501abe4
+        - ns-a92cae2b
+        - ns-cb5145a7
         - default
       view:
         active: pod

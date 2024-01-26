@@ -509,6 +509,8 @@
     "editorGroup.border": "#282C34",
     "sideBar.border": "#282C34"
   },
+  // Github Light Theme
+  // "D2 Light"
   "workbench.colorTheme": "Github Light Theme",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.showTabs": "single",
@@ -521,6 +523,7 @@
   "workspaceInStatusBar.alignment": "left",
   "workspaceInStatusBar.displayFolderIcon": false,
   "workspaceInStatusBar.priority": 0,
+  "workbench.activityBar.visible": false,
   "[yaml]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -532,8 +535,11 @@
   "zenMode.restore": true,
   "zenMode.showTabs": "single",
   "zenMode.silentNotifications": false,
-  "githubPullRequests.pullBranch": "never"
+  "githubPullRequests.pullBranch": "never",
   "terminal.integrated.showLinkHover": false,
+  "workbench.editor.enablePreview": false,
+  "window.customTitleBarVisibility": "never",
+  "breadcrumbs.enabled": false
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
