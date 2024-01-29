@@ -513,7 +513,7 @@
   // "D2 Light"
   "workbench.colorTheme": "Github Light Theme",
   "workbench.editor.empty.hint": "hidden",
-  "workbench.editor.showTabs": "single",
+  "workbench.editor.showTabs": "none",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
@@ -539,7 +539,8 @@
   "terminal.integrated.showLinkHover": false,
   "workbench.editor.enablePreview": false,
   "window.customTitleBarVisibility": "never",
-  "breadcrumbs.enabled": false
+  "breadcrumbs.enabled": false,
+  "workbench.activityBar.location": "hidden"
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
