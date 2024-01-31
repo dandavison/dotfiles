@@ -29,7 +29,7 @@
   "editor.guides.indentation": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
-  "editor.lightbulb.enabled": "off",
+  "editor.lightbulb.enabled": false,
   "editor.lineNumbers": "off",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
@@ -523,7 +523,6 @@
   "workspaceInStatusBar.alignment": "left",
   "workspaceInStatusBar.displayFolderIcon": false,
   "workspaceInStatusBar.priority": 0,
-  "workbench.activityBar.visible": false,
   "[yaml]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -540,7 +539,8 @@
   "workbench.editor.enablePreview": false,
   "window.customTitleBarVisibility": "never",
   "breadcrumbs.enabled": false,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "editor.codeActionWidget.includeNearbyQuickFixes": false
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
