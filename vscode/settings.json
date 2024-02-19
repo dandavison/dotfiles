@@ -29,7 +29,7 @@
   "editor.guides.indentation": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.lineNumbers": "off",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
@@ -200,6 +200,12 @@
     // }
   ],
   "hipdotUrlSchemeGrabber.useVSCodeInsiders": true,
+  "[d2]": {
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -308,7 +314,7 @@
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "rewrap.wrappingColumn": 80,
+  "rewrap.wrappingColumn": 120,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
@@ -538,9 +544,12 @@
   "terminal.integrated.showLinkHover": false,
   "workbench.editor.enablePreview": false,
   "window.customTitleBarVisibility": "never",
-  "breadcrumbs.enabled": false,
   "workbench.activityBar.location": "hidden",
-  "editor.codeActionWidget.includeNearbyQuickFixes": false
+  "editor.codeActionWidget.includeNearbyQuickFixes": false,
+  "D2.previewSketch": true,
+  "D2.updateTimer": 500,
+  "window.restoreWindows": "none",
+  "rust-analyzer.check.command": "clippy"
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
