@@ -9,7 +9,7 @@
       "program": "${workspaceFolder}/tests",
       "args": [
         "-test.run",
-        "TestFunctionalSuite/TestResetWorkflow_ExcludeSignalReapplyNone"
+        "TestFunctionalSuite/TestResetWorkflow_ExcludeNoneReapplyAll"
       ],
       "buildFlags": ""
     }

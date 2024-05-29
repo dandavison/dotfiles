@@ -67,6 +67,23 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
+    "key": "cmd+enter",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.closeSidebar",
+        "workbench.action.closePanel",
+        "workbench.action.closeEditorsInOtherGroups"
+      ]
+    },
+    "when": "!panelFocus"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "panelFocus"
+  },
+  {
     "key": "cmd+k cmd+l",
     "command": "-editor.toggleFold",
     "when": "editorTextFocus && foldingEnabled"
@@ -276,11 +293,6 @@
     "key": "shift+enter",
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "shift+tab",
-    "command": "editor.foldAll",
-    "when": "editorTextFocus && foldingEnabled"
   },
   {
     "key": "cmd+k cmd+0",
@@ -614,7 +626,7 @@
     "when": "listFocus && !inputFocus && !treestickyScrollFocused"
   },
   {
-    "key": "cmd+enter",
+    "key": "shift+alt+enter",
     "command": "etc.zoomPane"
   },
   {
@@ -682,5 +694,9 @@
   {
     "key": "cmd+f8",
     "command": "go-to-next-error.nextInFiles.warning"
+  },
+  {
+    "key": "shift+tab",
+    "command": "editor.foldAll"
   }
 ]

@@ -19,20 +19,20 @@ shell:
     - -s
     - '0'
 key_bindings:
-  - { key: Down, mods: Command, chars: "\x1a\x1b[B" } # tmux select-pane -D
-  - { key: Left, mods: Command, chars: "\x1a\x1b[D" } # tmux select-pane -L
-  - { key: N, mods: Command, chars: "\x1ac" } # tmux new-window
-  - { key: Return, mods: Command, chars: "\x1az" } # tmux resize-pane -Z
-  - { key: Right, mods: Command, chars: "\x1a\x1b[C" } # tmux select-pane -R
-  - { key: S, mods: Command, chars: "\x1a[" } # tmux scroll mode
+  - { key: Down, mods: Command, chars: "\x02\x1b[B" } # tmux select-pane -D
+  - { key: Left, mods: Command, chars: "\x02\x1b[D" } # tmux select-pane -L
+  - { key: N, mods: Command, chars: "\x02c" } # tmux new-window
+  - { key: Return, mods: Command, chars: "\x02z" } # tmux resize-pane -Z
+  - { key: Right, mods: Command, chars: "\x02\x1b[C" } # tmux select-pane -R
+  - { key: S, mods: Command, chars: "\x02[" } # tmux scroll mode
   - { key: Slash, mods: Command, action: ToggleSimpleFullscreen }
-  - { key: Up, mods: Command, chars: "\x1a\x1b[A" } # tmux select-pane -U
-  - { key: W, mods: Command, chars: "\x1ax" } # tmux kill-pane
-  - { key: Minus, mods: Command|Shift, chars: "\x1a\"" } # tmux horizontal split
-  - { key: Equals, mods: Command|Shift, chars: "\x1a%" } # tmux vertical split
-  - { key: Backslash, mods: Command|Shift, chars: "\x1a\\" } # tmux choose window
+  - { key: Up, mods: Command, chars: "\x02\x1b[A" } # tmux select-pane -U
+  - { key: W, mods: Command, chars: "\x02x" } # tmux kill-pane
+  - { key: Minus, mods: Command|Shift, chars: "\x02\"" } # tmux horizontal split
+  - { key: Equals, mods: Command|Shift, chars: "\x02%" } # tmux vertical split
+  - { key: Backslash, mods: Command|Shift, chars: "\x02\\" } # tmux choose window
   - { key: Return, mods: Command|Shift, action: ToggleSimpleFullscreen }
-  - { key: Comma, mods: Command, chars: "\x1aj" } # tmux-jump
+  - { key: Comma, mods: Command, chars: "\x02j" } # tmux-jump
   - { key: R, mods: Alt, chars: "\x1br" }
   - { key: V, mods: Alt, chars: "\x1bv" }
   - { key: X, mods: Alt, chars: "\x1bx" }

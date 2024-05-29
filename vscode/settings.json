@@ -20,7 +20,6 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
-  "editor.formatOnSave": true,
   "editor.gotoLocation.multipleDeclarations": "goto",
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleImplementations": "goto",
@@ -62,7 +61,7 @@
     "django-html": "html"
   },
   "errorLens.delay": 500,
-  "errorLens.enabled": false,
+  "errorLens.enabled": true,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
   "errorLens.messageMaxChars": 9999,
   "errorLens.scrollbarHackEnabled": true,
@@ -213,12 +212,9 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "isort.args": ["--profile", "black"],
-  "isort.check": true,
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
+  "isort.check": false,
+  "[java]": {},
   "java.format.comments.enabled": false,
-  "java.format.enabled": false,
   "java.format.onType.enabled": false,
   "java.imports.gradle.wrapper.checksums": [
     {
@@ -284,7 +280,7 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+      "source.organizeImports": "never"
     },
     "editor.wordBasedSuggestions": "off"
   },
@@ -302,6 +298,10 @@
       "name": "manim",
       "depth": 777,
       "includeAllSymbols": true
+    },
+    {
+      "name": "attr",
+      "depth": -1
     }
   ],
   "python.analysis.typeCheckingMode": "basic",
@@ -314,7 +314,7 @@
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "rewrap.wrappingColumn": 120,
+  "rewrap.wrappingColumn": 100,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
@@ -494,6 +494,9 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.stickyScroll.enabled": false,
   "testing.saveBeforeTest": false,
+  "[toml]": {
+    "editor.formatOnSave": false
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -515,9 +518,6 @@
     "editorGroup.border": "#282C34",
     "sideBar.border": "#282C34"
   },
-  // Github Light Theme
-  // "D2 Light"
-  "workbench.colorTheme": "Github Light Theme",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.showTabs": "none",
   "workbench.editorAssociations": {
@@ -549,7 +549,10 @@
   "D2.previewSketch": true,
   "D2.updateTimer": 500,
   "window.restoreWindows": "none",
-  "rust-analyzer.check.command": "clippy"
+  "workbench.colorTheme": "Default Light Modern",
+  "terminal.integrated.defaultLocation": "editor",
+  "editor.formatOnSave": true,
+  "python.analysis.completeFunctionParens": false
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],

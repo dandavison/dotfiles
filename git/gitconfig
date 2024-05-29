@@ -15,6 +15,9 @@
 [blame]
     # coloring = highlightRecent
 
+[clone]
+    recursive = true
+
 [color "diff"]
     frag = red
     # oldMoved = red
@@ -29,12 +32,15 @@
     excludesfile = ~/.gitignore
     default-branch = main
 
+[commit]
+    no-verify = true
+
 [diff]
-    # colorMoved = default
+    colorMoved = default
     # colorMovedWS = allow-indentation-change
     frag = red
     submodule = short
-    # context = 999999
+#    context = 30
 
 [difftool]
     prompt = false
