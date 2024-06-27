@@ -274,13 +274,13 @@
   "prettier.documentSelectors": ["*.ts"],
   "prettier.singleQuote": true,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "never"
+      "source.organizeImports": "explicit"
     },
     "editor.wordBasedSuggestions": "off"
   },
@@ -300,7 +300,15 @@
       "includeAllSymbols": true
     },
     {
+      "name": "attrs",
+      "depth": -1
+    },
+    {
       "name": "attr",
+      "depth": -1
+    },
+    {
+      "name": "cairo",
       "depth": -1
     }
   ],
@@ -322,6 +330,7 @@
   "rust-analyzer.hover.actions.enable": true,
   "rust-analyzer.hover.memoryLayout.enable": false,
   "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+  "rust-analyzer.diagnostics.disabled": ["unlinked-file"],
   "scm.diffDecorationsGutterVisibility": "hover",
   "search.showLineNumbers": true,
   "security.promptForLocalFileProtocolHandling": false,
@@ -551,8 +560,11 @@
   "window.restoreWindows": "none",
   "workbench.colorTheme": "Default Light Modern",
   "terminal.integrated.defaultLocation": "editor",
-  "editor.formatOnSave": true,
-  "python.analysis.completeFunctionParens": false
+  "python.analysis.completeFunctionParens": false,
+  "java.format.enabled": false,
+  "rust-analyzer.showUnlinkedFileNotification": false,
+  "highlightwords.defaultMode": 2,
+  "editor.formatOnSave": true
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
