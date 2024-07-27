@@ -101,10 +101,6 @@
     "command": "workbench.action.navigateUp"
   },
   {
-    "key": "cmd+m",
-    "command": "magit.status"
-  },
-  {
     "key": "cmd+n",
     "command": "workbench.action.quickOpen"
   },
@@ -340,7 +336,7 @@
     "command": "editor.action.transformToUppercase"
   },
   {
-    "key": "shift+cmd+;",
+    "key": "cmd+p",
     "command": "copyRelativeFilePath",
     "when": "!editorFocus"
   },
@@ -468,6 +464,10 @@
     "command": "etc.magitStatus"
   },
   {
+    "key": "cmd+shift+m",
+    "command": "etc.magitShow"
+  },
+  {
     "key": "cmd+a",
     "command": "editor.action.selectAll"
   },
@@ -504,7 +504,7 @@
     "command": "workbench.action.splitEditorUp"
   },
   {
-    "key": "shift+cmd+;",
+    "key": "cmd+p",
     "command": "copyRelativeFilePath",
     "when": "editorFocus"
   },
@@ -593,7 +593,7 @@
     "command": "-manim-sideview.renderNewScene"
   },
   {
-    "key": "cmd+p",
+    "key": "shift+cmd+p",
     "command": "github.copilot.toggleCopilot"
   },
   {
@@ -638,16 +638,8 @@
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "shift+cmd+f",
-    "command": "etc.ripgrep"
-  },
-  {
     "key": "ctrl+cmd+f",
     "command": "workbench.action.findInFiles"
-  },
-  {
-    "key": "shift+cmd+f",
-    "command": "-workbench.action.findInFiles"
   },
   {
     "key": "ctrl+cmd+f",
@@ -698,5 +690,10 @@
   {
     "key": "shift+tab",
     "command": "editor.foldAll"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-mdx.toggleStrong",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'mdx'"
   }
 ]

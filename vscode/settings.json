@@ -13,9 +13,8 @@
   "debug.inlineValues": "off",
   "debug.onTaskErrors": "showErrors",
   "diffEditor.codeLens": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.renderSideBySide": true,
+  "diffEditor.renderSideBySide": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
@@ -61,7 +60,7 @@
     "django-html": "html"
   },
   "errorLens.delay": 500,
-  "errorLens.enabled": true,
+  "errorLens.enabled": false,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
   "errorLens.messageMaxChars": 9999,
   "errorLens.scrollbarHackEnabled": true,
@@ -84,7 +83,8 @@
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "config": "toml",
     // "**/*.yaml": "yaml",
-    "*.jq": "jq"
+    "*.jq": "jq",
+    "*.mdx": "md"
   },
   "files.exclude": {
     "**/.git": true,
@@ -211,9 +211,6 @@
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "isort.args": ["--profile", "black"],
-  "isort.check": false,
-  "[java]": {},
   "java.format.comments.enabled": false,
   "java.format.onType.enabled": false,
   "java.imports.gradle.wrapper.checksums": [
@@ -280,7 +277,8 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+      "source.organizeImports": "explicit",
+      "source.fixAll.ruff": "explicit"
     },
     "editor.wordBasedSuggestions": "off"
   },
@@ -564,7 +562,12 @@
   "java.format.enabled": false,
   "rust-analyzer.showUnlinkedFileNotification": false,
   "highlightwords.defaultMode": 2,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "mypy-type-checker.args": ["\"--check-untyped-defs\""],
+  "ruff.lint.preview": true,
+  "ruff.nativeServer": true,
+  "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
+  "vale.enableSpellcheck": true
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
