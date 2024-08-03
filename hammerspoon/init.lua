@@ -59,12 +59,17 @@ end
 require("hs.ipc")
 require("hs.eventtap")
 
-local eventtap  = hs.eventtap.new({ hs.eventtap.event.types.gesture }, function(event)
-    local touches = event:getTouches()
-    if #touches == 3 then
-        logger.d("gesture event, #touches=", #touches)
-        hs.http.get("http://wormhole:7117/previous-project/", nil)
-    end
-end)
+local function startEventTap()
+    logger.d("startEventTap")
+    hs.eventtap.new({ hs.eventtap.event.types.gesture }, function(event)
+        local touches = event:getTouches()
+        if #touches == 3 then
+            logger.d("gesture event, #touches=", #touches)
+            startEventTap()
+            hs.http.get("http://wormhole:7117/previous-project/", nil)
+        end
+    end):start()
+end
 
-eventtap:start()
+
+startEventTap()
