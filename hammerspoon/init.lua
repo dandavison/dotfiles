@@ -1,7 +1,9 @@
+-- require("hs.inspect")
 require("hs.ipc")
 require("hs.eventtap")
+require("hs.notify")
 
-local logger = hs.logger.new('dan', "verbose")
+Logger = hs.logger.new('dan', "debug")
 
 
 -- https://www.hammerspoon.org/docs/hs.keycodes.html#map
@@ -21,7 +23,6 @@ hs.hotkey.bind({ "cmd" }, "space", function()
 end)
 
 hs.hotkey.bind({}, "f13", function()
-    logger.d("f13")
     hs.application.launchOrFocus("/Applications/Wormhole.app")
 end)
 
@@ -34,34 +35,57 @@ hs.hotkey.bind({ "cmd", "control" }, "right", function()
 end)
 
 
-logger.d("hello from logger")
-
-
 local fingerCount = 3
 local swipeSensitivity = 20
 
 local previousTouches = {}
 local startTime = nil
 
-local function isSwipeLeft(touches)
-    if #touches == fingerCount then
-        local totalDeltaX = 0
-        for _, touch in pairs(touches) do
-            totalDeltaX = totalDeltaX + touch.deltaX
-        end
-        return totalDeltaX < -swipeSensitivity
+local function printTable(t)
+    for key, value in pairs(t) do
+        print(key, value)
     end
-    return false
 end
 
--- hs.http.get("http://wormhole:7117/previous-project/", nil)
+Counter = 0
 
-local eventtap  = hs.eventtap.new({ hs.eventtap.event.types.gesture }, function(event)
+local logger = hs.logger.new('gesture', 'debug')
+
+local function isSwipeLeft(touches)
+    local totalDeltaX = 0
+    for _, touch in ipairs(touches) do
+        -- print("touch:")
+        -- printTable(touch)
+        -- logger.d("(prev_x, x) =", touch.previousNormalizedPosition.x, touch.normalizedPosition.x)
+        local deltaX = touch.normalizedPosition.x - touch.previousNormalizedPosition.x
+        totalDeltaX = totalDeltaX + deltaX
+    end
+    if math.abs(totalDeltaX) > 0.04 then
+        logger.d("totaldeltaX", totalDeltaX)
+        return true
+    else
+        return false
+    end
+end
+
+Eventtap = hs.eventtap.new({ hs.eventtap.event.types.gesture }, function(event)
     local touches = event:getTouches()
     if #touches == 3 then
-        logger.d("gesture event, #touches=", #touches)
-        hs.http.get("http://wormhole:7117/previous-project/", nil)
+        print("event")
+        -- print(hs.inspect(getmetatable(event)))
+        local doit = isSwipeLeft(touches)
+        -- logger.d("gesture event, #touches=", #touches, doit)
+        if doit then
+            Counter = Counter + 1
+            hs.notify.new({
+                title = string.format("Would switch [%d]", Counter),
+                informativeText = "",
+                autoWithdraw = true,
+            }):send()
+            -- hs.http.get("http://wormhole:7117/previous-project/", nil)
+        end
     end
 end)
 
-eventtap:start()
+
+Eventtap:start()
