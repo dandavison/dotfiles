@@ -145,11 +145,6 @@
     "when": "reference-list.hasResult && references-view.canNavigate"
   },
   {
-    "key": "ctrl+down",
-    "command": "search.action.focusNextSearchResult",
-    "when": "hasSearchResult || inSearchEditor"
-  },
-  {
     "key": "ctrl+end",
     "command": "terminal.focus",
     "when": "inDebugRepl"
@@ -190,9 +185,14 @@
     "when": "inReferenceSearchEditor || referenceSearchVisible"
   },
   {
-    "key": "ctrl+up",
+    "key": "up",
     "command": "search.action.focusPreviousSearchResult",
-    "when": "hasSearchResult || inSearchEditor"
+    "when": "searchViewletVisible && (hasSearchResult || inSearchEditor)"
+  },
+  {
+    "key": "down",
+    "command": "search.action.focusNextSearchResult",
+    "when": "searchViewletVisible && (hasSearchResult || inSearchEditor)"
   },
   {
     "key": "ctrl+x ctrl+f",
@@ -476,10 +476,6 @@
     "command": "-editor.action.selectAll"
   },
   {
-    "key": "ctrl+c f",
-    "command": "etc.openFolders"
-  },
-  {
     "key": "alt+x",
     "command": "workbench.action.showCommands",
     "when": "!config.emacs-mcx.useMetaPrefixMacCmd"
@@ -695,5 +691,14 @@
     "key": "cmd+b",
     "command": "-mdx.toggleStrong",
     "when": "editorTextFocus && !editorReadonly && editorLangId == 'mdx'"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "-workbench.action.files.saveLocalFile",
+    "when": "remoteFileDialogVisible"
   }
 ]
