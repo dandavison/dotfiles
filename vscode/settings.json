@@ -3,7 +3,6 @@
   "alt-editor.binary": "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea",
   "bracketLens.line": "none",
   "bracketLens.mode": "none",
-  "CodeGPT.model": "gpt-4",
   "cSpell.enabled": false,
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -314,8 +313,6 @@
   "python.envFile": "${workspaceFolder}/.env.dev",
   "python.languageServer": "Pylance",
   "python.terminal.activateEnvironment": false,
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "python.testing.promptToConfigure": false,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
@@ -324,7 +321,6 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "rust-analyzer.cargo.autoreload": false,
   "rust-analyzer.hover.actions.enable": true,
   "rust-analyzer.hover.memoryLayout.enable": false,
   "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
@@ -516,7 +512,6 @@
   },
   "window.nativeFullScreen": false,
   "window.zoomLevel": 0.5,
-  "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
     "editorError.foreground": "#FF0000",
     "editorInfo.foreground": "#0000FF",
@@ -551,7 +546,6 @@
   "terminal.integrated.showLinkHover": false,
   "workbench.editor.enablePreview": false,
   "window.customTitleBarVisibility": "never",
-  "workbench.activityBar.location": "hidden",
   "editor.codeActionWidget.includeNearbyQuickFixes": false,
   "D2.previewSketch": true,
   "D2.updateTimer": 500,
@@ -567,7 +561,8 @@
   "ruff.lint.preview": true,
   "ruff.nativeServer": true,
   "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
-  "vale.enableSpellcheck": true
+  "vale.enableSpellcheck": true,
+  "workbench.activityBar.location": "hidden"
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],

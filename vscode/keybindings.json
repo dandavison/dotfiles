@@ -336,7 +336,7 @@
     "command": "editor.action.transformToUppercase"
   },
   {
-    "key": "cmd+p",
+    "key": "shift+cmd+p",
     "command": "copyRelativeFilePath",
     "when": "!editorFocus"
   },
@@ -500,7 +500,7 @@
     "command": "workbench.action.splitEditorUp"
   },
   {
-    "key": "cmd+p",
+    "key": "shift+cmd+p",
     "command": "copyRelativeFilePath",
     "when": "editorFocus"
   },
@@ -589,7 +589,7 @@
     "command": "-manim-sideview.renderNewScene"
   },
   {
-    "key": "shift+cmd+p",
+    "key": "cmd+p",
     "command": "github.copilot.toggleCopilot"
   },
   {
@@ -700,5 +700,15 @@
     "key": "shift+cmd+s",
     "command": "-workbench.action.files.saveLocalFile",
     "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "shift+enter",
+    "command": "inlineChat.acceptChanges",
+    "when": "inlineChatHasProvider && inlineChatVisible && !inlineChatDocumentChanged || inlineChatHasProvider && inlineChatVisible && config.inlineChat.mode != 'preview'"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "-inlineChat.acceptChanges",
+    "when": "inlineChatHasProvider && inlineChatVisible && !inlineChatDocumentChanged || inlineChatHasProvider && inlineChatVisible && config.inlineChat.mode != 'preview'"
   }
 ]
