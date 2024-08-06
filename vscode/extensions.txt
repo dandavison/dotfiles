@@ -1,0 +1,7 @@
+dandavison.vscode-etc
+hoovercj.vscode-settings-cycler
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+rsbondi.highlight-words
+ryuta46.multi-command
