@@ -81,9 +81,8 @@
     "**/*.html": "html",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "config": "toml",
-    // "**/*.yaml": "yaml",
     "*.jq": "jq",
-    "*.mdx": "md"
+    "*.mdx": "markdown"
   },
   "files.exclude": {
     "**/.git": true,
@@ -118,7 +117,7 @@
   "git.mergeEditor": false,
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false
@@ -562,7 +561,9 @@
   "ruff.nativeServer": true,
   "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
   "vale.enableSpellcheck": true,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "git.confirmSync": false,
+  "markdown.validate.enabled": true
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],

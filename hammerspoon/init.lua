@@ -3,6 +3,7 @@ require("hs.ipc")
 require("hs.eventtap")
 require("hs.notify")
 
+
 Logger = hs.logger.new('dan', "debug")
 
 
@@ -35,57 +36,31 @@ hs.hotkey.bind({ "cmd", "control" }, "right", function()
 end)
 
 
-local fingerCount = 3
-local swipeSensitivity = 20
-
-local previousTouches = {}
-local startTime = nil
-
-local function printTable(t)
-    for key, value in pairs(t) do
-        print(key, value)
-    end
-end
-
-Counter = 0
-
-local logger = hs.logger.new('gesture', 'debug')
-
-local function isSwipeLeft(touches)
-    local totalDeltaX = 0
-    for _, touch in ipairs(touches) do
-        -- print("touch:")
-        -- printTable(touch)
-        -- logger.d("(prev_x, x) =", touch.previousNormalizedPosition.x, touch.normalizedPosition.x)
-        local deltaX = touch.normalizedPosition.x - touch.previousNormalizedPosition.x
-        totalDeltaX = totalDeltaX + deltaX
-    end
-    if math.abs(totalDeltaX) > 0.04 then
-        logger.d("totaldeltaX", totalDeltaX)
-        return true
-    else
-        return false
-    end
-end
-
-Eventtap = hs.eventtap.new({ hs.eventtap.event.types.gesture }, function(event)
-    local touches = event:getTouches()
-    if #touches == 3 then
-        print("event")
-        -- print(hs.inspect(getmetatable(event)))
-        local doit = isSwipeLeft(touches)
-        -- logger.d("gesture event, #touches=", #touches, doit)
-        if doit then
-            Counter = Counter + 1
-            hs.notify.new({
-                title = string.format("Would switch [%d]", Counter),
-                informativeText = "",
-                autoWithdraw = true,
-            }):send()
-            -- hs.http.get("http://wormhole:7117/previous-project/", nil)
+local current_id, threshold
+Swipe = hs.loadSpoon("Swipe")
+Swipe:start(3, function(direction, distance, id)
+    if id == current_id then
+        Logger.d("distance", distance)
+        if distance > threshold then
+            threshold = math.huge
+            if direction == "left" then
+                hs.http.get("http://wormhole:7117/previous-project/", nil)
+                -- hs.notify.new({
+                --     title = "→→→→",
+                --     informativeText = "",
+                --     autoWithdraw = true,
+                -- }):send()
+            elseif direction == "right" then
+                hs.http.get("http://wormhole:7117/previous-project/", nil)
+                -- hs.notify.new({
+                --     title = "←←←←",
+                --     informativeText = "",
+                --     autoWithdraw = true,
+                -- }):send()
+            end
         end
+    else
+        current_id = id
+        threshold = 0.05 -- swipe distance > % of trackpad
     end
 end)
-
-
-Eventtap:start()

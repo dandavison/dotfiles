@@ -37,7 +37,7 @@
     verify = false
 
 [diff]
-#    colorMoved = default
+    # colorMoved = default
     # colorMovedWS = allow-indentation-change
     frag = red
     submodule = short

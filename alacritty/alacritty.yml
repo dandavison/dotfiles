@@ -38,6 +38,7 @@ key_bindings:
   - { key: X, mods: Alt, chars: "\x1bx" }
   - { key: Z, mods: Alt, chars: "\x1bz" }
   - { key: Period, mods: Alt, chars: "\x1b." }
+  - { key: Q, mods: Command, chars: "" } # no-op
 hints:
   enabled:
     - regex: "(https:|http:|file:|file-line-column:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
