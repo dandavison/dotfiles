@@ -1,0 +1,4 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --light --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format "http://wormhole:7117/file/{path}:{line}?land-in=editor"
