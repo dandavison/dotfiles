@@ -563,7 +563,11 @@
   "vale.enableSpellcheck": true,
   "workbench.activityBar.location": "hidden",
   "git.confirmSync": false,
-  "markdown.validate.enabled": true
+  "markdown.validate.enabled": true,
+  "java.configuration.runtimes": [],
+  "java.import.gradle.java.home": "/opt/homebrew/opt/openjdk@21",
+  "java.import.gradle.home": "/opt/homebrew/opt/openjdk@21",
+  "java.jdt.ls.java.home": "/opt/homebrew/opt/openjdk@21"
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
