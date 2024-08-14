@@ -11,11 +11,13 @@ Logger = hs.logger.new('dan', "debug")
 -- https://github.com/alacritty/alacritty/issues/862#issuecomment-616873890
 
 local function terminal()
-    local alacritty = hs.application.find('alacritty')
-    if alacritty:isFrontmost() then
-        alacritty:hide()
+    local name = "Wezterm"
+
+    local app = hs.application.find(name:lower())
+    if app:isFrontmost() then
+        app:hide()
     else
-        hs.application.launchOrFocus("/Applications/Alacritty.app")
+        hs.application.launchOrFocus("/Applications/" .. name .. ".app")
     end
 end
 
@@ -28,12 +30,7 @@ local function wormholePrevious()
     hs.http.get("http://wormhole:7117/previous-project/", nil)
 end
 
--- terminal
-hs.hotkey.bind({ "cmd" }, "'", terminal)
 hs.hotkey.bind({}, "f16", terminal)
-
--- wormhole
-hs.hotkey.bind({ "cmd" }, "space", wormholeSelect)
 hs.hotkey.bind({}, "f13", wormholeSelect)
 hs.hotkey.bind({ "cmd", "control" }, "left", wormholePrevious)
 hs.hotkey.bind({ "cmd", "control" }, "right", wormholePrevious)
