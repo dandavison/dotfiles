@@ -565,9 +565,10 @@
   "git.confirmSync": false,
   "markdown.validate.enabled": true,
   "java.configuration.runtimes": [],
-  "java.import.gradle.java.home": "/opt/homebrew/opt/openjdk@21",
-  "java.import.gradle.home": "/opt/homebrew/opt/openjdk@21",
-  "java.jdt.ls.java.home": "/opt/homebrew/opt/openjdk@21"
+  "java.import.gradle.java.home": "/opt/homebrew/opt/openjdk@17",
+  "java.import.gradle.home": "/opt/homebrew/opt/openjdk@17",
+  "java.jdt.ls.java.home": "/opt/homebrew/opt/openjdk@17",
+  "rust-analyzer.hover.actions.enable": false
 }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
