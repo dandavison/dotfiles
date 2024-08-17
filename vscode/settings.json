@@ -27,7 +27,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": "off",
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "on",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
@@ -117,7 +117,7 @@
   "git.mergeEditor": false,
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
