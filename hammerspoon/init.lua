@@ -30,10 +30,14 @@ local function wormholePrevious()
     hs.http.get("http://wormhole:7117/previous-project/", nil)
 end
 
+local function wormholeNext()
+    hs.http.get("http://wormhole:7117/next-project/", nil)
+end
+
 hs.hotkey.bind({}, "f16", terminal)
 hs.hotkey.bind({}, "f13", wormholeSelect)
 hs.hotkey.bind({ "cmd", "control" }, "left", wormholePrevious)
-hs.hotkey.bind({ "cmd", "control" }, "right", wormholePrevious)
+hs.hotkey.bind({ "cmd", "control" }, "right", wormholeNext)
 
 
 local current_id, threshold
@@ -51,7 +55,7 @@ Swipe:start(3, function(direction, distance, id)
                 --     autoWithdraw = true,
                 -- }):send()
             elseif direction == "right" then
-                wormholePrevious()
+                wormholeNext()
                 -- hs.notify.new({
                 --     title = "←←←←",
                 --     informativeText = "",
