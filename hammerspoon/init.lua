@@ -49,18 +49,8 @@ Swipe:start(3, function(direction, distance, id)
             threshold = math.huge
             if direction == "left" then
                 wormholePrevious()
-                -- hs.notify.new({
-                --     title = "→→→→",
-                --     informativeText = "",
-                --     autoWithdraw = true,
-                -- }):send()
             elseif direction == "right" then
                 wormholeNext()
-                -- hs.notify.new({
-                --     title = "←←←←",
-                --     informativeText = "",
-                --     autoWithdraw = true,
-                -- }):send()
             end
         end
     else
