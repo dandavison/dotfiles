@@ -8,7 +8,7 @@ config.font = wezterm.font { family = 'JetBrains Mono', weight = 'Bold' }
 config.bold_brightens_ansi_colors = false
 config.font_size = 13
 config.color_scheme = 'Vs Code Light+ (Gogh)'
--- config.hide_tab_bar_if_only_one_tab = true
+config.enable_tab_bar = false
 config.default_cursor_style = 'SteadyBar'
 config.audible_bell = 'Disabled'
 
