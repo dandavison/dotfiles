@@ -11,7 +11,7 @@ Logger = hs.logger.new('dan', "debug")
 -- https://github.com/alacritty/alacritty/issues/862#issuecomment-616873890
 
 local function terminal()
-    local name = "Wezterm"
+    local name = "Alacritty"
 
     local app = hs.application.find(name:lower())
     if app:isFrontmost() then
