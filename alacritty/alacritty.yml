@@ -12,7 +12,7 @@ cursor:
   style:
     shape: Beam
 shell:
-  program: /Users/dan/bin/tmux
+  program: /opt/homebrew/bin/tmux
   args:
     - new-session
     - -A
