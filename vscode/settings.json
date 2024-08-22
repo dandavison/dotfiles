@@ -316,7 +316,7 @@
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "rewrap.wrappingColumn": 100,
+  "rewrap.wrappingColumn": 80,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
