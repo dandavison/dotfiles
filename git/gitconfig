@@ -16,7 +16,7 @@
     # coloring = highlightRecent
 
 [clone]
-    recursive = true
+    recurse-submodules = true
 
 [color "diff"]
     frag = red
