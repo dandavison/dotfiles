@@ -676,6 +676,10 @@
     "command": "-workbench.action.nextEditor"
   },
   {
+    "key": "f8",
+    "command": "go-to-next-error.nextInFiles.error"
+  },
+  {
     "key": "cmd+f8",
     "command": "go-to-next-error.nextInFiles.warning"
   },
