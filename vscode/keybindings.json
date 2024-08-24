@@ -185,16 +185,6 @@
     "when": "inReferenceSearchEditor || referenceSearchVisible"
   },
   {
-    "key": "up",
-    "command": "search.action.focusPreviousSearchResult",
-    "when": "searchViewletVisible && (hasSearchResult || inSearchEditor)"
-  },
-  {
-    "key": "down",
-    "command": "search.action.focusNextSearchResult",
-    "when": "searchViewletVisible && (hasSearchResult || inSearchEditor)"
-  },
-  {
     "key": "ctrl+x ctrl+f",
     "command": "workbench.action.quickOpen"
   },
