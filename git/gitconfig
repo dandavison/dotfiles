@@ -15,13 +15,20 @@
 [blame]
     # coloring = highlightRecent
 
+
 [clone]
-    recurse-submodules = true
+	recurseSubmodules = true
+
+[submodule]
+	recurse = true
+
 
 [color "diff"]
     frag = red
     # oldMoved = red
     # newMoved = green
+
+
 
 [commit]
     status = false
@@ -71,9 +78,6 @@
 [rebase]
     autosquash = true
 
-[clone]
-    recursive = true
-
 [status]
     aheadBehind = false
     hints = false
@@ -84,7 +88,6 @@
     head = rev-list -n1 HEAD
     logd = log --decorate
 	ls = ls-files
-    clone = clone --recursive
 	# merge = merge --no-edit
 	# squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
     diff-side-by-side = -c delta.features=side-by-side diff
