@@ -88,10 +88,51 @@
     "command": "-editor.toggleFold",
     "when": "editorTextFocus && foldingEnabled"
   },
+  // https://github.com/getcursor/cursor/issues/1570
   {
     "key": "cmd+left",
-    "command": "workbench.action.navigateLeft"
+    "command": "workbench.action.focusActiveEditorGroup"
   },
+  {
+    "key": "cmd+right",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorFocus && sideBarVisible"
+  },
+  // {
+  //   "key": "cmd+left",
+  //   "command": "workbench.action.focusActiveEditorGroup",
+  //   "when": "explorerViewletVisible && filesExplorerFocus"
+  // },
+  // {
+  //   "key": "cmd+left",
+  //   "command": "workbench.action.focusActiveEditorGroup",
+  //   "when": "searchViewletVisible && searchViewletFocus"
+  // },
+  // {
+  //   "key": "cmd+left",
+  //   "command": "workbench.action.focusActiveEditorGroup",
+  //   "when": "inReferenceSearchEditor"
+  // },
+  // {
+  //   "key": "cmd+right",
+  //   "command":  "workbench.files.action.focusFilesExplorer",
+  //   "when": "editorFocus && explorerViewletVisible && !filesExplorerFocus"
+  // },
+  // {
+  //   "key": "cmd+right",
+  //   "command":  "search.action.focusSearchList",
+  //   "when": "editorFocus && searchViewletVisible && hasSearchResult"
+  // },
+  // {
+  //   "key": "cmd+left",
+  //   "command":  "workbench.action.focusActiveEditorGroup",
+  //   "when": "editorHasReferenceProvider && referenceSearchVisible"
+  // },
+  // {
+  //   "key": "cmd+left",
+  //   "command":  "workbench.action.focusActiveEditorGroup",
+  //   "when": "editorTabsVisible && sideBarFocus"
+  // },
   {
     "key": "cmd+down",
     "command": "workbench.action.navigateDown"
@@ -117,10 +158,6 @@
     "key": "cmd+q",
     "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
     "when": "inEditorsPicker && inQuickOpen"
-  },
-  {
-    "key": "cmd+right",
-    "command": "workbench.action.navigateRight"
   },
   {
     "key": "cmd+s",
@@ -580,7 +617,7 @@
   },
   {
     "key": "cmd+p",
-    "command": "github.copilot.toggleCopilot"
+    "command": "etc.toggleCursorCpp"
   },
   {
     "key": "ctrl+d",
@@ -705,5 +742,13 @@
     "key": "alt+up",
     "command": "-editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "aichat.newchataction"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-aichat.newchataction"
   }
 ]
