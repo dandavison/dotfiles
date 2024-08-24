@@ -67,11 +67,7 @@
   },
   "errorLens.delay": 500,
   "errorLens.enabled": false,
-  "errorLens.enabledDiagnosticLevels": [
-    "warning",
-    "info",
-    "error"
-  ],
+  "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
   "errorLens.messageMaxChars": 9999,
   "errorLens.scrollbarHackEnabled": true,
   "eslint.format.enable": true,
@@ -134,9 +130,7 @@
     "scminput": false
   },
   "githubPullRequests.pullBranch": "never",
-  "githubPullRequests.remotes": [
-    "origin"
-  ],
+  "githubPullRequests.remotes": ["origin"],
   "gitlens.advanced.messages": {
     "suppressGitDisabledWarning": true,
     "suppressGitMissingWarning": true
@@ -246,18 +240,14 @@
     "-XX:+UseParallelGC",
     "-Dmetals.statistics=all"
   ],
-  "mypy-type-checker.args": [
-    "\"--check-untyped-defs\""
-  ],
+  "mypy-type-checker.args": ["\"--check-untyped-defs\""],
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
   },
   "outline.collapseItems": "alwaysCollapse",
   "output.smartScroll.enabled": false,
-  "prettier.documentSelectors": [
-    "*.ts"
-  ],
+  "prettier.documentSelectors": ["*.ts"],
   "prettier.singleQuote": true,
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
@@ -307,18 +297,14 @@
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
-  "remote.SSH.defaultExtensions": [
-    "gitpod.gitpod-remote-ssh"
-  ],
+  "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
   "rewrap.wrappingColumn": 80,
   "ruff.lint.preview": true,
   "ruff.nativeServer": true,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "rust-analyzer.diagnostics.disabled": [
-    "unlinked-file"
-  ],
+  "rust-analyzer.diagnostics.disabled": ["unlinked-file"],
   "rust-analyzer.hover.actions.enable": false,
   "rust-analyzer.hover.memoryLayout.enable": false,
   "rust-analyzer.showUnlinkedFileNotification": false,
@@ -429,9 +415,7 @@
     }
   ],
   "settings.cycle.logLevel": "log",
-  "settingsSync.ignoredExtensions": [
-    "esbenp.prettier-vscode"
-  ],
+  "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -473,18 +457,14 @@
       "alignment": "right",
       "id": "formatOnSave",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').formatOnSave ? '\u26a1': ''",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Format on save"
     },
     {
       "alignment": "right",
       "id": "sbc.rust-analyzer-inlay-hints",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('rust-analyzer.inlayHints').enable ? '$(extensions-info-message)' : ''",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "rust-analyzer inlay hints"
     },
     {
@@ -492,9 +472,7 @@
       "command": "dan.zen",
       "id": "sbc.zen",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('errorLens').enabled ? '' : '$(circle-slash)'",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Zen Squiggles"
     }
   ],
@@ -558,43 +536,43 @@
   "zenMode.showTabs": "single",
   "zenMode.silentNotifications": false
 }
-    // "**/.*": true,
-      // pink
-      // green
-      // blue
-      // yellow
-    // {
-    //   "light": "#b3d9ff",
-    //   "dark": "cyan"
-    // },
-    // {
-    //   "light": "#e6ffb3",
-    //   "dark": "pink"
-    // },
-    // {
-    //   "light": "#b3b3ff",
-    //   "dark": "lightgreen"
-    // },
-    // {
-    //   "light": "#ffd9b3",
-    //   "dark": "magenta"
-    // },
-    // {
-    //   "light": "#ffb3ff",
-    //   "dark": "cornflowerblue"
-    // },
-    // {
-    //   "light": "#b3ffb3",
-    //   "dark": "orange"
-    // },
-    // {
-    //   "light": "#ffff80",
-    //   "dark": "green"
-    // },
-    // {
-    //   "light": "#d1e0e0",
-    //   "dark": "red"
-    // }
+// "**/.*": true,
+// pink
+// green
+// blue
+// yellow
+// {
+//   "light": "#b3d9ff",
+//   "dark": "cyan"
+// },
+// {
+//   "light": "#e6ffb3",
+//   "dark": "pink"
+// },
+// {
+//   "light": "#b3b3ff",
+//   "dark": "lightgreen"
+// },
+// {
+//   "light": "#ffd9b3",
+//   "dark": "magenta"
+// },
+// {
+//   "light": "#ffb3ff",
+//   "dark": "cornflowerblue"
+// },
+// {
+//   "light": "#b3ffb3",
+//   "dark": "orange"
+// },
+// {
+//   "light": "#ffff80",
+//   "dark": "green"
+// },
+// {
+//   "light": "#d1e0e0",
+//   "dark": "red"
+// }
 // "rust-analyzer.checkOnSave.command": "clippy",
 // "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
 // "rust-analyzer.inlayHints.maxLength": null,
