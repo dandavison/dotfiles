@@ -148,19 +148,23 @@
   "highlightwords.showSidebar": true,
   "highlightwords.colors": [
     {
-      "light": "#fad1e8", // pink
+      // pink
+      "light": "#fad1e8",
       "dark": "#fad1e8"
     },
     {
-      "light": "#bff7cf", // green
+      // green
+      "light": "#bff7cf",
       "dark": "#bff7cf"
     },
     {
-      "light": "#c7eaf9", // blue
+      // blue
+      "light": "#c7eaf9",
       "dark": "#c7eaf9"
     },
     {
-      "light": "#fef680", // yellow
+      // yellow
+      "light": "#fef680",
       "dark": "#fef680"
     }
     // {
