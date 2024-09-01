@@ -1,5 +1,3 @@
-# print('ipython_config.py')
 c = get_config()
-
-# (NoColor, Linux, LightBG)
-# c.TerminalInteractiveShell.colors = 'NoColor'
+c.InteractiveShell.colors = "LightBG"
+c.TerminalIPythonApp.display_banner = False

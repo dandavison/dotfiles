@@ -19,9 +19,6 @@
 [clone]
 	recurseSubmodules = true
 
-[submodule]
-	recurse = true
-
 
 [color "diff"]
     frag = red

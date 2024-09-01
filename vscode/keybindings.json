@@ -73,7 +73,8 @@
       "sequence": [
         "workbench.action.closeSidebar",
         "workbench.action.closePanel",
-        "workbench.action.closeEditorsInOtherGroups"
+        "workbench.action.closeEditorsInOtherGroups",
+        "aichat.close-sidebar"
       ]
     },
     "when": "!panelFocus"

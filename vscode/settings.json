@@ -35,7 +35,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": "off",
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "off",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
@@ -306,7 +306,7 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "rust-analyzer.diagnostics.disabled": ["unlinked-file"],
-  "rust-analyzer.hover.actions.enable": false,
+  "rust-analyzer.hover.actions.enable": true,
   "rust-analyzer.hover.memoryLayout.enable": false,
   "rust-analyzer.showUnlinkedFileNotification": false,
   "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,

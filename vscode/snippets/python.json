@@ -1,7 +1,7 @@
 {
   "pdb": {
     "prefix": "pdb",
-    "body": ["import pdb", "pdb.set_trace()", "print(err)"],
+    "body": ["import pdb", "pdb.set_trace()"],
     "description": "pdb.set_trace()"
   },
 
