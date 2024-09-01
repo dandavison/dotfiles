@@ -527,7 +527,14 @@
   "workspaceInStatusBar.priority": 0,
   "[yaml]": {
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.autoIndent": "advanced"
+  },
+  "[dockercompose]": {
+    "editor.autoIndent": "advanced"
+  },
+  "[github-actions-workflow]": {
+    "editor.autoIndent": "advanced"
   },
   "zenMode.centerLayout": false,
   "zenMode.fullScreen": true,
