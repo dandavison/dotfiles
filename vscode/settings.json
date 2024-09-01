@@ -477,7 +477,7 @@
       "text": "Zen Squiggles"
     }
   ],
-  "task.saveBeforeRun": "never",
+  "task.saveBeforeRun": false,
   "terminal.explorerKind": "external",
   "terminal.integrated.defaultLocation": "editor",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
@@ -535,7 +535,9 @@
   "zenMode.hideStatusBar": false,
   "zenMode.restore": true,
   "zenMode.showTabs": "single",
-  "zenMode.silentNotifications": false
+  "zenMode.silentNotifications": false,
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "files.autoSave": "onWindowChange",
 }
 // "**/.*": true,
 // pink
