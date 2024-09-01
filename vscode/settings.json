@@ -545,6 +545,7 @@
   "zenMode.silentNotifications": false,
   "files.saveConflictResolution": "overwriteFileOnDisk",
   "files.autoSave": "onWindowChange",
+  "cursor.general.enableShadowWorkspace": true
 }
 // "**/.*": true,
 // pink
