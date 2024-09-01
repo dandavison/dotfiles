@@ -92,12 +92,23 @@
   // https://github.com/getcursor/cursor/issues/1570
   {
     "key": "cmd+left",
-    "command": "workbench.action.focusActiveEditorGroup"
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarVisible"
   },
   {
     "key": "cmd+right",
     "command": "workbench.action.focusSideBar",
     "when": "editorFocus && sideBarVisible"
+  },
+  {
+    "key": "cmd+left",
+    "command": "workbench.action.navigateLeft",
+    "when": "!sideBarVisible"
+  },
+  {
+    "key": "cmd+right",
+    "command": "workbench.action.navigateRight",
+    "when": "!sideBarVisible"
   },
   // {
   //   "key": "cmd+left",
@@ -751,5 +762,15 @@
   {
     "key": "cmd+l",
     "command": "-aichat.newchataction"
+  },
+  {
+    "key": "shift+cmd+enter",
+    "command": "editor.action.inlineDiffs.acceptAll",
+    "when": "editorTextFocus && (arbitrary function)"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "-editor.action.inlineDiffs.acceptAll",
+    "when": "editorTextFocus && (arbitrary function)"
   }
 ]
