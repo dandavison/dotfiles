@@ -89,62 +89,14 @@
     "command": "-editor.toggleFold",
     "when": "editorTextFocus && foldingEnabled"
   },
-  // https://github.com/getcursor/cursor/issues/1570
   {
     "key": "cmd+left",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "sideBarVisible"
+    "command": "workbench.action.navigateLeft"
   },
   {
     "key": "cmd+right",
-    "command": "workbench.action.focusSideBar",
-    "when": "editorFocus && sideBarVisible"
+    "command": "workbench.action.navigateRight"
   },
-  {
-    "key": "cmd+left",
-    "command": "workbench.action.navigateLeft",
-    "when": "!sideBarVisible"
-  },
-  {
-    "key": "cmd+right",
-    "command": "workbench.action.navigateRight",
-    "when": "!sideBarVisible"
-  },
-  // {
-  //   "key": "cmd+left",
-  //   "command": "workbench.action.focusActiveEditorGroup",
-  //   "when": "explorerViewletVisible && filesExplorerFocus"
-  // },
-  // {
-  //   "key": "cmd+left",
-  //   "command": "workbench.action.focusActiveEditorGroup",
-  //   "when": "searchViewletVisible && searchViewletFocus"
-  // },
-  // {
-  //   "key": "cmd+left",
-  //   "command": "workbench.action.focusActiveEditorGroup",
-  //   "when": "inReferenceSearchEditor"
-  // },
-  // {
-  //   "key": "cmd+right",
-  //   "command":  "workbench.files.action.focusFilesExplorer",
-  //   "when": "editorFocus && explorerViewletVisible && !filesExplorerFocus"
-  // },
-  // {
-  //   "key": "cmd+right",
-  //   "command":  "search.action.focusSearchList",
-  //   "when": "editorFocus && searchViewletVisible && hasSearchResult"
-  // },
-  // {
-  //   "key": "cmd+left",
-  //   "command":  "workbench.action.focusActiveEditorGroup",
-  //   "when": "editorHasReferenceProvider && referenceSearchVisible"
-  // },
-  // {
-  //   "key": "cmd+left",
-  //   "command":  "workbench.action.focusActiveEditorGroup",
-  //   "when": "editorTabsVisible && sideBarFocus"
-  // },
   {
     "key": "cmd+down",
     "command": "workbench.action.navigateDown"

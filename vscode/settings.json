@@ -499,6 +499,8 @@
   "window.restoreWindows": "none",
   "window.zoomLevel": 0.5,
   "workbench.activityBar.location": "hidden",
+  // https://github.com/getcursor/cursor/issues/1570
+  "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
     "editorError.foreground": "#FF0000",
     "editorInfo.foreground": "#0000FF",
