@@ -274,16 +274,11 @@
   "python.analysis.indexing": true,
   "python.analysis.packageIndexDepths": [
     {
-      "name": "manim",
-      "depth": 777,
-      "includeAllSymbols": true
-    },
-    {
       "name": "attrs",
       "depth": -1
     },
     {
-      "name": "attr",
+      "name": "click",
       "depth": -1
     },
     {
@@ -545,7 +540,8 @@
   "zenMode.silentNotifications": false,
   "files.saveConflictResolution": "overwriteFileOnDisk",
   "files.autoSave": "onWindowChange",
-  "cursor.general.enableShadowWorkspace": true
+  "cursor.general.enableShadowWorkspace": true,
+  "comments.visible": false,
 }
 // "**/.*": true,
 // pink
