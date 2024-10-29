@@ -63,7 +63,7 @@
     decorate = true
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
     renamelimit = 10000
 
 [push]
