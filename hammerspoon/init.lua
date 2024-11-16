@@ -40,21 +40,21 @@ hs.hotkey.bind({ "cmd", "control" }, "left", wormholePrevious)
 hs.hotkey.bind({ "cmd", "control" }, "right", wormholeNext)
 
 
-local current_id, threshold
-Swipe = hs.loadSpoon("Swipe")
-Swipe:start(3, function(direction, distance, id)
-    if id == current_id then
-        Logger.d("distance", distance)
-        if distance > threshold then
-            threshold = math.huge
-            if direction == "left" then
-                wormholePrevious()
-            elseif direction == "right" then
-                wormholeNext()
-            end
-        end
-    else
-        current_id = id
-        threshold = 0.05 -- swipe distance > % of trackpad
-    end
-end)
+-- local current_id, threshold
+-- Swipe = hs.loadSpoon("Swipe")
+-- Swipe:start(3, function(direction, distance, id)
+--     if id == current_id then
+--         Logger.d("distance", distance)
+--         if distance > threshold then
+--             threshold = math.huge
+--             if direction == "left" then
+--                 wormholePrevious()
+--             elseif direction == "right" then
+--                 wormholeNext()
+--             end
+--         end
+--     else
+--         current_id = id
+--         threshold = 0.05 -- swipe distance > % of trackpad
+--     end
+-- end)
