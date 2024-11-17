@@ -1,0 +1,5 @@
+@-moz-document domain(www.notion.so) {
+  [contenteditable]:empty::after {
+    content: ' ';
+  }
+}
