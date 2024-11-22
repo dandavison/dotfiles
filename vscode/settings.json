@@ -546,6 +546,8 @@
   "files.autoSave": "onWindowChange",
   "cursor.general.enableShadowWorkspace": true,
   "comments.visible": false,
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "window.confirmSaveUntitledWorkspace": false
 }
 // "**/.*": true,
 // pink
