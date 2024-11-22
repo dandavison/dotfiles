@@ -11,6 +11,8 @@ font:
 cursor:
   style:
     shape: Beam
+env:
+  TERM: xterm-256color
 shell:
   program: /opt/homebrew/bin/tmux
   args:
