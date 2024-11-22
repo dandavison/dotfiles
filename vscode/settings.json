@@ -497,6 +497,8 @@
   "window.customTitleBarVisibility": "never",
   "window.nativeFullScreen": false,
   "window.restoreWindows": "none",
+  "window.openFoldersInNewWindow": "on",
+  "window.openWithoutArgumentsInNewWindow": "on",
   "window.zoomLevel": 0.5,
   "workbench.activityBar.location": "hidden",
   // https://github.com/getcursor/cursor/issues/1570
