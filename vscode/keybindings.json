@@ -724,5 +724,19 @@
     "key": "cmd+enter",
     "command": "-editor.action.inlineDiffs.acceptAll",
     "when": "editorTextFocus && (arbitrary function)"
+  },
+  {
+    "key": "alt+cmd+.",
+    "command": "editor.action.goToImplementation",
+    "when": "editorHasImplementationProvider && editorTextFocus"
+  },
+  {
+    "key": "cmd+f12",
+    "command": "-editor.action.goToImplementation",
+    "when": "editorHasImplementationProvider && editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+cmd+k",
+    "command": "aichat.close-sidebar"
   }
 ]

@@ -25,7 +25,6 @@
   "editor.codeActionWidget.includeNearbyQuickFixes": false,
   "editor.cursorBlinking": "solid",
   "editor.foldingHighlight": false,
-  "editor.formatOnSave": true,
   "editor.gotoLocation.multipleDeclarations": "goto",
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleImplementations": "goto",
@@ -35,7 +34,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": "off",
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "on",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
@@ -262,6 +261,11 @@
     },
     "editor.wordBasedSuggestions": "off"
   },
+  "python.analysis.exclude": [
+    "**/.venv/**",
+    "**/lib/python*/**",
+    "**/.pyenv/**"
+  ],
   "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.autoSearchPaths": false,
@@ -269,7 +273,8 @@
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticSeverityOverrides": {
     "reportUnusedImport": "error",
-    "reportWildcardImportFromLibrary": "none"
+    "reportWildcardImportFromLibrary": "none",
+    "reportMissingTypeStubs": "none"
   },
   "python.analysis.indexing": true,
   "python.analysis.packageIndexDepths": [
@@ -294,7 +299,7 @@
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "rewrap.wrappingColumn": 80,
+  "rewrap.wrappingColumn": 90,
   "ruff.lint.preview": true,
   "ruff.nativeServer": true,
   "[rust]": {
@@ -546,8 +551,9 @@
   "files.autoSave": "onWindowChange",
   "cursor.general.enableShadowWorkspace": true,
   "comments.visible": false,
-  "editor.defaultFormatter": "charliermarsh.ruff",
-  "window.confirmSaveUntitledWorkspace": false
+  "window.confirmSaveUntitledWorkspace": false,
+  "FSharp.suggestGitignore": false,
+  "cursor.cpp.enablePartialAccepts": true
 }
 // "**/.*": true,
 // pink
