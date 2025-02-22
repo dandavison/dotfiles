@@ -1,29 +1,35 @@
 [[keyboard.bindings]]
+# tmux select-pane -D
 chars = "\u0002\u001B[B"
 key = "Down"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux select-pane -L
 chars = "\u0002\u001B[D"
 key = "Left"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux new-window
 chars = "\u0002c"
 key = "N"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux resize-pane -Z
 chars = "\u0002z"
 key = "Return"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux select-pane -R
 chars = "\u0002\u001B[C"
 key = "Right"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux scroll mode
 chars = "\u0002["
 key = "S"
 mods = "Command"
@@ -34,40 +40,53 @@ key = "Slash"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux select-pane -U
 chars = "\u0002\u001B[A"
 key = "Up"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux kill-pane
 chars = "\u0002x"
 key = "W"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux horizontal split
 chars = "\u0002\""
 key = "Minus"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
+# tmux vertical split
 chars = "\u0002%"
 key = "Equals"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
+# tmux choose window
 chars = "\u0002\\"
 key = "Backslash"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
+# tmux toggle fullscreen
 action = "ToggleSimpleFullscreen"
 key = "Return"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
+# tmux-jump
 chars = "\u0002j"
 key = "Comma"
 mods = "Command"
 
+[[keyboard.bindings]]
+chars = ""
+key = "Q"
+mods = "Command"
+
+# From YAML config. I think these were necessary but don't remember why.
 [[keyboard.bindings]]
 chars = "\u001Br"
 key = "R"
@@ -92,11 +111,6 @@ mods = "Alt"
 chars = "\u001B."
 key = "Period"
 mods = "Alt"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Q"
-mods = "Command"
 
 [terminal]
 
