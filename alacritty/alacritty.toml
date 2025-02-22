@@ -54,13 +54,13 @@ mods = "Command"
 [[keyboard.bindings]]
 # tmux horizontal split
 chars = "\u0002\""
-key = "Minus"
+key = "_"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
 # tmux vertical split
 chars = "\u0002%"
-key = "Equals"
+key = "+"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
