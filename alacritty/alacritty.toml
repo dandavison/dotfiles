@@ -86,32 +86,6 @@ chars = ""
 key = "Q"
 mods = "Command"
 
-# From YAML config. I think these were necessary but don't remember why.
-[[keyboard.bindings]]
-chars = "\u001Br"
-key = "R"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bv"
-key = "V"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bx"
-key = "X"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bz"
-key = "Z"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B."
-key = "Period"
-mods = "Alt"
-
 [terminal]
 
 [colors.bright]
