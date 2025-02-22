@@ -35,6 +35,7 @@ key_bindings:
   - { key: Backslash, mods: Command|Shift, chars: "\x02\\" } # tmux choose window
   - { key: Return, mods: Command|Shift, action: ToggleSimpleFullscreen }
   - { key: Comma, mods: Command, chars: "\x02j" } # tmux-jump
+  # I think these keys weren't working without these keybindings
   - { key: R, mods: Alt, chars: "\x1br" }
   - { key: V, mods: Alt, chars: "\x1bv" }
   - { key: X, mods: Alt, chars: "\x1bx" }
