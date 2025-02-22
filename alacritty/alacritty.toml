@@ -1,0 +1,168 @@
+[[keyboard.bindings]]
+chars = "\u0002\u001B[B"
+key = "Down"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[D"
+key = "Left"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002z"
+key = "Return"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[C"
+key = "Right"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002["
+key = "S"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ToggleSimpleFullscreen"
+key = "Slash"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[A"
+key = "Up"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002x"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\""
+key = "Minus"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002%"
+key = "Equals"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002\\"
+key = "Backslash"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+action = "ToggleSimpleFullscreen"
+key = "Return"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002j"
+key = "Comma"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001Br"
+key = "R"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bv"
+key = "V"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bx"
+key = "X"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bz"
+key = "Z"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B."
+key = "Period"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = ""
+key = "Q"
+mods = "Command"
+
+[terminal]
+
+[colors.bright]
+black = "0x4c4c4c"
+blue = "0x6871ff"
+cyan = "0x1e81b0"
+green = "0x5ff967"
+magenta = "0xff76ff"
+red = "0xff6d67"
+white = "0x6b6868"
+yellow = "0xfe9a67"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x0225c7"
+cyan = "0x0073c7"
+green = "0x066c06"
+magenta = "0xc930c7"
+red = "0xc91b00"
+white = "0xc7c7c7"
+yellow = "0xe55611"
+
+[colors.primary]
+background = "0xfffefe"
+foreground = "0x000000"
+
+[cursor.style]
+shape = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "Monaco"
+style = "Regular"
+
+[[hints.enabled]]
+command = "open"
+hyperlinks = true
+regex = "(https:|http:|file:|file-line-column:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.binding]
+key = "Period"
+mods = "Command"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "Command"
+
+[terminal.shell]
+args = ["new-session", "-A", "-s", "0"]
+program = "/opt/homebrew/bin/tmux"
+
+[window]
+startup_mode = "SimpleFullscreen"
+
+[window.padding]
+x = 7
+y = 7
+
+[keyboard]
