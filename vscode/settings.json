@@ -34,7 +34,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": "off",
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "off",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
@@ -180,7 +180,13 @@
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "java.configuration.runtimes": [],
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/opt/homebrew/opt/openjdk@17",
+      "default": true
+    }
+  ],
   "java.format.comments.enabled": false,
   "java.format.enabled": false,
   "java.format.onType.enabled": false,
@@ -283,11 +289,19 @@
       "depth": -1
     },
     {
+      "name": "ast",
+      "depth": -1
+    },
+    {
       "name": "click",
       "depth": -1
     },
     {
       "name": "cairo",
+      "depth": -1
+    },
+    {
+      "name": "ctypes",
       "depth": -1
     }
   ],
@@ -299,7 +313,7 @@
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "rewrap.wrappingColumn": 90,
+  "rewrap.wrappingColumn": 100,
   "ruff.lint.preview": true,
   "ruff.nativeServer": true,
   "[rust]": {
@@ -457,7 +471,7 @@
     {
       "alignment": "right",
       "id": "formatOnSave",
-      "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').formatOnSave ? '\u26a1': ''",
+      "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').formatOnSave ? '⚡': ''",
       "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
       "text": "Format on save"
     },
@@ -506,7 +520,6 @@
   "window.openWithoutArgumentsInNewWindow": "on",
   "window.zoomLevel": 0.5,
   "workbench.activityBar.location": "hidden",
-  // https://github.com/getcursor/cursor/issues/1570
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
     "editorError.foreground": "#FF0000",
@@ -553,71 +566,6 @@
   "comments.visible": false,
   "window.confirmSaveUntitledWorkspace": false,
   "FSharp.suggestGitignore": false,
-  "cursor.cpp.enablePartialAccepts": true
+  "cursor.cpp.enablePartialAccepts": true,
+  "java.compile.nullAnalysis.mode": "disabled"
 }
-// "**/.*": true,
-// pink
-// green
-// blue
-// yellow
-// {
-//   "light": "#b3d9ff",
-//   "dark": "cyan"
-// },
-// {
-//   "light": "#e6ffb3",
-//   "dark": "pink"
-// },
-// {
-//   "light": "#b3b3ff",
-//   "dark": "lightgreen"
-// },
-// {
-//   "light": "#ffd9b3",
-//   "dark": "magenta"
-// },
-// {
-//   "light": "#ffb3ff",
-//   "dark": "cornflowerblue"
-// },
-// {
-//   "light": "#b3ffb3",
-//   "dark": "orange"
-// },
-// {
-//   "light": "#ffff80",
-//   "dark": "green"
-// },
-// {
-//   "light": "#d1e0e0",
-//   "dark": "red"
-// }
-// "rust-analyzer.checkOnSave.command": "clippy",
-// "rust-analyzer.checkOnSave.extraArgs": ["--", "-D", "warnings"],
-// "rust-analyzer.inlayHints.maxLength": null,
-// {
-//   "alignment": "left",
-//   "scriptFile": "/Users/dan/src/devenv/dotfiles/vscode/statusbar_commands/bsp-status.js",
-//   "scriptEvents": [
-//     "vscode.workspace.onDidSaveTextDocument",
-//     "vscode.window.onDidChangeActiveTextEditor",
-//     "vscode.workspace.onDidChangeConfiguration"
-//   ],
-//   "id": "sbc.bsp-status",
-//   "name": "BSP status",
-//   "text": "<BSP status>"
-// },
-// "light": "#b3d9ff",
-// "light": "#e6ffb3",
-// "light": "#b3b3ff",
-// "light": "#ffd9b3",
-// "light": "#ffb3ff",
-// "light": "#b3ffb3",
-// "light": "#ffff80",
-// "light": "#d1e0e0",
-// "git.path": "/Users/dan/src/misc/git-wrapper.sh",
-// "rust-analyzer.hover.documentation.enable": false,
-// "rust-analyzer.inlayHints.parameterHints.enable": false,
-// "rust-analyzer.inlayHints.typeHints.enable": false,
-// "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
-// "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
