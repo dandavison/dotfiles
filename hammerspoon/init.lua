@@ -25,13 +25,28 @@ local function wormholeSelect()
     hs.application.launchOrFocus("/Applications/Wormhole.app")
 end
 
-
 local function wormholePrevious()
     hs.http.get("http://wormhole:7117/previous-project/", nil)
 end
 
 local function wormholeNext()
     hs.http.get("http://wormhole:7117/next-project/", nil)
+end
+
+local projects = {
+    "xray",
+    "sdk-python",
+    "samples-python",
+    "nexus-sdk-python",
+    "temporal",
+    "api",
+    "samples-go"
+}
+
+for i, project in ipairs(projects) do
+    hs.hotkey.bind({"cmd"}, tostring(i), function()
+        hs.http.get("http://wormhole:7117/project/" .. project, nil)
+    end)
 end
 
 hs.hotkey.bind({}, "f16", terminal)
