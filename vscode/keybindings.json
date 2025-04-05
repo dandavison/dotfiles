@@ -136,16 +136,6 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+down",
-    "command": "goToNextReference",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "references-view.next",
-    "when": "reference-list.hasResult && references-view.canNavigate"
-  },
-  {
     "key": "ctrl+end",
     "command": "terminal.focus",
     "when": "inDebugRepl"
@@ -603,16 +593,6 @@
     "when": "inlineChatHasProvider && inlineChatVisible && !inlineChatDocumentChanged || inlineChatHasProvider && inlineChatVisible && config.inlineChat.mode != 'preview'"
   },
   {
-    "key": "ctrl+down",
-    "command": "list.focusDown",
-    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "list.focusUp",
-    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
-  },
-  {
     "key": "shift+alt+enter",
     "command": "etc.zoomPane"
   },
@@ -738,5 +718,15 @@
   {
     "key": "ctrl+shift+cmd+k",
     "command": "aichat.close-sidebar"
+  {
+    "key": "ctrl+down",
+    "command": "references-view.next",
+    "when": "reference-list.hasResult && references-view.canNavigate"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "references-view.prev",
+    "when": "reference-list.hasResult && references-view.canNavigate"
+  },
   }
 ]
