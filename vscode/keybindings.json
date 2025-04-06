@@ -597,10 +597,6 @@
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "cmd+f",
-    "command": "workbench.action.findInFiles"
-  },
-  {
     "key": "ctrl+cmd+f",
     "command": "workbench.action.terminal.searchWorkspace",
     "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
@@ -746,23 +742,8 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "down",
-    "command": "goToNextReference",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-  {
-    "key": "f4",
-    "command": "-goToNextReference",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-  {
     "key": "ctrl+down",
     "command": "references-view.next",
-    "when": "reference-list.hasResult && references-view.canNavigate"
-  },
-  {
-    "key": "f4",
-    "command": "-references-view.next",
     "when": "reference-list.hasResult && references-view.canNavigate"
   },
   {
@@ -771,8 +752,13 @@
     "when": "reference-list.hasResult && references-view.canNavigate"
   },
   {
-    "key": "shift+f4",
-    "command": "-references-view.prev",
-    "when": "reference-list.hasResult && references-view.canNavigate"
-  }
+    "key": "ctrl+down",
+    "command": "search.action.focusNextSearchResult",
+    "when": "hasSearchResult || inSearchEditor"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "search.action.focusPreviousSearchResult",
+    "when": "hasSearchResult || inSearchEditor"
+  },
 ]
