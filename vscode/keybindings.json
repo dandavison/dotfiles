@@ -746,8 +746,23 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
+    "key": "down",
+    "command": "goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "f4",
+    "command": "-goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
     "key": "ctrl+down",
     "command": "references-view.next",
+    "when": "reference-list.hasResult && references-view.canNavigate"
+  },
+  {
+    "key": "f4",
+    "command": "-references-view.next",
     "when": "reference-list.hasResult && references-view.canNavigate"
   },
   {
@@ -755,5 +770,9 @@
     "command": "references-view.prev",
     "when": "reference-list.hasResult && references-view.canNavigate"
   },
+  {
+    "key": "shift+f4",
+    "command": "-references-view.prev",
+    "when": "reference-list.hasResult && references-view.canNavigate"
   }
 ]
