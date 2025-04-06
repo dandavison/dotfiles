@@ -526,10 +526,6 @@
     "when": "terminal.active"
   },
   {
-    "key": "shift+cmd+l",
-    "command": "etc.copyGithubMarkdownUrl"
-  },
-  {
     "key": "alt+cmd+l",
     "command": "etc.copyGithubUrl"
   },
@@ -574,10 +570,6 @@
     "command": "etc.toggleCursorCpp"
   },
   {
-    "key": "ctrl+d",
-    "command": "workbench.action.terminal.kill"
-  },
-  {
     "key": "ctrl+'",
     "command": "-editor.action.triggerSuggest",
     "when": "editorTextFocus"
@@ -605,7 +597,7 @@
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "ctrl+cmd+f",
+    "key": "cmd+f",
     "command": "workbench.action.findInFiles"
   },
   {
@@ -716,8 +708,43 @@
     "when": "editorHasImplementationProvider && editorTextFocus"
   },
   {
-    "key": "ctrl+shift+cmd+k",
+    "key": "shift+cmd+b",
     "command": "aichat.close-sidebar"
+  },
+  {
+    "key": "alt+cmd+m",
+    "command": "etc.copyGithubMarkdownUrl"
+  },
+  {
+    "key": "alt+cmd+d",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+r cmd+d",
+    "command": "-editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+left",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+cmd+up",
+    "command": "-workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+right",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+cmd+down",
+    "command": "-workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
   {
     "key": "ctrl+down",
     "command": "references-view.next",

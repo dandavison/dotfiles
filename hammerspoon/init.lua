@@ -36,15 +36,18 @@ end
 local projects = {
     "xray",
     "sdk-python",
-    "samples-python",
     "nexus-sdk-python",
+    "samples-python",
     "temporal",
     "api",
-    "samples-go"
+    "samples-go",
+    "sdk-java",
+    "samples-java",
+    "linnet",
 }
 
 for i, project in ipairs(projects) do
-    hs.hotkey.bind({"cmd"}, tostring(i), function()
+    hs.hotkey.bind({"cmd"}, tostring(i % 10), function()
         hs.http.get("http://wormhole:7117/project/" .. project, nil)
     end)
 end

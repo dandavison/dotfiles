@@ -12,7 +12,6 @@
   "[d2]": {
     "editor.formatOnSave": true
   },
-  "D2.previewSketch": true,
   "D2.updateTimer": 500,
   "debug.console.acceptSuggestionOnEnter": "on",
   "debug.inlineValues": "off",
@@ -313,7 +312,7 @@
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "rewrap.wrappingColumn": 100,
+  "rewrap.wrappingColumn": 80,
   "ruff.lint.preview": true,
   "ruff.nativeServer": true,
   "[rust]": {
@@ -519,7 +518,6 @@
   "window.openFoldersInNewWindow": "on",
   "window.openWithoutArgumentsInNewWindow": "on",
   "window.zoomLevel": 0.5,
-  "workbench.activityBar.location": "hidden",
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
     "editorError.foreground": "#FF0000",
@@ -567,5 +565,7 @@
   "window.confirmSaveUntitledWorkspace": false,
   "FSharp.suggestGitignore": false,
   "cursor.cpp.enablePartialAccepts": true,
-  "java.compile.nullAnalysis.mode": "disabled"
+  "java.compile.nullAnalysis.mode": "disabled",
+  "D2.previewSketch": true,
+  "rewrap.autoWrap.enabled": true
 }
