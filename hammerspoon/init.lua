@@ -42,7 +42,7 @@ local projects = {
     "api",
     "samples-go",
     "sdk-java",
-    "samples-java",
+    "xolmis",
     "linnet",
 }
 
