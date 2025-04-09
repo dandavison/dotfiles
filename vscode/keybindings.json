@@ -761,4 +761,8 @@
     "command": "search.action.focusPreviousSearchResult",
     "when": "hasSearchResult || inSearchEditor"
   },
+  {
+    "key": "cmd+q",
+    "command": "-workbench.action.quit"
+  },
 ]

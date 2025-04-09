@@ -567,5 +567,17 @@
   "cursor.cpp.enablePartialAccepts": true,
   "java.compile.nullAnalysis.mode": "disabled",
   "D2.previewSketch": true,
-  "rewrap.autoWrap.enabled": true
+  "rewrap.autoWrap.enabled": true,
+  "prettifySymbolsMode.substitutions": [
+    {
+      // https://github.com/siegebell/vsc-prettify-symbols-mode/wiki/Python
+      "language": "python",
+      "substitutions": [
+        { "ugly": ">=", "pretty": "≥", "pre": "[^=\\-<>]|^", "post": "[^=\\-<>]|$" },
+        { "ugly": "<=", "pretty": "≤", "pre": "[^=\\-<>]|^", "post": "[^=\\-<>]|$" },
+        { "ugly": "!=", "pretty": "≠", "pre": "[^<>=!]|^", "post": "[^<>=]|$" },
+        { "ugly": "lambda", "pretty": "λ", "pre": "\\b", "post": "\\b" },
+      ]
+    }
+  ]
 }
