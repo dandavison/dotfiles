@@ -566,10 +566,6 @@
     "command": "-manim-sideview.renderNewScene"
   },
   {
-    "key": "cmd+p",
-    "command": "etc.toggleCursorCpp"
-  },
-  {
     "key": "ctrl+'",
     "command": "-editor.action.triggerSuggest",
     "when": "editorTextFocus"
@@ -754,15 +750,29 @@
   {
     "key": "ctrl+down",
     "command": "search.action.focusNextSearchResult",
-    "when": "hasSearchResult || inSearchEditor"
+    "when": "hasSearchResult && inSearchEditor"
   },
   {
     "key": "ctrl+up",
     "command": "search.action.focusPreviousSearchResult",
-    "when": "hasSearchResult || inSearchEditor"
+    "when": "hasSearchResult && inSearchEditor"
   },
   {
     "key": "cmd+q",
     "command": "-workbench.action.quit"
+  },
+  {
+    "key": "cmd+p",
+    "command": "editor.cpp.toggle"
+  },
+  {
+    "key": "alt+tab",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
+  },
+  {
+    "key": "cmd+right",
+    "command": "-editor.action.inlineSuggest.acceptNextWord",
+    "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
   },
 ]

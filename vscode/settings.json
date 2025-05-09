@@ -312,7 +312,7 @@
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "rewrap.wrappingColumn": 80,
+  "rewrap.wrappingColumn": 90,
   "ruff.lint.preview": true,
   "ruff.nativeServer": true,
   "[rust]": {
@@ -567,17 +567,28 @@
   "cursor.cpp.enablePartialAccepts": true,
   "java.compile.nullAnalysis.mode": "disabled",
   "D2.previewSketch": true,
-  "rewrap.autoWrap.enabled": true,
   "prettifySymbolsMode.substitutions": [
     {
       // https://github.com/siegebell/vsc-prettify-symbols-mode/wiki/Python
       "language": "python",
       "substitutions": [
-        { "ugly": ">=", "pretty": "≥", "pre": "[^=\\-<>]|^", "post": "[^=\\-<>]|$" },
-        { "ugly": "<=", "pretty": "≤", "pre": "[^=\\-<>]|^", "post": "[^=\\-<>]|$" },
+        {
+          "ugly": ">=",
+          "pretty": "≥",
+          "pre": "[^=\\-<>]|^",
+          "post": "[^=\\-<>]|$"
+        },
+        {
+          "ugly": "<=",
+          "pretty": "≤",
+          "pre": "[^=\\-<>]|^",
+          "post": "[^=\\-<>]|$"
+        },
         { "ugly": "!=", "pretty": "≠", "pre": "[^<>=!]|^", "post": "[^<>=]|$" },
-        { "ugly": "lambda", "pretty": "λ", "pre": "\\b", "post": "\\b" },
+        { "ugly": "lambda", "pretty": "λ", "pre": "\\b", "post": "\\b" }
       ]
     }
-  ]
+  ],
+  "cursor.cmdk.useThemedDiffBackground": false,
+  "workbench.activityBar.location": "hidden"
 }
