@@ -1,3 +1,3 @@
 #!/bin/bash
 zone="Europe/Lisbon" # UTC
-echo "PT $(TZ=$zone date +'%H:%M')"
+echo "$(TZ=$zone date +'%H:%M')"
