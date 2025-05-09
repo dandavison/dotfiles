@@ -1,1 +1,0 @@
-clocks/clock-utc.1m.sh
