@@ -590,5 +590,6 @@
     }
   ],
   "cursor.cmdk.useThemedDiffBackground": false,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "vscode-etc.wormhole.openOutsideWorkspace": true
 }

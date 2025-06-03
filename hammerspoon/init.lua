@@ -38,12 +38,12 @@ local projects = {
     "sdk-python",
     "nexus-sdk-python",
     "samples-python",
-    "samples-python-2",
-    "api",
+    "sdk-typescript",
+    "nexus-sdk-typescript",
     "samples-go",
     "sdk-go",
-    "samples-java",
-    "instructions",
+    "nexus-sdk-go",
+    "temporal",
 }
 
 for i, project in ipairs(projects) do
