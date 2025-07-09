@@ -34,16 +34,16 @@ local function wormholeNext()
 end
 
 local projects = {
-    "xray",
+    "api",
     "sdk-python",
     "nexus-sdk-python",
     "samples-python",
-    "mcp-modelcontextprotocol",
-    "mcp-python-sdk",
-    "mcp-python-sdk-example-1",
+    "sdk-java",
+    "nexus-sdk-java",
+    "samples-java",
     "sdk-go",
     "nexus-sdk-go",
-    "temporal",
+    "xray",
 }
 
 for i, project in ipairs(projects) do
