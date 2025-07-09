@@ -775,4 +775,8 @@
     "command": "-editor.action.inlineSuggest.acceptNextWord",
     "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
   },
+  {
+    "key": "shift+cmd+t",
+    "command": "vscode-etc.togglePythonTypeCheckingMode"
+  },
 ]
