@@ -317,11 +317,6 @@
     "command": "editor.action.transformToUppercase"
   },
   {
-    "key": "shift+cmd+p",
-    "command": "copyRelativeFilePath",
-    "when": "!editorFocus"
-  },
-  {
     "key": "shift+alt+cmd+c",
     "command": "-copyRelativeFilePath",
     "when": "!editorFocus"
@@ -479,11 +474,6 @@
   {
     "key": "shift+cmd+-",
     "command": "workbench.action.splitEditorUp"
-  },
-  {
-    "key": "shift+cmd+p",
-    "command": "copyRelativeFilePath",
-    "when": "editorFocus"
   },
   {
     "key": "cmd+k shift+alt+cmd+c",
