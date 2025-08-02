@@ -579,10 +579,6 @@
     "command": "etc.gitBlame"
   },
   {
-    "key": "shift+cmd+enter",
-    "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
     "key": "ctrl+cmd+f",
     "command": "workbench.action.terminal.searchWorkspace",
     "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
@@ -776,5 +772,15 @@
         "text": "\\\r\n"
     },
     "when": "terminalFocus"
+},
+{
+  "key": "shift+cmd+enter",
+  "command": "workbench.action.toggleMaximizeEditorGroup",
+  "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+},
+{
+  "key": "cmd+r cmd+m",
+  "command": "-workbench.action.toggleMaximizeEditorGroup",
+  "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
 },
 ]
