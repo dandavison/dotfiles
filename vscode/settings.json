@@ -309,13 +309,12 @@
     }
   ],
   "python.envFile": "${workspaceFolder}/.env.dev",
-  "python.languageServer": "None",
   "python.terminal.activateEnvironment": false,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "rewrap.wrappingColumn": 90,
+  "rewrap.wrappingColumn": 100,
   "ruff.lint.preview": true,
   "ruff.nativeServer": true,
   "[rust]": {
@@ -600,15 +599,14 @@
   "cursorpyright.analysis.autoImportCompletions": true,
   "cursorpyright.analysis.autoSearchPaths": false,
   "cursorpyright.analysis.diagnosticMode": "workspace",
-  "cursorpyright.analysis.diagnosticSeverityOverrides": {
-    "reportUnusedImport": "error",
-    "reportWildcardImportFromLibrary": "none",
-    "reportMissingTypeStubs": "none"
-  },
-  "cursorpyright.analysis.exclude": [
-    "**/.venv/**",
-    "**/lib/python*/**",
-    "**/.pyenv/**"
-  ],
-  "cursorpyright.analysis.typeCheckingMode": "basic"
+  "cursorpyright.analysis.exclude": ["**/.venv/**"],
+  "cursorpyright.analysis.typeCheckingMode": "basic",
+  "cursorpyright.analysis.inlayHints.genericTypes": true,
+  "cursorpyright.analysis.inlayHints.variableTypes": true,
+  "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
+  "cursorpyright.analysis.inlayHints.callArgumentNames": true,
+  "cursorpyright.analysis.logLevel": "Warning",
+  "cursorpyright.analysis.useTypingExtensions": true,
+  "ty.diagnosticMode": "workspace",
+  "cursorpyright.shouldImportPylanceSettings": "always"
 }

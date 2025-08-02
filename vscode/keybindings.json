@@ -778,5 +778,13 @@
   {
     "key": "shift+cmd+t",
     "command": "vscode-etc.togglePythonTypeCheckingMode"
-  },
+},
+{
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+        "text": "\\\r\n"
+    },
+    "when": "terminalFocus"
+},
 ]

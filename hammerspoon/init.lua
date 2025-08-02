@@ -34,16 +34,16 @@ local function wormholeNext()
 end
 
 local projects = {
-    "api",
-    "sdk-python",
-    "nexus-sdk-python",
-    "samples-python",
-    "sdk-java",
-    "nexus-sdk-java",
-    "samples-java",
-    "sdk-go",
-    "nexus-sdk-go",
-    "xray",
+    "api",                   -- 1
+    "sdk-python",            -- 2
+    "nexus-sdk-python",      -- 3
+    "samples-python",        -- 4
+    "sdk-java",              -- 5
+    "nexus-sdk-java",        -- 6
+    "samples-java",          -- 7
+    "sdk-go",                -- 8
+    "nexus-sdk-go",          -- 9
+    "devenv",  -- 0
 }
 
 for i, project in ipairs(projects) do
@@ -56,6 +56,8 @@ hs.hotkey.bind({}, "f16", terminal)
 hs.hotkey.bind({}, "f13", wormholeSelect)
 hs.hotkey.bind({ "cmd", "control" }, "left", wormholePrevious)
 hs.hotkey.bind({ "cmd", "control" }, "right", wormholeNext)
+
+
 
 
 -- local current_id, threshold
