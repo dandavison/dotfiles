@@ -34,7 +34,7 @@ local function wormholeNext()
 end
 
 local projects = {
-    "api",                   -- 1
+    "temporal",              -- 1
     "sdk-python",            -- 2
     "nexus-sdk-python",      -- 3
     "samples-python",        -- 4
@@ -42,8 +42,8 @@ local projects = {
     "nexus-sdk-java",        -- 6
     "samples-java",          -- 7
     "sdk-go",                -- 8
-    "nexus-sdk-go",          -- 9
-    "devenv",  -- 0
+    "api",                   -- 9
+    "devenv",                -- 0
 }
 
 for i, project in ipairs(projects) do
