@@ -57,7 +57,42 @@ hs.hotkey.bind({}, "f13", wormholeSelect)
 hs.hotkey.bind({ "cmd", "control" }, "left", wormholePrevious)
 hs.hotkey.bind({ "cmd", "control" }, "right", wormholeNext)
 
+local alertUUID = nil
 
+local function showHotkeys()
+    -- Build project shortcuts dynamically
+    local lines = {}
+    for i, project in ipairs(projects) do
+        table.insert(lines, string.format("%d    %s", i % 10, project))
+    end
+
+    local text = table.concat(lines, "\n")
+
+    if alertUUID then
+        hs.alert.closeSpecific(alertUUID)
+        alertUUID = nil
+    else
+        alertUUID = hs.alert.show(text, {
+            textSize = 14,
+            textColor = {white = 1, alpha = 1},
+            fillColor = {white = 0.1, alpha = 0.9},
+            strokeColor = {white = 0.3, alpha = 1},
+            strokeWidth = 2,
+            radius = 10,
+            fadeInDuration = 0.15,
+            fadeOutDuration = 0.15,
+            atScreenEdge = 0
+        }, "♾️")
+    end
+
+    -- local tmuxCmd = string.format([[tmux display-message -d 5000 '%s']], hotkeyText:gsub("\n", "\\n"):gsub("'", "\\'"))
+    -- hs.execute(tmuxCmd, true)
+end
+
+hs.hotkey.bind({"cmd", "shift"}, "k", showHotkeys)
+hs.hotkey.bind({"cmd", "shift"}, "r", function()
+    hs.reload()
+end)
 
 
 -- local current_id, threshold
