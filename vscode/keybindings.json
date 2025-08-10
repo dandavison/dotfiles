@@ -774,7 +774,7 @@
     "when": "terminalFocus"
 },
 {
-  "key": "shift+cmd+enter",
+  "key": "alt+cmd+enter",
   "command": "workbench.action.toggleMaximizeEditorGroup",
   "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
 },
@@ -782,5 +782,13 @@
   "key": "cmd+r cmd+m",
   "command": "-workbench.action.toggleMaximizeEditorGroup",
   "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+},
+{
+  "key": "cmd+w",
+  "command": "workbench.action.closeEditorsInGroup"
+},
+{
+  "key": "cmd+r w",
+  "command": "-workbench.action.closeEditorsInGroup"
 },
 ]

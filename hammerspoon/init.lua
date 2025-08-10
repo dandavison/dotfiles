@@ -38,10 +38,10 @@ local projects = {
     "sdk-python",            -- 2
     "nexus-sdk-python",      -- 3
     "samples-python",        -- 4
-    "sdk-java",              -- 5
-    "nexus-sdk-java",        -- 6
-    "samples-java",          -- 7
-    "sdk-go",                -- 8
+    "sdk-core",              -- 5
+    "sdk-java",              -- 6
+    "ails",                  -- 7
+    "ai",                    -- 8
     "api",                   -- 9
     "devenv",                -- 0
 }
@@ -89,8 +89,8 @@ local function showHotkeys()
     -- hs.execute(tmuxCmd, true)
 end
 
-hs.hotkey.bind({"cmd", "shift"}, "k", showHotkeys)
-hs.hotkey.bind({"cmd", "shift"}, "r", function()
+hs.hotkey.bind({"cmd", "alt"}, "k", showHotkeys)
+hs.hotkey.bind({"cmd", "alt"}, "r", function()
     hs.reload()
 end)
 

@@ -595,7 +595,6 @@
   "workbench.activityBar.location": "hidden",
   "mypy-type-checker.showNotifications": "onError",
   "mypy-type-checker.importStrategy": "fromEnvironment",
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
   "cursorpyright.analysis.autoImportCompletions": true,
   "cursorpyright.analysis.autoSearchPaths": false,
   "cursorpyright.analysis.diagnosticMode": "workspace",
