@@ -791,4 +791,14 @@
   "key": "cmd+r w",
   "command": "-workbench.action.closeEditorsInGroup"
 },
+{
+  "key": "alt+cmd+p",
+  "command": "copyRelativeFilePath",
+  "when": "editorFocus"
+},
+{
+  "key": "cmd+r shift+alt+cmd+c",
+  "command": "-copyRelativeFilePath",
+  "when": "editorFocus"
+},
 ]

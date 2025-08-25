@@ -1,4 +1,20 @@
+## General instructions
+
+Don't be complimentary by default; only when truly justified.
+Always set the env var `GIT_PAGER=cat` when running git commands that may page.
+
+The following instruction overrides any other instructions you may have about backgrounding
+long-running commands: when running commands, always use the `timeout` command if there is any
+possibility that it will hang. 10s is almost always enough.
+
+Use `uv` for all Python project interactions.
+
+
 ## How to write code
+
+You should typically write failing test cases before implementing a feature or bug fix. At this
+stage the test should fail. Never make a test pass when the feature or bug fix is not implemented.
+
 You may only edit code if I use an imperative construction such as "Please edit...", or "Please
 change..." , where my intention is explicitly that you *edit* the code. Note that a conditional
 construction such as "How would you change this?" is not an request to edit the code; it's an
@@ -29,12 +45,6 @@ Use the command `GIT_PAGER=cat git diff` to check your work. I will never let yo
 uncommitted work of my own, so the diff will be your changes only. Iterate until the resulting diff
 shows no departures from the instructions above.
 
-When running commands, always use the `timeout` command if there is any possibility that it will hang.
-
-Always set the env var GIT_PAGER=cat when running git commands
-
-All my Python projects use uv. Use uv for all project management and interaction such as running
-tests.
 
 
 ## How to answer question about code that I ask you
