@@ -3,6 +3,7 @@ require("hs.ipc")
 require("hs.eventtap")
 require("hs.notify")
 
+local hs = hs
 
 Logger = hs.logger.new('dan', "debug")
 
@@ -33,22 +34,67 @@ local function wormholeNext()
     hs.http.get("http://wormhole:7117/next-project/", nil)
 end
 
-local projects = {
-    "temporal",                 -- 1
-    "sdk-python",               -- 2
-    "nexus-sdk-python",         -- 3
-    "samples-python",           -- 4
-    "a2a-python",               -- 5
-    "a2a-samples",              -- 6
-    "mcp-python-sdk",           -- 7
-    "nexus-mcp-python",         -- 8
-    "mcp-modelcontextprotocol", -- 9
-    "devenv",                   -- 0
+local keymap = {
+    ["temporal"] = {
+        "temporal",                 -- 1
+        "sdk-python",               -- 2
+        "nexus-sdk-python",         -- 3
+        "samples-python",           -- 4
+        "sdk-typescript",           -- 5
+        "sdk-java",                 -- 6
+        "sdk-go",                   -- 7
+        "samples-java",             -- 8
+        "api",                      -- 9
+        "devenv",                   -- 0
+    },
+    ["nexus"] = {
+        "temporal",                 -- 1
+        "sdk-python",               -- 2
+        "nexus-sdk-python",         -- 3
+        "samples-python",           -- 4
+        "sdk-java",                 -- 5
+        "nexus-sdk-java",           -- 6
+        "sdk-go",                   -- 7
+        "nexus-sdk-go",             -- 8
+        "nexus-sdk-typescript",     -- 9
+        "devenv",                   -- 0
+    },
+    ["ai"] = {
+        "temporal",                 -- 1
+        "sdk-python",               -- 2
+        "nexus-sdk-python",         -- 3
+        "samples-python",           -- 4
+        "a2a-python",               -- 5
+        "a2a-samples",              -- 6
+        "mcp-python-sdk",           -- 7
+        "nexus-mcp-python",         -- 8
+        "mcp-modelcontextprotocol", -- 9
+        "devenv",                   -- 0
+    }
 }
 
-for i, project in ipairs(projects) do
+local function getActiveWorkspace()
+    local file = io.open("/tmp/ws", "r")
+    if file then
+        local content = file:read("*all")
+        file:close()
+        return content:match("^%s*(.-)%s*$")
+    end
+    return "temporal"
+end
+
+local function getRepos()
+    local workspace = getActiveWorkspace()
+    return keymap[workspace] or keymap["temporal"]
+end
+
+for i = 1, 10 do
     hs.hotkey.bind({"cmd"}, tostring(i % 10), function()
-        hs.http.get("http://wormhole:7117/project/" .. project, nil)
+        local repos = getRepos()
+        local repo = repos[i]
+        if repo then
+            hs.http.get("http://wormhole:7117/project/" .. repo, nil)
+        end
     end)
 end
 
@@ -57,22 +103,27 @@ hs.hotkey.bind({}, "f13", wormholeSelect)
 hs.hotkey.bind({ "cmd", "control" }, "left", wormholePrevious)
 hs.hotkey.bind({ "cmd", "control" }, "right", wormholeNext)
 
-local alertUUID = nil
+local alertId = nil
 
 local function showHotkeys()
-    -- Build project shortcuts dynamically
+    local workspace = getActiveWorkspace()
+    local repos = getRepos()
+
     local lines = {}
-    for i, project in ipairs(projects) do
-        table.insert(lines, string.format("%d    %s", i % 10, project))
+    table.insert(lines, string.format("Workspace: %s", workspace))
+    table.insert(lines, "")
+
+    for i, repo in ipairs(repos) do
+        table.insert(lines, string.format("%d    %s", i % 10, repo))
     end
 
     local text = table.concat(lines, "\n")
 
-    if alertUUID then
-        hs.alert.closeSpecific(alertUUID)
-        alertUUID = nil
+    if alertId then
+        hs.alert.closeSpecific(alertId)
+        alertId = nil
     else
-        alertUUID = hs.alert.show(text, {
+        alertId = hs.alert.show(text, {
             textSize = 14,
             textColor = {white = 1, alpha = 1},
             fillColor = {white = 0.1, alpha = 0.9},
@@ -93,23 +144,3 @@ hs.hotkey.bind({"cmd", "alt"}, "k", showHotkeys)
 hs.hotkey.bind({"cmd", "alt"}, "r", function()
     hs.reload()
 end)
-
-
--- local current_id, threshold
--- Swipe = hs.loadSpoon("Swipe")
--- Swipe:start(3, function(direction, distance, id)
---     if id == current_id then
---         Logger.d("distance", distance)
---         if distance > threshold then
---             threshold = math.huge
---             if direction == "left" then
---                 wormholePrevious()
---             elseif direction == "right" then
---                 wormholeNext()
---             end
---         end
---     else
---         current_id = id
---         threshold = 0.05 -- swipe distance > % of trackpad
---     end
--- end)
