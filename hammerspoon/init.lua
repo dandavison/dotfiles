@@ -105,27 +105,54 @@ hs.hotkey.bind({ "cmd", "control" }, "right", wormholeNext)
 
 local alertId = nil
 
+local function getAvailableRepos()
+    local available = {}
+    local handle = io.popen("wormhole-list")
+    if handle then
+        for line in handle:lines() do
+            local repo = line:match("^%s*(.-)%s*$") -- trim whitespace
+            if repo and repo ~= "" then
+                available[repo] = true
+            end
+        end
+        handle:close()
+    end
+    return available
+end
+
 local function showHotkeys()
     local workspace = getActiveWorkspace()
     local repos = getRepos()
+    local availableRepos = getAvailableRepos()
 
     local lines = {}
-    table.insert(lines, string.format("Workspace: %s", workspace))
-    table.insert(lines, "")
+    table.insert(lines, {text = string.format("Workspace: %s", workspace), available = true})
+    table.insert(lines, {text = "", available = true})
 
     for i, repo in ipairs(repos) do
-        table.insert(lines, string.format("%d    %s", i % 10, repo))
+        local isAvailable = availableRepos[repo]
+        local line = string.format("%d    %s", i % 10, repo)
+        table.insert(lines, {text = line, available = isAvailable})
     end
-
-    local text = table.concat(lines, "\n")
 
     if alertId then
         hs.alert.closeSpecific(alertId)
         alertId = nil
     else
-        alertId = hs.alert.show(text, {
-            textSize = 14,
-            textColor = {white = 1, alpha = 1},
+        -- Create a custom styled text object
+        local styledText = hs.styledtext.new("")
+
+        for i, lineData in ipairs(lines) do
+            local color = lineData.available and {white = 1, alpha = 1} or {white = 0.5, alpha = 0.7}
+            local text = lineData.text .. (i < #lines and "\n" or "")
+            local styledLine = hs.styledtext.new(text, {
+                font = {size = 14},
+                color = color
+            })
+            styledText = styledText .. styledLine
+        end
+
+        alertId = hs.alert.show(styledText, {
             fillColor = {white = 0.1, alpha = 0.9},
             strokeColor = {white = 0.3, alpha = 1},
             strokeWidth = 2,
