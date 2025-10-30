@@ -15,7 +15,7 @@
    hyperlinks-file-link-format = "http://wormhole:7117/file/{path}:{line}?land-in=editor"
    default-language = python
    navigate-regex = ^•
-   width = variable
+   # width = variable
    # max-line-length = 77777
 
 

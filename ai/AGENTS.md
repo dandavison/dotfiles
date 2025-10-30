@@ -47,13 +47,9 @@ shows no departures from the instructions above.
 
 
 
-## How to answer question about code that I ask you
-When explaining code mechanics with verb constructions (e.g., "calls", "sends", "is processed"), follow this format:
-1. **Bold** the verb in the sentence
-2. Immediately after the sentence, provide a clickable code citation showing the exact line where that action occurs
-3. Use the format: ```startLine:endLine:filepath``` for code citations
+## How to present code fragments
+Always use this format to present code fragments: ```startLine:endLine:filepath```. E.g.
 
-Example:
 "When process_machine_responses() **calls** send_job(), the jobs are pushed into a vector:"
 ```1153:1153:core/src/worker/workflow/machines/workflow_machines.rs
 self.drive_me.send_job(a);
@@ -69,3 +65,4 @@ answer.
 
 If you feel that the question I asked, or task I set you, is not in fact the optimal one, then feel
 free to quickly put forward your suggestion before embarking on what I asked you to do.
+

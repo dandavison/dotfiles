@@ -35,15 +35,24 @@ local function wormholeNext()
 end
 
 local keymap = {
+    ["act"] = {
+        "temporal",                 -- 1
+        "server",                   -- 2
+        "api",                      -- 3
+        "sdk-python",               -- 4
+        "samples-python",           -- 5
+        "api-go",                   -- 9
+        "devenv",                   -- 0
+    },
     ["temporal"] = {
         "temporal",                 -- 1
         "sdk-python",               -- 2
         "nexus-sdk-python",         -- 3
-        "samples-python",           -- 4
-        "sdk-typescript",           -- 5
-        "sdk-java",                 -- 6
-        "sdk-go",                   -- 7
-        "samples-java",             -- 8
+        "sdk-core",                 -- 4
+        "server",                   -- 5
+        "sdk-go"  ,                 -- 6
+        "sdk-java",                 -- 7
+        "sdk-typescript",           -- 8
         "api",                      -- 9
         "devenv",                   -- 0
     },
@@ -51,24 +60,24 @@ local keymap = {
         "temporal",                 -- 1
         "sdk-python",               -- 2
         "nexus-sdk-python",         -- 3
-        "samples-python",           -- 4
-        "sdk-java",                 -- 5
-        "nexus-sdk-java",           -- 6
-        "sdk-go",                   -- 7
-        "nexus-sdk-go",             -- 8
-        "nexus-sdk-typescript",     -- 9
+        "sdk-typescript",           -- 4
+        "nexus-sdk-typescript",     -- 5
+        "sdk-go"  ,                 -- 6
+        "nexus-sdk-go",             -- 7
+        "sdk-java",                 -- 8
+        "nexus-sdk-java",           -- 9
         "devenv",                   -- 0
     },
     ["ai"] = {
         "temporal",                 -- 1
         "sdk-python",               -- 2
-        "nexus-sdk-python",         -- 3
-        "samples-python",           -- 4
+        "mcp-python-sdk",           -- 3
+        "mcp-modelcontextprotocol", -- 4
         "a2a-python",               -- 5
         "a2a-samples",              -- 6
-        "mcp-python-sdk",           -- 7
+        "nexus-a2a-python",         -- 7
         "nexus-mcp-python",         -- 8
-        "mcp-modelcontextprotocol", -- 9
+        "samples-python",           -- 9
         "devenv",                   -- 0
     }
 }
@@ -80,7 +89,7 @@ local function getActiveWorkspace()
         file:close()
         return content:match("^%s*(.-)%s*$")
     end
-    return "temporal"
+    return "act"
 end
 
 local function getRepos()

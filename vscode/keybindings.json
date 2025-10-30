@@ -350,7 +350,7 @@
     }
   },
   {
-    "key": "alt+cmd+h",
+    "key": "shift+alt+cmd+h",
     "command": "highlightwords.removeAllHighlights"
   },
   {
@@ -784,7 +784,7 @@
   "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
 },
 {
-  "key": "cmd+w",
+  "key": "shift+cmd+w",
   "command": "workbench.action.closeEditorsInGroup"
 },
 {
@@ -800,5 +800,25 @@
   "key": "cmd+r shift+alt+cmd+c",
   "command": "-copyRelativeFilePath",
   "when": "editorFocus"
+},
+{
+  "key": "cmd+w",
+  "command": "workbench.action.closeActiveEditor",
+  "when": "!terminalFocus"
+},
+{
+  "key": "ctrl+x k",
+  "command": "-workbench.action.closeActiveEditor",
+  "when": "!terminalFocus"
+},
+{
+  "key": "shift+enter",
+  "command": "-python.execInREPL",
+  "when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python'"
+},
+{
+  "key": "shift+enter",
+  "command": "-python.execSelectionInTerminal",
+  "when": "editorTextFocus && !findInputFocussed && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
 },
 ]

@@ -45,7 +45,7 @@
     "strings": true
   },
   "editor.renderControlCharacters": false,
-  "editor.renderLineHighlight": "none",
+  "editor.renderLineHighlight": "line",
   "editor.renderWhitespace": "none",
   "editor.rulers": [],
   "editor.scrollbar.horizontal": "hidden",
@@ -62,6 +62,14 @@
   "editor.wordWrapColumn": 777777,
   "editor.tokenColorCustomizations": {
     "comments": "#1886468b"
+  },
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "#FF0000",
+    "editorInfo.foreground": "#0000FF",
+    "editorWarning.foreground": "#FFA500",
+    "scrollbar.shadow": "#282C34",
+    "editorGroup.border": "#282C34",
+    "sideBar.border": "#282C34"
   },
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
@@ -525,6 +533,7 @@
     "editorError.foreground": "#FF0000",
     "editorInfo.foreground": "#0000FF",
     "editorWarning.foreground": "#FFA500",
+    "editorLineNumber.activeForeground": "#ff6b6b",
     "scrollbar.shadow": "#282C34",
     "editorGroup.border": "#282C34",
     "sideBar.border": "#282C34"
@@ -607,5 +616,7 @@
   "cursorpyright.analysis.logLevel": "Warning",
   "cursorpyright.analysis.useTypingExtensions": true,
   "ty.diagnosticMode": "workspace",
-  "cursorpyright.shouldImportPylanceSettings": "always"
+  "cursorpyright.shouldImportPylanceSettings": "always",
+  "workbench.localHistory.enabled": false,
+  "window.restoreFullscreen": true
 }
