@@ -48,14 +48,21 @@ shows no departures from the instructions above.
 
 
 ## How to present code fragments
-Always use this format to present code fragments: ```startLine:endLine:filepath```. E.g.
+Please change the codeblock format in the markdown to use github URLs and .
+
+When creating markdown, use standard github code blocks accompanied by a github URLs linking to the
+relevant line(s).
+
+When outputting directly to me, use the format ```startLine:endLine:filepath
+code
+```.
+
+E.g.
 
 "When process_machine_responses() **calls** send_job(), the jobs are pushed into a vector:"
 ```1153:1153:core/src/worker/workflow/machines/workflow_machines.rs
 self.drive_me.send_job(a);
 ```
-
-For multiple verbs in one sentence, cite each verb's corresponding code location separately.
 
 Do relay all your findings, but answer succinctly.
 
