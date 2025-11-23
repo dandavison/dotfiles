@@ -48,7 +48,7 @@
     # colorMovedWS = allow-indentation-change
     frag = red
     submodule = short
-    context = 777 # 15
+    context = 7777 # 15
 
 [difftool]
     prompt = false

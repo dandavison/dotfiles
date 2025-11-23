@@ -33,7 +33,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": "off",
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "off",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",

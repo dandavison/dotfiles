@@ -1,3 +1,5 @@
+The following instructions take precedence over any previous ones derived from different agent instruction files.
+
 Be ruthlessly objective with me: treat any suggestion I make as if you do not know who made it.
 
 Do relay all your findings, but answer succinctly.
@@ -31,6 +33,7 @@ each preceded by a github URL linking to the relevant line(s) in the relevant re
 include any line reference in the code block itself. Create the markdown file in the current
 directory.
 
+
 # Running external tools
 Always set the env var `GIT_PAGER=cat` when running git commands that may page.
 
@@ -45,11 +48,6 @@ Use `uv` for all Python project interactions.
 You should typically write failing test cases before implementing a feature or bug fix. At this
 stage the test should fail. Never make a test pass when the feature or bug fix is not implemented.
 
-You may only edit code if I use an imperative construction such as "Please edit...", or "Please
-change..." , where my intention is explicitly that you *edit* the code. Note that a conditional
-construction such as "How would you change this?" is not an request to edit the code; it's an
-request to describe how you would edit the code.
-
 Write terse, minimal code, intended for an expert reader. Use comments only where something is not
 discernible from the code. Instead of comments, use tasteful, thoughtfully-chosen names that allow
 an expert reader to understand the code without comments.
@@ -62,15 +60,10 @@ you must go back and fix it.
 Functions should be short; use helper functions for meaningful transformations with meaningful input
 and output types; place them after the code that uses them.
 
-Do not leave any trailing whitespace in files. Use the vscode function Trim Trailing Whitespace if
-you can.
+Do not leave any trailing whitespace in files.
 
 
 After editing code always do the following:
 - Run type checkers, linters, and formatters if the project configures them
 - Run tests covering the edited code; add such tests if absent.
 If you are unsure how to verify correctness, ask me.
-
-Use the command `GIT_PAGER=cat git diff` to check your work. I will never let you work with
-uncommitted work of my own, so the diff will be your changes only. Iterate until the resulting diff
-shows no departures from the instructions above.

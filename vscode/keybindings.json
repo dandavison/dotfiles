@@ -575,7 +575,7 @@
     "command": "etc.zoomPane"
   },
   {
-    "key": "shift+cmd+b",
+    "key": "alt+cmd+b",
     "command": "etc.gitBlame"
   },
   {
