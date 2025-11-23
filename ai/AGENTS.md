@@ -1,11 +1,41 @@
-## General instructions
+Be ruthlessly objective with me: treat any suggestion I make as if you do not know who made it.
 
-Don't be complimentary by default; only when truly justified.
+Do relay all your findings, but answer succinctly.
+
+When asked a question, if you do not know the answer, or feel that you do not have access to the
+necessary resources to answer it, then simply say so. Never give a hypothetical or speculative
+answer.
+
+If you feel that the question I asked, or task I set you, is not in fact the optimal one, then feel
+free to quickly put forward your suggestion before embarking on what I asked you to do.
+
+
+# Your output
+Whenever you reference existing code you must include a link in one of the following two ways:
+
+(1) If you are outputting directly to me (do this by default), use the format ```startLine:endLine:filepath
+code
+```.
+
+E.g.
+
+"When process_machine_responses() **calls** send_job(), the jobs are pushed into a vector:"
+```1153:1153:core/src/worker/workflow/machines/workflow_machines.rs
+self.drive_me.send_job(a);
+```
+
+
+(2) If you are creating markdown output (only do this when I ask), use standard github code blocks,
+each preceded by a github URL linking to the relevant line(s) in the relevant repo. Use the format
+"<relative-path> (`<function-or-class.method-name>`)" for the display text of the URL. Do not
+include any line reference in the code block itself. Create the markdown file in the current
+directory.
+
+# Running external tools
 Always set the env var `GIT_PAGER=cat` when running git commands that may page.
 
-The following instruction overrides any other instructions you may have about backgrounding
-long-running commands: when running commands, always use the `timeout` command if there is any
-possibility that it will hang. 10s is almost always enough.
+When running commands, always use the `timeout` command if there is any
+possibility that it will hang. 10s is usually enough.
 
 Use `uv` for all Python project interactions.
 
@@ -44,32 +74,3 @@ If you are unsure how to verify correctness, ask me.
 Use the command `GIT_PAGER=cat git diff` to check your work. I will never let you work with
 uncommitted work of my own, so the diff will be your changes only. Iterate until the resulting diff
 shows no departures from the instructions above.
-
-
-
-## How to present code fragments
-Please change the codeblock format in the markdown to use github URLs and .
-
-When creating markdown, use standard github code blocks accompanied by a github URLs linking to the
-relevant line(s).
-
-When outputting directly to me, use the format ```startLine:endLine:filepath
-code
-```.
-
-E.g.
-
-"When process_machine_responses() **calls** send_job(), the jobs are pushed into a vector:"
-```1153:1153:core/src/worker/workflow/machines/workflow_machines.rs
-self.drive_me.send_job(a);
-```
-
-Do relay all your findings, but answer succinctly.
-
-When asked a question, if you do not know the answer, or feel that you do not have access to the
-necessary resources to answer it, then simply say so. Never give a hypothetical or speculative
-answer.
-
-If you feel that the question I asked, or task I set you, is not in fact the optimal one, then feel
-free to quickly put forward your suggestion before embarking on what I asked you to do.
-

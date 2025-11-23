@@ -41,8 +41,9 @@ local keymap = {
         "api",                      -- 3
         "sdk-python",               -- 4
         "samples-python",           -- 5
-        "api-go",                   -- 9
-        "devenv",                   -- 0
+        "api-go",                   -- 6
+        "devenv",                   -- 7
+        "rgi"                       -- 8
     },
     ["temporal"] = {
         "temporal",                 -- 1

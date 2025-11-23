@@ -1,3 +1,5 @@
-disable=SC2162
 disable=SC2002
+disable=SC2016
 disable=SC2046
+disable=SC2155
+disable=SC2162
