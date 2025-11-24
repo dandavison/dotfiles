@@ -22,13 +22,17 @@
     # set diff.context (-U) to a large value
     hunk-header-style = omit
     # navigate visits file boundaries only
+    file-style="bold cyan #EEEEEE"
+    file-decoration-style="magenta ul"
     file-added-label = •
     file-modified-label = •
     file-removed-label = •
     file-renamed-label = •
-    line-numbers-minus-left-format = "{nm:^4}⁞"
-    line-numbers-plus-left-format = "{nm:^4}⁞"
-    navigate-regex = (^•|⁞)
+    line-numbers-left-format = ""
+    line-numbers-right-format = "{np:^4}│"
+    line-numbers-minus-right-format = "{np:^4}┃"
+    line-numbers-plus-right-format = "{np:^4}┃"
+    navigate-regex = (^•|┃)
 
 [delta "hunk-header-with-filepath"]
     file-style = omit
