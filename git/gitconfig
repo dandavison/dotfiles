@@ -64,6 +64,7 @@
 
 [log]
     decorate = true
+    date = relative
 
 [merge]
     conflictstyle = zdiff3
