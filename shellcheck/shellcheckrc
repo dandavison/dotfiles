@@ -1,3 +1,4 @@
+disable=SC1090
 disable=SC2002
 disable=SC2016
 disable=SC2046
