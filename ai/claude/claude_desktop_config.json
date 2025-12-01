@@ -1,17 +1,14 @@
 {
   "mcpServers": {
-    "Demo": {
-      "command": "/opt/homebrew/bin/uv",
+    "pl": {
+      "command": "/opt/homebrew/bin/uvx",
       "args": [
-        "run",
-        "--directory",
-        "/Users/dan/src/ai/mcp-python-sdk-example-1",
-        "--with",
-        "mcp[cli]",
-        "mcp",
-        "run",
-        "/Users/dan/src/ai/mcp-python-sdk-example-1/server.py"
+        "git+https://github.com/dandavison/pl"
       ]
     }
+  },
+  "preferences": {
+    "quickEntryShortcut": "off",
+    "menuBarEnabled": false
   }
 }
