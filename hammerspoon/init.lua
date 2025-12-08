@@ -37,16 +37,15 @@ end
 local keymap = {
     ["act"] = {
         "temporal",                 -- 1
-        "server",                   -- 2
-        "api",                      -- 3
-        "sdk-python",               -- 4
-        "samples-python",           -- 5
-        "api-go",                   -- 6
-        "devenv",                   -- 7
-        "rgi"                       -- 8
+        "api",                      -- 2
+        "sdk-python",               -- 3
+        "samples-python",           -- 4
+        "api-go",                   -- 5
+        "devenv",                   -- 6
+        "rgi"                       -- 7
     },
-    ["temporal"] = {
-        "temporal",                 -- 1
+    ["temporal-all"] = {
+        "temporal-all",                 -- 1
         "sdk-python",               -- 2
         "nexus-sdk-python",         -- 3
         "sdk-core",                 -- 4
@@ -58,7 +57,7 @@ local keymap = {
         "devenv",                   -- 0
     },
     ["nexus"] = {
-        "temporal",                 -- 1
+        "temporal-all",                 -- 1
         "sdk-python",               -- 2
         "nexus-sdk-python",         -- 3
         "sdk-typescript",           -- 4
@@ -70,7 +69,7 @@ local keymap = {
         "devenv",                   -- 0
     },
     ["ai"] = {
-        "temporal",                 -- 1
+        "temporal-all",                 -- 1
         "sdk-python",               -- 2
         "mcp-python-sdk",           -- 3
         "mcp-modelcontextprotocol", -- 4
