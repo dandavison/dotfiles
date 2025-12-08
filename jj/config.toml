@@ -3,3 +3,6 @@
 [user]
 name = "Dan Davison"
 email = "dan.davison@temporal.io"
+
+[ui]
+default-colors = "light"

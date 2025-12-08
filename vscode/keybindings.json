@@ -52,7 +52,7 @@
     "when": "panelFocus"
   },
   {
-    "key": "cmd+;",
+    "key": "alt+h",
     "command": "highlight.selectedWords",
     "when": "editorTextFocus"
   },
@@ -339,19 +339,11 @@
     "command": "workbench.action.navigateForward"
   },
   {
-    "key": "alt+h",
-    "command": "highlightwords.addHighlight"
-  },
-  {
     "key": "cmd+m",
     "command": "command-runner.run",
     "args": {
       "command": "magit"
     }
-  },
-  {
-    "key": "shift+alt+cmd+h",
-    "command": "highlightwords.removeAllHighlights"
   },
   {
     "key": "cmd+,",
@@ -529,10 +521,6 @@
     "command": "references-view.findImplementations"
   },
   {
-    "key": "shift+alt+h",
-    "command": "highlightwords.addRegExpHighlight"
-  },
-  {
     "key": "shift+cmd+left",
     "command": "workbench.files.action.collapseExplorerFolders",
     "when": "explorerViewletFocus"
@@ -615,14 +603,6 @@
   {
     "key": "alt+cmd+right",
     "command": "-workbench.action.nextEditor"
-  },
-  {
-    "key": "f8",
-    "command": "go-to-next-error.nextInFiles.error"
-  },
-  {
-    "key": "cmd+f8",
-    "command": "go-to-next-error.nextInFiles.warning"
   },
   {
     "key": "shift+tab",
@@ -824,5 +804,9 @@
   {
     "key": "alt+,",
     "command": "etc.ripgrep"
+  },
+  {
+    "key": "f8",
+    "command": "next-error.nextInFiles.error"
   }
 ]

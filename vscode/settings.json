@@ -33,7 +33,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": "off",
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "on",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
@@ -47,7 +47,7 @@
   "editor.renderControlCharacters": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
-  "editor.rulers": [],
+  "editor.rulers": [100],
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.stickyScroll.enabled": false,
@@ -65,14 +65,7 @@
   "editor.tokenColorCustomizations": {
     "comments": "#1886468b"
   },
-  "workbench.colorCustomizations": {
-    "editorError.foreground": "#FF0000",
-    "editorInfo.foreground": "#0000FF",
-    "editorWarning.foreground": "#FFA500",
-    "scrollbar.shadow": "#282C34",
-    "editorGroup.border": "#282C34",
-    "sideBar.border": "#282C34"
-  },
+  "emacs-mcx.useMetaPrefixAlt": true,
   "emacs-mcx.strictEmacsMove": true,
   "emmet.includeLanguages": {
     "django-html": "html"
@@ -532,6 +525,7 @@
   "window.zoomLevel": 0.5,
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#fafafaf0",
     "editorError.foreground": "#FF0000",
     "editorInfo.foreground": "#0000FF",
     "editorWarning.foreground": "#FFA500",
@@ -569,7 +563,7 @@
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
   "zenMode.restore": true,
-  "zenMode.showTabs": "single",
+  "zenMode.showTabs": "none",
   "zenMode.silentNotifications": false,
   "files.saveConflictResolution": "overwriteFileOnDisk",
   "files.autoSave": "onWindowChange",
@@ -620,5 +614,44 @@
   "ty.diagnosticMode": "workspace",
   "cursorpyright.shouldImportPylanceSettings": "always",
   "workbench.localHistory.enabled": false,
-  "window.restoreFullscreen": true
+  "window.restoreFullscreen": true,
+  "highlight.configuration.Bold": false,
+  "highlight.configuration.colors": [
+
+    {
+      "light": "#b3d9ff",
+      "dark": "#F5B041"
+    },
+    {
+      "light": "#e6ffb3",
+      "dark": "#FF9933"
+    },
+    {
+      "light": "#b3b3ff",
+      "dark": "#85C1E9"
+    },
+    {
+      "light": "#ffd9b3",
+      "dark": "#CD6155"
+    },
+    {
+      "light": "#ffb3ff",
+      "dark": "#AF7AC5"
+    },
+    {
+      "light": "#b3ffb3",
+      "dark": "#48C9B0"
+    },
+    {
+      "light": "#ffff80",
+      "dark": "#52BE80"
+    },
+    {
+      "light": "#d1e0e0",
+      "dark": "#F4D03F"
+    }
+  ],
+  "highlight.configuration.wholeWord": false,
+  "highlight.configuration.ignoreCase": true,
+  "breadcrumbs.enabled": false
 }

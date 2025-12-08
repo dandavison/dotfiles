@@ -1,9 +1,6 @@
 [core]
     pager = delta
 
-[pager]
-    log = rg -v '^ [0-9]+ files? changed' | sed 's/Dan Davison //'  | delta
-
 [interactive]
     diffFilter = delta --color-only
 

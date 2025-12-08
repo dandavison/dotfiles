@@ -40,7 +40,6 @@ Always set the env var `GIT_PAGER=cat` when running git commands that may page.
 When running commands, always use the `timeout` command if there is any
 possibility that it will hang. 10s is usually enough.
 
-Use `uv` for all Python project interactions.
 
 
 ## How to write code
@@ -67,3 +66,18 @@ After editing code always do the following:
 - Run type checkers, linters, and formatters if the project configures them
 - Run tests covering the edited code; add such tests if absent.
 If you are unsure how to verify correctness, ask me.
+
+
+## Python
+Use `uv` for all Python project interactions. Do not use the legacy `uv pip` interface.
+Use `uv init`, `uv sync`, `uv add`, `uv run` etc.
+
+Create Python scripts as uv-runnable scripts with dependencies in the header as follows:
+```
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = ">=3.12"
+# dependencies = ["httpx"]
+# ///
+```

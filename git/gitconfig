@@ -15,6 +15,10 @@
 [advice]
     detachedHead = false
 
+[pager]
+    log = git-log-pager
+
+
 [blame]
     # coloring = highlightRecent
 
@@ -69,6 +73,9 @@
 [merge]
     conflictstyle = zdiff3
     renamelimit = 10000
+
+[rerere]
+    enabled = false
 
 [push]
     default = current

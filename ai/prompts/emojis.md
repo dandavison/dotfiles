@@ -2,8 +2,10 @@ Choose from the following emojis:
 
 ⤴ Sent
 ⬅ Received
+⬇ Written / Created
 📡 Listening, long-polling
 ⚙️ State transition
+🚀 Started
 ✅ Success
 ❌ Failure
 🔄 Retry
@@ -12,7 +14,7 @@ Choose from the following emojis:
 🟡 In progress
 
 
-You could maybe use these but there semantics are unclear to me
+You could maybe also use these, but their semantics are unclear to me:
 🔵
 🟣
 🟠
@@ -23,6 +25,5 @@ You could maybe use these but there semantics are unclear to me
 ⭕
 💢
 ⤵
-🚀
 🖤
 🌐
