@@ -12,6 +12,9 @@
   "[d2]": {
     "editor.formatOnSave": true
   },
+  "gopls": {
+    "build.buildFlags": ["-tags=test_dep"]
+  },
   "D2.updateTimer": 500,
   "debug.console.acceptSuggestionOnEnter": "on",
   "debug.inlineValues": "off",

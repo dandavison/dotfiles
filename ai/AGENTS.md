@@ -71,6 +71,7 @@ If you are unsure how to verify correctness, ask me.
 ## Python
 Use `uv` for all Python project interactions. Do not use the legacy `uv pip` interface.
 Use `uv init`, `uv sync`, `uv add`, `uv run` etc.
+Code must pass `ruff` formatting and linting, and must have type annotations that pass `ty` type-checking.
 
 Create Python scripts as uv-runnable scripts with dependencies in the header as follows:
 ```
