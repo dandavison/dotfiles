@@ -47,9 +47,9 @@ possibility that it will hang. 10s is usually enough.
 You should typically write failing test cases before implementing a feature or bug fix. At this
 stage the test should fail. Never make a test pass when the feature or bug fix is not implemented.
 
-Write terse, minimal code, intended for an expert reader. Use comments only where something is not
-discernible from the code. Instead of comments, use tasteful, thoughtfully-chosen names that allow
-an expert reader to understand the code without comments.
+Write terse, minimal code, intended for an expert reader. Don't add comments; I will add them.
+Instead of comments, use tasteful, thoughtfully-chosen names that allow an expert reader to
+understand the code without comments.
 
 Your changes must be surgically targeted to achieve the requested outcome, idiomatically,
 and stylishly, but with absolutely no changes to unrelated code: do not change any line of

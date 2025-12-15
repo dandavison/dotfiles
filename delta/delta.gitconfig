@@ -17,6 +17,7 @@
     commit-decoration-style = blue ol
     commit-style = raw
     commit-regex = ^▸
+    side-by-side-fill-empty = true
 
 
 [delta "whole-file-hunks"]

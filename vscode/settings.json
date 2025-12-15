@@ -41,6 +41,7 @@
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
   "editor.overviewRulerBorder": false,
+  "editor.padding.top": 31,
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestions": {
     "comments": false,
