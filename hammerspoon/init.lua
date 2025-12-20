@@ -36,52 +36,52 @@ end
 
 local keymap = {
     ["server"] = {
-        "temporal",
-        "saas-temporal",
-        "bench-go",
-        "api",
-        "api-go",
-        "sdk-python",
-        "obedience",
-        "devenv",
-        "temporal-all",
+        [1] = "temporal",
+        [2] = "saas-temporal",
+        [3] = "bench-go",
+        [4] = "api",
+        [5] = "api-go",
+        [6] = "sdk-python",
+        [7] = "obedience",
+        [9] = "devenv",
+        [0] = "temporal-all",
     },
     ["temporal-all"] = {
-        "temporal-all",
-        "sdk-python",
-        "nexus-sdk-python",
-        "sdk-core",
-        "server",
-        "sdk-go"  ,
-        "sdk-java",
-        "sdk-typescript",
-        "api",
-        "devenv",
+        [1] = "temporal-all",
+        [2] = "sdk-python",
+        [3] = "nexus-sdk-python",
+        [4] = "sdk-core",
+        [5] = "server",
+        [6] = "sdk-go",
+        [7] = "sdk-java",
+        [8] = "sdk-typescript",
+        [9] = "api",
+        [0] = "devenv",
     },
     ["nexus"] = {
-        "temporal-all",
-        "sdk-python",
-        "nexus-sdk-python",
-        "sdk-typescript",
-        "nexus-sdk-typescript",
-        "sdk-go"  ,
-        "nexus-sdk-go",
-        "sdk-java",
-        "nexus-sdk-java",
-        "devenv",
+        [1] = "temporal-all",
+        [2] = "sdk-python",
+        [3] = "nexus-sdk-python",
+        [4] = "sdk-typescript",
+        [5] = "nexus-sdk-typescript",
+        [6] = "sdk-go",
+        [7] = "nexus-sdk-go",
+        [8] = "sdk-java",
+        [9] = "nexus-sdk-java",
+        [0] = "devenv",
     },
     ["ai"] = {
-        "temporal-all",
-        "sdk-python",
-        "mcp-python-sdk",
-        "mcp-modelcontextprotocol",
-        "a2a-python",
-        "a2a-samples",
-        "nexus-a2a-python",
-        "nexus-mcp-python",
-        "samples-python",
-        "devenv",
-    }
+        [1] = "temporal-all",
+        [2] = "sdk-python",
+        [3] = "mcp-python-sdk",
+        [4] = "mcp-modelcontextprotocol",
+        [5] = "a2a-python",
+        [6] = "a2a-samples",
+        [7] = "nexus-a2a-python",
+        [8] = "nexus-mcp-python",
+        [9] = "samples-python",
+        [0] = "devenv",
+    },
 }
 
 local function getActiveWorkspace()
@@ -99,8 +99,8 @@ local function getRepos()
     return keymap[workspace] or keymap["temporal"]
 end
 
-for i = 1, 10 do
-    hs.hotkey.bind({"cmd"}, tostring(i % 10), function()
+for i = 0, 9 do
+    hs.hotkey.bind({"cmd"}, tostring(i), function()
         local repos = getRepos()
         local repo = repos[i]
         if repo then
@@ -140,9 +140,17 @@ local function showHotkeys()
     table.insert(lines, {text = string.format("Workspace: %s", workspace), available = true})
     table.insert(lines, {text = "", available = true})
 
-    for i, repo in ipairs(repos) do
-        local isAvailable = availableRepos[repo]
-        local line = string.format("%d    %s", i % 10, repo)
+    for i = 1, 9 do
+        local repo = repos[i]
+        if repo then
+            local isAvailable = availableRepos[repo]
+            local line = string.format("%d    %s", i, repo)
+            table.insert(lines, {text = line, available = isAvailable})
+        end
+    end
+    if repos[0] then
+        local isAvailable = availableRepos[repos[0]]
+        local line = string.format("0    %s", repos[0])
         table.insert(lines, {text = line, available = isAvailable})
     end
 
