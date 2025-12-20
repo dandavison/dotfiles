@@ -37,13 +37,14 @@ end
 local keymap = {
     ["server"] = {
         "temporal",
-        "temporal-2",
+        "saas-temporal",
         "bench-go",
         "api",
         "api-go",
+        "sdk-python",
         "obedience",
-        "ro",
         "devenv",
+        "temporal-all",
     },
     ["temporal-all"] = {
         "temporal-all",

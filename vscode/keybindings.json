@@ -563,7 +563,7 @@
     "command": "etc.zoomPane"
   },
   {
-    "key": "alt+cmd+b",
+    "key": "shift+cmd+b",
     "command": "etc.gitBlame"
   },
   {
@@ -808,5 +808,15 @@
   {
     "key": "f8",
     "command": "next-error.nextInFiles.error"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "!isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar",
+    "when": "!isAuxiliaryWindowFocusedContext"
   }
 ]

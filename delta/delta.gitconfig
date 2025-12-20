@@ -22,7 +22,7 @@
 
 [delta "whole-file-hunks"]
     # set diff.context (-U) to a large value
-    hunk-header-style = omit
+    # hunk-header-style = omit
     # navigate visits file boundaries only
     line-numbers = true
     file-style="bold cyan #EEEEEE"

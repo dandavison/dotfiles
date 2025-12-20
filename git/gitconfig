@@ -48,8 +48,8 @@
     verify = false
 
 [diff]
-    # colorMoved = default
-    # colorMovedWS = allow-indentation-change
+    colorMoved = default
+    colorMovedWS = allow-indentation-change
     frag = red
     submodule = short
     context = 15 # 7777 # 15
@@ -75,7 +75,7 @@
     renamelimit = 10000
 
 [rerere]
-    enabled = false
+    enabled = true
 
 [push]
     default = current

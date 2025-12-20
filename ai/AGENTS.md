@@ -11,12 +11,19 @@ answer.
 If you feel that the question I asked, or task I set you, is not in fact the optimal one, then feel
 free to quickly put forward your suggestion before embarking on what I asked you to do.
 
+# Fixing bugs
+Suppose you are in a situation where the code is not behaving correctly. You must always proceed follows:
+1. Determine whether there are any tests that _should_ be failing because of this bug.
+   If so, change the tests so that they fail, as they should. If not, write a test that _fails_. Do not hack
+   tests to pass when the actual implementation is broken. Commit the tests now.
+2. Fix the bug. It must now be the case that at least one test transitions from failing to passing. Commit the fix.
+   I must now be able to revert the fix and see the test(s) fail.
 
 # Your output
 Whenever you reference existing code you must include a link in one of the following two ways:
 
-(1) If you are outputting directly to me (do this by default), use the format ```startLine:endLine:filepath
-code
+(1) If you are outputting directly to me (do this by default): Use the format
+```startLine:endLine:filepath code
 ```.
 
 E.g.
@@ -27,11 +34,11 @@ self.drive_me.send_job(a);
 ```
 
 
-(2) If you are creating markdown output (only do this when I ask), use standard github code blocks,
-each preceded by a github URL linking to the relevant line(s) in the relevant repo. Use the format
-"<relative-path> (`<function-or-class.method-name>`)" for the display text of the URL. Do not
-include any line reference in the code block itself. Create the markdown file in the current
-directory.
+(2) If you are creating markdown output (only do this when I ask): When referring to code use
+standard github code blocks, each preceded by a github URL linking to the relevant line(s) in the
+relevant repo. Use the format "<relative-path> (`<function-or-class.method-name>`)" for the display
+text of the URL. Do not include any line reference in the code block itself. Create the markdown
+file in the current directory.
 
 
 # Running external tools
