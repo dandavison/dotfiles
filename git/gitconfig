@@ -9,8 +9,8 @@
 [includeIf "gitdir:~/src/temporalio/"]
     path = ~/src/temporalio/.gitconfig
 
-[includeIf "gitdir:~/src/temporal/"]
-    path = ~/src/temporal/.gitconfig
+[includeIf "gitdir:~/src/temporal-all/"]
+    path = ~/src/temporal-all/.gitconfig
 
 [advice]
     detachedHead = false
