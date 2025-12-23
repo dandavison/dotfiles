@@ -37,52 +37,32 @@ end
 local keymap = {
     ["server"] = {
         [1] = "temporal",
-        [2] = "saas-temporal",
-        [3] = "bench-go",
-        [4] = "api",
-        [5] = "api-go",
-        [6] = "sdk-python",
-        [7] = "obedience",
+        [2] = "api",
+        [3] = "api-go",
+        [4] = "bench-go",
+        [5] = "saas-cicd",
+        [6] = "saas-temporal",
+        [7] = "sdk-python",
+        [8] = "rgi",
         [9] = "devenv",
         [0] = "temporal-all",
     },
-    ["temporal-all"] = {
-        [1] = "temporal-all",
-        [2] = "sdk-python",
-        [3] = "nexus-sdk-python",
-        [4] = "sdk-core",
-        [5] = "server",
-        [6] = "sdk-go",
-        [7] = "sdk-java",
-        [8] = "sdk-typescript",
-        [9] = "api",
-        [0] = "devenv",
-    },
-    ["nexus"] = {
-        [1] = "temporal-all",
-        [2] = "sdk-python",
-        [3] = "nexus-sdk-python",
-        [4] = "sdk-typescript",
-        [5] = "nexus-sdk-typescript",
-        [6] = "sdk-go",
-        [7] = "nexus-sdk-go",
-        [8] = "sdk-java",
-        [9] = "nexus-sdk-java",
-        [0] = "devenv",
-    },
-    ["ai"] = {
-        [1] = "temporal-all",
-        [2] = "sdk-python",
-        [3] = "mcp-python-sdk",
-        [4] = "mcp-modelcontextprotocol",
-        [5] = "a2a-python",
-        [6] = "a2a-samples",
-        [7] = "nexus-a2a-python",
-        [8] = "nexus-mcp-python",
-        [9] = "samples-python",
-        [0] = "devenv",
-    },
 }
+
+local openInEditor = {
+}
+
+local openInTerminal = {
+}
+
+local function getLandIn(repo)
+    if openInEditor[repo] then
+        return "?land-in=editor"
+    elseif openInTerminal[repo] then
+        return "?land-in=terminal"
+    end
+    return ""
+end
 
 local function getActiveWorkspace()
     local file = io.open("/tmp/ws", "r")
@@ -104,7 +84,7 @@ for i = 0, 9 do
         local repos = getRepos()
         local repo = repos[i]
         if repo then
-            hs.http.get("http://wormhole:7117/project/" .. repo, nil)
+            hs.http.get("http://wormhole:7117/project/" .. repo .. getLandIn(repo), nil)
         end
     end)
 end
