@@ -49,21 +49,6 @@ local keymap = {
     },
 }
 
-local openInEditor = {
-}
-
-local openInTerminal = {
-}
-
-local function getLandIn(repo)
-    if openInEditor[repo] then
-        return "?land-in=editor"
-    elseif openInTerminal[repo] then
-        return "?land-in=terminal"
-    end
-    return ""
-end
-
 local function getActiveWorkspace()
     local file = io.open("/tmp/ws", "r")
     if file then
@@ -84,7 +69,7 @@ for i = 0, 9 do
         local repos = getRepos()
         local repo = repos[i]
         if repo then
-            hs.http.get("http://wormhole:7117/project/" .. repo .. getLandIn(repo), nil)
+            hs.http.get("http://wormhole:7117/project/" .. repo, nil)
         end
     end)
 end
