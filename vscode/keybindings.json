@@ -257,16 +257,6 @@
     "when": "listFocus"
   },
   {
-    "key": "shift+cmd+[",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "shift+cmd+]",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus && terminalProcessSupported"
-  },
-  {
     "key": "shift+enter",
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
@@ -383,16 +373,6 @@
     "key": "alt+/",
     "command": "-toggleSuggestionDetails",
     "when": "editorTextFocus && suggestWidgetVisible && !config.emacs-mcx.useMetaPrefixMacCmd"
-  },
-  {
-    "key": "shift+cmd+]",
-    "command": "workbench.action.nextPanelView",
-    "when": "panelFocus"
-  },
-  {
-    "key": "shift+cmd+[",
-    "command": "workbench.action.previousPanelView",
-    "when": "panelFocus"
   },
   {
     "key": "ctrl+k",
@@ -818,5 +798,63 @@
     "key": "alt+cmd+b",
     "command": "-workbench.action.toggleAuxiliaryBar",
     "when": "!isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "composer.selectNextComposer",
+    "when": "agentsPaneFocused && cursor.agentIdeUnification.enabled && !editorTextFocus || composerFocused && cursor.agentIdeUnification.enabled && !editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "-composer.selectNextComposer",
+    "when": "agentsPaneFocused && cursor.agentIdeUnification.enabled && !editorTextFocus || composerFocused && cursor.agentIdeUnification.enabled && !editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "composer.selectPreviousComposer",
+    "when": "agentsPaneFocused && cursor.agentIdeUnification.enabled && !editorTextFocus || composerFocused && cursor.agentIdeUnification.enabled && !editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+left",
+    "command": "-composer.selectPreviousComposer",
+    "when": "agentsPaneFocused && cursor.agentIdeUnification.enabled && !editorTextFocus || composerFocused && cursor.agentIdeUnification.enabled && !editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "-workbench.action.previousEditor"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "-emacs-mcx.backwardParagraph",
+    "when": "config.emacs-mcx.useMetaPrefixMacCmd && editorTextFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "-workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "-workbench.action.debug.prevConsole",
+    "when": "inDebugRepl"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "-emacs-mcx.forwardParagraph",
+    "when": "config.emacs-mcx.useMetaPrefixMacCmd && editorTextFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "-workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "-workbench.action.debug.nextConsole",
+    "when": "inDebugRepl"
   }
 ]
