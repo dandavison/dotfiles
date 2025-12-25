@@ -11,13 +11,15 @@ Logger = hs.logger.new('dan', "debug")
 -- https://github.com/alacritty/alacritty/issues/862#issuecomment-616873890
 
 local function terminal()
-    local name = "Alacritty"
-
-    local app = hs.application.find(name:lower())
-    if app:isFrontmost() then
-        app:hide()
+    local app = hs.application.find("alacritty")
+    if app then
+        if app:isFrontmost() then
+            app:hide()
+        else
+            app:activate()
+        end
     else
-        hs.application.launchOrFocus("/Applications/" .. name .. ".app")
+        hs.application.launchOrFocus("/Applications/Alacritty.app")
     end
 end
 
@@ -33,6 +35,10 @@ local function wormholeNext()
     hs.http.get("http://wormhole:7117/next-project/", nil)
 end
 
+local function wormholePin()
+    hs.http.post("http://wormhole:7117/pin/", nil)
+end
+
 local keymap = {
     ["server"] = {
         [1] = "temporal",
@@ -42,7 +48,7 @@ local keymap = {
         [5] = "saas-cicd",
         [6] = "saas-temporal",
         [7] = "sdk-python",
-        [8] = "rgi",
+        [8] = "wormhole",
         [9] = "devenv",
         [0] = "temporal-all",
     },
@@ -73,10 +79,6 @@ for i = 0, 9 do
     end)
 end
 
-hs.hotkey.bind({}, "f16", terminal)
-hs.hotkey.bind({}, "f13", wormholeSelect)
-hs.hotkey.bind({ "cmd", "control" }, "left", wormholePrevious)
-hs.hotkey.bind({ "cmd", "control" }, "right", wormholeNext)
 
 local alertId = nil
 
@@ -150,7 +152,12 @@ local function showHotkeys()
     -- hs.execute(tmuxCmd, true)
 end
 
-hs.hotkey.bind({"cmd", "alt"}, "k", showHotkeys)
-hs.hotkey.bind({"cmd", "alt"}, "r", function()
+hs.hotkey.bind({}, "f16", terminal)
+hs.hotkey.bind({}, "f13", wormholeSelect)
+hs.hotkey.bind({ "cmd", "control" }, "left", wormholePrevious)
+hs.hotkey.bind({ "cmd", "control" }, "right", wormholeNext)
+hs.hotkey.bind({ "cmd", "control" }, ".", wormholePin)
+hs.hotkey.bind({ "cmd", "alt" }, "k", showHotkeys)
+hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
 end)
