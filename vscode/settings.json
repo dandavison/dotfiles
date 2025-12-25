@@ -666,5 +666,8 @@
     "vscode",
     "vscode-insiders",
     "cursor"
+  ],
+  "Lua.workspace.library": [
+    "/Users/dan/.hammerspoon/Spoons/EmmyLua.spoon/annotations"
   ]
 }

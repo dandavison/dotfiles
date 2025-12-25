@@ -2,8 +2,7 @@
 require("hs.ipc")
 require("hs.eventtap")
 require("hs.notify")
-
-local hs = hs
+hs.loadSpoon('EmmyLua')
 
 Logger = hs.logger.new('dan', "debug")
 
@@ -65,7 +64,7 @@ local function getRepos()
 end
 
 for i = 0, 9 do
-    hs.hotkey.bind({"cmd"}, tostring(i), function()
+    hs.hotkey.bind({ "cmd" }, tostring(i), function()
         local repos = getRepos()
         local repo = repos[i]
         if repo then
@@ -102,21 +101,21 @@ local function showHotkeys()
     local availableRepos = getAvailableRepos()
 
     local lines = {}
-    table.insert(lines, {text = string.format("Workspace: %s", workspace), available = true})
-    table.insert(lines, {text = "", available = true})
+    table.insert(lines, { text = string.format("Workspace: %s", workspace), available = true })
+    table.insert(lines, { text = "", available = true })
 
     for i = 1, 9 do
         local repo = repos[i]
         if repo then
             local isAvailable = availableRepos[repo]
             local line = string.format("%d    %s", i, repo)
-            table.insert(lines, {text = line, available = isAvailable})
+            table.insert(lines, { text = line, available = isAvailable })
         end
     end
     if repos[0] then
         local isAvailable = availableRepos[repos[0]]
         local line = string.format("0    %s", repos[0])
-        table.insert(lines, {text = line, available = isAvailable})
+        table.insert(lines, { text = line, available = isAvailable })
     end
 
     if alertId then
@@ -127,18 +126,18 @@ local function showHotkeys()
         local styledText = hs.styledtext.new("")
 
         for i, lineData in ipairs(lines) do
-            local color = lineData.available and {white = 1, alpha = 1} or {white = 0.5, alpha = 0.7}
+            local color = lineData.available and { white = 1, alpha = 1 } or { white = 0.5, alpha = 0.7 }
             local text = lineData.text .. (i < #lines and "\n" or "")
             local styledLine = hs.styledtext.new(text, {
-                font = {size = 14},
+                font = { size = 14 },
                 color = color
             })
             styledText = styledText .. styledLine
         end
 
         alertId = hs.alert.show(styledText, {
-            fillColor = {white = 0.1, alpha = 0.9},
-            strokeColor = {white = 0.3, alpha = 1},
+            fillColor = { white = 0.1, alpha = 0.9 },
+            strokeColor = { white = 0.3, alpha = 1 },
             strokeWidth = 2,
             radius = 10,
             fadeInDuration = 0.15,
