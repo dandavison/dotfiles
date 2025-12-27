@@ -84,7 +84,7 @@ local alertId = nil
 
 local function getAvailableRepos()
     local available = {}
-    local handle = io.popen("wormhole-list")
+    local handle = io.popen("wormhole list")
     if handle then
         for line in handle:lines() do
             local repo = line:match("^%s*(.-)%s*$") -- trim whitespace
