@@ -24,19 +24,25 @@ local function terminal()
 end
 
 local function wormholeSelect()
-    hs.application.launchOrFocus("/Applications/Wormhole.app")
+    local frontApp = hs.application.frontmostApplication()
+    if frontApp and frontApp:name() == "Wormhole" then
+        -- Already focused: toggle between current/available projects
+        hs.eventtap.keyStroke({}, "tab")
+    else
+        hs.application.launchOrFocus("/Applications/Wormhole.app")
+    end
 end
 
 local function wormholePrevious()
-    hs.http.get("http://wormhole:7117/previous-project/", nil)
+    hs.http.asyncGet("http://wormhole:7117/previous-project/", nil, function() end)
 end
 
 local function wormholeNext()
-    hs.http.get("http://wormhole:7117/next-project/", nil)
+    hs.http.asyncGet("http://wormhole:7117/next-project/", nil, function() end)
 end
 
 local function wormholePin()
-    hs.http.post("http://wormhole:7117/pin/", nil)
+    hs.http.asyncPost("http://wormhole:7117/pin/", "", nil, function() end)
 end
 
 local keymap = {
@@ -74,7 +80,7 @@ for i = 0, 9 do
         local repos = getRepos()
         local repo = repos[i]
         if repo then
-            hs.http.get("http://wormhole:7117/project/" .. repo, nil)
+            hs.http.asyncGet("http://wormhole:7117/project/" .. repo, nil, function() end)
         end
     end)
 end
