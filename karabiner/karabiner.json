@@ -2,6 +2,28 @@
     "global": { "show_in_menu_bar": false },
     "profiles": [
         {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "left_cmd+right_shift => f16 (terminalToggle)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": { "mandatory": ["left_command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f16",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
             "devices": [
                 {
                     "identifiers": { "is_keyboard": true },
@@ -9,10 +31,6 @@
                         {
                             "from": { "key_code": "caps_lock" },
                             "to": [{ "key_code": "f13" }]
-                        },
-                        {
-                            "from": { "key_code": "right_shift" },
-                            "to": [{ "key_code": "f16" }]
                         }
                     ]
                 }
