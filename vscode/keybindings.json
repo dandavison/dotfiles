@@ -98,14 +98,6 @@
     "command": "workbench.action.navigateRight"
   },
   {
-    "key": "cmd+down",
-    "command": "workbench.action.navigateDown"
-  },
-  {
-    "key": "cmd+up",
-    "command": "workbench.action.navigateUp"
-  },
-  {
     "key": "cmd+n",
     "command": "workbench.action.quickOpen"
   },
