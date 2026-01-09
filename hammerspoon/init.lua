@@ -43,7 +43,7 @@ wormhole.bindProjectHotkeys(keymap)
 
 -- Keybindings
 hs.hotkey.bind({}, "f16", terminal)
-hs.hotkey.bind({ "cmd" }, "f13", wormhole.select)
+hs.hotkey.bind({}, "f13", wormhole.select)
 hs.hotkey.bind({ "cmd", "control" }, "left", wormhole.previous)
 hs.hotkey.bind({ "cmd", "control" }, "right", wormhole.next)
 hs.hotkey.bind({ "cmd", "control" }, ".", wormhole.pin)
