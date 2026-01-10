@@ -98,10 +98,6 @@ red = "0xff6d67"
 white = "0x6b6868"
 yellow = "0xfe9a67"
 
-[colors.cursor]
-cursor = "CellForeground"
-text = "CellBackground"
-
 [colors.normal]
 black = "0x000000"
 blue = "0x0225c7"
@@ -115,6 +111,10 @@ yellow = "0xe55611"
 [colors.primary]
 background = "0xfffefe"
 foreground = "0x000000"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
 
 [cursor.style]
 shape = "Beam"
