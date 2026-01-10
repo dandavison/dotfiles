@@ -88,29 +88,29 @@ mods = "Command"
 
 [terminal]
 
-[colors.normal]
-black = "0x1f2328"
-red = "0xe5342e"
-green = "0x1a9f29"
-yellow = "0xe87d3e"
-blue = "0x2a7fdb"
-magenta = "0xc24bc2"
-cyan = "0x1a9aaa"
-white = "0x1f2328"
-
 [colors.bright]
-black = "0x6e7781"
-red = "0xc41a00"
-green = "0x0a7d0a"
-yellow = "0xc95d1e"
-blue = "0x0550ae"
-magenta = "0xa626a4"
-cyan = "0x0077aa"
-white = "0x6e7781"
+black = "0x4c4c4c"
+blue = "0x6871ff"
+cyan = "0x1e81b0"
+green = "0x5ff967"
+magenta = "0xff76ff"
+red = "0xff6d67"
+white = "0x6b6868"
+yellow = "0xfe9a67"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x0225c7"
+cyan = "0x0073c7"
+green = "0x066c06"
+magenta = "0xc930c7"
+red = "0xc91b00"
+white = "0xc7c7c7"
+yellow = "0xe55611"
 
 [colors.primary]
 background = "0xfffefe"
-foreground = "0x1f2328"
+foreground = "0x000000"
 
 [colors.cursor]
 cursor = "CellForeground"
