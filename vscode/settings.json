@@ -128,7 +128,8 @@
     "*.jq": "jq",
     "*.mdx": "markdown"
   },
-  "files.autoSave": "onWindowChange",
+  "files.autoSave": "off",
+  "files.hotExit": "onExitAndWindowClose",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
