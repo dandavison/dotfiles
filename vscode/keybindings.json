@@ -848,5 +848,25 @@
     "key": "shift+cmd+]",
     "command": "-workbench.action.debug.nextConsole",
     "when": "inDebugRepl"
+  },
+  {
+    "key": "ctrl+x r w",
+    "command": "etc.saveWindowConfiguration"
+  },
+  {
+    "key": "ctrl+x r j",
+    "command": "etc.restoreWindowConfiguration"
+  },
+  {
+    "key": "ctrl+shift+1",
+    "command": "etc.quickSaveWindowConfiguration"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "etc.quickRestoreWindowConfiguration"
+  },
+  {
+    "key": "ctrl+x r l",
+    "command": "etc.listWindowConfigurationRegisters"
   }
 ]
