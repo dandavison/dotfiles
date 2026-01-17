@@ -1,5 +1,9 @@
 {
+  "model": "opus",
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
   }
 }
