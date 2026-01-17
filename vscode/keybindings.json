@@ -850,20 +850,20 @@
     "when": "inDebugRepl"
   },
   {
-    "key": "ctrl+x r w",
-    "command": "etc.saveWindowConfiguration"
-  },
-  {
-    "key": "ctrl+x r j",
-    "command": "etc.restoreWindowConfiguration"
-  },
-  {
     "key": "ctrl+shift+1",
-    "command": "etc.quickSaveWindowConfiguration"
+    "command": "etc.saveWindowConfiguration1"
   },
   {
     "key": "ctrl+1",
-    "command": "etc.quickRestoreWindowConfiguration"
+    "command": "etc.restoreWindowConfiguration1"
+  },
+  {
+    "key": "ctrl+shift+2",
+    "command": "etc.saveWindowConfiguration2"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "etc.restoreWindowConfiguration2"
   },
   {
     "key": "ctrl+x r l",
