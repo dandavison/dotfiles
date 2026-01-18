@@ -38,16 +38,9 @@ local keymap = {
     [0] = "temporal-all",
 }
 
--- Bind wormhole project hotkeys
-wormhole.bindProjectHotkeys(keymap)
-
 -- Keybindings
+wormhole.bindKeys(keymap)
 hs.hotkey.bind({}, "f16", terminal)
-wormhole.bindSelect({ "cmd" }, "f13")
-hs.hotkey.bind({ "cmd", "control" }, "left", wormhole.previous)
-hs.hotkey.bind({ "cmd", "control" }, "right", wormhole.next)
-hs.hotkey.bind({ "cmd", "control" }, ".", wormhole.pin)
-hs.hotkey.bind({ "cmd", "alt" }, "k", wormhole.createHotkeyOverlay(keymap))
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
 end)
