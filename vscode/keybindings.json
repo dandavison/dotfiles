@@ -794,7 +794,7 @@
   {
     "key": "shift+cmd+]",
     "command": "composer.selectNextComposer",
-    "when": "agentsPaneFocused && cursor.agentIdeUnification.enabled && !editorTextFocus || composerFocused && cursor.agentIdeUnification.enabled && !editorTextFocus"
+    "when": ""
   },
   {
     "key": "alt+cmd+right",
@@ -804,7 +804,7 @@
   {
     "key": "shift+cmd+[",
     "command": "composer.selectPreviousComposer",
-    "when": "agentsPaneFocused && cursor.agentIdeUnification.enabled && !editorTextFocus || composerFocused && cursor.agentIdeUnification.enabled && !editorTextFocus"
+    "when": ""
   },
   {
     "key": "alt+cmd+left",
