@@ -41,19 +41,15 @@
                         ]
                     },
                     {
-                        "description": "left_cmd+right_shift => f16 (terminalToggle)",
+                        "description": "right_cmd alone => f16 (terminalToggle)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": { "mandatory": ["left_command"] }
+                                    "key_code": "right_command",
+                                    "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "f16",
-                                        "modifiers": []
-                                    }
-                                ],
+                                "to": [{ "key_code": "right_command" }],
+                                "to_if_alone": [{ "key_code": "f16" }],
                                 "type": "basic"
                             }
                         ]
