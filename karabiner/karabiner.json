@@ -5,31 +5,19 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "option+tab => option+f17 (wormhole project switcher)",
+                        "description": "left_cmd+right_shift => f16 (terminalToggle)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": ["option"],
-                                        "optional": ["shift"]
+                                    "key_code": "right_shift",
+                                    "modifiers": { "mandatory": ["left_command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f16",
+                                        "modifiers": []
                                     }
-                                },
-                                "to": [{ "key_code": "f17" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "right_cmd alone => f16 (terminalToggle)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "right_command" }],
-                                "to_if_alone": [{ "key_code": "f16" }],
+                                ],
                                 "type": "basic"
                             }
                         ]
