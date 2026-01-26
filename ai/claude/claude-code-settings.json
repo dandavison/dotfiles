@@ -1,9 +1,18 @@
 {
-  "model": "opus",
-  "feedbackSurveyState": {
-    "lastShownTime": 1753986113236
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Edit",
+      "Grep",
+      "Read",
+      "Write"
+    ]
   },
+  "model": "opus",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1753986113236
   }
 }

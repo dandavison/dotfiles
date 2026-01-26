@@ -868,5 +868,15 @@
   {
     "key": "ctrl+x r l",
     "command": "etc.listWindowConfigurationRegisters"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "composer.closeComposerTab",
+    "when": "composerFocused && !editorTextFocus || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-composer.closeComposerTab",
+    "when": "composerFocused && !editorTextFocus || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/"
   }
 ]

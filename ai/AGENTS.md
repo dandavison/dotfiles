@@ -89,3 +89,6 @@ Create Python scripts as uv-runnable scripts with dependencies in the header as 
 # dependencies = ["httpx"]
 # ///
 ```
+
+## Wormhole
+Run tests via `make test`, not `cargo test` directly. Direct `cargo test` will use the user's tmux session.

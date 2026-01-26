@@ -161,7 +161,6 @@
   "git.autorefresh": false,
   "git.autoRepositoryDetection": false,
   "git.confirmSync": false,
-  "git.enabled": false,
   "git.ignoreUntrackedDirFiles": true,
   "git.mergeEditor": false,
   "git.openRepositoryInParentFolders": "never",
@@ -671,7 +670,6 @@
   "window.openFoldersInNewWindow": "on",
   "window.openWithoutArgumentsInNewWindow": "on",
   "window.restoreFullscreen": true,
-  "window.restoreWindows": "none",
   "window.zoomLevel": 0.3,
   "workbench.activityBar.location": "hidden",
   "workbench.activityBar.orientation": "vertical",
@@ -710,5 +708,14 @@
   "zenMode.hideStatusBar": false,
   "zenMode.restore": true,
   "zenMode.showTabs": "none",
-  "zenMode.silentNotifications": false
+  "zenMode.silentNotifications": false,
+  "git.enabled": false,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.forceDisabled": true,
+  "cursor.blame.hoverDelay": 10000,
+  "cursorBlame.editorDecoration.enabled": false,
+  "claudeCode.respectGitIgnore": false,
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.selectedModel": "opus",
+  "claudeCode.allowDangerouslySkipPermissions": true
 }
