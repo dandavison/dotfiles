@@ -68,11 +68,12 @@ and output types; place them after the code that uses them.
 
 Do not leave any trailing whitespace in files.
 
-
 After editing code always do the following:
 - Run type checkers, linters, and formatters if the project configures them
 - Run tests covering the edited code; add such tests if absent.
 If you are unsure how to verify correctness, ask me.
+
+Commit your work once it is passing tests, linters, type checker etc.
 
 
 ## Python
