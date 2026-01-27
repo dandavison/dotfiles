@@ -7,23 +7,17 @@
   "comments.visible": false,
   "cSpell.enabled": false,
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "css.colorDecorators.enable": true,
   "cursor.cmdk.useThemedDiffBackground": false,
-  "cursor.cpp.disabledLanguages": [
-    "plaintext",
-    "markdown",
-    "scminput"
-  ],
+  "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.general.enableShadowWorkspace": true,
   "cursorpyright.analysis.autoImportCompletions": true,
   "cursorpyright.analysis.autoSearchPaths": false,
   "cursorpyright.analysis.diagnosticMode": "workspace",
-  "cursorpyright.analysis.exclude": [
-    "**/.venv/**"
-  ],
+  "cursorpyright.analysis.exclude": ["**/.venv/**"],
   "cursorpyright.analysis.inlayHints.callArgumentNames": true,
   "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
   "cursorpyright.analysis.inlayHints.genericTypes": true,
@@ -33,7 +27,7 @@
   "cursorpyright.analysis.useTypingExtensions": true,
   "cursorpyright.shouldImportPylanceSettings": "always",
   "[d2]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "D2.previewSketch": true,
   "D2.updateTimer": 500,
@@ -44,7 +38,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "[dockercompose]": {
-    "editor.autoIndent": "advanced"
+    "editor.autoIndent": "advanced",
   },
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.bracketPairColorization.enabled": true,
@@ -70,14 +64,12 @@
   "editor.quickSuggestions": {
     "comments": false,
     "other": true,
-    "strings": true
+    "strings": true,
   },
   "editor.renderControlCharacters": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.stickyScroll.enabled": false,
@@ -87,7 +79,7 @@
   "editor.suggest.showTypeParameters": true,
   "editor.suggestSelection": "first",
   "editor.tokenColorCustomizations": {
-    "comments": "#1886468b"
+    "comments": "#1886468b",
   },
   "editor.trimAutoWhitespace": false,
   "editor.wordBasedSuggestions": "off",
@@ -96,15 +88,11 @@
   "emacs-mcx.strictEmacsMove": true,
   "emacs-mcx.useMetaPrefixAlt": true,
   "emmet.includeLanguages": {
-    "django-html": "html"
+    "django-html": "html",
   },
   "errorLens.delay": 500,
   "errorLens.enabled": false,
-  "errorLens.enabledDiagnosticLevels": [
-    "warning",
-    "info",
-    "error"
-  ],
+  "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
   "errorLens.messageMaxChars": 9999,
   "errorLens.scrollbarHackEnabled": true,
   "eslint.format.enable": true,
@@ -117,7 +105,7 @@
     "*.ts": "${capture}.typegen.ts",
     "*.tsx": "${capture}.typegen.ts",
     "*.mts": "${capture}.typegen.ts",
-    "*.cts": "${capture}.typegen.ts"
+    "*.cts": "${capture}.typegen.ts",
   },
   "extensions.ignoreRecommendations": true,
   "files.associations": {
@@ -126,7 +114,7 @@
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "config": "toml",
     "*.jq": "jq",
-    "*.mdx": "markdown"
+    "*.mdx": "markdown",
   },
   "files.autoSave": "off",
   "files.hotExit": "onExitAndWindowClose",
@@ -148,14 +136,14 @@
     "**/*.olean": true,
     "**/staticfiles": true,
     "docs/_book": true,
-    "out": false
+    "out": false,
   },
   "files.saveConflictResolution": "overwriteFileOnDisk",
   "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
     "**/.ammonite": true,
     "**/.bloop": true,
-    "**/.metals": true
+    "**/.metals": true,
   },
   "FSharp.suggestGitignore": false,
   "git.autorefresh": false,
@@ -165,21 +153,19 @@
   "git.mergeEditor": false,
   "git.openRepositoryInParentFolders": "never",
   "[github-actions-workflow]": {
-    "editor.autoIndent": "advanced"
+    "editor.autoIndent": "advanced",
   },
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
-    "scminput": false
+    "scminput": false,
   },
   "githubPullRequests.pullBranch": "never",
-  "githubPullRequests.remotes": [
-    "origin"
-  ],
+  "githubPullRequests.remotes": ["origin"],
   "gitlens.advanced.messages": {
     "suppressGitDisabledWarning": true,
-    "suppressGitMissingWarning": true
+    "suppressGitMissingWarning": true,
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
@@ -188,93 +174,91 @@
   "gitlens.hovers.enabled": false,
   "[go]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "never"
-    }
+      "source.organizeImports": "never",
+    },
   },
   "go.alternateTools": {
-    "customFormatter": "/Users/dan/go/bin/golines"
+    "customFormatter": "/Users/dan/go/bin/golines",
   },
   "go.toolsManagement.autoUpdate": true,
   "gopls": {
-    "build.buildFlags": [
-      "-tags=test_dep"
-    ]
+    "build.buildFlags": ["-tags=test_dep"],
   },
   "highlight.configuration.Bold": false,
   "highlight.configuration.colors": [
     {
       "light": "#b3d9ff",
-      "dark": "#F5B041"
+      "dark": "#F5B041",
     },
     {
       "light": "#e6ffb3",
-      "dark": "#FF9933"
+      "dark": "#FF9933",
     },
     {
       "light": "#b3b3ff",
-      "dark": "#85C1E9"
+      "dark": "#85C1E9",
     },
     {
       "light": "#ffd9b3",
-      "dark": "#CD6155"
+      "dark": "#CD6155",
     },
     {
       "light": "#ffb3ff",
-      "dark": "#AF7AC5"
+      "dark": "#AF7AC5",
     },
     {
       "light": "#b3ffb3",
-      "dark": "#48C9B0"
+      "dark": "#48C9B0",
     },
     {
       "light": "#ffff80",
-      "dark": "#52BE80"
+      "dark": "#52BE80",
     },
     {
       "light": "#d1e0e0",
-      "dark": "#F4D03F"
-    }
+      "dark": "#F4D03F",
+    },
   ],
   "highlight.configuration.ignoreCase": true,
   "highlight.configuration.wholeWord": false,
   "highlightwords.box": {
     "light": false,
-    "dark": true
+    "dark": true,
   },
   "highlightwords.colors": [
     {
       "light": "#fad1e8",
-      "dark": "#fad1e8"
+      "dark": "#fad1e8",
     },
     {
       "light": "#bff7cf",
-      "dark": "#bff7cf"
+      "dark": "#bff7cf",
     },
     {
       "light": "#c7eaf9",
-      "dark": "#c7eaf9"
+      "dark": "#c7eaf9",
     },
     {
       "light": "#fef680",
-      "dark": "#fef680"
-    }
+      "dark": "#fef680",
+    },
   ],
   "highlightwords.defaultMode": 2,
   "highlightwords.showSidebar": true,
   "hipdotUrlSchemeGrabber.useVSCodeInsiders": true,
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
   },
   "java.compile.nullAnalysis.mode": "disabled",
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-17",
       "path": "/opt/homebrew/opt/openjdk@17",
-      "default": true
-    }
+      "default": true,
+    },
   ],
   "java.format.comments.enabled": false,
   "java.format.enabled": false,
@@ -284,12 +268,12 @@
   "java.imports.gradle.wrapper.checksums": [
     {
       "sha256": "946fe3f0e260713e0c57e430ab99e95a88e04376ef31e71ed117952896534e27",
-      "allowed": true
+      "allowed": true,
     },
     {
       "sha256": "2cd72143b05dda4c6f1e8b542faa1514b25fb651492520285509f55ddf6dd4ad",
-      "allowed": true
-    }
+      "allowed": true,
+    },
   ],
   "java.jdt.ls.java.home": "/opt/homebrew/opt/openjdk@17",
   "java.project.importOnFirstTimeStartup": "automatic",
@@ -297,19 +281,19 @@
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.indentSize": 2
+    "editor.indentSize": 2,
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "liveshare.anonymousGuestApproval": "accept",
   "lldb.launch.expressions": "native",
   "lldb.library": "/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
   "Lua.workspace.library": [
-    "/Users/dan/.hammerspoon/Spoons/EmmyLua.spoon/annotations"
+    "/Users/dan/.hammerspoon/Spoons/EmmyLua.spoon/annotations",
   ],
   "magit.hide-status-sections": [
     "issues",
@@ -319,7 +303,7 @@
     "unpulled",
     "unpushed",
     "unmerged",
-    "stashes"
+    "stashes",
   ],
   "magit.quick-switch-enabled": true,
   "manim-sideview.focusOutputOnRun": false,
@@ -328,7 +312,7 @@
   "manim-sideview.previewLooping": false,
   "manim-sideview.runOnSave": false,
   "[markdown]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   "markdown.preview.markEditorSelection": false,
   "markdown.validate.enabled": true,
@@ -336,22 +320,18 @@
     "-Xmx20G",
     "-XX:MaxInlineLevel=20",
     "-XX:+UseParallelGC",
-    "-Dmetals.statistics=all"
+    "-Dmetals.statistics=all",
   ],
-  "mypy-type-checker.args": [
-    "\"--check-untyped-defs\""
-  ],
+  "mypy-type-checker.args": ["\"--check-untyped-defs\""],
   "mypy-type-checker.importStrategy": "fromEnvironment",
   "mypy-type-checker.showNotifications": "onError",
   "notebook.cellToolbarLocation": {
     "default": "right",
-    "jupyter-notebook": "left"
+    "jupyter-notebook": "left",
   },
   "outline.collapseItems": "alwaysCollapse",
   "output.smartScroll.enabled": false,
-  "prettier.documentSelectors": [
-    "*.ts"
-  ],
+  "prettier.documentSelectors": ["*.ts"],
   "prettier.singleQuote": true,
   "prettifySymbolsMode.substitutions": [
     {
@@ -362,28 +342,28 @@
           "ugly": ">=",
           "pretty": "\u2265",
           "pre": "[^=\\-<>]|^",
-          "post": "[^=\\-<>]|$"
+          "post": "[^=\\-<>]|$",
         },
         {
           "ugly": "<=",
           "pretty": "\u2264",
           "pre": "[^=\\-<>]|^",
-          "post": "[^=\\-<>]|$"
+          "post": "[^=\\-<>]|$",
         },
         {
           "ugly": "!=",
           "pretty": "\u2260",
           "pre": "[^<>=!]|^",
-          "post": "[^<>=]|$"
+          "post": "[^<>=]|$",
         },
         {
           "ugly": "lambda",
           "pretty": "\u03bb",
           "pre": "\\b",
-          "post": "\\b"
-        }
-      ]
-    }
+          "post": "\\b",
+        },
+      ],
+    },
   ],
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
@@ -393,9 +373,9 @@
     "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
-      "source.fixAll.ruff": "explicit"
+      "source.fixAll.ruff": "explicit",
     },
-    "editor.wordBasedSuggestions": "off"
+    "editor.wordBasedSuggestions": "off",
   },
   "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
@@ -405,35 +385,35 @@
   "python.analysis.diagnosticSeverityOverrides": {
     "reportUnusedImport": "error",
     "reportWildcardImportFromLibrary": "none",
-    "reportMissingTypeStubs": "none"
+    "reportMissingTypeStubs": "none",
   },
   "python.analysis.exclude": [
     "**/.venv/**",
     "**/lib/python*/**",
-    "**/.pyenv/**"
+    "**/.pyenv/**",
   ],
   "python.analysis.indexing": true,
   "python.analysis.packageIndexDepths": [
     {
       "name": "attrs",
-      "depth": -1
+      "depth": -1,
     },
     {
       "name": "ast",
-      "depth": -1
+      "depth": -1,
     },
     {
       "name": "click",
-      "depth": -1
+      "depth": -1,
     },
     {
       "name": "cairo",
-      "depth": -1
+      "depth": -1,
     },
     {
       "name": "ctypes",
-      "depth": -1
-    }
+      "depth": -1,
+    },
   ],
   "python.analysis.typeCheckingMode": "basic",
   "python.envFile": "${workspaceFolder}/.env.dev",
@@ -441,18 +421,14 @@
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   "redhat.telemetry.enabled": false,
-  "remote.SSH.defaultExtensions": [
-    "gitpod.gitpod-remote-ssh"
-  ],
+  "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
   "rewrap.wrappingColumn": 100,
   "ruff.lint.preview": true,
   "ruff.nativeServer": true,
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
   },
-  "rust-analyzer.diagnostics.disabled": [
-    "unlinked-file"
-  ],
+  "rust-analyzer.diagnostics.disabled": ["unlinked-file"],
   "rust-analyzer.hover.actions.enable": true,
   "rust-analyzer.hover.memoryLayout.enable": false,
   "rust-analyzer.showUnlinkedFileNotification": false,
@@ -469,60 +445,60 @@
       "overrideWorkspaceSettings": true,
       "values": [
         {
-          "editor.formatOnSave": true
+          "editor.formatOnSave": true,
         },
         {
-          "editor.formatOnSave": false
-        }
-      ]
+          "editor.formatOnSave": false,
+        },
+      ],
     },
     {
       "id": "indentGuides",
       "overrideWorkspaceSettings": true,
       "values": [
         {
-          "editor.guides.indentation": true
+          "editor.guides.indentation": true,
         },
         {
-          "editor.guides.indentation": false
-        }
-      ]
+          "editor.guides.indentation": false,
+        },
+      ],
     },
     {
       "id": "lineNumbers",
       "overrideWorkspaceSettings": true,
       "values": [
         {
-          "editor.lineNumbers": "on"
+          "editor.lineNumbers": "on",
         },
         {
-          "editor.lineNumbers": "off"
-        }
-      ]
+          "editor.lineNumbers": "off",
+        },
+      ],
     },
     {
       "id": "matchParens",
       "overrideWorkspaceSettings": true,
       "values": [
         {
-          "editor.matchBrackets": "never"
+          "editor.matchBrackets": "never",
         },
         {
-          "editor.matchBrackets": "always"
-        }
-      ]
+          "editor.matchBrackets": "always",
+        },
+      ],
     },
     {
       "id": "rust-analyzer-inlay-hints",
       "overrideWorkspaceSettings": true,
       "values": [
         {
-          "rust-analyzer.inlayHints.enable": false
+          "rust-analyzer.inlayHints.enable": false,
         },
         {
-          "rust-analyzer.inlayHints.enable": true
-        }
-      ]
+          "rust-analyzer.inlayHints.enable": true,
+        },
+      ],
     },
     {
       "id": "zen",
@@ -540,8 +516,8 @@
             "editorWarning.foreground": "#FFA500",
             "scrollbar.shadow": "#282C34",
             "editorGroup.border": "#282C34",
-            "sideBar.border": "#282C34"
-          }
+            "sideBar.border": "#282C34",
+          },
         },
         {
           "dan.ZenPlus": true,
@@ -556,23 +532,21 @@
             "editorWarning.foreground": "#00000000",
             "scrollbar.shadow": "#282C34",
             "editorGroup.border": "#282C34",
-            "sideBar.border": "#282C34"
-          }
-        }
-      ]
-    }
+            "sideBar.border": "#282C34",
+          },
+        },
+      ],
+    },
   ],
   "settings.cycle.logLevel": "log",
-  "settingsSync.ignoredExtensions": [
-    "esbenp.prettier-vscode"
-  ],
+  "settingsSync.ignoredExtensions": ["esbenp.prettier-vscode"],
   "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
   },
   "spotlessGradle.diagnostics.enable": true,
   "spotlessGradle.format.enable": true,
   "[sql]": {
-    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter",
   },
   "statusbar_command.commands": [
     {
@@ -581,9 +555,9 @@
       "script": "statusBarItem.text = vscode.window.activeTextEditor.document.offsetAt(vscode.window.activeTextEditor.selection.active)",
       "scriptEvents": [
         "vscode.workspace.onDidSaveTextDocument",
-        "vscode.window.onDidChangeActiveTextEditor"
+        "vscode.window.onDidChangeActiveTextEditor",
       ],
-      "text": "Document offset"
+      "text": "Document offset",
     },
     {
       "alignment": "right",
@@ -592,7 +566,7 @@
       "name": "settings",
       "priority": -1000,
       "text": "$(gear)",
-      "tooltip": "workspace settings"
+      "tooltip": "workspace settings",
     },
     {
       "alignment": "right",
@@ -601,36 +575,30 @@
       "name": "Terminal",
       "priority": 1000,
       "text": "$(terminal)",
-      "tooltip": "Terminal"
+      "tooltip": "Terminal",
     },
     {
       "alignment": "right",
       "id": "formatOnSave",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('editor').formatOnSave ? '\u26a1': ''",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
-      "text": "Format on save"
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
+      "text": "Format on save",
     },
     {
       "alignment": "right",
       "id": "sbc.rust-analyzer-inlay-hints",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('rust-analyzer.inlayHints').enable ? '$(extensions-info-message)' : ''",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
-      "text": "rust-analyzer inlay hints"
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
+      "text": "rust-analyzer inlay hints",
     },
     {
       "alignment": "right",
       "command": "dan.zen",
       "id": "sbc.zen",
       "script": "statusBarItem.text = vscode.workspace.getConfiguration('errorLens').enabled ? '' : '$(circle-slash)'",
-      "scriptEvents": [
-        "vscode.workspace.onDidChangeConfiguration"
-      ],
-      "text": "Zen Squiggles"
-    }
+      "scriptEvents": ["vscode.workspace.onDidChangeConfiguration"],
+      "text": "Zen Squiggles",
+    },
   ],
   "task.saveBeforeRun": false,
   "terminal.explorerKind": "external",
@@ -641,7 +609,7 @@
     "mailto",
     "vscode",
     "vscode-insiders",
-    "cursor"
+    "cursor",
   ],
   "terminal.integrated.defaultLocation": "editor",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
@@ -649,18 +617,18 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "testing.saveBeforeTest": false,
   "[toml]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   "ty.diagnosticMode": "workspace",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.acceptSuggestionOnCommitCharacter": false,
     "typescript.preferences.quoteStyle": "double",
-    "editor.indentSize": 2
+    "editor.indentSize": 2,
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
   "vale.enableSpellcheck": true,
@@ -681,14 +649,14 @@
     "editorLineNumber.activeForeground": "#ff6b6b",
     "scrollbar.shadow": "#282C34",
     "editorGroup.border": "#282C34",
-    "sideBar.border": "#282C34"
+    "sideBar.border": "#282C34",
   },
   "workbench.colorTheme": "Default Light Modern",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "none",
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
+    "*.ipynb": "jupyter-notebook",
   },
   "workbench.localHistory.enabled": false,
   "workbench.sideBar.location": "right",
@@ -700,7 +668,7 @@
   "[yaml]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.autoIndent": "advanced"
+    "editor.autoIndent": "advanced",
   },
   "zenMode.centerLayout": false,
   "zenMode.fullScreen": true,
@@ -717,5 +685,10 @@
   "claudeCode.respectGitIgnore": false,
   "claudeCode.preferredLocation": "panel",
   "claudeCode.selectedModel": "opus",
-  "claudeCode.allowDangerouslySkipPermissions": true
+  "claudeCode.allowDangerouslySkipPermissions": true,
+  "chat.tools.terminal.outputLocation": "chat",
+  "makefile.configureOnOpen": false,
+  "security.workspace.trust.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "github.copilot.nextEditSuggestions.enabled": true,
 }

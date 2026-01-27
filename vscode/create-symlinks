@@ -1,0 +1,17 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+link_user() {
+    mkdir -p "$1"
+    ln -sf "$DIR/settings.json" "$1/settings.json"
+    ln -sf "$DIR/keybindings.json" "$1/keybindings.json"
+}
+
+link_user "$HOME/Library/Application Support/Code/User"
+link_user "$HOME/Library/Application Support/Code - Insiders/User"
+link_user "$HOME/Library/Application Support/Cursor/User"
+link_user "$HOME/.vscode-server/data/User"
+
+mkdir -p "$HOME/.vscode-server/data/Machine"
+ln -sf "$DIR/settings.json" "$HOME/.vscode-server/data/Machine/settings.json"
+ln -sf "$HOME/.vscode/extensions" "$HOME/.vscode-server/extensions"
