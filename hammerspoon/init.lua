@@ -10,7 +10,7 @@ Logger = hs.logger.new('dan', "debug")
 package.path = package.path .. ";/Users/dan/src/wormhole/hammerspoon/?.lua"
 local wormhole = require("wormhole")
 
--- Terminal toggle (non-wormhole)
+-- Terminal toggle
 local function terminal()
     local app = hs.application.find("alacritty")
     if app then
@@ -21,6 +21,20 @@ local function terminal()
         end
     else
         hs.application.launchOrFocus("/Applications/Alacritty.app")
+    end
+end
+
+-- Cursor toggle
+local function cursor()
+    local app = hs.application.find("Cursor")
+    if app then
+        if app:isFrontmost() then
+            app:hide()
+        else
+            app:activate()
+        end
+    else
+        hs.application.launchOrFocus("/Applications/Cursor.app")
     end
 end
 
@@ -41,6 +55,7 @@ local keymap = {
 -- Keybindings
 wormhole.bindKeys(keymap)
 hs.hotkey.bind({}, "f16", terminal)
+hs.hotkey.bind({}, "f17", cursor)
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
 end)

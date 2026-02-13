@@ -21,6 +21,24 @@
                 "type": "basic"
               }
             ]
+          },
+          {
+            "description": "left_cmd+left_option+right_shift => f17 (cursorToggle)",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "right_shift",
+                  "modifiers": { "mandatory": ["left_command", "left_option"] }
+                },
+                "to": [
+                  {
+                    "key_code": "f17",
+                    "modifiers": []
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
           }
         ]
       },
