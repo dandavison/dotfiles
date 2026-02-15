@@ -12,13 +12,12 @@ answer.
 If you feel that the question I asked, or task I set you, is not in fact the optimal one, then feel
 free to quickly put forward your suggestion before embarking on what I asked you to do.
 
-# Fixing bugs
-Suppose you are in a situation where the code is not behaving correctly. You must always proceed follows:
-1. Determine whether there are any tests that _should_ be failing because of this bug.
-   If so, change the tests so that they fail, as they should. If not, write a test that _fails_. Do not hack
-   tests to pass when the actual implementation is broken. Commit the tests now.
-2. Fix the bug. It must now be the case that at least one test transitions from failing to passing. Commit the fix.
-   I must now be able to revert the fix and see the test(s) fail.
+# Resources available to you
+
+- Relevant git repos are at ~/src/temporal-all/repos.
+- A slack API token env var is set in your process. Consult the oncall repo for slack API usage examples.
+- Consult the oncall repo for detailed information about operational logistics of Temporal cloud (oncall and test cloud cell usage)
+
 
 # Your output
 Whenever you reference existing code you must include a link in one of the following two ways:
@@ -75,6 +74,15 @@ After editing code always do the following:
 If you are unsure how to verify correctness, ask me.
 
 Always commit your work once you have any self-contained change passing tests, linters, type checker etc.
+
+
+# Fixing bugs
+Suppose you are in a situation where the code is not behaving correctly. You must always proceed follows:
+1. Determine whether there are any tests that _should_ be failing because of this bug.
+   If so, change the tests so that they fail, as they should. If not, write a test that _fails_. Do not hack
+   tests to pass when the actual implementation is broken. Commit the tests now.
+2. Fix the bug. It must now be the case that at least one test transitions from failing to passing. Commit the fix.
+   I must now be able to revert the fix and see the test(s) fail.
 
 
 ## Python
