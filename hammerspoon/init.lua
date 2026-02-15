@@ -1,7 +1,5 @@
 -- require("hs.inspect")
 require("hs.ipc")
-require("hs.eventtap")
-require("hs.notify")
 hs.loadSpoon('EmmyLua')
 
 Logger = hs.logger.new('dan', "debug")
