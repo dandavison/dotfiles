@@ -15,9 +15,14 @@ free to quickly put forward your suggestion before embarking on what I asked you
 # Resources available to you
 
 - Relevant git repos are at ~/src/temporal-all/repos.
-- A slack API token env var is set in your process. Consult the oncall repo for slack API usage examples.
 - Consult the oncall repo for detailed information about operational logistics of Temporal cloud (oncall and test cloud cell usage)
 
+## Slack
+Use the `agent-slack` CLI (see `~/.agents/skills/agent-slack/SKILL.md`) for all Slack operations.
+When constructing Slack message links from `agent-slack` output, the `ts` in the path has its dot
+removed; thread replies require `thread_ts` and `cid` query params or the link will 404:
+- Top-level: `https://temporaltechnologies.slack.com/archives/{channel_id}/p{ts_no_dot}`
+- Thread reply: `https://temporaltechnologies.slack.com/archives/{channel_id}/p{ts_no_dot}?thread_ts={thread_ts}&cid={channel_id}`
 
 # Your output
 Whenever you reference existing code you must include a link in one of the following two ways:
@@ -73,7 +78,8 @@ After editing code always do the following:
 - Run tests covering the edited code; add such tests if absent.
 If you are unsure how to verify correctness, ask me.
 
-Always commit your work once you have any self-contained change passing tests, linters, type checker etc.
+Always commit your work once you have any self-contained change. But make sure that all type
+checker, linters,  formatters, and tests, etc are passing.
 
 
 # Fixing bugs
