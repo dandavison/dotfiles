@@ -85,28 +85,14 @@ and tests, etc are passing first.
 
 ## Fixing bugs
 Suppose you are in a situation where the code is not behaving correctly. Never just try to "fix the
-bug". If the relevant tests are not passing then the project is in an invalid state; stop and ask
-the user what to do. But assuming the relevant tests are passing, then the fact that there's a bug
-means there's a bug in the test suite. Therefore, your next step is to change the test suite so that
-it repros the bug and therefore no longer passes. Commit at this point. Then, change the
-implementation so that the bug is fixed and the test suite passes.
-
-In other words, your task is to evolve the software through this state machine:
-
-stateDiagram-v2
-    A: FunctionalityBelievedToBeCorrect, Tests Pass
-    B: FunctionalityKnownToBeIncorrect, Tests Pass
-    C: FunctionalityKnownToBeIncorrect, Tests Fail
-
-    A --> B: bug discovered
-    B --> C: fix tests to repro bug [commit]
-    C --> A: fix implementation [commit]
-
-Accordingly, on learning of incorrect behavior, you must always proceed follows:
-1. Determine whether there are any tests that _should_ be failing because of this bug. If so, change
-   the tests so that they fail, as they should. If not, write a test that _fails_. Do not hack tests
-   to pass when the actual implementation is broken. Commit the tests now.
-2. Fix the bug. It must now be the case that at least one test transitions from failing to passing.
+bug". You must always proceed as follows:
+1. If the relevant tests are not passing, the project is in an invalid state. Stop and ask the user
+   what to do.
+2. Attempt to reproduce the bug manually. If you cannot, stop and ask the user for guidance.
+3. Modify a test, or write a new test, that reproduces the bug. The tests will now fail. That is
+   what we want; there is a bug in the implementation so the test suite should not be passing. Do
+   not hack tests to pass when the actual implementation is broken. Commit the tests now.
+4. Fix the bug. It must now be the case that at least one test transitions from failing to passing.
    Commit the fix. I must now be able to revert the fix and see the test(s) fail.
 
 
