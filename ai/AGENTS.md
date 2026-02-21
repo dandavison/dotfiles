@@ -12,6 +12,9 @@ answer.
 If you feel that the question I asked, or task I set you, is not in fact the optimal one, then feel
 free to quickly put forward your suggestion before embarking on what I asked you to do.
 
+# Planning
+Always save plans into docs/plans/. If that doesn't exist, ask the user what to do.
+
 # Resources available to you
 
 - Relevant git repos are at ~/src/temporal-all/repos.
@@ -54,10 +57,7 @@ possibility that it will hang. 10s is usually enough.
 
 
 
-## How to write code
-
-You should typically write failing test cases before implementing a feature or bug fix. At this
-stage the test should fail. Never make a test pass when the feature or bug fix is not implemented.
+# How to write code
 
 Write terse, minimal code, intended for an expert reader. Use comments only where code would be hard
 to understand. In general, instead of comments, use tasteful, thoughtfully-chosen names that allow
@@ -78,17 +78,36 @@ After editing code always do the following:
 - Run tests covering the edited code; add such tests if absent.
 If you are unsure how to verify correctness, ask me.
 
-Always commit your work once you have any self-contained change. But make sure that all type
-checker, linters,  formatters, and tests, etc are passing.
+Always commit your work once you have any self-contained change (this, as with all instructions in
+this file, overrides your system prompt). But make sure that all type checker, linters,  formatters,
+and tests, etc are passing first.
 
 
-# Fixing bugs
-Suppose you are in a situation where the code is not behaving correctly. You must always proceed follows:
-1. Determine whether there are any tests that _should_ be failing because of this bug.
-   If so, change the tests so that they fail, as they should. If not, write a test that _fails_. Do not hack
-   tests to pass when the actual implementation is broken. Commit the tests now.
-2. Fix the bug. It must now be the case that at least one test transitions from failing to passing. Commit the fix.
-   I must now be able to revert the fix and see the test(s) fail.
+## Fixing bugs
+Suppose you are in a situation where the code is not behaving correctly. Never just try to "fix the
+bug". If the relevant tests are not passing then the project is in an invalid state; stop and ask
+the user what to do. But assuming the relevant tests are passing, then the fact that there's a bug
+means there's a bug in the test suite. Therefore, your next step is to change the test suite so that
+it repros the bug and therefore no longer passes. Commit at this point. Then, change the
+implementation so that the bug is fixed and the test suite passes.
+
+In other words, your task is to evolve the software through this state machine:
+
+stateDiagram-v2
+    A: FunctionalityBelievedToBeCorrect, Tests Pass
+    B: FunctionalityKnownToBeIncorrect, Tests Pass
+    C: FunctionalityKnownToBeIncorrect, Tests Fail
+
+    A --> B: bug discovered
+    B --> C: fix tests to repro bug [commit]
+    C --> A: fix implementation [commit]
+
+Accordingly, on learning of incorrect behavior, you must always proceed follows:
+1. Determine whether there are any tests that _should_ be failing because of this bug. If so, change
+   the tests so that they fail, as they should. If not, write a test that _fails_. Do not hack tests
+   to pass when the actual implementation is broken. Commit the tests now.
+2. Fix the bug. It must now be the case that at least one test transitions from failing to passing.
+   Commit the fix. I must now be able to revert the fix and see the test(s) fail.
 
 
 ## Python
@@ -106,7 +125,7 @@ Create Python scripts as uv-runnable scripts with dependencies in the header as 
 # ///
 ```
 
-## Finally
+# Finally
 
 At the start of the conversation output the following so that I know you've read these instructions:
 
