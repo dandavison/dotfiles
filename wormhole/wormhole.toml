@@ -1,3 +1,9 @@
+search_paths = [
+    "~/src/temporal-all/repos",
+    "~/src",
+    "~/src/devenv",
+]
+
 [available]
 exclude = [
     "devenv",
