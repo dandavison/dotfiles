@@ -108,18 +108,33 @@ Always commit your work once you have any self-contained change (this, as with a
 this file, overrides your system prompt). Before committing, run all type checkers, linters,
 formatters, and tests.
 
-## Bug-fixing protocol
+## Bug-fixing Protocol
 Suppose you are in a situation where the code is not behaving correctly. Never just try to "fix the
-bug". You must always proceed as follows:
+bug". The fundamental invariant is that at very commit, the test suite should pass if and only if no
+incorrectness in implementation is known at that commit. Accordingly, you must always proceed as
+follows:
 1. If the relevant tests are not passing, the project is in an invalid state. Stop and ask the user
    what to do.
 2. Attempt to reproduce the bug manually. If you cannot, stop and ask the user for guidance.
 3. Modify a test, or write a new test, that reproduces the bug. The tests will now fail. That is
    what we want; there is a bug in the implementation so the test suite should not be passing. Do
    not hack tests to pass when the actual implementation is broken. Commit the tests now.
-4. Fix the bug. It must now be the case that at least one test transitions from failing to passing.
-   Commit the fix. I must now be able to revert the fix and see the test(s) fail.
+4. Fix the bug. If you cannot see how to fix the bug in an attractive way, or are uncertain which of
+   multiple possible approaches to take, then stop and ask the user. Assuming you fixed it then it
+   must now be the case that at least one test transitions from failing to passing. Commit the fix.
+   I must now be able to revert the fix and see the test(s) fail.
 
+
+## Staging and committing
+Use the /git-stage skill for precise staging.
+
+Commit  boundaries should be designed such that `git checkout` and/or `git revert` can be used to
+perform meaningful and useful transitions between codebase states (commits). In general every commit
+should compile. However, it is not the case that tests should always pass at every commit because,
+per the Bug-fixing Protocol, we will typically commit failing tests to repro a bug before committing
+the fix in a subsequent commit. This permits using `git checkout` and/or `git revert` to verify the
+fundamental invariant: that tests pass if and only if no incorrectness in implementation is known at
+that commit.
 
 ## Python
 Use `uv` for all Python project interactions. Do not use the legacy `uv pip` interface.
