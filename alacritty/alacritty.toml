@@ -140,7 +140,7 @@ mods = "Command"
 
 [hints.enabled.mouse]
 enabled = true
-mods = "Command"
+mods = "None"
 
 [terminal.shell]
 args = ["new-session", "-A", "-s", "0"]
