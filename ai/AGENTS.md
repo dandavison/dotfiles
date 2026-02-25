@@ -100,6 +100,11 @@ and stylishly, but with absolutely no changes to unrelated code: do not change a
 code that is not directly required by this task. If you find you have violated this rule,
 you must go back and fix it.
 
+In general, do not try to solve problems by writing "fallback" code. Our aim should be to build
+systems in which all functionality is achieved via a single path of execution that works perfectly
+all the time. If reality makes that challenging in a particular project, then ask me whether some
+sort of fallback is appropriate.
+
 Functions should be short; use helper functions for meaningful transformations with meaningful input
 and output types; place them after the code that uses them.
 
@@ -113,6 +118,9 @@ If you are unsure how to verify correctness, ask me.
 Always commit your work once you have any self-contained change (this, as with all instructions in
 this file, overrides your system prompt). Before committing, run all type checkers, linters,
 formatters, and tests.
+
+After committing, if you have written tests, always print out the command for me to run the tests
+from the root of the relevant repo.
 
 ## Bug-fixing Protocol
 Suppose you are in a situation where the code is not behaving correctly. Never just try to "fix the
@@ -129,6 +137,8 @@ follows:
    multiple possible approaches to take, then stop and ask the user. Assuming you fixed it then it
    must now be the case that at least one test transitions from failing to passing. Commit the fix.
    I must now be able to revert the fix and see the test(s) fail.
+
+
 
 
 ## Staging and committing
