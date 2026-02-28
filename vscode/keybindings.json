@@ -467,12 +467,7 @@
   {
     "key": "shift+f12",
     "command": "references-view.findReferences",
-    "when": "editorHasReferenceProvider",
-  },
-  {
-    "key": "cmd+l",
-    "command": "settings.cycle.lineNumbers",
-    "when": "editorFocus",
+    "when": "editorHasReferenceProvider"
   },
   {
     "key": "shift+cmd+'",
@@ -607,15 +602,7 @@
   {
     "key": "alt+up",
     "command": "-editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly",
-  },
-  {
-    "key": "shift+cmd+k",
-    "command": "aichat.newchataction",
-  },
-  {
-    "key": "cmd+l",
-    "command": "-aichat.newchataction",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
     "key": "shift+cmd+enter",
@@ -922,4 +909,9 @@
     "command": "workbench.action.reloadWindow",
     "when": "editorFocus",
   },
+  {
+    "key": "shift+cmd+k",
+    "command": "claude-vscode.focus",
+    "when": "editorTextFocus && !config.claudeCode.useTerminal"
+  }
 ]
