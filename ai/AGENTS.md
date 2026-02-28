@@ -41,6 +41,97 @@ free to quickly put forward your suggestion before embarking on what I asked you
 
 Do relay all your findings, but answer succinctly.
 
+# Codebase state machine
+
+When working, we're usally doing one of the following:
+
+- Refactor
+- Bug investigation and fix
+- Design / implement a proposed feature
+- Review a proposed change
+- Try to find bugs in this application by manually testing many combinations of inputs / scenarios /
+  fuzz testing
+
+First note that a test suite should pass if and only if the application is behaving correctly in all
+respects. This implies that if the application is behaving incorrectly (there's a bug), then at
+least one test should FAIL. We never write tests that demonstrate a bug by passing. In other words,
+if there's a bug in the application and the test suite is passing, then there's also a bug in the
+test suite: a test should be failing. We address the bug in the test suite first by committing a
+failing test, before proposing a fix for the application.
+
+In general, we think of a codebase as evolving according to the state machine defined by the
+sections below.
+
+The equilibrium/default state is (no-bugs-reported, test-suite-passing-and-adequate). Here,
+"adequate" means that whenever you change the code so as to deliberately make the application behave
+incorrectly, at least one test fails. You don't have to verify that we're in this before starting
+but, if at any point you become at all suspicious, then commit/stash any uncommitted changes,
+checkout the appropriate before-you-started commit (e.g. main) and run the tests. If they don't
+pass, stop and tell the user. Of course "no bugs claimed" is an ideal unlikely to be met by
+real-world projects of sufficient complexity. But "no pre-existing bugs reported that are relevant
+to my current task" is a reasonable clean slate ambition.
+
+## Refactor
+
+The definition of a refactor is a change that has no functional consequences. Therefore, no tests
+should break, and no new tests should be needed. In order to refactor safely, the test suite must be
+sufficiently comprehensive and stringent: ideally, it should be the case that any incorrect
+refactoring you make results in at least one failing test. So, before starting a refactor, test this
+hypothesis by making some deliberately incorrect refactors along the lines of the proposed refactor,
+and confirm that the tests fail. If they don't then add tests and commit. Once they do, then proceed
+by taking the formal view that it is a bug that the code is not in the proposed refactored state and
+follow the procedure described in this document for a bug fix.
+
+## Bug investigation and fix
+
+When a bug is reported, we first research all relevant aspects of the codebase thoroughly. Next we
+attempt to repro the bug. We do so by trying to create a manual repro script (use the
+repro-script-creator skill) and an in-codebase FAILING functional/unit test, and we commit these.
+For small bugs it's acceptable (in fact desirable) to modify an existing test for the purpose. In
+general, tests should repro the bug realistically (to take an extreme example, if an error message
+is wrong, the test would not merely import the error object and make an assertion about its message
+field; instead, it would cause the error path to be hit via realistic aplication usage and make an
+assertion about the reported errror message).
+
+We have thus transitioned into (bug-exists, test-suite-failing). Next, enter planning mode and
+produce an implementation proposal for the fix. The plan must conclude with a section instructing me
+regarding exactly how I run the repro script and the test (the test and repro script must pass with
+the fix, and fail without it). On implemention of the plan, we transition back to (no-bugs-reported,
+test-suite-passing-and-adequate). For non-trivial bugs, consider planning multiple times and
+comparing results, and implementing multiple times and comparing results.
+
+## Design / implement a feature
+
+Take the formal view that the lack of this feature is a bug and follow the procedure described in
+this document for a bug fix.
+
+## Review a proposed codebase change / PR
+
+A codebase change may have been proposed by us (perhaps we just completed implementation of a
+feature, or a bug fix), or by a collaborator. Proceed as follows:
+
+First, before examing the change itself, answer the following: Who has proposed this? Why? Is it a
+response to a bug report / issue? Is it part of some broader program of work? What is this repo?
+What product/application/component does it implement? What was the author trying to achieve with
+this change? Was their intention appropriate? If you believe that the change, regardless of how
+well-executed, simply isn't the right move, then stop and say so.
+
+Next, unless it is impractical, without looking at their change, proceed in a local checkout of the
+repo to indepdently make the change yourself, by taking the formal view that the lack of whatever
+they are trying to do is a bug and following the procedure described in this document for a bug fix.
+If you're able to do this, then, assuming your work is high quality then you are in a fantastic
+position to help improve the proposed change. Compare your work (tests and implementation) with the
+proposed change in detail: did you do anything they did not, or vice versa? Did you do anything
+better/worse than them?
+
+If the proposed change is a PR, then use the /pr-review skill to post your review. Note well the
+fundamental rule of that skill: all comments go into a **pending review** that is private until the
+human submits it. Never submit or complete the review yourself.
+
+## Try to find bugs in this application by manually testing many combinations of inputs / scenarios / fuzz testing
+
+
+
 # Planning
 Always save plans into docs/plans/. If that doesn't exist, ask the user what to do.
 
