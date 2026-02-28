@@ -288,6 +288,7 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
   },
   "liveshare.anonymousGuestApproval": "accept",
   "lldb.launch.expressions": "native",
