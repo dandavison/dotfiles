@@ -688,6 +688,11 @@
   "claudeCode.preferredLocation": "panel",
   "claudeCode.selectedModel": "opus",
   "claudeCode.allowDangerouslySkipPermissions": true,
+  "claudeCode.initialPermissionMode": "bypassPermissions",
+  "claudeCode.spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [""],
+  },
   "chat.tools.terminal.outputLocation": "chat",
   "makefile.configureOnOpen": false,
   "security.workspace.trust.enabled": false,

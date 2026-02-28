@@ -1,19 +1,17 @@
 {
   "permissions": {
-    "allow": [
-      "Bash",
-      "Edit",
-      "Grep",
-      "Read",
-      "Write"
-    ]
+    "allow": ["Bash", "Edit", "Glob", "Grep", "Read", "Write"]
   },
   "model": "opus",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true
   },
+  "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
   },
-  "skipDangerousModePermissionPrompt": true
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [""]
+  }
 }
