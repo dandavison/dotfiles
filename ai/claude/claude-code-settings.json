@@ -24,5 +24,15 @@
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
+  },
+  "mcpServers": {
+    "notion": {
+      "type": "url",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "temporal-docs": {
+      "type": "url",
+      "url": "https://temporal.mcp.kapa.ai"
+    }
   }
 }

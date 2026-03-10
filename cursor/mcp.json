@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "notion": {
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "temporal-docs": {
+      "type": "http",
+      "url": "https://temporal.mcp.kapa.ai",
+      "headers": {}
+    }
+  }
+}
