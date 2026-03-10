@@ -122,9 +122,9 @@
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
-    "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
+    "**/CVS": true,
     "*.egg-info": true,
     "**/__pycache__": true,
     "**/.*_cache": true,
@@ -136,7 +136,7 @@
     "**/*.olean": true,
     "**/staticfiles": true,
     "docs/_book": true,
-    "out": false,
+    "out": false
   },
   "files.saveConflictResolution": "overwriteFileOnDisk",
   "files.trimTrailingWhitespace": true,
@@ -317,6 +317,7 @@
   },
   "markdown.preview.markEditorSelection": false,
   "markdown.validate.enabled": true,
+  "markdownInlinePreview.aliasedURIs": true,
   "metals.serverProperties": [
     "-Xmx20G",
     "-XX:MaxInlineLevel=20",
