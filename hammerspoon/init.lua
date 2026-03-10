@@ -7,6 +7,7 @@ Logger = hs.logger.new('dan', "debug")
 -- Load wormhole module from wormhole repo
 package.path = package.path .. ";/Users/dan/src/wormhole/hammerspoon/?.lua"
 local wormhole = require("wormhole")
+wormhole.dashboardApp = "Island"
 
 -- Terminal toggle
 local function terminal()
