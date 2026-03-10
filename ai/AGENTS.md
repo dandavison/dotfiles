@@ -60,7 +60,12 @@ test suite: a test should be failing. We address the bug in the test suite first
 failing test, before proposing a fix for the application.
 
 In general, we think of a codebase as evolving according to the state machine defined by the
-sections below.
+sections below. Your task is to advance the task through this state machine as far as possible,
+until it becomes blocked needing my input. In paticular, before implementation, you'll always make a
+plan, and ask for my input. You'll maintain a markdown file at ~/.task/task.md recording all stages
+of the state machine that we passed through with the artifacts that were used at each (repros, etc).
+Please keep up a running commentary explaining what stage of the codebase state machine we're at and
+what transition you're attempting to effect next.
 
 The equilibrium/default state is (no-bugs-reported, test-suite-passing-and-adequate). Here,
 "adequate" means that whenever you change the code so as to deliberately make the application behave
@@ -80,17 +85,23 @@ refactoring you make results in at least one failing test. So, before starting a
 hypothesis by making some deliberately incorrect refactors along the lines of the proposed refactor,
 and confirm that the tests fail. If they don't then add tests and commit. Once they do, then proceed
 by taking the formal view that it is a bug that the code is not in the proposed refactored state and
-follow the procedure described in this document for a bug fix.
+follow the procedure described in this document for a bug fix starting at the (bug-exists,
+test-suite-failing) stage.
 
 ## Bug investigation and fix
 
-When a bug is reported, we first research all relevant aspects of the codebase thoroughly. Next we
-attempt to repro the bug. We do so by trying to create a manual repro script (use the
-repro-script-creator skill) and an in-codebase FAILING functional/unit test, and we commit these.
-For small bugs it's acceptable (in fact desirable) to modify an existing test for the purpose. In
-general, tests should repro the bug realistically (to take an extreme example, if an error message
-is wrong, the test would not merely import the error object and make an assertion about its message
-field; instead, it would cause the error path to be hit via realistic aplication usage and make an
+The very first step is to ensure we have a perfectly clear understanding of what the bug is and
+record this in our task summary document ~/.task/task.md. Note that in some cases we use this
+section for purposes other than what would normally be considered a bug, for example by formally
+take the view that the absence of a feature or refactor is a "bug".
+
+When we  learn of a claimed bug, we first research all relevant aspects of the codebase thoroughly.
+Next we attempt to repro the bug. We do so by trying to create a manual repro script (use the
+repro-creator skill) and an in-codebase FAILING functional/unit test, and we commit these. For small
+bugs it's acceptable (in fact desirable) to modify an existing test for the purpose. In general,
+tests should repro the bug realistically (to take an extreme example, if an error message is wrong,
+the test would not merely import the error object and make an assertion about its message field;
+instead, it would cause the error path to be hit via realistic aplication usage and make an
 assertion about the reported errror message).
 
 We have thus transitioned into (bug-exists, test-suite-failing). Next, enter planning mode and
