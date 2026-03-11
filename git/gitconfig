@@ -1,109 +1,104 @@
 [user]
-    email = dandavison7@gmail.com
-    name = Dan Davison
-    useConfigOnly = true
+email = dandavison7@gmail.com
+name = Dan Davison
+useConfigOnly = true
 
 [github]
-    user = dandavison
+user = dandavison
 
 [includeIf "gitdir:~/src/temporalio/"]
-    path = ~/src/temporalio/.gitconfig
+path = ~/src/temporalio/.gitconfig
 
 [includeIf "gitdir:~/src/temporal-all/"]
-    path = ~/src/temporal-all/.gitconfig
+path = ~/src/temporal-all/.gitconfig
 
 [advice]
-    detachedHead = false
+detachedHead = false
 
 [pager]
-    log = git-log-pager
-
+log = git-log-pager
 
 [blame]
-    # coloring = highlightRecent
-
+# coloring = highlightRecent
 
 [clone]
-	recurseSubmodules = true
-
+recurseSubmodules = true
 
 [color "diff"]
-    frag = red
-    # oldMoved = red
-    # newMoved = green
-
-
+frag = red
+# oldMoved = red
+# newMoved = green
 
 [commit]
-    status = false
-    verify = false
+status = false
+verify = false
 
 [core]
-    # attributesfile = ~/devenv/dotfiles/git/gitattributes
-    editor = emacsclient
-    excludesfile = ~/.gitignore
-    default-branch = main
+# attributesfile = ~/devenv/dotfiles/git/gitattributes
+editor = emacsclient
+excludesfile = ~/.gitignore
+default-branch = main
 
 [commit]
-    verify = false
+verify = false
 
 [diff]
-    # colorMoved = default
-    # colorMovedWS = allow-indentation-change
-    frag = red
-    submodule = short
-    context = 15 # 7777 # 15
+# colorMoved = default
+# colorMovedWS = allow-indentation-change
+frag = red
+submodule = short
+context = 15 # 7777 # 15
 
 [difftool]
-    prompt = false
+prompt = false
 
 [difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
+cmd = difft "$LOCAL" "$REMOTE"
 
 [include]
-    path = ~/src/devenv/dotfiles/delta/delta.gitconfig
+path = ~/src/devenv/dotfiles/delta/delta.gitconfig
 
 [init]
-    defaultBranch = main
+defaultBranch = main
 
 [log]
-    decorate = true
-    date = relative
+decorate = true
+date = relative
 
 [merge]
-    conflictstyle = zdiff3
-    renamelimit = 10000
+conflictstyle = zdiff3
+renamelimit = 10000
 
 [rerere]
-    enabled = true
+enabled = true
 
 [push]
-    default = current
+default = current
 
 [pull]
-    ff = only
+ff = only
 
 [rebase]
-    autosquash = true
+autosquash = true
 
 [status]
-    aheadBehind = false
-    hints = false
-    short = true
+aheadBehind = false
+hints = false
+short = true
 
 [alias]
-    fixup = commit --amend -C HEAD
-    head = rev-list -n1 HEAD
-    logd = log --decorate
-	ls = ls-files
-	# merge = merge --no-edit
-	# squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
-    diff-side-by-side = -c delta.features=side-by-side diff
+fixup = commit --amend -C HEAD
+head = rev-list -n1 HEAD
+logd = log --decorate
+ls = ls-files
+# merge = merge --no-edit
+# squash = !git reset --soft HEAD~1 && git commit --amend -C HEAD
+diff-side-by-side = -c delta.features=side-by-side diff
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
-	pushInsteadOf = https://github.com/
-	pushInsteadOf = git://github.com/
+insteadOf = https://github.com/
+pushInsteadOf = https://github.com/
+pushInsteadOf = git://github.com/
 
 [protocol "file"]
-	allow = always
+allow = always
