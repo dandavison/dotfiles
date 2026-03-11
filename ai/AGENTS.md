@@ -41,110 +41,6 @@ free to quickly put forward your suggestion before embarking on what I asked you
 
 Do relay all your findings, but answer succinctly.
 
-# Codebase state machine
-
-When working, we're usally doing one of the following:
-
-- Refactor
-- Bug investigation and fix
-- Design / implement a proposed feature
-- Review a proposed change
-- Try to find bugs in this application by manually testing many combinations of inputs / scenarios /
-  fuzz testing
-
-First note that a test suite should pass if and only if the application is behaving correctly in all
-respects. This implies that if the application is behaving incorrectly (there's a bug), then at
-least one test should FAIL. We never write tests that demonstrate a bug by passing. In other words,
-if there's a bug in the application and the test suite is passing, then there's also a bug in the
-test suite: a test should be failing. We address the bug in the test suite first by committing a
-failing test, before proposing a fix for the application.
-
-In general, we think of a codebase as evolving according to the state machine defined by the
-sections below. Your task is to advance the task through this state machine as far as possible,
-until it becomes blocked needing my input. In paticular, before implementation, you'll always make a
-plan, and ask for my input. You'll maintain a markdown file at ~/.task/task.md recording all stages
-of the state machine that we passed through with the artifacts that were used at each (repros, etc).
-Please keep up a running commentary explaining what stage of the codebase state machine we're at and
-what transition you're attempting to effect next.
-
-The equilibrium/default state is (no-bugs-reported, test-suite-passing-and-adequate). Here,
-"adequate" means that whenever you change the code so as to deliberately make the application behave
-incorrectly, at least one test fails. You don't have to verify that we're in this before starting
-but, if at any point you become at all suspicious, then commit/stash any uncommitted changes,
-checkout the appropriate before-you-started commit (e.g. main) and run the tests. If they don't
-pass, stop and tell the user. Of course "no bugs claimed" is an ideal unlikely to be met by
-real-world projects of sufficient complexity. But "no pre-existing bugs reported that are relevant
-to my current task" is a reasonable clean slate ambition.
-
-## Refactor
-
-The definition of a refactor is a change that has no functional consequences. Therefore, no tests
-should break, and no new tests should be needed. In order to refactor safely, the test suite must be
-sufficiently comprehensive and stringent: ideally, it should be the case that any incorrect
-refactoring you make results in at least one failing test. So, before starting a refactor, test this
-hypothesis by making some deliberately incorrect refactors along the lines of the proposed refactor,
-and confirm that the tests fail. If they don't then add tests and commit. Once they do, then proceed
-by taking the formal view that it is a bug that the code is not in the proposed refactored state and
-follow the procedure described in this document for a bug fix starting at the (bug-exists,
-test-suite-failing) stage.
-
-## Bug investigation and fix
-
-The very first step is to ensure we have a perfectly clear understanding of what the bug is and
-record this in our task summary document ~/.task/task.md. Note that in some cases we use this
-section for purposes other than what would normally be considered a bug, for example by formally
-take the view that the absence of a feature or refactor is a "bug".
-
-When we  learn of a claimed bug, we first research all relevant aspects of the codebase thoroughly.
-Next we attempt to repro the bug. We do so by trying to create a manual repro script (use the
-repro-creator skill) and an in-codebase FAILING functional/unit test, and we commit these. For small
-bugs it's acceptable (in fact desirable) to modify an existing test for the purpose. In general,
-tests should repro the bug realistically (to take an extreme example, if an error message is wrong,
-the test would not merely import the error object and make an assertion about its message field;
-instead, it would cause the error path to be hit via realistic aplication usage and make an
-assertion about the reported errror message).
-
-We have thus transitioned into (bug-exists, test-suite-failing). Next, enter planning mode and
-produce an implementation proposal for the fix. The plan must conclude with a section instructing me
-regarding exactly how I run the repro script and the test (the test and repro script must pass with
-the fix, and fail without it). On implemention of the plan, we transition back to (no-bugs-reported,
-test-suite-passing-and-adequate). For non-trivial bugs, consider planning multiple times and
-comparing results, and implementing multiple times and comparing results.
-
-## Design / implement a feature
-
-Take the formal view that the lack of this feature is a bug and follow the procedure described in
-this document for a bug fix.
-
-## Review a proposed codebase change / PR
-
-A codebase change may have been proposed by us (perhaps we just completed implementation of a
-feature, or a bug fix), or by a collaborator. Proceed as follows:
-
-First, before examing the change itself, answer the following: Who has proposed this? Why? Is it a
-response to a bug report / issue? Is it part of some broader program of work? What is this repo?
-What product/application/component does it implement? What was the author trying to achieve with
-this change? Was their intention appropriate? If you believe that the change, regardless of how
-well-executed, simply isn't the right move, then stop and say so.
-
-Next, unless it is impractical, without looking at their change, proceed in a local checkout of the
-repo to indepdently make the change yourself, by taking the formal view that the lack of whatever
-they are trying to do is a bug and following the procedure described in this document for a bug fix.
-If you're able to do this, then, assuming your work is high quality then you are in a fantastic
-position to help improve the proposed change. Compare your work (tests and implementation) with the
-proposed change in detail: did you do anything they did not, or vice versa? Did you do anything
-better/worse than them?
-
-If the proposed change is a PR, then use the /pr-review skill to post your review. Note well the
-fundamental rule of that skill: all comments go into a **pending review** that is private until the
-human submits it. Never submit or complete the review yourself.
-
-## Try to find bugs in this application by manually testing many combinations of inputs / scenarios / fuzz testing
-
-
-
-# Planning
-Always save plans into docs/plans/. If that doesn't exist, ask the user what to do.
 
 # Resources available to you
 
@@ -224,35 +120,15 @@ formatters, and tests.
 After committing, if you have written tests, always print out the command for me to run the tests
 from the root of the relevant repo.
 
-## Bug-fixing Protocol
-Suppose you are in a situation where the code is not behaving correctly. Never just try to "fix the
-bug". The fundamental invariant is that at very commit, the test suite should pass if and only if no
-incorrectness in implementation is known at that commit. Accordingly, you must always proceed as
-follows:
-1. If the relevant tests are not passing, the project is in an invalid state. Stop and ask the user
-   what to do.
-2. Attempt to reproduce the bug manually. If you cannot, stop and ask the user for guidance.
-3. Modify a test, or write a new test, that reproduces the bug. The tests will now fail. That is
-   what we want; there is a bug in the implementation so the test suite should not be passing. Do
-   not hack tests to pass when the actual implementation is broken. Commit the tests now.
-4. Fix the bug. If you cannot see how to fix the bug in an attractive way, or are uncertain which of
-   multiple possible approaches to take, then stop and ask the user. Assuming you fixed it then it
-   must now be the case that at least one test transitions from failing to passing. Commit the fix.
-   I must now be able to revert the fix and see the test(s) fail.
-
-
-
 
 ## Staging and committing
-Use the /git-stage skill for precise staging.
 
 Commit  boundaries should be designed such that `git checkout` and/or `git revert` can be used to
 perform meaningful and useful transitions between codebase states (commits). In general every commit
 should compile. However, it is not the case that tests should always pass at every commit because,
-per the Bug-fixing Protocol, we will typically commit failing tests to repro a bug before committing
-the fix in a subsequent commit. This permits using `git checkout` and/or `git revert` to verify the
-fundamental invariant: that tests pass if and only if no incorrectness in implementation is known at
-that commit.
+we will typically commit failing tests to repro a bug before committing the fix in a subsequent
+commit. This permits using `git checkout` and/or `git revert` to verify the fundamental invariant:
+that tests pass if and only if no incorrectness in implementation is known at that commit.
 
 ## Python
 Use `uv` for all Python project interactions. Do not use the legacy `uv pip` interface.
