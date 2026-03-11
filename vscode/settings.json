@@ -299,7 +299,6 @@
   "magit.hide-status-sections": [
     "issues",
     "pull requests",
-    "untracked",
     "recent commits",
     "unpulled",
     "unpushed",

@@ -35,7 +35,6 @@ verify = false
 
 [core]
 # attributesfile = ~/devenv/dotfiles/git/gitattributes
-editor = emacsclient
 excludesfile = ~/.gitignore
 default-branch = main
 
@@ -47,7 +46,7 @@ verify = false
 # colorMovedWS = allow-indentation-change
 frag = red
 submodule = short
-context = 15 # 7777 # 15
+context = 3 # 7777 # 15
 
 [difftool]
 prompt = false

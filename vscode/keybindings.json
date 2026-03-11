@@ -197,11 +197,6 @@
     "when": "editorFocus",
   },
   {
-    "key": "ctrl+x g",
-    "command": "workbench.action.tasks.runTask",
-    "args": "emacs-magit-status",
-  },
-  {
     "key": "ctrl+x i",
     "command": "settings.cycle.indentGuides",
     "when": "editorFocus",
@@ -321,13 +316,6 @@
     "command": "workbench.action.navigateForward",
   },
   {
-    "key": "cmd+m",
-    "command": "command-runner.run",
-    "args": {
-      "command": "magit",
-    },
-  },
-  {
     "key": "cmd+,",
     "command": "editor.action.showHover",
     "when": "editorTextFocus",
@@ -398,14 +386,6 @@
     "key": "shift+cmd+k",
     "command": "-editor.action.deleteLines",
     "when": "textInputFocus && !editorReadonly",
-  },
-  {
-    "key": "cmd+m",
-    "command": "etc.magitStatus",
-  },
-  {
-    "key": "cmd+shift+m",
-    "command": "etc.magitShow",
   },
   {
     "key": "cmd+a",
@@ -918,5 +898,13 @@
     "key": "alt+cmd+s",
     "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
     "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "cmd+m",
+    "command": "magit.status"
+  },
+  {
+    "key": "alt+x g",
+    "command": "-magit.status"
   }
 ]

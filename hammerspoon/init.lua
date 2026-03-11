@@ -59,3 +59,9 @@ hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
 end)
 hs.alert.show("♻️", 0.5)
+
+
+-- open "cursor://dandavison.vscode-etc/command?id=magit.status"
+
+-- # Hammerspoon
+-- hs.urlevent.openURL("cursor://dandavison.vscode-etc/command?id=magit.status")
