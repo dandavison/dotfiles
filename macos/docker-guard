@@ -1,0 +1,6 @@
+#!/bin/sh
+# Quit Docker Desktop if it's running and ~/.docker-wanted doesn't exist.
+[ -f "$HOME/.docker-wanted" ] && exit 0
+pgrep -xq "Docker Desktop" || exit 0
+osascript -e 'quit app "Docker Desktop"' 2>/dev/null
+logger -t docker-guard "Quit unwanted Docker Desktop"

@@ -1,0 +1,3 @@
+#!/bin/sh
+rm -f "$HOME/.docker-wanted"
+osascript -e 'quit app "Docker Desktop"' 2>/dev/null

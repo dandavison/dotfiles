@@ -1,0 +1,3 @@
+#!/bin/sh
+touch "$HOME/.docker-wanted"
+open -a "Docker Desktop"
