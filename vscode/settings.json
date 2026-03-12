@@ -305,6 +305,7 @@
     "unmerged",
     "stashes",
   ],
+  "magit.diff-colorizer-theme": "GitHub",
   "magit.quick-switch-enabled": true,
   "manim-sideview.focusOutputOnRun": false,
   "manim-sideview.outputToTerminal": true,
