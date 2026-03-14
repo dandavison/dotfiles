@@ -34,7 +34,7 @@ status = false
 verify = false
 
 [core]
-# attributesfile = ~/devenv/dotfiles/git/gitattributes
+attributesfile = ~/src/devenv/dotfiles/git/gitattributes
 excludesfile = ~/.gitignore
 default-branch = main
 
@@ -47,6 +47,9 @@ verify = false
 frag = red
 submodule = short
 context = 3 # 7777 # 15
+
+[diff "pdf"]
+textconv = sh -c 'pdftotext -layout "$0" -'
 
 [difftool]
 prompt = false

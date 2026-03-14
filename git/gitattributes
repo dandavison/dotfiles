@@ -22,3 +22,4 @@
 *.lisp  diff=lisp
 *.el    diff=lisp
 # *.js    diff=prettier
+*.pdf   diff=pdf
