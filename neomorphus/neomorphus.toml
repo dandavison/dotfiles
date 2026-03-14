@@ -1,0 +1,2 @@
+[web]
+link_format = "http://wormhole:7117/file/{path}:1?land-in=editor"
