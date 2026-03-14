@@ -106,42 +106,4 @@ config.mouse_bindings = {
 }
 
 
--- colors
-
-config.colors = {
-    -- The default text color
-    foreground = '#000000',
-    -- The default background color
-    background = '#fffefe',
-
-    -- Cursor colors
-    -- cursor_bg = 'CellForeground',
-    -- cursor_fg = 'CellBackground',
-    -- cursor_border = 'CellForeground',
-
-    -- ANSI color palette
-    ansi = {
-        '#000000', -- black
-        '#c91b00', -- red
-        '#066c06', -- green
-        '#e55611', -- yellow
-        '#0225c7', -- blue
-        '#c930c7', -- magenta
-        '#0073c7', -- cyan
-        '#c7c7c7', -- white
-    },
-
-    -- Bright ANSI color palette
-    brights = {
-        '#4c4c4c', -- black
-        '#ff6d67', -- red
-        '#5ff967', -- green
-        '#fe9a67', -- yellow
-        '#6871ff', -- blue
-        '#ff76ff', -- magenta
-        '#1e81b0', -- cyan
-        '#6b6868', -- white
-    },
-}
-
 return config
