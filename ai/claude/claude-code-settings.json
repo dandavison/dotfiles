@@ -1,4 +1,5 @@
 {
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash",
@@ -11,16 +12,17 @@
       "WebFetch"
     ]
   },
-  "model": "opus",
+  "model": "opus[1m]",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true
   },
   "spinnerVerbs": {
     "mode": "replace",
-    "verbs": [""]
+    "verbs": [
+      ""
+    ]
   },
-  "includeCoAuthoredBy": false,
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
