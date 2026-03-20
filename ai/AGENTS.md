@@ -49,6 +49,7 @@ I'm an engineer on the open source server team at Temporal. We'll often be worki
 - Relevant git repos are at ~/src/temporal-all/repos (the server repo is called `temporal`)
 - Consult the oncall repo for detailed information about operational logistics of Temporal cloud
   (oncall and test cloud cell usage)
+- Markdown documents explaining various aspects of Temporal are at https://github.com/dandavison/log/issues. If I ask you to post a markdown document as a comment to an issue in dandavison/log this is what I mean.
 
 ## Slack
 Use the `agent-slack` CLI (see `~/.agents/skills/agent-slack/SKILL.md`) for all Slack operations.
