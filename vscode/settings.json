@@ -55,7 +55,6 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
   "editor.lightbulb.enabled": "off",
-  "editor.lineNumbers": "off",
   "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
@@ -84,7 +83,7 @@
   "editor.trimAutoWhitespace": false,
   "editor.wordBasedSuggestions": "off",
   "editor.wordSeparators": "_`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
-  "editor.wordWrapColumn": 777777,
+  "editor.wordWrapColumn": 100,
   "emacs-mcx.strictEmacsMove": true,
   "emacs-mcx.useMetaPrefixAlt": true,
   "emmet.includeLanguages": {
@@ -305,7 +304,8 @@
     "unmerged",
     "stashes",
   ],
-  "magit.diff-colorizer-theme": "GitHub",
+  "magit.use-diff-colorizer": true,
+  "magit.diff-colorizer-command": ["delta", "--color-only", "--no-gitconfig", "--true-color", "always", "--light"],
   "magit.quick-switch-enabled": true,
   "manim-sideview.focusOutputOnRun": false,
   "manim-sideview.outputToTerminal": true,
@@ -688,7 +688,7 @@
   "cursorBlame.editorDecoration.enabled": false,
   "claudeCode.respectGitIgnore": false,
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.selectedModel": "opus",
+  "claudeCode.selectedModel": "opus[1m]",
   "claudeCode.allowDangerouslySkipPermissions": true,
   "claudeCode.initialPermissionMode": "bypassPermissions",
   "claudeCode.spinnerVerbs": {
@@ -705,4 +705,5 @@
     "reportWildcardImportFromLibrary": "none",
     "reportMissingTypeStubs": "none",
   },
+  "editor.lineNumbers": "off",
 }
