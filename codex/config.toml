@@ -1,0 +1,8 @@
+model = "gpt-5.4"
+model_reasoning_effort = "medium"
+
+[projects."/Users/dan/src/temporal-all/.git/modules/repos"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/devenv/tools"]
+trust_level = "trusted"
