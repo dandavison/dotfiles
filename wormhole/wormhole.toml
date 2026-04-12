@@ -4,6 +4,11 @@ search_paths = [
     "~/src/devenv",
 ]
 
+card_commands = [
+    "ls .task",
+    "git log --format='%an|%ar|%s' -n 3 | awk -F'|' '{split($1,a,\" \"); gsub(/ ago$/,\"\",$2); printf \"%-10s %-15s %s\\n\", a[1], $2, $3}'",
+]
+
 [available]
 exclude = [
     "devenv",
