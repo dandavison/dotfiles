@@ -1,4 +1,7 @@
 {
+  "env": {
+    "GIT_PAGER": ""
+  },
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
@@ -9,10 +12,12 @@
       "Read",
       "Write",
       "WebSearch",
-      "WebFetch"
+      "WebFetch",
+      "mcp__notion__*",
+      "mcp__temporal-docs__*",
+      "Edit(~/.claude/skills/live-transcribe/**)"
     ]
   },
-  "model": "opus[1m]",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true
@@ -36,5 +41,6 @@
       "type": "url",
       "url": "https://temporal.mcp.kapa.ai"
     }
-  }
+  },
+  "model": "opus[1m]"
 }

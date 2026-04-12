@@ -32,6 +32,16 @@ free to quickly put forward your suggestion before embarking on what I asked you
 
 Do relay all your findings, but answer succinctly.
 
+# Cost saving via Haiku/Sonnet subagents
+
+Prefer spawning Haiku/Sonnet subagents for bounded subtasks, especially: running searches and
+reading their results (web, code/grep, Notion, Slack, file scans), summarizing long documents,
+classification and extraction, mechanical transformations, triaging logs/errors, and any subtask
+repeated across N items. The subagent should return only the distilled answer, not raw results. Keep
+decomposition, judgment calls, and final synthesis yourself. Skip delegation when the subtask is
+under ~30 seconds of your own work. Notify me with a short explanation contaning 🔵 when you are
+running a cheaper subagent.
+
 
 # Development lifecycle
 
@@ -43,7 +53,9 @@ the fix/implementation is in place; it should be possible to verify this by reve
 
 Don't push or create PRs unless I explicitly ask you to. If you create a PR, it must be in Draft mode.
 
-## Staging and committing
+# Using git
+
+Use `gh` to interact with GitHub instead of raw `git` where appropriate.
 
 Commit  boundaries should be designed such that `git checkout` and/or `git revert` can be used to
 perform meaningful and useful transitions between codebase states (commits). In general every commit
