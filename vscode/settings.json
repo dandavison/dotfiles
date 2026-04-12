@@ -179,6 +179,7 @@
   "go.alternateTools": {
     "customFormatter": "/Users/dan/go/bin/golines",
   },
+  "go.formatFlags": ["--max-len=100"],
   "go.toolsManagement.autoUpdate": true,
   "gopls": {
     "build.buildFlags": ["-tags=test_dep"],
@@ -655,7 +656,6 @@
     "sideBar.border": "#282C34",
     "workspaceInStatusBar.text": "#0225c7",
   },
-  "workbench.colorTheme": "Default Light Modern",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "none",
@@ -706,4 +706,5 @@
     "reportMissingTypeStubs": "none",
   },
   "editor.lineNumbers": "off",
+  "workbench.colorTheme": "Default Light Modern",
 }

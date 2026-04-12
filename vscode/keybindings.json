@@ -890,16 +890,20 @@
     "when": "editorTextFocus && !config.claudeCode.useTerminal"
   },
   {
-    "key": "alt+cmd+s",
-    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
-    "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
-  },
-  {
     "key": "cmd+m",
     "command": "magit.status"
   },
   {
     "key": "alt+x g",
     "command": "-magit.status"
+  },
+  {
+    "key": "cmd+k",
+    "command": "claudeVSCodeSidebar.focus"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+    "when": "!isAuxiliaryWindowFocusedContext"
   }
 ]
