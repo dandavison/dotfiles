@@ -34,12 +34,14 @@ Do relay all your findings, but answer succinctly.
 
 # Cost saving via Haiku/Sonnet subagents
 
+If you are not Claude Code (for example, you are Codex) then ignore this section.
+
 Prefer spawning Haiku/Sonnet subagents for bounded subtasks, especially: running searches and
 reading their results (web, code/grep, Notion, Slack, file scans), summarizing long documents,
 classification and extraction, mechanical transformations, triaging logs/errors, and any subtask
 repeated across N items. The subagent should return only the distilled answer, not raw results. Keep
 decomposition, judgment calls, and final synthesis yourself. Skip delegation when the subtask is
-under ~30 seconds of your own work. Notify me with a short explanation contaning 🔵 when you are
+under ~30 seconds of your own work. Notify me with a short explanation containing 🔵 when you are
 running a cheaper subagent.
 
 
