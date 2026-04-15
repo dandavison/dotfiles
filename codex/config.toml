@@ -6,3 +6,15 @@ trust_level = "trusted"
 
 [projects."/Users/dan/src/devenv/tools"]
 trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/temporal"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/sdk-go"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/wormhole"]
+trust_level = "trusted"
+
+[mcp_servers.notion]
+url = "https://mcp.notion.com/mcp"
