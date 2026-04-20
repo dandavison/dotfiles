@@ -707,4 +707,5 @@
   },
   "editor.lineNumbers": "off",
   "workbench.colorTheme": "Default Light Modern",
+  "chatgpt.commentCodeLensEnabled": false,
 }

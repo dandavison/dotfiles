@@ -16,8 +16,15 @@
       "mcp__notion__*",
       "mcp__temporal-docs__*",
       "Edit(~/.claude/skills/live-transcribe/**)"
+    ],
+    "deny": [
+      "Bash(ct)",
+      "Bash(ct *)",
+      "Bash(omni)",
+      "Bash(omni *)"
     ]
   },
+  "model": "opus[1m]",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true
@@ -28,6 +35,7 @@
       ""
     ]
   },
+  "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
@@ -41,6 +49,5 @@
       "type": "url",
       "url": "https://temporal.mcp.kapa.ai"
     }
-  },
-  "model": "opus[1m]"
+  }
 }

@@ -16,5 +16,11 @@ trust_level = "trusted"
 [projects."/Users/dan/src/wormhole"]
 trust_level = "trusted"
 
+[projects."/Users/dan/src/todo"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/api"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
