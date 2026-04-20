@@ -1,5 +1,6 @@
 {
   "env": {
+    "TEMPORAL_IS_AGENT": "true",
     "GIT_PAGER": ""
   },
   "includeCoAuthoredBy": false,
