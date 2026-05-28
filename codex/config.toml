@@ -1,5 +1,44 @@
+approval_policy = "never"
+sandbox_mode    = "workspace-write"
 model = "gpt-5.4"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "xhigh"
+
+
+[sandbox_workspace_write]
+writable_roots = [
+    "/Users/dan/src/temporal-all/repos/samples-go",
+    "/Users/dan/src/temporal-all/repos/samples-python",
+    "/Users/dan/src/temporal-all/repos/samples-dotnet",
+    "/Users/dan/src/temporal-all/.git/modules/repos",
+    "/Users/dan/src/temporal-all/repos/samples-go",
+    "/Users/dan/src/temporal-all/repos/samples-python",
+    "/Users/dan/src/temporal-all/repos/samples-dotnet",
+    "/Users/dan/src/temporal-all/.git/modules/repos/samples-go",
+    "/Users/dan/src/temporal-all/.git/modules/repos/samples-python",
+    "/Users/dan/src/temporal-all/.git/modules/repos/samples-dotnet",
+    "/Users/dan/Library/Caches/go-build",
+    "/Users/dan/go/pkg/mod",
+    "/Users/dan/.cache/uv",
+    "/Users/dan/.nuget/packages",
+]
+network_access = true
+
+
+
+[projects."/Users/dan/src/temporal-all/repos/samples-go"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/samples-python"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/samples-dotnet"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/sdk-dotnet"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/api-go"]
+trust_level = "trusted"
 
 [projects."/Users/dan/src/temporal-all/.git/modules/repos"]
 trust_level = "trusted"
@@ -22,5 +61,23 @@ trust_level = "trusted"
 [projects."/Users/dan/src/temporal-all/repos/api"]
 trust_level = "trusted"
 
+[projects."/Users/dan/tmp/3p/context-engineering"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/saas-control-plane"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/sdk-python"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/cli"]
+trust_level = "trusted"
+
+[projects."/Users/dan/worktrees/cli/fix-username-bug/cli"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 2

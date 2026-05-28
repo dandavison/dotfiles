@@ -39,6 +39,7 @@ end
 
 -- Project hotkey mappings (personal config)
 local keymap = {
+    [0] = "projects",
     [1] = "temporal",
     [2] = "api",
     [3] = "api-go",
@@ -48,7 +49,6 @@ local keymap = {
     [7] = "sdk-python",
     [8] = "wormhole",
     [9] = "devenv",
-    [0] = "temporal-all",
 }
 
 -- Keybindings

@@ -36,6 +36,7 @@
       ""
     ]
   },
+  "effortLevel": "medium",
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
@@ -50,5 +51,6 @@
       "type": "url",
       "url": "https://temporal.mcp.kapa.ai"
     }
-  }
+  },
+  "theme": "light"
 }

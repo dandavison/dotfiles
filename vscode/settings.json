@@ -636,7 +636,9 @@
   "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
   "vale.enableSpellcheck": true,
   "window.confirmSaveUntitledWorkspace": false,
+  "window.commandCenter": false,
   "window.customTitleBarVisibility": "never",
+  "window.menuBarVisibility": "hidden",
   "window.nativeFullScreen": false,
   "window.openFoldersInNewWindow": "on",
   "window.openWithoutArgumentsInNewWindow": "on",
@@ -644,6 +646,7 @@
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.zoomLevel": 0.3,
   "workbench.activityBar.location": "hidden",
+  "workbench.layoutControl.enabled": false,
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#fafafaf0",
@@ -708,4 +711,5 @@
   "editor.lineNumbers": "off",
   "workbench.colorTheme": "Default Light Modern",
   "chatgpt.commentCodeLensEnabled": false,
+  "window.autoDetectColorScheme": false,
 }
