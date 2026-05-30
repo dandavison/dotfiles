@@ -23,7 +23,7 @@
             ]
           },
           {
-            "description": "left_option+right_shift => f17 (cursorToggle)",
+            "description": "left_option+right_shift => f17 (codeToggle)",
             "manipulators": [
               {
                 "from": {

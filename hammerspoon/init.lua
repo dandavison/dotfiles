@@ -23,9 +23,9 @@ local function terminal()
     end
 end
 
--- Cursor toggle
-local function cursor()
-    local app = hs.application.find("Cursor")
+-- VSCode toggle
+local function code()
+    local app = hs.application.find("Code")
     if app then
         if app:isFrontmost() then
             app:hide()
@@ -33,7 +33,7 @@ local function cursor()
             app:activate()
         end
     else
-        hs.application.launchOrFocus("/Applications/Cursor.app")
+        hs.application.launchOrFocus("/Applications/Visual Studio Code.app")
     end
 end
 
@@ -54,14 +54,14 @@ local keymap = {
 -- Keybindings
 wormhole.bindKeys(keymap)
 hs.hotkey.bind({}, "f16", terminal)
-hs.hotkey.bind({}, "f17", cursor)
+hs.hotkey.bind({}, "f17", code)
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
 end)
 hs.alert.show("♻️", 0.5)
 
 
--- open "cursor://dandavison.vscode-etc/command?id=magit.status"
+-- open "vscode://dandavison.vscode-etc/command?id=magit.status"
 
 -- # Hammerspoon
--- hs.urlevent.openURL("cursor://dandavison.vscode-etc/command?id=magit.status")
+-- hs.urlevent.openURL("vscode://dandavison.vscode-etc/command?id=magit.status")

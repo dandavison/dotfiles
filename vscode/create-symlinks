@@ -9,7 +9,6 @@ link_user() {
 
 link_user "$HOME/Library/Application Support/Code/User"
 link_user "$HOME/Library/Application Support/Code - Insiders/User"
-link_user "$HOME/Library/Application Support/Cursor/User"
 link_user "$HOME/.vscode-server/data/User"
 
 mkdir -p "$HOME/.vscode-server/data/Machine"
