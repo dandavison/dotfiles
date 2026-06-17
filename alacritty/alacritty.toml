@@ -153,6 +153,7 @@ program = "/opt/homebrew/bin/tmux"
 
 [window]
 startup_mode = "SimpleFullscreen"
+option_as_alt = "OnlyLeft"   # or "Both"
 
 [window.padding]
 x = 7
