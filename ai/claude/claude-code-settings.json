@@ -25,11 +25,15 @@
       "Bash(omni *)"
     ]
   },
-  "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/dan/src/devenv/dotfiles/ai/claude/claude-statusline.sh"
+  },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true
   },
+  "spinnerTipsEnabled": false,
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
@@ -37,8 +41,10 @@
     ]
   },
   "effortLevel": "medium",
+  "promptSuggestionEnabled": false,
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "light",
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
   },
@@ -52,5 +58,5 @@
       "url": "https://temporal.mcp.kapa.ai"
     }
   },
-  "theme": "light"
+  "model": "opus[1m]"
 }
