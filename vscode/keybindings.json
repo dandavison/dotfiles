@@ -74,7 +74,8 @@
         "workbench.action.closeSidebar",
         "workbench.action.closePanel",
         "workbench.action.closeEditorsInOtherGroups",
-        "aichat.close-sidebar",
+        "aichat.close-sidebar",  // cursor
+        // "workbench.action.closeAuxiliaryBar",  // vscode
       ],
     },
     "when": "!panelFocus",
@@ -601,7 +602,8 @@
   },
   {
     "key": "shift+cmd+b",
-    "command": "aichat.close-sidebar",
+    "command": "aichat.close-sidebar",  // cursor
+    // "command": "workbench.action.closeAuxiliaryBar" // vscode
   },
   {
     "key": "alt+cmd+m",
