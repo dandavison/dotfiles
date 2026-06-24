@@ -712,4 +712,6 @@
   "chatgpt.commentCodeLensEnabled": false,
   "window.autoDetectColorScheme": false,
   "git.enabled": true,
+  "workbench.agentsWindowButton.enabled": false,  // hide cursor top bar stuff
+  "workbench.editor.editorActionsLocation": "hidden", // hide cursor top bar stuff
 }
