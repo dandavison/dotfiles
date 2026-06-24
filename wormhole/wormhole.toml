@@ -1,3 +1,10 @@
+# The active editor: source of truth for wormhole and for editor-aware shell
+# functions/tools (queried live via `wormhole editor`). Switch with either
+# `wormhole editor <name>` (writes back here) or by editing this line and
+# running `wormhole refresh`. One of: cursor, code, code-insiders, emacs, idea,
+# pycharm, pycharm-ce, none.
+editor = "code"
+
 search_paths = [
     "~/src/temporal-all/repos",
     "~/src",

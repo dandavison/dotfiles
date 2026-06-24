@@ -23,7 +23,11 @@ local function terminal()
     end
 end
 
--- VSCode toggle
+-- Editor toggle (f17). Pinned to VSCode rather than tracking the current
+-- editor (`wormhole editor`): doing so correctly needs the running-name vs
+-- launchable-name distinction (VSCode reports "Code" when running but launches
+-- as "Visual Studio Code") that wormhole's editor.rs already encodes but the
+-- hammerspoon module doesn't expose. Not worth duplicating here for now.
 local function code()
     local app = hs.application.find("Code")
     if app then
