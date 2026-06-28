@@ -160,7 +160,12 @@
   },
   {
     "key": "ctrl+tab",
-    "command": "editor.unfoldRecursively",
+    "command": "etc.toggleFold",
+    "when": "editorTextFocus && foldingEnabled",
+  },
+  {
+    "key": "shift+tab",
+    "command": "etc.toggleFoldAll",
     "when": "editorTextFocus && foldingEnabled",
   },
   {
@@ -551,10 +556,6 @@
   {
     "key": "alt+cmd+right",
     "command": "-workbench.action.nextEditor",
-  },
-  {
-    "key": "shift+tab",
-    "command": "editor.foldAll",
   },
   {
     "key": "cmd+b",
