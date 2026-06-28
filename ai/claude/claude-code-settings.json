@@ -4,6 +4,7 @@
     "GIT_PAGER": ""
   },
   "includeCoAuthoredBy": false,
+  "fileCheckpointingEnabled": false,
   "permissions": {
     "allow": [
       "Bash",
@@ -18,13 +19,9 @@
       "mcp__temporal-docs__*",
       "Edit(~/.claude/skills/live-transcribe/**)"
     ],
-    "deny": [
-      "Bash(ct)",
-      "Bash(ct *)",
-      "Bash(omni)",
-      "Bash(omni *)"
-    ]
+    "deny": ["Bash(ct)", "Bash(ct *)", "Bash(omni)", "Bash(omni *)"]
   },
+  "model": "opus[1m]",
   "statusLine": {
     "type": "command",
     "command": "/Users/dan/src/devenv/dotfiles/ai/claude/claude-statusline.sh"
@@ -36,9 +33,7 @@
   "spinnerTipsEnabled": false,
   "spinnerVerbs": {
     "mode": "replace",
-    "verbs": [
-      ""
-    ]
+    "verbs": [""]
   },
   "effortLevel": "medium",
   "promptSuggestionEnabled": false,
@@ -57,6 +52,5 @@
       "type": "url",
       "url": "https://temporal.mcp.kapa.ai"
     }
-  },
-  "model": "opus[1m]"
+  }
 }
