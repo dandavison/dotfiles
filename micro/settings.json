@@ -3,5 +3,6 @@
     "cursorline": false,
     "reload": "auto",
     "ruler": false,
-    "statusformatr": ""
+    "statusformatr": "",
+    "xterm": true
 }

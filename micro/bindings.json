@@ -11,6 +11,8 @@
 
   "Ctrl-a": "StartOfLine",
   "Ctrl-e": "EndOfLine",
+  "Alt-<": "CursorStart",
+  "Alt->": "CursorEnd",
   "Ctrl-d": "Delete",
   "Ctrl-y": "Paste",
 
