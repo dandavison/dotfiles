@@ -28,4 +28,5 @@
   "<Ctrl-c><Ctrl-c>": "Save,Quit",
   "Alt-k": "DescribeKey",
   "Alt-h": "HighlightWord",
+  "Alt-Ctrl-n": "SkipMultiCursor",
 }
