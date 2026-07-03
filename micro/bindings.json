@@ -26,4 +26,5 @@
 
   "<Ctrl-x><Ctrl-s>": "Save",
   "<Ctrl-c><Ctrl-c>": "Save,Quit",
+  "Alt-k": "DescribeKey",
 }
