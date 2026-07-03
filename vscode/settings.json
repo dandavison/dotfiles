@@ -708,10 +708,21 @@
     "reportMissingTypeStubs": "none",
   },
   "editor.lineNumbers": "off",
-  "workbench.colorTheme": "Light Modern",
+  "workbench.colorTheme": "Default Light Modern",
   "chatgpt.commentCodeLensEnabled": false,
   "window.autoDetectColorScheme": false,
   "git.enabled": true,
   "workbench.agentsWindowButton.enabled": false,  // hide cursor top bar stuff
-  "workbench.editor.editorActionsLocation": "hidden", // hide cursor top bar stuff
+  "workbench.editor.editorActionsLocation": "hidden",
+  "hippieExpand.languages": [
+    "bash",
+    "go",
+    "javascript",
+    "markdown",
+    "plaintext",
+    "python",
+    "rust",
+    "shell",
+    "typescript"
+  ], // hide cursor top bar stuff
 }

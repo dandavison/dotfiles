@@ -888,11 +888,6 @@
     "when": "editorFocus",
   },
   {
-    "key": "shift+cmd+k",
-    "command": "claude-vscode.focus",
-    "when": "editorTextFocus && !config.claudeCode.useTerminal"
-  },
-  {
     "key": "cmd+m",
     "command": "magit.status"
   },
@@ -901,12 +896,12 @@
     "command": "-magit.status"
   },
   {
-    "key": "cmd+k",
-    "command": "claudeVSCodeSidebar.focus"
-  },
-  {
     "key": "alt+cmd+s",
     "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
     "when": "!isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "cmd+k",
+    "command": "composer.focusComposer"
   }
 ]
