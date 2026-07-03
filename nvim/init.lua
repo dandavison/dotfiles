@@ -10,6 +10,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.o.background = "light"
+vim.o.number = false
+vim.o.relativenumber = false
 
 require("lazy").setup({
   {

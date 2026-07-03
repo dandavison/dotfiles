@@ -1,5 +1,5 @@
 theme = "github_light"
 
 [editor]
-# Trim the gutter to line numbers only: no diagnostics/diff "fringe" column.
-gutters = ["line-numbers"]
+# No gutter at all: no line numbers, no diagnostics/diff "fringe" column.
+gutters = []
