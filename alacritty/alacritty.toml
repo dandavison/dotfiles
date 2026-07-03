@@ -149,7 +149,7 @@ mods = "Command"
 
 [terminal.shell]
 args = ["new-session", "-A", "-s", "0"]
-program = "/opt/homebrew/bin/tmux"
+program = "/Users/dan/bin/tmux"
 
 [window]
 startup_mode = "SimpleFullscreen"
