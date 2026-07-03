@@ -1,0 +1,78 @@
+# See https://github.com/altsem/gitu/blob/master/src/default_config.toml
+
+[general]
+diff_colorizer.enabled = true
+stash_list_limit = 0
+recent_commits_limit = 0
+collapsed_sections = ["branch_status"]
+
+# GitHub light theme palette:
+#   fg #333333  gray #969896  pink #a71d5d  blue #0086b3
+#   purple #795da3  string #183691  green #63a35c/#009926
+#   orange #df5000  red #f93232
+[style]
+separator = { mods = "DIM" }
+
+info_msg = { fg = "#009926", mods = "BOLD" }
+error_msg = { fg = "#f93232", mods = "BOLD" }
+command = { fg = "#0086b3", mods = "BOLD" }
+
+menu.heading = { fg = "#0086b3", mods = "BOLD" }
+menu.key = { fg = "#a71d5d" }
+menu.active_arg = { fg = "#df5000", mods = "BOLD" }
+menu.inactive_arg = {}
+
+prompt = { fg = "#0086b3", mods = "DIM" }
+
+section_header = { fg = "#000000", mods = "BOLD" }
+file_header = { fg = "#6a737d" }
+hunk_header = { fg = "#0086b3" }
+
+diff_highlight.tag_old = { fg = "#770000", mods = "BOLD" }
+diff_highlight.tag_new = { fg = "#009926", mods = "BOLD" }
+diff_highlight.unchanged_old = { mods = "DIM" }
+diff_highlight.unchanged_new = { mods = "DIM" }
+diff_highlight.changed_old = { fg = "#770000" }
+diff_highlight.changed_new = { fg = "#009926" }
+
+syntax_highlight.enabled = true
+syntax_highlight.attribute = { fg = "#795da3" }
+syntax_highlight.comment = { fg = "#969896" }
+syntax_highlight.constant_builtin = { fg = "#0086b3" }
+syntax_highlight.constant = { fg = "#0086b3" }
+syntax_highlight.constructor = { fg = "#0086b3" }
+syntax_highlight.embedded = { fg = "#333333" }
+syntax_highlight.function_builtin = { fg = "#0086b3" }
+syntax_highlight.function = { fg = "#795da3" }
+syntax_highlight.keyword = { fg = "#a71d5d" }
+syntax_highlight.number = { fg = "#0086b3" }
+syntax_highlight.module = { fg = "#0086b3" }
+syntax_highlight.property = { fg = "#333333" }
+syntax_highlight.operator = { fg = "#a71d5d" }
+syntax_highlight.punctuation_bracket = { fg = "#333333" }
+syntax_highlight.punctuation_delimiter = { fg = "#333333" }
+syntax_highlight.string_special = { fg = "#009926" }
+syntax_highlight.string = { fg = "#183691" }
+syntax_highlight.tag = { fg = "#63a35c" }
+syntax_highlight.type = { fg = "#0086b3" }
+syntax_highlight.type_builtin = { fg = "#0086b3" }
+syntax_highlight.variable_builtin = { fg = "#df5000" }
+syntax_highlight.variable_parameter = { fg = "#333333" }
+
+picker.prompt = { fg = "#0086b3" }
+picker.info = { mods = "DIM" }
+picker.selection_line = { mods = "BOLD" }
+picker.matched = { fg = "#a71d5d", mods = "BOLD" }
+
+cursor = { symbol = "▌", fg = "#0086b3" }
+selection_bar = { symbol = "▌", fg = "#0086b3", mods = "DIM" }
+selection_line = { mods = "BOLD" }
+selection_area = {}
+
+hash = { fg = "#0086b3" }
+branch = { fg = "#63a35c" }
+remote = { fg = "#df5000" }
+tag = { fg = "#0086b3" }
+
+blame.line_num = { mods = "DIM" }
+blame.code_line = { mods = "DIM" }
