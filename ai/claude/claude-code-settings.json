@@ -4,7 +4,6 @@
     "GIT_PAGER": ""
   },
   "includeCoAuthoredBy": false,
-  "fileCheckpointingEnabled": false,
   "permissions": {
     "allow": [
       "Bash",
@@ -19,7 +18,12 @@
       "mcp__temporal-docs__*",
       "Edit(~/.claude/skills/live-transcribe/**)"
     ],
-    "deny": ["Bash(ct)", "Bash(ct *)", "Bash(omni)", "Bash(omni *)"]
+    "deny": [
+      "Bash(ct)",
+      "Bash(ct *)",
+      "Bash(omni)",
+      "Bash(omni *)"
+    ]
   },
   "model": "opus[1m]",
   "statusLine": {
@@ -33,13 +37,16 @@
   "spinnerTipsEnabled": false,
   "spinnerVerbs": {
     "mode": "replace",
-    "verbs": [""]
+    "verbs": [
+      ""
+    ]
   },
   "effortLevel": "medium",
   "promptSuggestionEnabled": false,
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "theme": "light",
+  "fileCheckpointingEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
   },
