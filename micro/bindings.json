@@ -8,6 +8,7 @@
   "<Ctrl-x><Ctrl-s>": "Save",
   "Alt-<": "CursorStart",
   "Alt->": "CursorEnd",
+  "Alt-|": "command-edit:textfilter ",
   "Alt-Ctrl-n": "SkipMultiCursor",
   "Alt-g": "None",
   "Alt-h": "HighlightWord",
