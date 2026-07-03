@@ -91,6 +91,37 @@ key = "Return"
 mods = "Shift"
 chars = "\u001B\r"
 
+# micro editor: Cmd-<key> -> raw escape sequences bound in micro/bindings.json
+[[keyboard.bindings]]
+chars = "\u001bcmda"
+key = "A"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001bcmdx"
+key = "X"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001bcmdz"
+key = "Z"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001bcmdrd"
+key = "Z"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001bcmdf"
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001bcmdd"
+key = "D"
+mods = "Command"
+
 [terminal]
 
 [colors.bright]

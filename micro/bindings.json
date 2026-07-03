@@ -1,4 +1,10 @@
 {
+  "\u001bcmda": "SelectAll",
+  "\u001bcmdd": "Duplicate|DuplicateLine",
+  "\u001bcmdf": "Find",
+  "\u001bcmdrd": "Redo",
+  "\u001bcmdx": "Cut|CutLine",
+  "\u001bcmdz": "Undo",
   "<Ctrl-x><Ctrl-s>": "Save",
   "Alt-<": "CursorStart",
   "Alt->": "CursorEnd",
