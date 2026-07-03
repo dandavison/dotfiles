@@ -19,6 +19,11 @@
   "Ctrl-p": "CommandMode",
   "CtrlUnderscore": "Find",
 
+  "Ctrl-k": "lua:initlua.killLine",
+
   "Ctrl-g": "None",
   "Alt-g": "None",
+
+  "<Ctrl-x><Ctrl-s>": "Save",
+  "<Ctrl-c><Ctrl-c>": "Save,Quit",
 }
