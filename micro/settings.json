@@ -1,6 +1,7 @@
 {
-    "colorscheme": "github-light",
+    "colorscheme": "github",
     "cursorline": false,
     "reload": "auto",
-    "ruler": false
+    "ruler": false,
+    "statusformatr": ""
 }

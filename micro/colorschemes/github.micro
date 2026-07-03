@@ -1,0 +1,64 @@
+# GitHub — emulates bat's "GitHub" theme (the AlexanderEkdahl GitHub Sublime theme).
+# Standalone; no include.
+
+color-link default "#333333,#ffffff"
+
+color-link comment "#969896,#ffffff"
+
+color-link statement "#a71d5d,#ffffff"
+color-link preproc "#a71d5d,#ffffff"
+
+color-link identifier "#795da3,#ffffff"
+color-link identifier.class "#795da3,#ffffff"
+color-link identifier.macro "#795da3,#ffffff"
+color-link identifier.var "#0086b3,#ffffff"
+
+color-link special "#795da3,#ffffff"
+
+color-link type "#0086b3,#ffffff"
+color-link type.keyword "#a71d5d,#ffffff"
+
+color-link constant "#0086b3,#ffffff"
+color-link constant.number "#0086b3,#ffffff"
+color-link constant.bool "#0086b3,#ffffff"
+color-link constant.string "#183691,#ffffff"
+color-link constant.specialChar "#183691,#ffffff"
+
+color-link symbol "#333333,#ffffff"
+color-link symbol.brackets "#333333,#ffffff"
+color-link symbol.operator "#a71d5d,#ffffff"
+color-link symbol.tag "#63a35c,#ffffff"
+
+color-link underlined "underline #183691,#ffffff"
+color-link error "bold #f93232,#ffffff"
+color-link todo "bold #a71d5d,#ffffff"
+
+color-link selection "#333333,#b0cde7"
+color-link cursor-line "#f8eec7"
+color-link color-column "#f8eec7"
+color-link match-brace "#333333,#b0cde7"
+color-link hlsearch "#333333,#ffe792"
+
+color-link line-number "#c0c0c0,#ffffff"
+color-link current-line-number "#333333,#ffffff"
+color-link indent-char "#e0e0e0,#ffffff"
+color-link divider "#e0e0e0,#ffffff"
+color-link scrollbar "#d1d5da,#ffffff"
+
+color-link statusline "#333333,#ededed"
+color-link statusline.inactive "#969896,#f6f8fa"
+color-link tabbar "#333333,#ededed"
+color-link tabbar.active "#333333,#ffffff"
+
+color-link message "#333333,#ffffff"
+color-link error-message "#f93232,#ffffff"
+
+color-link gutter-error "#ffffff,#f93232"
+color-link gutter-warning "#b08800,#ffffff"
+
+color-link diff-added "#003300,#ddffdd"
+color-link diff-modified "#b08800,#ffffff"
+color-link diff-deleted "#770000,#ffdddd"
+
+color-link trailingws ",#ffdddd"
+color-link tab-error ",#ffdddd"

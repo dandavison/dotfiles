@@ -1,4 +1,22 @@
 {
-	"Ctrl-a": "StartOfLine",
-	"Ctrl-y": "Paste",
+  "ShiftUp": "SelectUp",
+  "ShiftDown": "SelectDown",
+  "ShiftLeft": "SelectLeft",
+  "ShiftRight": "SelectRight",
+
+  "AltLeft": "WordLeft",
+  "AltRight": "WordRight",
+  "AltShiftLeft": "SelectWordLeft",
+  "AltShiftRight": "SelectWordRight",
+
+  "Ctrl-a": "StartOfLine",
+  "Ctrl-e": "EndOfLine",
+  "Ctrl-d": "Delete",
+  "Ctrl-y": "Paste",
+
+  "Ctrl-p": "CommandMode",
+  "CtrlUnderscore": "Find",
+
+  "Ctrl-g": "None",
+  "Alt-g": "None",
 }
