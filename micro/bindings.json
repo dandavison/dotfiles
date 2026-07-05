@@ -1,6 +1,7 @@
 {
   "\u001bcmda": "SelectAll",
   "\u001bcmdd": "Duplicate|DuplicateLine",
+  "\u001bcmdc": "Copy",
   "\u001bcmdf": "Find",
   "\u001bcmdrd": "Redo",
   "\u001bcmds": "Save",

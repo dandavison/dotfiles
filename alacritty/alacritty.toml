@@ -86,6 +86,20 @@ mods = "Shift"
 chars = "\u001B\r"
 
 # micro editor: Cmd-<key> -> raw escape sequences bound in micro/bindings.json
+
+# Cmd-C: copy Alacritty's selection when one exists, else pass through to micro
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+mode = "Selection"
+
+[[keyboard.bindings]]
+chars = "\u001bcmdc"
+key = "C"
+mods = "Command"
+mode = "~Selection"
+
 [[keyboard.bindings]]
 chars = "\u001bcmda"
 key = "A"
