@@ -92,6 +92,21 @@ key = "A"
 mods = "Command"
 
 [[keyboard.bindings]]
+chars = "\u001bcmdd"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001bcmdf"
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001bcmds"
+key = "S"
+mods = "Command"
+
+[[keyboard.bindings]]
 chars = "\u001bcmdx"
 key = "X"
 mods = "Command"
@@ -106,15 +121,6 @@ chars = "\u001bcmdrd"
 key = "Z"
 mods = "Command|Shift"
 
-[[keyboard.bindings]]
-chars = "\u001bcmdf"
-key = "F"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001bcmdd"
-key = "D"
-mods = "Command"
 
 [terminal]
 

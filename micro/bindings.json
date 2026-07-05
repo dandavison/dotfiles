@@ -3,6 +3,7 @@
   "\u001bcmdd": "Duplicate|DuplicateLine",
   "\u001bcmdf": "Find",
   "\u001bcmdrd": "Redo",
+  "\u001bcmds": "Save",
   "\u001bcmdx": "Cut|CutLine",
   "\u001bcmdz": "Undo",
   "<Ctrl-x><Ctrl-s>": "Save",
