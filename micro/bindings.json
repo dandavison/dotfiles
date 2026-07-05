@@ -8,12 +8,13 @@
   "<Ctrl-x><Ctrl-s>": "Save",
   "Alt-<": "CursorStart",
   "Alt->": "CursorEnd",
-  "Alt-|": "command-edit:textfilter ",
   "Alt-Ctrl-n": "SkipMultiCursor",
   "Alt-g": "None",
   "Alt-h": "HighlightWord",
   "Alt-k": "DescribeKey",
   "Alt-p": "CommandMode",
+  "Alt-w": "Copy",
+  "Alt-|": "command-edit:textfilter ",
   "AltLeft": "WordLeft",
   "AltRight": "WordRight",
   "AltShiftLeft": "SelectWordLeft",
@@ -29,5 +30,5 @@
   "ShiftDown": "SelectDown",
   "ShiftLeft": "SelectLeft",
   "ShiftRight": "SelectRight",
-  "ShiftUp": "SelectUp",
+  "ShiftUp": "SelectUp"
 }
