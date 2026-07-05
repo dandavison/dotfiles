@@ -29,12 +29,6 @@ key = "Right"
 mods = "Command"
 
 [[keyboard.bindings]]
-# tmux scroll mode
-chars = "\u0002["
-key = "S"
-mods = "Command"
-
-[[keyboard.bindings]]
 action = "ToggleSimpleFullscreen"
 key = "Slash"
 mods = "Command"
