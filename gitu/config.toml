@@ -2,6 +2,7 @@
 
 [general]
 diff_colorizer.enabled = true
+diff_colorizer.command = ["delta", "--side-by-side", "--width", "{width}"]
 stash_list_limit = 0
 recent_commits_limit = 0
 collapsed_sections = ["branch_status"]
