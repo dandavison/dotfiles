@@ -29,5 +29,8 @@
   "ShiftDown": "SelectDown",
   "ShiftLeft": "SelectLeft",
   "ShiftRight": "SelectRight",
-  "ShiftUp": "SelectUp"
+  "ShiftUp": "SelectUp",
+  "command": {
+    "Ctrl-g": "AbortCommand"
+  }
 }
