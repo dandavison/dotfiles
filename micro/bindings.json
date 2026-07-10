@@ -20,7 +20,6 @@
   "AltShiftLeft": "SelectWordLeft",
   "AltShiftRight": "SelectWordRight",
   "Ctrl-a": "StartOfLine",
-  "<Ctrl-c><Ctrl-c>": "Save,Quit",
   "Ctrl-c": "Save,Quit",
   "Ctrl-d": "Delete",
   "Ctrl-e": "EndOfLine",
