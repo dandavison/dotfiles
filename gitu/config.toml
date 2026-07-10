@@ -77,3 +77,10 @@ tag = { fg = "#0086b3" }
 
 blame.line_num = { mods = "DIM" }
 blame.code_line = { mods = "DIM" }
+
+# Navigate by line by default; modifier for by-hunk
+[bindings]
+root.move_up = ["ctrl+k", "ctrl+up"]
+root.move_down = ["ctrl+j", "ctrl+down"]
+root.move_up_line = ["k", "up"]
+root.move_down_line = ["j", "down"]
