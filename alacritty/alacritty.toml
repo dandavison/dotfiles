@@ -164,7 +164,7 @@ background = "0xfffefe"
 foreground = "0x000000"
 
 [colors.cursor]
-cursor = "0x0969da"
+cursor = "0x0550ae"
 text = "CellBackground"
 
 [cursor]
