@@ -76,7 +76,8 @@ key = "Comma"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = ""
+# tmux copy-mode (scroll mode)
+chars = "\u0002["
 key = "Q"
 mods = "Command"
 
@@ -163,8 +164,11 @@ background = "0xfffefe"
 foreground = "0x000000"
 
 [colors.cursor]
-cursor = "CellForeground"
+cursor = "0x0969da"
 text = "CellBackground"
+
+[cursor]
+thickness = 0.4
 
 [cursor.style]
 shape = "Beam"
