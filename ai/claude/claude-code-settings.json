@@ -41,7 +41,7 @@
       ""
     ]
   },
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "promptSuggestionEnabled": false,
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
