@@ -3,6 +3,16 @@ local clip  = import("micro/clipboard")
 local util  = import("micro/util")
 local time  = import("time")
 
+-- Files run as `uv` scripts start with `#!/usr/bin/env -S uv run --script`; this
+-- is Python, but the file usually has no `.py` extension and the shebang ends in
+-- neither `python` nor `python3`, so micro's built-in detector leaves it unknown.
+function onBufferOpen(buf)
+    if buf.Settings["filetype"] == "unknown" and buf:Line(0):match("^#!.*uv run") then
+        buf:SetOptionNative("filetype", "python")
+    end
+    return true
+end
+
 -- Emacs-style kill-line (Ctrl-k): cut from the cursor to the end of the line,
 -- or, when already at the end of the line, cut the newline joining the next
 -- line. So on a non-empty line one Ctrl-k clears to EOL and a second removes the
