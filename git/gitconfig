@@ -46,7 +46,7 @@ verify = false
 # colorMovedWS = allow-indentation-change
 frag = red
 submodule = short
-context = 3
+context = 77
 
 [diff "pdf"]
 textconv = sh -c 'pdftotext -layout "$0" -'
