@@ -4,6 +4,7 @@
     "GIT_PAGER": ""
   },
   "includeCoAuthoredBy": false,
+  "autoMemoryEnabled": false,
   "permissions": {
     "allow": [
       "Bash",
