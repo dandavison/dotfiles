@@ -13,5 +13,14 @@ if [ -z "$name" ]; then
 fi
 [ -z "$name" ] && name="claude"
 
+ctx=$(echo "$input" | jq -r '
+  .context_window as $c
+  | (($c.total_input_tokens // 0)) as $used
+  | if $used > 0 then
+      (($c.context_window_size // 200000)) as $max
+      | (($c.used_percentage // (($used / $max) * 100)) | floor) as $pct
+      | "\($used / 1000 | floor)k/\($max / 1000 | floor)k (\($pct)%)"
+    else empty end')
+
 { printf '\033]0;%s\007' "$name" > /dev/tty; } 2>/dev/null   # tab/pane title
-echo "$name"                                          # footer
+[ -n "$ctx" ] && echo "$name  ·  $ctx" || echo "$name"       # footer
