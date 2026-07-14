@@ -36,7 +36,7 @@
     line-numbers-right-format = "{np:^4}│"
     line-numbers-minus-right-format = "{np:^4}┃"
     line-numbers-plus-right-format = "{np:^4}┃"
-    navigate-regex = (^•|┃)
+    navigate-regex = ^▸
 
 [delta "hunk-header-with-filepath"]
     file-style = omit
