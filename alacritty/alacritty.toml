@@ -136,6 +136,13 @@ chars = "\u001bcmdrd"
 key = "Z"
 mods = "Command|Shift"
 
+# rgi (tide search): Cmd-O -> Ctrl-O, bound in fzf to open the result in the
+# wormhole editor (vs Enter, which opens micro in-terminal).
+[[keyboard.bindings]]
+chars = "\u000f"
+key = "O"
+mods = "Command"
+
 
 [terminal]
 
