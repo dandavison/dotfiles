@@ -84,3 +84,6 @@ root.move_up = ["ctrl+k", "ctrl+up"]
 root.move_down = ["ctrl+j", "ctrl+down"]
 root.move_up_line = ["k", "up"]
 root.move_down_line = ["j", "down"]
+# fn+up / fn+down send PageUp / PageDown: scroll a full viewport like micro
+root.full_page_up = ["pageup"]
+root.full_page_down = ["pagedown"]
