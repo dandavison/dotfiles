@@ -33,5 +33,6 @@
   "ShiftUp": "SelectUp",
   "command": {
     "Ctrl-g": "AbortCommand"
-  }
+  },
+  "Alt-q": "lua:fillparagraph.fillParagraph"
 }
