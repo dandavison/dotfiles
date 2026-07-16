@@ -2,6 +2,7 @@
   "\u001bcmda": "SelectAll",
   "\u001bcmdc": "Copy",
   "\u001bcmdf": "Find",
+  "\u001bcmdo": "lua:initlua.openInWormhole",
   "\u001bcmds": "Save",
   "\u001bcmdx": "Cut|CutLine",
   "\u001bcmdz": "Undo",

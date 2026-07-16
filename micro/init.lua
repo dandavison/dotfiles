@@ -1,5 +1,6 @@
 local micro = import("micro")
 local clip  = import("micro/clipboard")
+local shell = import("micro/shell")
 local util  = import("micro/util")
 local time  = import("time")
 
@@ -9,6 +10,17 @@ local time  = import("time")
 function onBufferOpen(buf)
     if buf.Settings["filetype"] == "unknown" and buf:Line(0):match("^#!.*uv run") then
         buf:SetOptionNative("filetype", "python")
+    end
+    return true
+end
+
+-- cmd-o: jump to the current line of the current file in the active editor
+-- (cursor, code, etc.) via wormhole. Cursor.Y is 0-indexed; editors are 1-indexed.
+function openInWormhole(bp)
+    local target = bp.Buf.AbsPath .. ":" .. (bp.Cursor.Y + 1)
+    local out, err = shell.ExecCommand("wormhole", "open", target)
+    if err ~= nil then
+        micro.InfoBar():Error("wormhole open failed: " .. (out ~= "" and out or tostring(err)))
     end
     return true
 end
