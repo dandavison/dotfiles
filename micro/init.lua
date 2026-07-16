@@ -14,7 +14,7 @@ function onBufferOpen(buf)
     return true
 end
 
--- cmd-o: jump to the current line of the current file in the active editor
+-- cmd-shift-o: jump to the current line of the current file in the active editor
 -- (cursor, code, etc.) via wormhole. Cursor.Y is 0-indexed; editors are 1-indexed.
 function openInWormhole(bp)
     local target = bp.Buf.AbsPath .. ":" .. (bp.Cursor.Y + 1)
