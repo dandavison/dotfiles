@@ -4,7 +4,6 @@
     "GIT_PAGER": ""
   },
   "includeCoAuthoredBy": false,
-  "autoMemoryEnabled": false,
   "permissions": {
     "allow": [
       "Bash",
@@ -45,6 +44,7 @@
   "effortLevel": "high",
   "promptSuggestionEnabled": false,
   "tui": "default",
+  "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "theme": "light",
   "fileCheckpointingEnabled": false,

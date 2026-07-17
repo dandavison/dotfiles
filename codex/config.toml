@@ -1,7 +1,7 @@
 approval_policy = "never"
 sandbox_mode    = "workspace-write"
-model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
 
 
 [sandbox_workspace_write]
@@ -81,3 +81,4 @@ url = "https://mcp.notion.com/mcp"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 2
+"gpt-5.6-sol" = 4
