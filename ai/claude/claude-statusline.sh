@@ -13,6 +13,8 @@ if [ -z "$name" ]; then
 fi
 [ -z "$name" ] && name="claude"
 
+model=$(echo "$input" | jq -r '.model.display_name // empty')
+
 ctx=$(echo "$input" | jq -r '
   .context_window as $c
   | (($c.total_input_tokens // 0)) as $used
@@ -23,4 +25,8 @@ ctx=$(echo "$input" | jq -r '
     else empty end')
 
 { printf '\033]0;%s\007' "$name" > /dev/tty; } 2>/dev/null   # tab/pane title
-[ -n "$ctx" ] && echo "$name  ·  $ctx" || echo "$name"       # footer
+
+line="$name"
+[ -n "$model" ] && line="$line  ·  $model"
+[ -n "$ctx" ] && line="$line  ·  $ctx"
+echo "$line"                                                 # footer
