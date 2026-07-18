@@ -24,9 +24,13 @@ ctx=$(echo "$input" | jq -r '
       | "\($used / 1000 | floor)k/\($max / 1000 | floor)k (\($pct)%)"
     else empty end')
 
+cost_usd=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
+[ -n "$cost_usd" ] && cost=$(printf '$%.2f' "$cost_usd")
+
 { printf '\033]0;%s\007' "$name" > /dev/tty; } 2>/dev/null   # tab/pane title
 
 line="$name"
 [ -n "$model" ] && line="$line  ·  $model"
 [ -n "$ctx" ] && line="$line  ·  $ctx"
+[ -n "$cost" ] && line="$line  ·  $cost"
 echo "$line"                                                 # footer
