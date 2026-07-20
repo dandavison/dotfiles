@@ -136,15 +136,9 @@ chars = "\u001bcmdrd"
 key = "Z"
 mods = "Command|Shift"
 
-# Cmd-Shift-O: open current line in wormhole editor (action in micro/bindings.json)
-[[keyboard.bindings]]
-chars = "\u001bcmdO"
-key = "O"
-mods = "Command|Shift"
-
-
-# rgi (tide search): Cmd-O -> Ctrl-O, bound in fzf to open the result in the
-# wormhole editor (vs Enter, which opens micro in-terminal).
+# Cmd-O -> Ctrl-O: open in the wormhole editor. In rgi/fzf opens the search
+# result (vs Enter, which opens micro in-terminal); in micro opens the
+# current line (Ctrl-o in micro/bindings.json).
 [[keyboard.bindings]]
 chars = "\u000f"
 key = "O"
