@@ -3,7 +3,6 @@
 export default {
   defaultBrowser: "Google Chrome",
   options: {
-    keepRunning: true, // stay resident so routing doesn't relaunch (and flash) the app
     hideIcon: true,
   },
   handlers: [
