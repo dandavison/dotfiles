@@ -23,7 +23,8 @@
       "Bash(ct *)",
       "Bash(omni)",
       "Bash(omni *)"
-    ]
+    ],
+    "defaultMode": "bypassPermissions"
   },
   "model": "opus[1m]",
   "statusLine": {
