@@ -503,12 +503,12 @@
   },
   {
     "key": "shift+cmd+enter",
-    "command": "interactive.acceptChanges",
+    "command": "interactive.acceptChanges", // cursor
     "when": "inlineChatHasProvider && inlineChatVisible && !inlineChatDocumentChanged || inlineChatHasProvider && inlineChatVisible && config.inlineChat.mode != 'preview'",
   },
   {
     "key": "cmd+enter",
-    "command": "-interactive.acceptChanges",
+    "command": "-interactive.acceptChanges", // cursor
     "when": "inlineChatHasProvider && inlineChatVisible && !inlineChatDocumentChanged || inlineChatHasProvider && inlineChatVisible && config.inlineChat.mode != 'preview'",
   },
   {
@@ -583,12 +583,12 @@
   },
   {
     "key": "shift+cmd+enter",
-    "command": "editor.action.inlineDiffs.acceptAll",
+    "command": "editor.action.inlineDiffs.acceptAll", // cursor
     "when": "editorTextFocus && (arbitrary function)",
   },
   {
     "key": "cmd+enter",
-    "command": "-editor.action.inlineDiffs.acceptAll",
+    "command": "-editor.action.inlineDiffs.acceptAll", // cursor
     "when": "editorTextFocus && (arbitrary function)",
   },
   {
@@ -758,22 +758,22 @@
   },
   {
     "key": "shift+cmd+]",
-    "command": "composer.selectNextComposer",
+    "command": "composer.selectNextComposer", // cursor
     "when": "",
   },
   {
     "key": "alt+cmd+right",
-    "command": "-composer.selectNextComposer",
+    "command": "-composer.selectNextComposer", // cursor
     "when": "agentsPaneFocused && cursor.agentIdeUnification.enabled && !editorTextFocus || composerFocused && cursor.agentIdeUnification.enabled && !editorTextFocus",
   },
   {
     "key": "shift+cmd+[",
-    "command": "composer.selectPreviousComposer",
+    "command": "composer.selectPreviousComposer", // cursor
     "when": "",
   },
   {
     "key": "alt+cmd+left",
-    "command": "-composer.selectPreviousComposer",
+    "command": "-composer.selectPreviousComposer", // cursor
     "when": "agentsPaneFocused && cursor.agentIdeUnification.enabled && !editorTextFocus || composerFocused && cursor.agentIdeUnification.enabled && !editorTextFocus",
   },
   {
@@ -836,12 +836,12 @@
   },
   {
     "key": "shift+cmd+w",
-    "command": "composer.closeComposerTab",
+    "command": "composer.closeComposerTab", // cursor
     "when": "composerFocused && !editorTextFocus || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/",
   },
   {
     "key": "cmd+w",
-    "command": "-composer.closeComposerTab",
+    "command": "-composer.closeComposerTab", // cursor
     "when": "composerFocused && !editorTextFocus || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/",
   },
   {
@@ -897,11 +897,11 @@
   },
   {
     "key": "alt+cmd+s",
-    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard", // cursor
     "when": "!isAuxiliaryWindowFocusedContext"
   },
   {
     "key": "cmd+k",
-    "command": "composer.focusComposer"
+    "command": "composerMode.agent" // cursor only
   }
 ]
