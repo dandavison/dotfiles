@@ -52,6 +52,43 @@
                 "type": "basic"
               }
             ]
+          },
+          {
+            "description": "right_option+arrows => f18/f19/f20/f14 (wormhole switcher)",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "left_arrow",
+                  "modifiers": { "mandatory": ["right_option"] }
+                },
+                "to": [{ "key_code": "f18", "modifiers": [] }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "right_arrow",
+                  "modifiers": { "mandatory": ["right_option"] }
+                },
+                "to": [{ "key_code": "f19", "modifiers": [] }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "up_arrow",
+                  "modifiers": { "mandatory": ["right_option"] }
+                },
+                "to": [{ "key_code": "f20", "modifiers": [] }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "down_arrow",
+                  "modifiers": { "mandatory": ["right_option"] }
+                },
+                "to": [{ "key_code": "f14", "modifiers": [] }],
+                "type": "basic"
+              }
+            ]
           }
         ]
       },
@@ -62,10 +99,6 @@
             {
               "from": { "key_code": "caps_lock" },
               "to": [{ "key_code": "f13" }]
-            },
-            {
-              "from": { "key_code": "right_option" },
-              "to": [{ "key_code": "left_option" }]
             }
           ]
         }
