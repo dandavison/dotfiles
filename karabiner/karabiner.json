@@ -62,6 +62,10 @@
             {
               "from": { "key_code": "caps_lock" },
               "to": [{ "key_code": "f13" }]
+            },
+            {
+              "from": { "key_code": "right_option" },
+              "to": [{ "key_code": "left_option" }]
             }
           ]
         }
