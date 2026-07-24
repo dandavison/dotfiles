@@ -5,12 +5,25 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "left_cmd+right_shift => f16 (terminalToggle)",
+            "description": "left_cmd/right_cmd+right_shift => f16 (terminalToggle)",
             "manipulators": [
               {
                 "from": {
                   "key_code": "right_shift",
                   "modifiers": { "mandatory": ["left_command"] }
+                },
+                "to": [
+                  {
+                    "key_code": "f16",
+                    "modifiers": []
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "right_shift",
+                  "modifiers": { "mandatory": ["right_command"] }
                 },
                 "to": [
                   {
