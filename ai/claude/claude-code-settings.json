@@ -48,6 +48,7 @@
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "theme": "light",
+  "verbose": false,
   "fileCheckpointingEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
