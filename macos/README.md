@@ -1,5 +1,19 @@
 # macOS dotfiles
 
+## `defaults/`
+
+Snapshots of app settings held in the macOS user defaults system (NSUserDefaults) rather
+than in a config file. These cannot be symlinked: cfprefsd caches preferences in memory
+and rewrites the plist atomically, replacing any symlink. `manifest.json` lists the
+domains to track and the keys to omit (history, analytics IDs, window geometry).
+
+```bash
+~/src/devenv/macos-defaults export   # capture current settings into this directory
+~/src/devenv/macos-defaults import   # apply them on a new machine (quit the apps first)
+```
+
+`import` merges into the existing domain, so untracked keys are left alone.
+
 ## Files
 
 ### `DefaultKeyBinding.dict`

@@ -1,0 +1,23 @@
+{
+  "global_exclude": [
+    "NSWindow Frame*",
+    "NSSplitView*",
+    "NSToolbar*",
+    "NSNavLastRootDirectory",
+    "NSNavPanelExpandedStateForSaveMode"
+  ],
+  "domains": {
+    "com.FluidApp.app": {
+      "app": "FluidVoice",
+      "exclude": [
+        "AXLastPromptAt",
+        "Analytics*",
+        "CommandMode*",
+        "FluidVoice_AccessibilityRestartPending",
+        "FluidVoice_HasAutoRestartedForAccessibility",
+        "LastUpdateCheckDate",
+        "TranscriptionHistoryEntries"
+      ]
+    }
+  }
+}
