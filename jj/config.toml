@@ -1,8 +1,0 @@
-#:schema https://jj-vcs.github.io/jj/latest/config-schema.json
-
-[user]
-name = "Dan Davison"
-email = "dan.davison@temporal.io"
-
-[ui]
-default-colors = "light"

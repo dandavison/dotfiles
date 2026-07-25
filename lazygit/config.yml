@@ -1,9 +1,0 @@
-git:
-  paging:
-    colorArg: always
-    pager: delta --light --paging=never --line-numbers
-
-os:
-  editPreset: "vscode"
-  open: "code {{filename}}"
-  openLink: "open {{link}}"
