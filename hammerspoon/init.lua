@@ -40,6 +40,33 @@ local function code()
     end
 end
 
+local popupTasks = {} -- retain tasks so GC doesn't drop the completion callback
+
+-- tmux display-popup, focusing alacritty first if needed. When the popup is dismissed,
+-- focus returns to the previously frontmost app, unless focus has been switched.
+local function tmuxPopup(args)
+    local prev = hs.application.frontmostApplication()
+    local app = hs.application.find("alacritty")
+    if not (app and app:isFrontmost()) then
+        hs.application.launchOrFocus("/Applications/Alacritty.app")
+    end
+    local task
+    task = hs.task.new(os.getenv("HOME") .. "/bin/tmux", function()
+        popupTasks[task] = nil
+        local front = hs.application.frontmostApplication()
+        if prev
+            and prev:bundleID() ~= "org.alacritty"
+            and prev:isRunning()
+            and front
+            and front:bundleID() == "org.alacritty"
+        then
+            prev:activate()
+        end
+    end, args)
+    popupTasks[task] = true
+    task:start()
+end
+
 -- Project hotkey mappings (personal config)
 local keymap = {
     [0] = "projects",
@@ -58,6 +85,15 @@ local keymap = {
 wormhole.bindKeys(keymap)
 hs.hotkey.bind({}, "f16", terminal)
 hs.hotkey.bind({}, "f17", code)
+
+-- Full-screen scratch zsh popup (same as tmux M-Space)
+hs.hotkey.bind({ "alt" }, "space", function()
+    tmuxPopup({ "display-popup", "-d", "#{pane_current_path}", "-E", "-w", "100%", "-h", "100%", "-b", "rounded", "-T", "", "SKIP_XOLMIS=1 zsh" })
+end)
+-- App launcher popup
+hs.hotkey.bind({ "cmd" }, "space", function()
+    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", os.getenv("HOME") .. "/bin/f-open-app" })
+end)
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
 end)
