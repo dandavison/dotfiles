@@ -888,6 +888,21 @@
     "when": "editorFocus",
   },
   {
+    "key": "cmd+down",
+    "command": "-cursorBottom",
+    "when": "textInputFocus",
+  },
+  {
+    "key": "cmd+down",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "cmd+up",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus",
+  },
+  {
     "key": "cmd+m",
     "command": "magit.status"
   },
