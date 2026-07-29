@@ -7,7 +7,7 @@ them atomically, replacing any symlink. So they are snapshotted here instead.
     ./macos-defaults export            # capture current settings into the repo
     ./macos-defaults import            # apply repo settings on a new machine
 
-Domains and the keys to omit are listed in dotfiles/macos/defaults/manifest.json.
+Domains and the keys to omit are listed in defaults/manifest.json.
 """
 
 import argparse
@@ -18,7 +18,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-DEFAULTS_DIR = Path(__file__).resolve().parent / "dotfiles/macos/defaults"
+DEFAULTS_DIR = Path(__file__).resolve().parent / "defaults"
 MANIFEST = DEFAULTS_DIR / "manifest.json"
 SECRET_PATTERNS = [
     "*api?key*",
