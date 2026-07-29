@@ -2,6 +2,8 @@ approval_policy = "never"
 sandbox_mode    = "workspace-write"
 model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
+approvals_reviewer = "user"
+service_tier = "default"
 
 
 [sandbox_workspace_write]
@@ -76,9 +78,24 @@ trust_level = "trusted"
 [projects."/Users/dan/worktrees/cli/fix-username-bug/cli"]
 trust_level = "trusted"
 
+[projects."/Users/dan/src/devenv"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporal-all/repos/saas-temporal"]
+trust_level = "trusted"
+
+[projects."/Users/dan/tmp/3p/alacritty"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 2
 "gpt-5.6-sol" = 4
+
+[features]
+tool_suggest = false
+
+[notice.model_migrations]
+"gpt-5.4-mini" = "gpt-5.6-luna"
