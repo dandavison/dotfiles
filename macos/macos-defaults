@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""Export/import the macOS user defaults (NSUserDefaults) tracked in this repo.
+
+Preference plists cannot be symlinked: cfprefsd caches them in memory and rewrites
+them atomically, replacing any symlink. So they are snapshotted here instead.
+
+    ./macos-defaults export            # capture current settings into the repo
+    ./macos-defaults import            # apply repo settings on a new machine
+
+Domains and the keys to omit are listed in dotfiles/macos/defaults/manifest.json.
+"""
+
+import argparse
+import fnmatch
+import json
+import plistlib
+import subprocess
+import sys
+from pathlib import Path
+
+DEFAULTS_DIR = Path(__file__).resolve().parent / "dotfiles/macos/defaults"
+MANIFEST = DEFAULTS_DIR / "manifest.json"
+SECRET_PATTERNS = [
+    "*api?key*",
+    "*auth?token*",
+    "*access?token*",
+    "*refresh?token*",
+    "*secret*",
+    "*password*",
+    "*credential*",
+]
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    for command in ("export", "import"):
+        subparser = subparsers.add_parser(command)
+        subparser.add_argument("domains", nargs="*")
+    subparsers.add_parser("list")
+
+    args = parser.parse_args()
+    manifest = json.loads(MANIFEST.read_text())
+    if args.command == "list":
+        for domain in manifest["domains"]:
+            print(domain)
+        return
+    for domain in args.domains or manifest["domains"]:
+        if domain not in manifest["domains"]:
+            sys.exit(f"{domain} is not in {MANIFEST}")
+        if args.command == "export":
+            export(domain, manifest)
+        else:
+            import_(domain, manifest)
+    if args.command == "import":
+        subprocess.run(["killall", "cfprefsd"], check=True)
+
+
+def export(domain: str, manifest: dict) -> None:
+    exported = subprocess.run(
+        ["defaults", "export", domain, "-"], check=True, capture_output=True
+    ).stdout
+    settings = plistlib.loads(exported)
+    excluded = [key for key in settings if is_excluded(key, domain, manifest)]
+    for key in excluded:
+        del settings[key]
+    for key in settings:
+        if any(fnmatch.fnmatch(key.lower(), pattern) for pattern in SECRET_PATTERNS):
+            print(f"warning: {domain}.{key} may hold a secret", file=sys.stderr)
+    path = plist_path(domain)
+    path.write_bytes(plistlib.dumps(settings))
+    print(f"{domain} -> {path} ({len(settings)} keys, {len(excluded)} excluded)")
+
+
+def import_(domain: str, manifest: dict) -> None:
+    path = plist_path(domain)
+    if not path.exists():
+        sys.exit(f"{path} does not exist; run `macos-defaults export {domain}` first")
+    app = manifest["domains"][domain].get("app")
+    if app and subprocess.run(["pgrep", "-qx", app]).returncode == 0:
+        sys.exit(f"{app} is running; quit it first so it does not overwrite the import")
+    subprocess.run(["defaults", "import", domain, str(path)], check=True)
+    print(f"{path} -> {domain}")
+
+
+def is_excluded(key: str, domain: str, manifest: dict) -> bool:
+    patterns = manifest["global_exclude"] + manifest["domains"][domain].get("exclude", [])
+    return any(fnmatch.fnmatch(key, pattern) for pattern in patterns)
+
+
+def plist_path(domain: str) -> Path:
+    return DEFAULTS_DIR / f"{domain}.plist"
+
+
+if __name__ == "__main__":
+    main()
