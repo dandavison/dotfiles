@@ -1,5 +1,5 @@
 approval_policy = "never"
-sandbox_mode    = "workspace-write"
+sandbox_mode    = "workspace-write"  #  "danger-full-access"
 model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
 approvals_reviewer = "user"
