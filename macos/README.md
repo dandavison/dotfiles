@@ -14,6 +14,18 @@ domains to track and the keys to omit (history, analytics IDs, window geometry).
 
 `import` merges into the existing domain, so untracked keys are left alone.
 
+### `org.alacritty.plist` — freeing Cmd-Q for tmux
+
+winit hardcodes a native "Quit" menu item with key equivalent Cmd-Q, and AppKit
+resolves menu key equivalents before Alacritty sees the key, so the Cmd-Q binding in
+`dotfiles/alacritty/alacritty.toml` (tmux copy mode) could never fire. The fix is
+`NSUserKeyEquivalents`, which reassigns Cmd-Q to `Show All`; a key equivalent belongs
+to only one item, so Quit loses it. `Show All` is disabled whenever no application is
+hidden, so it declines the event and it falls through to Alacritty's own bindings.
+
+Caveat: while some application *is* hidden, Cmd-Q unhides it instead of entering copy
+mode.
+
 ## Files
 
 ### `DefaultKeyBinding.dict`
