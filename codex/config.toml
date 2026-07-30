@@ -87,6 +87,9 @@ trust_level = "trusted"
 [projects."/Users/dan/tmp/3p/alacritty"]
 trust_level = "trusted"
 
+[projects."/Users/dan/tmp/3p"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
 
