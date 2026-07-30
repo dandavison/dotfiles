@@ -40,6 +40,10 @@ local function code()
     end
 end
 
+-- Resolve tmux via a login shell (hs.execute(_, true)) so GUI-launched
+-- Hammerspoon picks up Homebrew's PATH rather than launchd's minimal one.
+local tmux = hs.execute("command -v tmux", true):gsub("%s+$", "")
+
 local popupTasks = {} -- retain tasks so GC doesn't drop the completion callback
 
 -- tmux display-popup, focusing alacritty first if needed. When the popup is dismissed,
@@ -51,7 +55,7 @@ local function tmuxPopup(args)
         hs.application.launchOrFocus("/Applications/Alacritty.app")
     end
     local task
-    task = hs.task.new(os.getenv("HOME") .. "/bin/tmux", function()
+    task = hs.task.new(tmux, function()
         popupTasks[task] = nil
         local front = hs.application.frontmostApplication()
         if prev

@@ -207,9 +207,11 @@ mods = "Command"
 enabled = true
 mods = "Command"
 
+# Launch tmux via a login shell so it resolves from PATH (GUI apps get launchd's
+# minimal PATH, which lacks Homebrew); avoids hardcoding tmux's absolute path.
 [terminal.shell]
-args = ["new-session", "-A", "-s", "0"]
-program = "/opt/homebrew/bin/tmux"
+program = "/bin/zsh"
+args = ["-l", "-c", "exec tmux new-session -A -s 0"]
 
 [window]
 startup_mode = "SimpleFullscreen"
