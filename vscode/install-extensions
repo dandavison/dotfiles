@@ -1,2 +1,7 @@
 #!/bin/bash
-cat extensions.txt | xargs -n 1 code --install-extension
+# Make installed extensions match extensions.txt exactly: uninstall anything
+# not listed, then install everything listed.
+cd "$(dirname "$0")"
+comm -23 <(code --list-extensions | sort) <(sort extensions.txt) \
+    | xargs -r -n 1 code --uninstall-extension
+xargs -n 1 code --install-extension < extensions.txt
