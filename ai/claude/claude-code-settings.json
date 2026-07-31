@@ -22,7 +22,14 @@
       "Bash(ct)",
       "Bash(ct *)",
       "Bash(omni)",
-      "Bash(omni *)"
+      "Bash(omni *)",
+      "Bash(agent-slack message send:*)",
+      "Bash(agent-slack message edit:*)",
+      "Bash(agent-slack message delete:*)",
+      "Bash(agent-slack message draft:*)",
+      "Bash(agent-slack message react:*)",
+      "Bash(agent-slack channel new:*)",
+      "Bash(agent-slack channel invite:*)"
     ],
     "defaultMode": "bypassPermissions"
   },
