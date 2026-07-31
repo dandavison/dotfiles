@@ -1,5 +1,5 @@
 approval_policy = "never"
-sandbox_mode    = "workspace-write"  #  "danger-full-access"
+sandbox_mode = "danger-full-access"
 model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
 approvals_reviewer = "user"
@@ -88,6 +88,15 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/Users/dan/tmp/3p"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporalio/.git/modules"]
+trust_level = "trusted"
+
+[projects."/private/tmp/z"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/temporalio/temporal"]
 trust_level = "trusted"
 
 [mcp_servers.notion]
