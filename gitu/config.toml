@@ -7,6 +7,9 @@ stash_list_limit = 0
 recent_commits_limit = 0
 collapsed_sections = ["branch_status"]
 
+log_renderer.enabled = true
+log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
+
 # GitHub light theme palette:
 #   fg #333333  gray #969896  pink #a71d5d  blue #0086b3
 #   purple #795da3  string #183691  green #63a35c/#009926
