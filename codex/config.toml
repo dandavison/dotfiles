@@ -99,6 +99,15 @@ trust_level = "trusted"
 [projects."/Users/dan/src/temporalio/temporal"]
 trust_level = "trusted"
 
+[projects."/private/tmp/x"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/codex"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/micro"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
 
