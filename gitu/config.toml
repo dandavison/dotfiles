@@ -73,6 +73,14 @@ selection_bar = { symbol = "▌", fg = "#0086b3", mods = "DIM" }
 selection_line = { mods = "BOLD" }
 selection_area = {}
 
+# What the interactive rebase will do with each commit.
+rebase_todo.pick = { fg = "#f93232", mods = "BOLD" }
+rebase_todo.reword = { fg = "#f93232", mods = "BOLD" }
+rebase_todo.edit = { fg = "#f93232", mods = "BOLD" }
+rebase_todo.squash = { fg = "#f93232", mods = "BOLD" }
+rebase_todo.fixup = { fg = "#f93232", mods = "BOLD" }
+rebase_todo.drop = { fg = "#f93232", mods = "BOLD" }
+
 hash = { fg = "#0086b3" }
 branch = { fg = "#63a35c" }
 remote = { fg = "#df5000" }
