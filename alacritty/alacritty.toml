@@ -191,9 +191,6 @@ size = 14.0
 family = "Monaco"
 style = "Regular"
 
-[mouse]
-reporting = "Wheel"
-
 [[hints.enabled]]
 command = "open"
 hyperlinks = true
