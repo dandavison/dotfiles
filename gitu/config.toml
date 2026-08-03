@@ -74,7 +74,6 @@ selection_line = { mods = "BOLD" }
 selection_area = {}
 
 # What the interactive rebase will do with each commit.
-rebase_todo.pick = { fg = "#f93232", mods = "BOLD" }
 rebase_todo.reword = { fg = "#f93232", mods = "BOLD" }
 rebase_todo.edit = { fg = "#f93232", mods = "BOLD" }
 rebase_todo.squash = { fg = "#f93232", mods = "BOLD" }
