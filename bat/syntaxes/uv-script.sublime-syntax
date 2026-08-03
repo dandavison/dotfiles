@@ -1,0 +1,9 @@
+%YAML 1.2
+---
+name: Python (uv script)
+scope: source.python.uv
+file_extensions: []
+first_line_match: '^#!.*\buv\s+run\b.*--script\b'
+contexts:
+  main:
+    - include: scope:source.python
