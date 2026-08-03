@@ -4,7 +4,7 @@ model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
 approvals_reviewer = "user"
 service_tier = "default"
-
+show_prompt_suggestions = false
 
 [sandbox_workspace_write]
 writable_roots = [
@@ -106,6 +106,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/Users/dan/src/micro"]
+trust_level = "trusted"
+
+[projects."/Users/dan/src/devenv/dotfiles"]
 trust_level = "trusted"
 
 [mcp_servers.notion]
