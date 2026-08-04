@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# OpenAI-compatible server for a local MLX model, as used by pi and qwen.
+set -euo pipefail
+
+exec mlx_lm.server \
+  --model "${MLX_MODEL:-mlx-community/Qwen3.6-35B-A3B-4bit}" \
+  --port "${MLX_PORT:-8080}" \
+  --max-tokens "${MLX_MAX_TOKENS:-32768}" \
+  "$@"
