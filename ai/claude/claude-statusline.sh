@@ -27,10 +27,21 @@ ctx=$(echo "$input" | jq -r '
 cost_usd=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 [ -n "$cost_usd" ] && cost=$(printf '$%.2f' "$cost_usd")
 
+session_id=$(echo "$input" | jq -r '.session_id // empty')
+session_code=${session_id: -8}
+
 { printf '\033]0;%s\007' "$name" > /dev/tty; } 2>/dev/null   # tab/pane title
 
 line="$name"
 [ -n "$model" ] && line="$line  ·  $model"
 [ -n "$ctx" ] && line="$line  ·  $ctx"
 [ -n "$cost" ] && line="$line  ·  $cost"
-echo "$line"                                                 # footer
+
+cols=$(tput cols 2>/dev/null)
+if [ -n "$cols" ] && [ -n "$session_code" ]; then
+  pad=$((cols - ${#line} - ${#session_code} - 1))
+  [ "$pad" -lt 1 ] && pad=1
+  printf '%s%*s%s\n' "$line" "$pad" "" "$session_code"
+else
+  echo "$line  ·  $session_code"
+fi
