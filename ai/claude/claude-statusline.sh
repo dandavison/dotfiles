@@ -4,14 +4,23 @@
 # falling back to the auto-generated ai-title from the transcript.
 input=$(cat)
 
+transcript=$(echo "$input" | jq -r '.transcript_path // empty')
+[ -f "$transcript" ] || transcript=""
+
 name=$(echo "$input" | jq -r '.session_name // empty')
-if [ -z "$name" ]; then
-  transcript=$(echo "$input" | jq -r '.transcript_path // empty')
-  if [ -n "$transcript" ] && [ -f "$transcript" ]; then
-    name=$(jq -r 'select(.type=="ai-title") | .aiTitle' "$transcript" 2>/dev/null | tail -1)
-  fi
+if [ -z "$name" ] && [ -n "$transcript" ]; then
+  name=$(jq -r 'select(.type=="ai-title") | .aiTitle' "$transcript" 2>/dev/null | tail -1)
 fi
 [ -z "$name" ] && name="claude"
+
+# Age of the session, so that resuming an old one is visually obvious.
+[ -n "$transcript" ] && age=$(head -50 "$transcript" | jq -rn '
+  first(inputs | .timestamp // empty)
+  | (sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601) as $start
+  | ((now - $start) / 60 | floor) as $m
+  | if $m < 60 then empty
+    elif $m < 1440 then "\($m / 60 | floor)h ago"
+    else "\($m / 1440 | floor)d ago" end' 2>/dev/null)
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
 
@@ -36,6 +45,7 @@ line="$name"
 [ -n "$model" ] && line="$line  ·  $model"
 [ -n "$ctx" ] && line="$line  ·  $ctx"
 [ -n "$cost" ] && line="$line  ·  $cost"
+[ -n "$age" ] && line="$line  ·  $age"
 
 cols=$(tput cols 2>/dev/null)
 if [ -n "$cols" ] && [ -n "$session_code" ]; then
