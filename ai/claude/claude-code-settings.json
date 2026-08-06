@@ -51,7 +51,7 @@
   },
   "effortLevel": "high",
   "promptSuggestionEnabled": false,
-  "tui": "default",
+  "tui": "fullscreen",
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "theme": "light",
