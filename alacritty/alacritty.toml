@@ -191,6 +191,10 @@ size = 14.0
 family = "Monaco"
 style = "Regular"
 
+# Hints are tried in order and the first one matching under the cursor wins, so
+# the URL hint must precede the path hint: a URL contains path-shaped text.
+
+# URLs, and any OSC 8 hyperlink.
 [[hints.enabled]]
 command = "open"
 hyperlinks = true
@@ -199,6 +203,35 @@ regex = "(https:|http:|file:|file-line-column:|git:|ssh:|ftp:)[^\u0000-\u001F\u0
 [hints.enabled.binding]
 key = "Period"
 mods = "Command"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "Command"
+
+# Python traceback frames, which carry the line number outside the path.
+[[hints.enabled]]
+# `wormhole` is not on the PATH that launchd gives GUI apps; `sh -c` is cheap
+# and avoids hardcoding a home directory.
+command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" hint "$0"'] }
+regex = 'File "[^"]+", line [0-9]+'
+
+[hints.enabled.mouse]
+enabled = true
+mods = "Command"
+
+# Paths (absolute, ./ ../ ~/, relative, or a bare filename), optionally followed
+# by :line, :line:column, or (line) as pdb prints it; and wormhole task
+# identifiers (repo:branch). `wormhole hint` decides which it is, resolving
+# relative paths against the cwd Alacritty gives the spawned command.
+[[hints.enabled]]
+# `wormhole` is not on the PATH that launchd gives GUI apps; `sh -c` is cheap
+# and avoids hardcoding a home directory.
+command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" hint "$0"'] }
+regex = '((~|\.{1,2})?/[A-Za-z0-9._~/+-]+|[A-Za-z0-9._~+-]+/[A-Za-z0-9._~/+-]+|[A-Za-z0-9_+-]+\.[A-Za-z0-9]+|[A-Za-z0-9][A-Za-z0-9._-]*:[A-Za-z0-9._/-]*[A-Za-z_/-][A-Za-z0-9._/-]*)(\([0-9]+\)|(:[0-9]+){0,2})'
+
+[hints.enabled.binding]
+key = "Period"
+mods = "Command|Shift"
 
 [hints.enabled.mouse]
 enabled = true
