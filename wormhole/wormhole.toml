@@ -3,10 +3,12 @@
 # `wormhole editor <name>` (writes back here) or by editing this line and
 # running `wormhole refresh`. One of: cursor, code, code-insiders, emacs, idea,
 # pycharm, pycharm-ce, none.
-editor = "code"
+default_project = "temporal"
+editor = "micro"
 
 search_paths = [
-    "~/src/temporal-all/repos",
+    "~/src/temporalio",
+    "~/src/temporalio-etc",
     "~/src",
     "~/src/devenv",
 ]
