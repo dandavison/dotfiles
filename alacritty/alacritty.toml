@@ -95,8 +95,13 @@ key = "C"
 mods = "Command"
 mode = "Selection"
 
+# Ctrl-] rather than an ESC-prefixed sequence: tmux's `mouse on` means a drag
+# makes a tmux selection, not an Alacritty one, so this fallback fires at the
+# shell prompt too, where "\u001bcmdc" ran zsh's ESC-c (capitalize-word) and left
+# "mdc" on the line. Ctrl-] is undefined-key in zsh and unbound in tmux, so it is
+# dropped silently everywhere except where it is bound (micro, tmux copy-mode).
 [[keyboard.bindings]]
-chars = "\u001bcmdc"
+chars = "\u001d"
 key = "C"
 mods = "Command"
 mode = "~Selection"
