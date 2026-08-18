@@ -86,20 +86,28 @@ key = "Return"
 mods = "Shift"
 chars = "\u001B\r"
 
-# micro editor: Cmd-<key> -> raw escape sequences bound in micro/bindings.json
+# micro editor: Cmd-<key> -> raw escape sequences bound in micro/bindings.json.
+#
+# The prefix is ESC ';' rather than ESC "cmd": micro can only register a raw
+# sequence that starts with ESC (screen.RegisterRawSeq), but every byte after the
+# ESC is taken literally by any reader that does not know the sequence. tmux's
+# `mouse on` means a mouse drag makes a tmux selection rather than an Alacritty
+# one, so these reach the bare shell prompt routinely, and there zsh bound ESC-c
+# to capitalize-word, ESC-a to accept-and-hold and so on -- swallowing two bytes
+# and typing the rest ("mdc", "mda", ...). ESC-; is undefined-key in zsh, and
+# shell/zsh/bindings.zsh binds it to discard the single byte that follows, so the
+# whole sequence vanishes. Keep every sequence one byte after the prefix to hold
+# that widget correct. Cmd-D was dropped: nothing ever bound it.
 
-# Cmd-C: copy Alacritty's selection when one exists, else pass through to micro
+# Cmd-C: copy Alacritty's own selection when there is one, else fall through to
+# the application. Ctrl-] rather than an ESC sequence because tmux binds it in
+# copy-mode and tmux can only bind a single key; it is undefined-key in zsh too.
 [[keyboard.bindings]]
 action = "Copy"
 key = "C"
 mods = "Command"
 mode = "Selection"
 
-# Ctrl-] rather than an ESC-prefixed sequence: tmux's `mouse on` means a drag
-# makes a tmux selection, not an Alacritty one, so this fallback fires at the
-# shell prompt too, where "\u001bcmdc" ran zsh's ESC-c (capitalize-word) and left
-# "mdc" on the line. Ctrl-] is undefined-key in zsh and unbound in tmux, so it is
-# dropped silently everywhere except where it is bound (micro, tmux copy-mode).
 [[keyboard.bindings]]
 chars = "\u001d"
 key = "C"
@@ -107,37 +115,32 @@ mods = "Command"
 mode = "~Selection"
 
 [[keyboard.bindings]]
-chars = "\u001bcmda"
+chars = "\u001b;a"
 key = "A"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001bcmdd"
-key = "D"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001bcmdf"
+chars = "\u001b;f"
 key = "F"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001bcmds"
+chars = "\u001b;s"
 key = "S"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001bcmdx"
+chars = "\u001b;x"
 key = "X"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001bcmdz"
+chars = "\u001b;z"
 key = "Z"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001bcmdrd"
+chars = "\u001b;Z"
 key = "Z"
 mods = "Command|Shift"
 
