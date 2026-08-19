@@ -245,6 +245,13 @@ mods = "Command|Shift"
 enabled = true
 mods = "Command"
 
+# Double-click selection in tmux popups is Alacritty's, not tmux's (see
+# dotfiles/tmux/tmux.conf), so keep the word boundaries identical: tmux's
+# word-separators plus space and tab, which tmux always breaks on (WHITESPACE in
+# grid_reader_cursor_previous_word) whether or not they are in the option.
+[selection]
+semantic_escape_chars = "\t !\"#$%&'()*+,:;<=>?@[\\]^`{|}~"
+
 # Launch tmux via a login shell so it resolves from PATH (GUI apps get launchd's
 # minimal PATH, which lacks Homebrew); avoids hardcoding tmux's absolute path.
 [terminal.shell]
