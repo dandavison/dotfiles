@@ -46,6 +46,19 @@ local tmux = hs.execute("command -v tmux", true):gsub("%s+$", "")
 
 local popupTasks = {} -- retain tasks so GC doesn't drop the completion callback
 
+-- Alacritty, not tmux, must own the mouse while a popup is up: tmux drops mouse
+-- events in popups but `mouse on` still enables reporting, so double-click would
+-- select nothing. See dotfiles/tmux/tmux.conf. display-popup blocks the command
+-- queue until the popup is dismissed, so the trailing set restores it.
+local function withMouseOff(args)
+    local argv = { "set", "-g", "mouse", "off", ";" }
+    table.move(args, 1, #args, #argv + 1, argv)
+    for _, arg in ipairs({ ";", "set", "-g", "mouse", "on" }) do
+        argv[#argv + 1] = arg
+    end
+    return argv
+end
+
 -- tmux display-popup, focusing alacritty first if needed. When the popup is dismissed,
 -- focus returns to the previously frontmost app, unless focus has been switched.
 local function tmuxPopup(args)
@@ -66,7 +79,7 @@ local function tmuxPopup(args)
         then
             prev:activate()
         end
-    end, args)
+    end, withMouseOff(args))
     popupTasks[task] = true
     task:start()
 end
