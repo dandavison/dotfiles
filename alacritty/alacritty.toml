@@ -88,16 +88,22 @@ chars = "\u001B\r"
 
 # micro editor: Cmd-<key> -> raw escape sequences bound in micro/bindings.json.
 #
-# The prefix is ESC ';' rather than ESC "cmd": micro can only register a raw
-# sequence that starts with ESC (screen.RegisterRawSeq), but every byte after the
-# ESC is taken literally by any reader that does not know the sequence. tmux's
-# `mouse on` means a mouse drag makes a tmux selection rather than an Alacritty
-# one, so these reach the bare shell prompt routinely, and there zsh bound ESC-c
-# to capitalize-word, ESC-a to accept-and-hold and so on -- swallowing two bytes
-# and typing the rest ("mdc", "mda", ...). ESC-; is undefined-key in zsh, and
-# shell/zsh/bindings.zsh binds it to discard the single byte that follows, so the
-# whole sequence vanishes. Keep every sequence one byte after the prefix to hold
-# that widget correct. Cmd-D was dropped: nothing ever bound it.
+# micro can only register a raw sequence that starts with ESC
+# (screen.RegisterRawSeq), and every layer in between reads the byte after the
+# ESC as a Meta key it may have bound -- so the prefix has to be one that
+# neither zsh nor tmux binds, and both have bitten:
+#
+#   ESC "cmd"  zsh binds ESC-c to capitalize-word and ESC-a to accept-and-hold,
+#              which ate two bytes and typed the rest ("mdc", "mda", ...).
+#   ESC ";"    tmux.conf binds M-\; to `tide home`, so tmux ran tide and passed
+#              on only the tail: Cmd-S typed "s" rather than saving.
+#
+# ESC-~ is bound by neither. These reach the bare shell prompt routinely,
+# because tmux's `mouse on` means a mouse drag makes a tmux selection rather
+# than an Alacritty one, so shell/zsh/bindings.zsh binds ESC-~ to discard the
+# single byte that follows: keep every sequence one byte after the prefix to
+# hold that widget correct. test-cmd-key-passthrough checks all of this.
+# Cmd-D was dropped: nothing ever bound it.
 
 # Cmd-C: copy Alacritty's own selection when there is one, else fall through to
 # the application. Ctrl-] rather than an ESC sequence because tmux binds it in
@@ -115,32 +121,32 @@ mods = "Command"
 mode = "~Selection"
 
 [[keyboard.bindings]]
-chars = "\u001b;a"
+chars = "\u001b~a"
 key = "A"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001b;f"
+chars = "\u001b~f"
 key = "F"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001b;s"
+chars = "\u001b~s"
 key = "S"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001b;x"
+chars = "\u001b~x"
 key = "X"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001b;z"
+chars = "\u001b~z"
 key = "Z"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001b;Z"
+chars = "\u001b~Z"
 key = "Z"
 mods = "Command|Shift"
 
