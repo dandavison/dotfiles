@@ -1,0 +1,150 @@
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = ">=3.12"
+# dependencies = []
+# ///
+"""Check that Alacritty's Cmd-<key> passthrough sequences survive the stack.
+
+Alacritty binds Cmd-<key> to byte sequences that only the micro editor
+understands. Two layers in between can silently eat them, and both have:
+
+  tmux  binds M-<char> in its root table (M-; is `tide home`), so it swallows an
+        ESC-prefixed sequence whose second byte it has bound and forwards only
+        the tail -- Cmd-S ran tide and typed "s".
+  zsh   binds ESC-<char> as ZLE widgets (ESC-c is capitalize-word), so it eats
+        two bytes and self-inserts the rest -- Cmd-C typed "mdc".
+
+Both failures are silent and only show up in use, so assert on them.
+"""
+
+import fcntl
+import os
+import pty
+import re
+import select
+import struct
+import subprocess
+import sys
+import termios
+import time
+import tomllib
+from pathlib import Path
+
+CONFIG = Path(__file__).with_name("alacritty.toml")
+TMUX_SOCKET = "alacritty-cmd-key-test"
+ZSH = "/opt/homebrew/bin/zsh"
+
+
+def main() -> int:
+    seqs = cmd_key_sequences(CONFIG)
+    if not seqs:
+        sys.exit(f"no Cmd-<key> chars bindings found in {CONFIG}")
+
+    failures = []
+    for name, seq in seqs.items():
+        got = through_tmux(seq)
+        if got != seq:
+            failures.append(f"{name}: tmux forwarded {got!r}, expected {seq!r}")
+
+    for name, seq in seqs.items():
+        typed = through_zsh(seq)
+        if typed:
+            failures.append(f"{name}: zsh inserted {typed!r} at the prompt")
+
+    for f in failures:
+        print(f"FAIL {f}")
+    print(f"{len(seqs) * 2 - len(failures)}/{len(seqs) * 2} checks passed")
+    return 1 if failures else 0
+
+
+def cmd_key_sequences(config: Path) -> dict[str, str]:
+    bindings = tomllib.loads(config.read_text())["keyboard"]["bindings"]
+    return {
+        f"{b['mods'].replace('|', '-')}-{b['key']}": b["chars"]
+        for b in bindings
+        if "chars" in b and b.get("mods", "").startswith("Command") and b["chars"][0] != "\x02"
+    }
+
+
+def through_tmux(seq: str) -> str:
+    """The bytes a pane receives when `seq` is typed into an attached client.
+
+    The pane is put in raw mode, as every application these sequences target
+    runs in raw mode; in canonical mode the line discipline would eat some of
+    them itself: ^O is the tty discard character on macOS, and `stty raw` alone
+    does not clear IEXTEN there.
+    """
+    out = Path("/tmp/alacritty-cmd-key-test.out")
+    out.unlink(missing_ok=True)
+    tmux("kill-server")
+    with pty_client(
+        ["tmux", "-L", TMUX_SOCKET, "-f", os.path.expanduser("~/.tmux.conf"),
+         "new-session", f"stty raw -echo -iexten; exec cat -u > {out}"]
+    ) as master:
+        write(master, seq, settle=1.0)
+    tmux("kill-server")
+    return out.read_text() if out.exists() else ""
+
+
+def through_zsh(seq: str) -> str:
+    """The text left on an interactive zsh command line after typing `seq`."""
+    with pty_client([ZSH, "-i"], settle=4.0) as master:
+        write(master, seq)
+        write(master, "#<<\r")
+        out = drain(master)
+        write(master, "\x15\x03")
+    visible = re.sub(r"\x1b\[[0-9;?]*[ -/]*[@-~]|\x1b\][^\x07\x1b]*(\x07|\x1b\\)", "", out)
+    return re.sub(r"[#\x07\x08\r\n]|<<.*", "", visible.split("#<<")[0])
+
+
+class pty_client:
+    """A process attached to a pty it owns as its controlling terminal."""
+
+    def __init__(self, argv: list[str], settle: float = 3.0):
+        self.argv, self.settle = argv, settle
+
+    def __enter__(self) -> int:
+        self.master, slave = pty.openpty()
+        fcntl.ioctl(slave, termios.TIOCSWINSZ, struct.pack("HHHH", 24, 80, 0, 0))
+        self.proc = subprocess.Popen(
+            self.argv, stdin=slave, stdout=slave, stderr=slave,
+            env={**os.environ, "TERM": "xterm-256color"},
+            preexec_fn=lambda: (os.setsid(), fcntl.ioctl(0, termios.TIOCSCTTY, 0)),
+        )
+        os.close(slave)
+        drain(self.master, self.settle)
+        return self.master
+
+    def __exit__(self, *_) -> None:
+        self.proc.kill()
+        self.proc.wait()
+        os.close(self.master)
+
+
+def write(fd: int, s: str, settle: float = 0.6) -> None:
+    os.write(fd, s.encode())
+    drain(fd, settle)
+
+
+def drain(fd: int, timeout: float = 1.5) -> str:
+    out, deadline = b"", time.time() + timeout
+    while time.time() < deadline:
+        if not select.select([fd], [], [], 0.2)[0]:
+            continue
+        try:
+            chunk = os.read(fd, 65536)
+        except OSError:
+            break
+        if not chunk:
+            break
+        out, deadline = out + chunk, time.time() + 0.3
+    return out.decode("utf-8", "replace")
+
+
+def tmux(*args: str) -> None:
+    subprocess.run(["tmux", "-L", TMUX_SOCKET, *args], capture_output=True)
+
+
+if __name__ == "__main__":
+    sys.exit(main())
