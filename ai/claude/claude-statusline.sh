@@ -13,9 +13,10 @@ if [ -z "$name" ] && [ -n "$transcript" ]; then
 fi
 [ -z "$name" ] && name="claude"
 
-# Age of the session, so that resuming an old one is visually obvious.
-[ -n "$transcript" ] && age=$(head -50 "$transcript" | jq -rn '
-  first(inputs | .timestamp // empty)
+# Age of the last turn (not the session's creation), so that resuming an old
+# one is visually obvious.
+[ -n "$transcript" ] && age=$(tail -200 "$transcript" | jq -rn '
+  last(inputs | .timestamp // empty)
   | (sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601) as $start
   | ((now - $start) / 60 | floor) as $m
   | if $m < 60 then empty
