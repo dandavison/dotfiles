@@ -1,0 +1,4 @@
+*_mock.go
+*.mock.go
+*_gen.go
+*.pb.go

@@ -1,0 +1,52 @@
+# ripgrep config: vocabulary only, no filtering.
+#
+# Defines file types so that noise can be toggled with a two-char flag rather
+# than hardwired into per-project configs: -TT drops tests, -tT searches only
+# tests, likewise -TG/-tG for generated code and -TD/-td for docs and data.
+#
+# Type globs match the file name only; directory patterns do not work.
+# One glob per --type-add; commas are not separators.
+#
+# Things you almost never want belong in a repo's .ignore file instead
+# (see dotfiles/rg/ignore/), which -g and -u can override.
+
+# T: tests
+--type-add=T:*_test.go
+--type-add=T:*_test.py
+--type-add=T:test_*.py
+--type-add=T:conftest.py
+--type-add=T:*_test.rs
+--type-add=T:*_test.rb
+--type-add=T:*_spec.rb
+--type-add=T:*Test.java
+--type-add=T:*Tests.java
+--type-add=T:*IT.java
+--type-add=T:*Test.cs
+--type-add=T:*Tests.cs
+--type-add=T:*Test.php
+--type-add=T:*.test.ts
+--type-add=T:*.test.tsx
+--type-add=T:*.test.js
+--type-add=T:*.test.jsx
+--type-add=T:*.spec.ts
+--type-add=T:*.spec.tsx
+--type-add=T:*.spec.js
+--type-add=T:*.spec.jsx
+
+# G: generated
+--type-add=G:*.pb.go
+--type-add=G:*.pb.gw.go
+--type-add=G:*_gen.go
+--type-add=G:*.gen.go
+--type-add=G:*_mock.go
+--type-add=G:*.mock.go
+--type-add=G:mock_*.go
+--type-add=G:*_pb2.py
+--type-add=G:*_pb2.pyi
+--type-add=G:*_pb2_grpc.py
+
+# D: docs and data
+--type-add=D:*.json
+--type-add=D:*.yaml
+--type-add=D:*.yml
+--type-add=D:*.md
