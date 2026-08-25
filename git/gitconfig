@@ -7,10 +7,10 @@ useConfigOnly = true
 user = dandavison
 
 [includeIf "gitdir:~/src/temporalio/"]
-path = ~/src/temporalio/.gitconfig
+path = ~/src/devenv/temporal/dotfiles/gitconfig
 
 [includeIf "gitdir:~/src/temporal-all/"]
-path = ~/src/temporal-all/.gitconfig
+path = ~/src/devenv/temporal/dotfiles/gitconfig
 
 [advice]
 detachedHead = false
