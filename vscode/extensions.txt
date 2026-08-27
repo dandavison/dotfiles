@@ -2,7 +2,6 @@ anthropic.claude-code
 bierner.markdown-mermaid
 brunnerh.insert-unicode
 charliermarsh.ruff
-daelmaak.next-error
 dandavison.vscode-etc
 dandavison.wormhole
 debugpig.highlight
