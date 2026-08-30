@@ -70,23 +70,17 @@ fi
 
 { printf '\033]0;%s\007' "$name" > /dev/tty; } 2>/dev/null   # tab/pane title
 
-# Groups: session identity, wormhole project/task, run stats. "  │  " separates
-# groups; "  ·  " separates parts within a group.
+# wormhole task, then session identity, then run stats — each stat its own
+# "│"-separated field so the busiest/most-variable info sits at the end.
 identity="$bold$name$reset  $dim#$session_code$reset"
 
-line="$identity"
-[ -n "$task" ] && line="$line  │  $cyan$task$reset"
+line=""
+[ -n "$task" ] && line="$cyan$task$reset | "
+line="$line$identity"
 
-[ -n "$model" ] && model="$dim$model$reset"
-[ -n "$cost" ] && cost="$dim$cost$reset"
-[ -n "$age" ] && age="$dim$age$reset"
-
-stats=""
-for part in "$model" "$ctx" "$cost" "$age"; do
-  [ -n "$part" ] || continue
-  [ -n "$stats" ] && stats="$stats $dim ·$reset "
-  stats="$stats$part"
-done
-[ -n "$stats" ] && line="$line  │  $stats"
+[ -n "$model" ] && line="$line │ $dim$model$reset"
+[ -n "$cost" ] && line="$line │ $dim$cost$reset"
+[ -n "$ctx" ] && line="$line │ $ctx"
+[ -n "$age" ] && line="$line │ $dim$age$reset"
 
 echo "$line"
