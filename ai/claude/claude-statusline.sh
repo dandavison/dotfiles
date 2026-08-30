@@ -4,8 +4,18 @@
 # falling back to the auto-generated ai-title from the transcript.
 input=$(cat)
 
+bold=$'\033[1m'
+dim=$'\033[2m'
+cyan=$'\033[36m'
+green=$'\033[32m'
+yellow=$'\033[33m'
+red=$'\033[31m'
+reset=$'\033[0m'
+
 transcript=$(echo "$input" | jq -r '.transcript_path // empty')
 [ -f "$transcript" ] || transcript=""
+
+cwd=$(echo "$input" | jq -r '.cwd // empty')
 
 name=$(echo "$input" | jq -r '.session_name // empty')
 if [ -z "$name" ] && [ -n "$transcript" ]; then
@@ -25,6 +35,10 @@ fi
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
 
+pct=$(echo "$input" | jq -r '
+  .context_window as $c
+  | (($c.total_input_tokens // 0)) as $used
+  | if $used > 0 then (($c.used_percentage // (($used / (($c.context_window_size // 200000)) * 100))) | floor) else empty end')
 ctx=$(echo "$input" | jq -r '
   .context_window as $c
   | (($c.total_input_tokens // 0)) as $used
@@ -33,6 +47,12 @@ ctx=$(echo "$input" | jq -r '
       | (($c.used_percentage // (($used / $max) * 100)) | floor) as $pct
       | "\($used / 1000 | floor)k/\($max / 1000 | floor)k (\($pct)%)"
     else empty end')
+if [ -n "$ctx" ]; then
+  if [ "$pct" -ge 80 ]; then ctx="$red$ctx$reset"
+  elif [ "$pct" -ge 50 ]; then ctx="$yellow$ctx$reset"
+  else ctx="$green$ctx$reset"
+  fi
+fi
 
 cost_usd=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 [ -n "$cost_usd" ] && cost=$(printf '$%.2f' "$cost_usd")
@@ -40,19 +60,33 @@ cost_usd=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 session_id=$(echo "$input" | jq -r '.session_id // empty')
 session_code=${session_id: -8}
 
+# Current wormhole project/task for the session's directory, e.g. "api-go" or
+# "api-go:some-branch" when the project is checked out as a task worktree.
+task=""
+if [ -n "$cwd" ] && command -v wormhole >/dev/null 2>&1; then
+  task=$(cd "$cwd" 2>/dev/null && timeout 1 wormhole project show -o json 2>/dev/null \
+    | jq -r 'if .branch then "\(.name):\(.branch)" else .name end' 2>/dev/null)
+fi
+
 { printf '\033]0;%s\007' "$name" > /dev/tty; } 2>/dev/null   # tab/pane title
 
-line="$name"
-[ -n "$model" ] && line="$line  ·  $model"
-[ -n "$ctx" ] && line="$line  ·  $ctx"
-[ -n "$cost" ] && line="$line  ·  $cost"
-[ -n "$age" ] && line="$line  ·  $age"
+# Groups: session identity, wormhole project/task, run stats. "  │  " separates
+# groups; "  ·  " separates parts within a group.
+identity="$bold$name$reset  $dim#$session_code$reset"
 
-cols=$(tput cols 2>/dev/null)
-if [ -n "$cols" ] && [ -n "$session_code" ]; then
-  pad=$((cols - ${#line} - ${#session_code} - 1))
-  [ "$pad" -lt 1 ] && pad=1
-  printf '%s%*s%s\n' "$line" "$pad" "" "$session_code"
-else
-  echo "$line  ·  $session_code"
-fi
+line="$identity"
+[ -n "$task" ] && line="$line  │  $cyan$task$reset"
+
+[ -n "$model" ] && model="$dim$model$reset"
+[ -n "$cost" ] && cost="$dim$cost$reset"
+[ -n "$age" ] && age="$dim$age$reset"
+
+stats=""
+for part in "$model" "$ctx" "$cost" "$age"; do
+  [ -n "$part" ] || continue
+  [ -n "$stats" ] && stats="$stats $dim ·$reset "
+  stats="$stats$part"
+done
+[ -n "$stats" ] && line="$line  │  $stats"
+
+echo "$line"
