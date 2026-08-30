@@ -111,6 +111,9 @@ trust_level = "trusted"
 [projects."/Users/dan/src/devenv/dotfiles"]
 trust_level = "trusted"
 
+[projects."/Users/dan/src/agent-sessions"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
 
