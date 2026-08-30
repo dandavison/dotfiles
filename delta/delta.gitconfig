@@ -19,6 +19,10 @@
     commit-style = raw
     commit-regex = ^▸
     side-by-side-fill-empty = true
+    minus-style = normal "#ffe9e9"
+    minus-emph-style = normal "#ffd0d0"
+    plus-style = syntax "#dfffe0"
+    plus-emph-style = syntax "#bcf2bd"
 
 
 [delta "whole-file-hunks"]
