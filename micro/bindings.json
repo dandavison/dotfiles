@@ -2,6 +2,8 @@
   "\u001b~a": "SelectAll",
   "CtrlRightSq": "Copy",
   "\u001b~f": "Find",
+  "\u001b~g": "FindNext",
+  "\u001b~G": "FindPrevious",
   "\u001b~s": "Save",
   "\u001b~x": "Cut|CutLine",
   "\u001b~z": "Undo",
