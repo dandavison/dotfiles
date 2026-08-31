@@ -23,18 +23,17 @@ if [ -z "$name" ] && [ -n "$transcript" ]; then
 fi
 [ -z "$name" ] && name="claude"
 
-# Time since the last user-submitted turn (not tool results, interruptions,
-# or other synthetic transcript entries), so a session left waiting on you
-# stands out.
+# Wall-clock time of the last user-submitted turn (not tool results,
+# interruptions, or other synthetic transcript entries) — absolute, not
+# relative, since a relative "X ago" would go stale between statusline
+# refreshes.
 [ -n "$transcript" ] && age=$(jq -rn '
   [inputs | select(.type=="user" and (.message.content|type)=="string") | .timestamp] | last as $ts
   | if $ts == null then empty else
-      ($ts | sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601) as $start
-      | ((now - $start) / 60 | floor) as $m
-      | if $m < 1 then "just now"
-        elif $m < 60 then "\($m)m ago"
-        elif $m < 1440 then "\($m / 60 | floor)h ago"
-        else "\($m / 1440 | floor)d ago" end
+      ($ts | sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601 | localtime) as $lt
+      | (now | localtime) as $today
+      | if $lt[0:3] == $today[0:3] then $lt | strftime("%H:%M")
+        else $lt | strftime("%b %d %H:%M") end
     end' "$transcript" 2>/dev/null)
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
