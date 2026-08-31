@@ -23,15 +23,19 @@ if [ -z "$name" ] && [ -n "$transcript" ]; then
 fi
 [ -z "$name" ] && name="claude"
 
-# Age of the last turn (not the session's creation), so that resuming an old
-# one is visually obvious.
-[ -n "$transcript" ] && age=$(tail -200 "$transcript" | jq -rn '
-  last(inputs | .timestamp // empty)
-  | (sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601) as $start
-  | ((now - $start) / 60 | floor) as $m
-  | if $m < 60 then empty
-    elif $m < 1440 then "\($m / 60 | floor)h ago"
-    else "\($m / 1440 | floor)d ago" end' 2>/dev/null)
+# Time since the last user-submitted turn (not tool results, interruptions,
+# or other synthetic transcript entries), so a session left waiting on you
+# stands out.
+[ -n "$transcript" ] && age=$(jq -rn '
+  [inputs | select(.type=="user" and (.message.content|type)=="string") | .timestamp] | last as $ts
+  | if $ts == null then empty else
+      ($ts | sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601) as $start
+      | ((now - $start) / 60 | floor) as $m
+      | if $m < 1 then "just now"
+        elif $m < 60 then "\($m)m ago"
+        elif $m < 1440 then "\($m / 60 | floor)h ago"
+        else "\($m / 1440 | floor)d ago" end
+    end' "$transcript" 2>/dev/null)
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
 
