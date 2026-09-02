@@ -63,6 +63,14 @@ cost_usd=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 session_id=$(echo "$input" | jq -r '.session_id // empty')
 session_code=${session_id: -8}
 
+# Clickable link to this conversation's agent-sessions view (assumes it has
+# been synced into the index already; syncing is a separate concern).
+link_open="" link_close=""
+if [ -n "$session_id" ]; then
+  link_open=$'\033]8;;http://127.0.0.1:7118/session/claude:'"$session_id"$'\033\\'
+  link_close=$'\033]8;;\033\\'
+fi
+
 # Current wormhole project/task for the session's directory, e.g. "api-go" or
 # "api-go:some-branch" when the project is checked out as a task worktree.
 task=""
@@ -75,7 +83,7 @@ fi
 
 # wormhole task, then session identity, then run stats — each stat its own
 # "│"-separated field so the busiest/most-variable info sits at the end.
-identity="$bold$name$reset  $dim#$session_code$reset"
+identity="$bold$link_open$name$link_close$reset  $dim#$session_code$reset"
 
 line=""
 [ -n "$task" ] && line="$cyan$task$reset | "
