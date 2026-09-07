@@ -215,9 +215,14 @@ size = 14.0
 family = "Monaco"
 style = "Regular"
 
-# Click targets, tried in order; the first one matching under the cursor wins,
-# so URLs must come before paths, since a URL contains path-shaped text. The
-# table names below are Alacritty's schema.
+# Click targets, tried in order; the first one matching under the cursor wins.
+# URLs come first, since a URL contains path-shaped text, and paths come before
+# task identifiers, since `existing_path` lets a path rule decline a match it
+# cannot resolve and fall through. The table names are Alacritty's schema.
+
+# `wormhole` is not on the PATH that launchd gives GUI apps, so these run via
+# `sh -c`, which is cheap and avoids hardcoding a home directory. --no-create
+# because the matched text is whatever happened to be on screen.
 
 # URLs, and any OSC 8 link.
 [[hints.enabled]]
@@ -233,10 +238,10 @@ mods = "Command"
 enabled = true
 mods = "Command"
 
-# Python traceback frames, which carry the line number outside the path.
+# Python traceback frames, which carry the line number outside the path. No
+# existing_path: the match is not itself a path, and the shape never occurs by
+# accident.
 [[hints.enabled]]
-# `wormhole` is not on the PATH that launchd gives GUI apps; `sh -c` is cheap
-# and avoids hardcoding a home directory.
 command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
 regex = 'File "[^"]+", line [0-9]+'
 
@@ -244,18 +249,28 @@ regex = 'File "[^"]+", line [0-9]+'
 enabled = true
 mods = "Command"
 
-# Paths (absolute, ./ ../ ~/, relative, or a bare filename), optionally followed
-# by :line, :line:column, or (line) as pdb prints it; and wormhole task
-# identifiers (repo:branch). `wormhole open` decides which it is, resolving
-# relative paths against the cwd Alacritty gives the spawned command.
-# --no-create because this text is whatever happened to be on screen.
+# Paths: absolute, ./ ../ ~/, relative, or a bare filename, optionally followed
+# by :line, :line:column, or (line) as pdb prints it. existing_path means
+# nothing underlines unless clicking it would really open something.
 [[hints.enabled]]
+existing_path = true
 command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
-regex = '((~|\.{1,2})?/[A-Za-z0-9._~/+-]+|[A-Za-z0-9._~+-]+/[A-Za-z0-9._~/+-]+|[A-Za-z0-9_+-]+\.[A-Za-z0-9]+|[A-Za-z0-9][A-Za-z0-9._-]*:[A-Za-z0-9._/-]*[A-Za-z_/-][A-Za-z0-9._/-]*)(\([0-9]+\)|(:[0-9]+){0,2})'
+regex = '((~|\.{1,2})?/[A-Za-z0-9._~/+-]+|[A-Za-z0-9._~+-]+/[A-Za-z0-9._~/+-]+|[A-Za-z0-9_+-]+\.[A-Za-z0-9]+)(\([0-9]+\)|(:[0-9]+){0,2})'
 
 [hints.enabled.binding]
 key = "Period"
 mods = "Command|Shift"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "Command"
+
+# Wormhole task identifiers (repo:branch, or :branch). Not a path, so
+# existing_path cannot vet these; `wormhole open --no-create` rejects the ones
+# that name no task, silently.
+[[hints.enabled]]
+command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
+regex = '[A-Za-z0-9][A-Za-z0-9._-]*:[A-Za-z0-9._/-]*[A-Za-z_/-][A-Za-z0-9._/-]*'
 
 [hints.enabled.mouse]
 enabled = true
