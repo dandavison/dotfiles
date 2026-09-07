@@ -1,0 +1,136 @@
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = ">=3.12"
+# dependencies = []
+# ///
+"""Check which text Alacritty's hints offer as click targets, and to whom.
+
+Two layers decide what a Cmd-click opens, and only one of them is tested
+elsewhere:
+
+  regexes  say what shape of text to consider, and in what order, so a bug here
+           either mangles a target (a `:73-79` range cut back to `:73`) or never
+           considers it at all. Asserted below, against the config itself.
+  wormhole says whether a shape names anything, which a regex cannot know: it
+           is what declines `api.go:73-79` as a task identifier and `dan/saa-fix`
+           as a path. Asserted in that repo, and reached from here only through
+           the argv plumbing of `dan_openable_command`, checked at the end.
+
+So a case here asserts every hint that would consider the text, in the order
+they are asked, rather than which one wins: the winner is the first of them
+wormhole says it would open.
+
+Python's `re` stands in for the regex crate Alacritty compiles these with. The
+two agree on leftmost-first alternation and greedy repetition, which is all
+these patterns use.
+"""
+
+import re
+import subprocess
+import sys
+import tomllib
+from pathlib import Path
+
+CONFIG = Path(__file__).with_name("alacritty.toml")
+
+# (screen text, text the cursor is over, [(hint, match), ...] in the order asked)
+#
+# A hint is named by the position of its table in the config, since that order
+# is what decides which of them is asked first.
+CASES = [
+    ("(service/history/api/requestcancelworkflow/api.go:73-79).", "api.go", [
+        (2, "service/history/api/requestcancelworkflow/api.go:73-79"),
+        (3, "api.go:73-79"),
+    ]),
+    ("(service/history/api/requestcancelworkflow/api.go:73-79).", "73-79", [
+        (2, "service/history/api/requestcancelworkflow/api.go:73-79"),
+        (3, "api.go:73-79"),
+    ]),
+    ("SAA refuses, chasm/lib/activity/operator_commands.go:245-249.", "operator_commands", [
+        (2, "chasm/lib/activity/operator_commands.go:245-249"),
+        (3, "operator_commands.go:245-249."),
+    ]),
+    ("see src/main.rs:12:9 for the rest", "main.rs", [(2, "src/main.rs:12:9")]),
+    ("> /Users/dan/src/alacritty/CHANGELOG.md", "CHANGELOG", [
+        (2, "/Users/dan/src/alacritty/CHANGELOG.md"),
+    ]),
+    ("~/notes.md", "notes", [(2, "~/notes.md")]),
+    ("app.py(42)", "app", [(2, "app.py(42)")]),
+    ('  File "app.py", line 42, in <module>', "app.py", [
+        (1, 'File "app.py", line 42'),
+        (2, "app.py"),
+    ]),
+    ("https://github.com/alacritty/alacritty/blob/master/README.md#L3", "README", [
+        (0, "https://github.com/alacritty/alacritty/blob/master/README.md#L3"),
+        (2, "//github.com/alacritty/alacritty/blob/master/README.md"),
+        (3, "https://github.com/alacritty/alacritty/blob/master/README.md"),
+    ]),
+    # A task identifier: the pane directory the branch is checked out in is not
+    # on screen, so the path hint is asked about `dan/saa-fix` first and declines.
+    ("temporal:dan/saa-fix", "saa-fix", [
+        (2, "dan/saa-fix"),
+        (3, "temporal:dan/saa-fix"),
+    ]),
+    # The branch-only form, which searches every repo for the branch.
+    (":saa-fix", "saa", [(3, ":saa-fix")]),
+]
+
+
+def main() -> int:
+    config = tomllib.loads(CONFIG.read_text())
+    regexes = [
+        re.compile(hint["regex"]) if "regex" in hint else None
+        for hint in config["hints"]["enabled"]
+    ]
+
+    failures = []
+    for line, under_cursor, expected in CASES:
+        got = considered_for(regexes, line, line.index(under_cursor))
+        if got != [tuple(candidate) for candidate in expected]:
+            failures.append(f"{under_cursor!r} in {line!r}: expected {expected}, got {got}")
+
+    failures += openable_command_failures(config)
+
+    for failure in failures:
+        print(f"FAIL {failure}")
+    print(f"{len(CASES) + 1 - len(failures)}/{len(CASES) + 1} checks passed")
+    return 1 if failures else 0
+
+
+def considered_for(regexes, line: str, column: int) -> list[tuple[int, str]]:
+    """Every hint that would consider the text at `column`, in the order asked.
+
+    Hovering asks each hint in configured order for a match spanning the column,
+    and takes the first whose match its program would open.
+    """
+    considered = []
+    for hint, regex in enumerate(regexes):
+        if regex is None:
+            continue
+        spanning = (m for m in regex.finditer(line) if m.start() <= column < m.end())
+        match = next(spanning, None)
+        if match is not None:
+            considered.append((hint, match.group(0)))
+    return considered
+
+
+def openable_command_failures(config: dict) -> list[str]:
+    """`dan_openable_command` must echo back a target it would open.
+
+    Alacritty appends the matches after a `--`, so a wrapper mishandling "$@"
+    silently offers nothing at all.
+    """
+    command = config["hints"]["dan_openable_command"]
+    argv = [command["program"], *command.get("args", []), "--", str(CONFIG)]
+    result = subprocess.run(argv, capture_output=True, text=True)
+    if result.stdout.splitlines() != [str(CONFIG)]:
+        return [
+            f"dan_openable_command did not offer {CONFIG}: "
+            f"stdout={result.stdout!r} stderr={result.stderr!r}"
+        ]
+    return []
+
+
+if __name__ == "__main__":
+    sys.exit(main())
