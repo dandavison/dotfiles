@@ -250,12 +250,13 @@ enabled = true
 mods = "Command"
 
 # Paths: absolute, ./ ../ ~/, relative, or a bare filename, optionally followed
-# by :line, :line:column, or (line) as pdb prints it. dan_existing_path means
-# nothing underlines unless clicking it would really open something.
+# by :line, :line:column, :line-line, or (line) as pdb prints it.
+# dan_existing_path means nothing underlines unless clicking it would really open
+# something.
 [[hints.enabled]]
 dan_existing_path = true
 command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
-regex = '((~|\.{1,2})?/[A-Za-z0-9._~/+-]+|[A-Za-z0-9._~+-]+/[A-Za-z0-9._~/+-]+|[A-Za-z0-9_+-]+\.[A-Za-z0-9]+)(\([0-9]+\)|(:[0-9]+){0,2})'
+regex = '((~|\.{1,2})?/[A-Za-z0-9._~/+-]+|[A-Za-z0-9._~+-]+/[A-Za-z0-9._~/+-]+|[A-Za-z0-9_+-]+\.[A-Za-z0-9]+)(\([0-9]+\)|:[0-9]+-[0-9]+|(:[0-9]+){0,2})'
 
 [hints.enabled.binding]
 key = "Period"
