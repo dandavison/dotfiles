@@ -112,13 +112,13 @@ chars = "\u001B\r"
 action = "Copy"
 key = "C"
 mods = "Command"
-mode = "Selection"
+mode = "dan_selection"
 
 [[keyboard.bindings]]
 chars = "\u001d"
 key = "C"
 mods = "Command"
-mode = "~Selection"
+mode = "~dan_selection"
 
 [[keyboard.bindings]]
 chars = "\u001b~a"
@@ -217,7 +217,7 @@ style = "Regular"
 
 # Click targets, tried in order; the first one matching under the cursor wins.
 # URLs come first, since a URL contains path-shaped text, and paths come before
-# task identifiers, since `existing_path` lets a path rule decline a match it
+# task identifiers, since `dan_existing_path` lets a path rule decline a match it
 # cannot resolve and fall through. The table names are Alacritty's schema.
 
 # `wormhole` is not on the PATH that launchd gives GUI apps, so these run via
@@ -239,7 +239,7 @@ enabled = true
 mods = "Command"
 
 # Python traceback frames, which carry the line number outside the path. No
-# existing_path: the match is not itself a path, and the shape never occurs by
+# dan_existing_path: the match is not itself a path, and the shape never occurs by
 # accident.
 [[hints.enabled]]
 command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
@@ -250,10 +250,10 @@ enabled = true
 mods = "Command"
 
 # Paths: absolute, ./ ../ ~/, relative, or a bare filename, optionally followed
-# by :line, :line:column, or (line) as pdb prints it. existing_path means
+# by :line, :line:column, or (line) as pdb prints it. dan_existing_path means
 # nothing underlines unless clicking it would really open something.
 [[hints.enabled]]
-existing_path = true
+dan_existing_path = true
 command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
 regex = '((~|\.{1,2})?/[A-Za-z0-9._~/+-]+|[A-Za-z0-9._~+-]+/[A-Za-z0-9._~/+-]+|[A-Za-z0-9_+-]+\.[A-Za-z0-9]+)(\([0-9]+\)|(:[0-9]+){0,2})'
 
@@ -266,7 +266,7 @@ enabled = true
 mods = "Command"
 
 # Wormhole task identifiers (repo:branch, or :branch). Not a path, so
-# existing_path cannot vet these; `wormhole open --no-create` rejects the ones
+# dan_existing_path cannot vet these; `wormhole open --no-create` rejects the ones
 # that name no task, silently.
 [[hints.enabled]]
 command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
