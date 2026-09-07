@@ -702,7 +702,7 @@
   "cursor.blame.hoverDelay": 10000,
   "cursorBlame.editorDecoration.enabled": false,
   "claudeCode.respectGitIgnore": false,
-  "claudeCode.preferredLocation": "panel",
+  "claudeCode.preferredLocation": "sidebar",
   "claudeCode.selectedModel": "opus[1m]",
   "claudeCode.allowDangerouslySkipPermissions": true,
   "claudeCode.initialPermissionMode": "bypassPermissions",
