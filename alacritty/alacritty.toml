@@ -215,10 +215,11 @@ size = 14.0
 family = "Monaco"
 style = "Regular"
 
-# Hints are tried in order and the first one matching under the cursor wins, so
-# the URL hint must precede the path hint: a URL contains path-shaped text.
+# Click targets, tried in order; the first one matching under the cursor wins,
+# so URLs must come before paths, since a URL contains path-shaped text. The
+# table names below are Alacritty's schema.
 
-# URLs, and any OSC 8 hyperlink.
+# URLs, and any OSC 8 link.
 [[hints.enabled]]
 command = "open"
 hyperlinks = true
@@ -236,7 +237,7 @@ mods = "Command"
 [[hints.enabled]]
 # `wormhole` is not on the PATH that launchd gives GUI apps; `sh -c` is cheap
 # and avoids hardcoding a home directory.
-command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" hint "$0"'] }
+command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
 regex = 'File "[^"]+", line [0-9]+'
 
 [hints.enabled.mouse]
@@ -245,12 +246,11 @@ mods = "Command"
 
 # Paths (absolute, ./ ../ ~/, relative, or a bare filename), optionally followed
 # by :line, :line:column, or (line) as pdb prints it; and wormhole task
-# identifiers (repo:branch). `wormhole hint` decides which it is, resolving
+# identifiers (repo:branch). `wormhole open` decides which it is, resolving
 # relative paths against the cwd Alacritty gives the spawned command.
+# --no-create because this text is whatever happened to be on screen.
 [[hints.enabled]]
-# `wormhole` is not on the PATH that launchd gives GUI apps; `sh -c` is cheap
-# and avoids hardcoding a home directory.
-command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" hint "$0"'] }
+command = { program = "/bin/sh", args = ['-c', 'exec "$HOME/bin/wormhole" open --no-create "$0"'] }
 regex = '((~|\.{1,2})?/[A-Za-z0-9._~/+-]+|[A-Za-z0-9._~+-]+/[A-Za-z0-9._~/+-]+|[A-Za-z0-9_+-]+\.[A-Za-z0-9]+|[A-Za-z0-9][A-Za-z0-9._-]*:[A-Za-z0-9._/-]*[A-Za-z_/-][A-Za-z0-9._/-]*)(\([0-9]+\)|(:[0-9]+){0,2})'
 
 [hints.enabled.binding]
@@ -260,13 +260,6 @@ mods = "Command|Shift"
 [hints.enabled.mouse]
 enabled = true
 mods = "Command"
-
-# Double-click selection in tmux popups is Alacritty's, not tmux's (see
-# dotfiles/tmux/tmux.conf), so keep the word boundaries identical: tmux's
-# word-separators plus space and tab, which tmux always breaks on (WHITESPACE in
-# grid_reader_cursor_previous_word) whether or not they are in the option.
-[selection]
-semantic_escape_chars = "\t !\"#$%&'()*+,:;<=>?@[\\]^`{|}~"
 
 # Launch tmux via a login shell so it resolves from PATH (GUI apps get launchd's
 # minimal PATH, which lacks Homebrew); avoids hardcoding tmux's absolute path.
