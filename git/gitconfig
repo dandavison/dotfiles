@@ -16,7 +16,12 @@ path = ~/src/devenv/temporal/dotfiles/gitconfig
 detachedHead = false
 
 [pager]
+# gitu as the pager for what it can give keybindings to: it spawns delta
+# itself, so these stay delta-rendered. core.pager is still delta + less for
+# everything else, where gitu would only cost the search less has.
 log = git-log-pager
+diff = gitu --pager
+show = gitu --pager
 
 [blame]
 # coloring = highlightRecent

@@ -17,7 +17,9 @@
     grep-file-style = red
     commit-decoration-style = blue ol
     commit-style = raw
-    commit-regex = ^▸
+    # The custom log format and git's own, so delta marks the commit in either
+    # and gitu can make the rows of both navigable.
+    commit-regex = ^(▸|commit )
     side-by-side-fill-empty = true
     minus-style = normal "#ffe9e9"
     minus-emph-style = normal "#ffd0d0"
