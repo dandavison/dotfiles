@@ -9,7 +9,7 @@ user = dandavison
 [includeIf "gitdir:~/src/temporalio/"]
 path = ~/src/devenv/temporal/dotfiles/gitconfig
 
-[includeIf "gitdir:~/src/temporal-all/"]
+[includeIf "gitdir:~/src/temporal-etc/"]
 path = ~/src/devenv/temporal/dotfiles/gitconfig
 
 [advice]
