@@ -120,6 +120,9 @@ trust_level = "trusted"
 [projects."/Users/dan/worktrees/temporal/rippling/temporal"]
 trust_level = "trusted"
 
+[projects."/Users/dan/src/gitu"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
 
