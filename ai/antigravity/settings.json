@@ -1,0 +1,16 @@
+{
+  "colorScheme": "light",
+  "permissions": {
+    "allow": [
+      "command(*)",
+      "read_file(*)",
+      "write_file(*)",
+      "read_url(*)",
+      "execute_url(*)",
+      "mcp(*)"
+    ]
+  },
+  "trustedWorkspaces": [
+    "/Users/dan/src/devenv/tools"
+  ]
+}
