@@ -305,8 +305,8 @@
     "unmerged",
     "stashes",
   ],
-  "magit.use-diff-colorizer": true,
-  "magit.diff-colorizer-command": [
+  "magit.use-diff-renderer": true,
+  "magit.diff-renderer-command": [
     "delta-no-osc1717",
     "--color-only",
     "--no-gitconfig",
