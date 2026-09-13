@@ -1,21 +1,28 @@
 # See https://github.com/altsem/gitu/blob/master/src/default_config.toml
 
 [general]
-diff_renderer.enabled = true
-diff_renderer.command = ["delta", "--width", "{width}"]
-stash_list_limit = 0
-recent_commits_limit = 0
 collapsed_sections = ["branch_status"]
+diff_renderer.command = ["delta", "--width", "{width}"]
+diff_renderer.enabled = true
+log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
+log_renderer.enabled = true
+recent_commits_limit = 0
+stash_list_limit = 0
 visit_context_lines = true
 
-log_renderer.enabled = true
-log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
+[bindings]
+root.discard = ["k"]
+root.move_down = ["ctrl+down"]
+root.move_down_line = ["down"]
+root.move_up = ["ctrl+up"]
+root.move_up_line = ["up"]
 
+
+[style]
 # GitHub light theme palette:
 #   fg #333333  gray #969896  pink #a71d5d  blue #0086b3
 #   purple #795da3  string #183691  green #63a35c/#009926
 #   orange #df5000  red #f93232
-[style]
 separator = { mods = "DIM" }
 
 info_msg = { fg = "#009926", mods = "BOLD" }
@@ -74,7 +81,6 @@ selection_bar = { symbol = "▌", fg = "#0086b3", mods = "DIM" }
 selection_line = { mods = "BOLD" }
 selection_area = {}
 
-# What the interactive rebase will do with each commit.
 rebase_todo.reword = { fg = "#f93232", mods = "BOLD" }
 rebase_todo.edit = { fg = "#f93232", mods = "BOLD" }
 rebase_todo.squash = { fg = "#f93232", mods = "BOLD" }
@@ -88,13 +94,3 @@ tag = { fg = "#0086b3" }
 
 blame.line_num = { mods = "DIM" }
 blame.code_line = { mods = "DIM" }
-
-# Navigate by line by default; modifier for by-hunk
-[bindings]
-
-root.move_up = ["ctrl+up"]
-root.move_down = ["ctrl+down"]
-root.move_up_line = ["up"]
-root.move_down_line = ["down"]
-
-root.discard = ["k"]
