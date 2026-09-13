@@ -16,7 +16,7 @@ root.move_down = ["ctrl+down"]
 root.move_down_line = ["down"]
 root.move_up = ["ctrl+up"]
 root.move_up_line = ["up"]
-
+rebase_todo.rebase_todo_drop = ["ctrl+k"]
 
 [style]
 # GitHub light theme palette:
