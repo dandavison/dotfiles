@@ -114,16 +114,21 @@ hs.hotkey.bind({}, "f17", code)
 hs.hotkey.bind({ "alt" }, "space", function()
     tmuxPopup({ "display-popup", "-d", "#{pane_current_path}", "-E", "-w", "100%", "-h", "100%", "-b", "rounded", "-T", "", "SKIP_XOLMIS=1 zsh" })
 end)
+-- The pickers run under an interactive shell: a popup's shell is otherwise
+-- non-interactive, so it would miss shell/env.sh, and fzf would fall back to
+-- its own defaults rather than FZF_DEFAULT_OPTS.
+local function picker(command)
+    return "zsh -ic '" .. os.getenv("HOME") .. "/bin/" .. command .. "'"
+end
+
 -- App launcher popup
 hs.hotkey.bind({ "cmd" }, "space", function()
-    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", os.getenv("HOME") .. "/bin/f-open-app" })
+    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-open-app") })
 end)
 -- Project picker popup that lands in the project's tide files browser, i.e.
--- tmux M-j in the chosen project's window. Run via an interactive shell: a
--- popup's shell is otherwise non-interactive, so it would miss shell/env.sh
--- and fzf would fall back to its defaults.
+-- tmux M-j in the chosen project's window.
 hs.hotkey.bind({ "cmd" }, "j", function()
-    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", "zsh -ic '" .. os.getenv("HOME") .. "/bin/f-tide files'" }, true)
+    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-tide files") }, true)
 end)
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
