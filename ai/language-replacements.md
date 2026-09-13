@@ -1,3 +1,10 @@
+
+
+"a workflow activity has no per-activity start delay, so neither a config nor a trace can name one"
+
+"workflow activity does not support start delay"
+
+
 Do not use metaphors or LLM-speak such as "load-bearing", "the honest truth", "sharp", or any
 language that has that flavor; just write in a sober, straightforward, direct way without any extra
 verbosity or editorialization.
