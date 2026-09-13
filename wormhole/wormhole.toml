@@ -22,3 +22,11 @@ card_commands = [
 exclude = [
     "devenv",
 ]
+
+
+[project_branches]
+"*" = ["{project}-*", "z-{project}-*"]
+"temporal:dan/saa-model-tests-w-transitions-conformance-explorer" = []
+
+
+
