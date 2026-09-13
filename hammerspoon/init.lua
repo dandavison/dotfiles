@@ -119,9 +119,11 @@ hs.hotkey.bind({ "cmd" }, "space", function()
     tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", os.getenv("HOME") .. "/bin/f-open-app" })
 end)
 -- Project picker popup that lands in the project's tide files browser, i.e.
--- tmux M-j in the chosen project's window.
+-- tmux M-j in the chosen project's window. Run via an interactive shell: a
+-- popup's shell is otherwise non-interactive, so it would miss shell/env.sh
+-- and fzf would fall back to its defaults.
 hs.hotkey.bind({ "cmd" }, "j", function()
-    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", os.getenv("HOME") .. "/bin/f-tide files" }, true)
+    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", "zsh -ic '" .. os.getenv("HOME") .. "/bin/f-tide files'" }, true)
 end)
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
