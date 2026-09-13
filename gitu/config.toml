@@ -1,11 +1,12 @@
 # See https://github.com/altsem/gitu/blob/master/src/default_config.toml
 
 [general]
-diff_colorizer.enabled = true
-diff_colorizer.command = ["delta", "--width", "{width}"]
+diff_renderer.enabled = true
+diff_renderer.command = ["delta", "--width", "{width}"]
 stash_list_limit = 0
 recent_commits_limit = 0
 collapsed_sections = ["branch_status"]
+visit_context_lines = true
 
 log_renderer.enabled = true
 log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
@@ -90,8 +91,9 @@ blame.code_line = { mods = "DIM" }
 
 # Navigate by line by default; modifier for by-hunk
 [bindings]
-root.move_up = ["ctrl+k", "ctrl+up"]
-root.move_down = ["ctrl+j", "ctrl+down"]
+
+root.move_up = ["ctrl+up"]
+root.move_down = ["ctrl+down"]
 root.move_up_line = ["up"]
 root.move_down_line = ["down"]
 
