@@ -125,11 +125,16 @@ end
 hs.hotkey.bind({ "cmd" }, "space", function()
     tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-open-app") })
 end)
--- Project picker popup that lands in the project's tide files browser, i.e.
--- tmux M-j in the chosen project's window.
-hs.hotkey.bind({ "cmd" }, "j", function()
-    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-tide files") }, true)
-end)
+-- Project picker popups landing in one of the chosen project's tide views,
+-- i.e. that view's tmux key in that project's window.
+local function bindTideView(key, view)
+    hs.hotkey.bind({ "cmd" }, key, function()
+        tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-tide " .. view) }, true)
+    end)
+end
+
+bindTideView("j", "files") -- M-j
+bindTideView("m", "git")   -- M-l
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
 end)

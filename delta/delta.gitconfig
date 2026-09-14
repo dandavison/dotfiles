@@ -26,6 +26,8 @@
     plus-style = syntax "#dfffe0"
     plus-emph-style = syntax "#bcf2bd"
 
+[delta "keep-plus-minus-markers"]
+    keep-plus-minus-markers = true
 
 [delta "whole-file-hunks"]
     # set diff.context (-U) to a large value
