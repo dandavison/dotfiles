@@ -44,7 +44,24 @@ end
 -- Hammerspoon picks up Homebrew's PATH rather than launchd's minimal one.
 local tmux = hs.execute("command -v tmux", true):gsub("%s+$", "")
 
-local popupTasks = {} -- retain tasks so GC doesn't drop the completion callback
+local tasks = {} -- retain tasks so GC doesn't drop their completion callbacks
+
+local function run(binary, args, done)
+    local task
+    task = hs.task.new(binary, function()
+        tasks[task] = nil
+        if done then done() end
+    end, args)
+    tasks[task] = true
+    task:start()
+end
+
+local function focusAlacritty()
+    local app = hs.application.find("alacritty")
+    if not (app and app:isFrontmost()) then
+        hs.application.launchOrFocus("/Applications/Alacritty.app")
+    end
+end
 
 -- Alacritty, not tmux, must own the mouse while a popup is up. A popup is not a
 -- pane: tmux forwards mouse events to the popup's program only if that program
@@ -69,13 +86,8 @@ end
 -- somewhere in tmux).
 local function tmuxPopup(args, keepFocus)
     local prev = hs.application.frontmostApplication()
-    local app = hs.application.find("alacritty")
-    if not (app and app:isFrontmost()) then
-        hs.application.launchOrFocus("/Applications/Alacritty.app")
-    end
-    local task
-    task = hs.task.new(tmux, function()
-        popupTasks[task] = nil
+    focusAlacritty()
+    run(tmux, withMouseOff(args), function()
         local front = hs.application.frontmostApplication()
         if not keepFocus
             and prev
@@ -86,9 +98,7 @@ local function tmuxPopup(args, keepFocus)
         then
             prev:activate()
         end
-    end, withMouseOff(args))
-    popupTasks[task] = true
-    task:start()
+    end)
 end
 
 -- Project hotkey mappings (personal config)
@@ -125,16 +135,17 @@ end
 hs.hotkey.bind({ "cmd" }, "space", function()
     tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-open-app") })
 end)
--- Project picker popups landing in one of the chosen project's tide views,
--- i.e. that view's tmux key in that project's window.
-local function bindTideView(key, view)
-    hs.hotkey.bind({ "cmd" }, key, function()
-        tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-tide " .. view) }, true)
-    end)
-end
-
-bindTideView("j", "files") -- M-j
-bindTideView("m", "git")   -- M-l
+-- Project picker popup that lands in the project's tide files browser, i.e.
+-- tmux M-j in the chosen project's window.
+hs.hotkey.bind({ "cmd" }, "j", function()
+    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-tide files") }, true)
+end)
+-- tide's git view in the current tmux window, i.e. tmux M-l there: given no
+-- context, tide reads the current pane's.
+hs.hotkey.bind({ "cmd" }, "m", function()
+    focusAlacritty()
+    run(os.getenv("HOME") .. "/.local/bin/tide", { "git" })
+end)
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
 end)
