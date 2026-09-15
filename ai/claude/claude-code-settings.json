@@ -34,6 +34,18 @@
     "defaultMode": "bypassPermissions"
   },
   "model": "opus[1m]",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"UserPromptSubmit\",\"additionalContext\":\"\\n--\\nIf my message above did not suggest otherwise, answer in 1ss.\"}}'"
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "/Users/dan/src/devenv/dotfiles/ai/claude/claude-statusline.sh"
