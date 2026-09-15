@@ -12,6 +12,7 @@ visit_context_lines = true
 
 [bindings]
 root.discard = ["k"]
+root.quit = ["q", "esc", "left"]
 root.move_down = ["ctrl+down"]
 root.move_down_line = ["down"]
 root.move_up = ["ctrl+up"]
