@@ -40,6 +40,18 @@ key = "Up"
 mods = "Command"
 
 [[keyboard.bindings]]
+# tmux resize-pane -U 5
+chars = "\u0002\u001B[1;3A"
+key = "Up"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+# tmux resize-pane -D 5
+chars = "\u0002\u001B[1;3B"
+key = "Down"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
 # tmux kill-pane
 chars = "\u0002x"
 key = "W"
