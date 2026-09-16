@@ -1,7 +1,8 @@
 {
   "env": {
     "TEMPORAL_IS_AGENT": "true",
-    "GIT_PAGER": ""
+    "GIT_PAGER": "",
+    "DISABLE_AUTOUPDATER": "1"
   },
   "includeCoAuthoredBy": false,
   "permissions": {
