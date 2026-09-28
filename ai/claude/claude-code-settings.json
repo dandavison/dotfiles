@@ -67,7 +67,7 @@
   "tui": "fullscreen",
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
-  "theme": "light",
+  "theme": "custom:github-light",
   "verbose": false,
   "fileCheckpointingEnabled": false,
   "feedbackSurveyState": {

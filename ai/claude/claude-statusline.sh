@@ -31,9 +31,7 @@ fi
   [inputs | select(.type=="user" and (.message.content|type)=="string") | .timestamp] | last as $ts
   | if $ts == null then empty else
       ($ts | sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601 | localtime) as $lt
-      | (now | localtime) as $today
-      | if $lt[0:3] == $today[0:3] then $lt | strftime("%H:%M")
-        else $lt | strftime("%b %d %H:%M") end
+      | $lt | strftime("%b %d %H:%M")
     end' "$transcript" 2>/dev/null)
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')

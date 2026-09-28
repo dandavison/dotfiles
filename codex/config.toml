@@ -1,7 +1,7 @@
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
-model = "gpt-5.6-sol"
-model_reasoning_effort = "high"
+model = "gpt-6-luna"
+model_reasoning_effort = "medium"
 approvals_reviewer = "user"
 service_tier = "default"
 show_prompt_suggestions = false
@@ -123,8 +123,17 @@ trust_level = "trusted"
 [projects."/Users/dan/src/gitu"]
 trust_level = "trusted"
 
+[projects."/Users/dan/src/reduct"]
+trust_level = "trusted"
+
+[projects."/Users/dan/worktrees/temporal/activity-model-conformance-testing/temporal"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
+
+[tui]
+screen_reader_detection_done = true
 
 [tui.model_availability_nux]
 "gpt-5.5" = 2
