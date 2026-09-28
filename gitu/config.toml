@@ -2,7 +2,7 @@
 
 [general]
 collapsed_sections = ["branch_status"]
-diff_renderer.command = ["delta", "--width", "{width}"]
+diff_renderer.command = ["delta"]
 diff_renderer.enabled = true
 log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
 log_renderer.enabled = true
