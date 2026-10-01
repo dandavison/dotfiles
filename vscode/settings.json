@@ -737,5 +737,6 @@
     "rust",
     "shell",
     "typescript"
-  ], // hide cursor top bar stuff
+  ],
+  "claudeCode.hideOnboarding": true, // hide cursor top bar stuff
 }
