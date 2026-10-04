@@ -2,13 +2,18 @@
 
 [general]
 collapsed_sections = ["branch_status"]
-# diff_renderer.command = ["delta"]
-# diff_renderer.enabled = true
-# log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
-# log_renderer.enabled = true
 recent_commits_limit = 0
 stash_list_limit = 0
+max_input_bytes = 1_000_000
+debug = true
+
+# Added in fork
+# diff_renderer.command = ["delta"]
+# diff_renderer.enabled = true
+log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
+log_renderer.enabled = true
 visit_context_lines = true
+diff_renderer.feature_keys = { side-by-side = "S", line-numbers = "L", keep-plus-minus-markers = "K" }
 
 [bindings]
 root.discard = ["k"]
@@ -85,6 +90,7 @@ selection_bar = { symbol = "▌", fg = "#0086b3", mods = "DIM" }
 selection_line = { mods = "BOLD" }
 selection_area = {}
 
+# Added in fork
 rebase_todo.reword = { fg = "#f93232", mods = "BOLD" }
 rebase_todo.edit = { fg = "#f93232", mods = "BOLD" }
 rebase_todo.squash = { fg = "#f93232", mods = "BOLD" }
