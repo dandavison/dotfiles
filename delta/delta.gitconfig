@@ -2,9 +2,9 @@
     pager = delta
 
 [pager]
-    log = delta --gitu --pager
-    diff = delta --gitu --pager
-    show = delta --gitu --pager
+    log = delta --gitu --pager --quit-if-one-screen
+    diff = delta --gitu --pager --quit-if-one-screen
+    show = delta --gitu --pager --quit-if-one-screen
 
 [interactive]
     diffFilter = delta --color-only

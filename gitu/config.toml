@@ -2,10 +2,10 @@
 
 [general]
 collapsed_sections = ["branch_status"]
-diff_renderer.command = ["delta"]
-diff_renderer.enabled = true
-log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
-log_renderer.enabled = true
+# diff_renderer.command = ["delta"]
+# diff_renderer.enabled = true
+# log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
+# log_renderer.enabled = true
 recent_commits_limit = 0
 stash_list_limit = 0
 visit_context_lines = true
@@ -17,7 +17,10 @@ root.move_down = ["ctrl+down"]
 root.move_down_line = ["down"]
 root.move_up = ["ctrl+up"]
 root.move_up_line = ["up"]
-rebase_todo.rebase_todo_drop = ["ctrl+k"]
+
+# Added in fork
+# root.hide_file = ["ctrl+k"]
+# rebase_todo.rebase_todo_drop = ["ctrl+k"]
 
 [style]
 # GitHub light theme palette:
