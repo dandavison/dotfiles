@@ -32,7 +32,7 @@
       "Bash(agent-slack channel new:*)",
       "Bash(agent-slack channel invite:*)"
     ],
-    "defaultMode": "bypassPermissions"
+    "defaultMode": "auto"
   },
   "model": "opus[1m]",
   "hooks": {
@@ -73,6 +73,5 @@
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
   },
-  "mcpServers": {
-  }
+  "mcpServers": {}
 }

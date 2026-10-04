@@ -129,6 +129,9 @@ trust_level = "trusted"
 [projects."/Users/dan/worktrees/temporal/activity-model-conformance-testing/temporal"]
 trust_level = "trusted"
 
+[projects."/Users/dan/src/delta"]
+trust_level = "trusted"
+
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
 
@@ -146,6 +149,7 @@ status_line = [
 [tui.model_availability_nux]
 "gpt-5.5" = 2
 "gpt-5.6-sol" = 4
+"gpt-6.1-sol" = 4
 
 [features]
 tool_suggest = false
