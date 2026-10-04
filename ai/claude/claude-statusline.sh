@@ -36,6 +36,18 @@ fi
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
 
+# Who is billed: an API key overrides the logged-in account.
+if [ -n "$ANTHROPIC_API_KEY" ]; then
+  payer="${yellow}api-key$reset"
+else
+  email=$(jq -r '.oauthAccount.emailAddress // empty' ~/.claude.json 2>/dev/null)
+  case "$email" in
+    *@temporal.io) payer="${dim}temporal$reset" ;;
+    "") payer="" ;;
+    *) payer="$bold${yellow}personal$reset" ;;
+  esac
+fi
+
 pct=$(echo "$input" | jq -r '
   .context_window as $c
   | (($c.total_input_tokens // 0)) as $used
@@ -87,6 +99,7 @@ line=""
 [ -n "$task" ] && line="$cyan$task$reset | "
 line="$line$identity"
 
+[ -n "$payer" ] && line="$line │ $payer"
 [ -n "$model" ] && line="$line │ $dim$model$reset"
 [ -n "$cost" ] && line="$line │ $dim$cost$reset"
 [ -n "$ctx" ] && line="$line │ $ctx"
