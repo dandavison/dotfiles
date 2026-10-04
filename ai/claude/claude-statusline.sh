@@ -99,9 +99,9 @@ line=""
 [ -n "$task" ] && line="$cyan$task$reset | "
 line="$line$identity"
 
-[ -n "$payer" ] && line="$line │ $payer"
 [ -n "$model" ] && line="$line │ $dim$model$reset"
-[ -n "$cost" ] && line="$line │ $dim$cost$reset"
+billing="${cost:+$dim$cost$reset}${cost:+${payer:+ }}$payer"
+[ -n "$billing" ] && line="$line │ $billing"
 [ -n "$ctx" ] && line="$line │ $ctx"
 [ -n "$age" ] && line="$line │ $dim$age$reset"
 
