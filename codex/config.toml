@@ -134,6 +134,14 @@ url = "https://mcp.notion.com/mcp"
 
 [tui]
 screen_reader_detection_done = true
+status_line = [
+    "project-name",
+    "git-branch",
+    "thread-title",
+    "model-with-reasoning",
+    "context-used",
+    "context-window-size",
+]
 
 [tui.model_availability_nux]
 "gpt-5.5" = 2
