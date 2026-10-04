@@ -40,7 +40,7 @@ model=$(echo "$input" | jq -r '.model.display_name // empty')
 if [ -n "$ANTHROPIC_API_KEY" ]; then
   payer="${yellow}api-key$reset"
 else
-  email=$(jq -r '.oauthAccount.emailAddress // empty' ~/.claude.json 2>/dev/null)
+  email=$(jq -r '.oauthAccount.emailAddress // empty' "${CLAUDE_CONFIG_DIR:-$HOME}/.claude.json" 2>/dev/null)
   case "$email" in
     *@temporal.io) payer="${dim}temporal$reset" ;;
     "") payer="" ;;
