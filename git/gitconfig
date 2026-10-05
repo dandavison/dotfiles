@@ -1,3 +1,9 @@
+[core]
+attributesfile = ~/src/devenv/dotfiles/git/gitattributes
+excludesfile = ~/.gitignore
+default-branch = main
+editor = micro
+
 [user]
 email = dandavison7@gmail.com
 name = Dan Davison
@@ -29,11 +35,6 @@ frag = red
 [commit]
 status = false
 verify = false
-
-[core]
-attributesfile = ~/src/devenv/dotfiles/git/gitattributes
-excludesfile = ~/.gitignore
-default-branch = main
 
 [commit]
 verify = false

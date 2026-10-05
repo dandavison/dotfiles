@@ -6,6 +6,9 @@
     diff = delta --gitu --pager --quit-if-one-screen
     show = delta --gitu --pager --quit-if-one-screen
 
+[sequence]
+    editor = delta --gitu sequence-editor
+
 [interactive]
     diffFilter = delta --color-only
 
