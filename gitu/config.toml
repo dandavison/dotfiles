@@ -10,8 +10,12 @@ debug = true
 # Added in fork
 # diff_renderer.command = ["delta"]
 # diff_renderer.enabled = true
-log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --format='{commit}%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)' \"$@\" | rg -v '^ [0-9]+ files? changed' | delta --width {width}", "gitu"]
+# The formats are pretty.commit-format(-full) in git config, shared with the
+# shell's log and show aliases. delta marks each commit by its commit-regex.
+log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --pretty=commit-format \"$@\" | rg -v '^ [0-9]+ files? changed' | delta", "gitu"]
 log_renderer.enabled = true
+show_renderer.command = ["sh", "-c", "git show -s --color=always --pretty=commit-format-full \"$@\" | delta", "gitu"]
+show_renderer.enabled = true
 visit_context_lines = true
 diff_renderer.feature_keys = { side-by-side = "S", line-numbers = "L", keep-plus-minus-markers = "K" }
 

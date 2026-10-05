@@ -86,6 +86,12 @@ aheadBehind = false
 hints = false
 short = true
 
+[pretty]
+# Shared by the shell's log aliases (_gl) and gitu's log renderer. The full
+# variant, with the whole message, is shared by gs and gitu's commit view.
+commit-format = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)
+commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n%w(0,4,4)%C(green)%s%C(reset)%n%+b
+
 [alias]
 fixup = commit --amend -C HEAD
 head = rev-list -n1 HEAD
