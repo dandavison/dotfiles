@@ -71,7 +71,7 @@ cost_usd=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 [ -n "$cost_usd" ] && cost=$(printf '$%.2f' "$cost_usd")
 
 session_id=$(echo "$input" | jq -r '.session_id // empty')
-session_code=${session_id: -8}
+session_code=${session_id:0:8}
 
 # Clickable link to this conversation's agent-sessions view (assumes it has
 # been synced into the index already; syncing is a separate concern).
