@@ -4,7 +4,7 @@
 collapsed_sections = ["branch_status"]
 recent_commits_limit = 0
 stash_list_limit = 0
-max_input_bytes = 1_000_000
+max_input_bytes = 3_000_000
 debug = true
 
 # Added in fork
