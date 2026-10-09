@@ -35,6 +35,10 @@ fi
     end' "$transcript" 2>/dev/null)
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
+case "$(echo "$input" | jq -r '.model.id // empty')" in
+  *opus*) model_color=$dim ;;
+  *) model_color=$red ;;
+esac
 
 # Who is billed: an API key overrides the logged-in account.
 if [ -n "$ANTHROPIC_API_KEY" ]; then
@@ -99,7 +103,7 @@ line=""
 [ -n "$task" ] && line="$cyan$task$reset | "
 line="$line$identity"
 
-[ -n "$model" ] && line="$line │ $dim$model$reset"
+[ -n "$model" ] && line="$line │ $model_color$model$reset"
 billing="${cost:+$dim$cost$reset}${cost:+${payer:+ }}$payer"
 [ -n "$billing" ] && line="$line │ $billing"
 [ -n "$ctx" ] && line="$line │ $ctx"
