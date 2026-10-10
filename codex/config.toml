@@ -4,7 +4,6 @@ model = "gpt-6-luna"
 model_reasoning_effort = "medium"
 approvals_reviewer = "user"
 service_tier = "default"
-show_prompt_suggestions = false
 
 [sandbox_workspace_write]
 writable_roots = [
