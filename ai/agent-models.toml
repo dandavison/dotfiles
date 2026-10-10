@@ -1,7 +1,8 @@
 # Models offered by agent-pick (agent-oneshot, agent-from-issues).
 # cli: claude | codex | pi. A model with `health` is offered only if that URL responds.
-# price: USD per million tokens, used by agent-oneshot for codex (claude reports its own cost).
-# Long-context tiers are not modeled.
+# openrouter: OpenRouter model id, used to look up prices in the cache written by
+# agent-prices-refresh. agent-oneshot uses them for codex (claude reports its own cost).
+# Long-context price tiers are ignored.
 
 [accounts.personal]
 CLAUDE_CONFIG_DIR = "~/.claude-personal"
@@ -26,8 +27,7 @@ model = "claude-haiku-4-5-20251001"
 name = "luna"
 cli = "codex"
 model = "gpt-6-luna"
-# https://openrouter.ai/openai/gpt-6-luna
-price = { input = 0.10, cached_input = 0.01, cache_write = 0.125, output = 0.50 }
+openrouter = "openai/gpt-6-luna"
 
 [[models]]
 name = "qwen-local"
