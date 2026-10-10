@@ -1,0 +1,5 @@
+default_repo = "temporalio/dandavison-log"
+
+[labels]
+"temporalio/dandavison-log" = "my log repo"
+"dandavison/log" = "my log repo"
