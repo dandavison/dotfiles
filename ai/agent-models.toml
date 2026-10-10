@@ -1,0 +1,32 @@
+# Models offered by agent-pick (agent-oneshot, agent-from-issues).
+# cli: claude | codex | pi. A model with `health` is offered only if that URL responds.
+
+[accounts.personal]
+CLAUDE_CONFIG_DIR = "~/.claude-personal"
+CODEX_HOME = "~/.codex-personal"
+
+[[models]]
+name = "opus"
+cli = "claude"
+model = "claude-opus-5-5"
+
+[[models]]
+name = "sonnet"
+cli = "claude"
+model = "claude-sonnet-5-5"
+
+[[models]]
+name = "haiku"
+cli = "claude"
+model = "claude-haiku-4-5-20251001"
+
+[[models]]
+name = "luna"
+cli = "codex"
+model = "gpt-6-luna"
+
+[[models]]
+name = "qwen-local"
+cli = "pi"
+model = "mlx/mlx-community/Qwen3.6-35B-A3B-4bit"
+health = "http://localhost:8080/v1/models"
