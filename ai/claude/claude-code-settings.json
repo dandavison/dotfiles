@@ -34,7 +34,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "opus",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -69,7 +69,9 @@
   "skipDangerousModePermissionPrompt": true,
   "theme": "custom:github-light",
   "verbose": false,
+  "autoCompactEnabled": false,
   "fileCheckpointingEnabled": false,
+  "idleCompaction": false,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
   },
