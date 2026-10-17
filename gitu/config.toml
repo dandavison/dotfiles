@@ -8,15 +8,12 @@ max_input_bytes = 3_000_000
 debug = true
 
 # Added in fork
-# diff_renderer.command = ["delta"]
-# diff_renderer.enabled = true
-# The formats are pretty.commit-format(-full) in git config, shared with the
-# shell's log and show aliases. delta marks each commit by its commit-regex.
-log_renderer.command = ["sh", "-c", "git log --stat --date relative --color=always --pretty=commit-format \"$@\" | rg -v '^ [0-9]+ files? changed' | delta", "gitu"]
-log_renderer.enabled = true
-show_renderer.command = ["sh", "-c", "git show -s --color=always --pretty=commit-format-full \"$@\" | delta", "gitu"]
-show_renderer.enabled = true
-diff_renderer.feature_keys = { side-by-side = "S", line-numbers = "L", keep-plus-minus-markers = "K" }
+# The --pretty formats are defined in git config
+log_args = ["--stat", "--date=relative", "--pretty=commit-format"]
+show_args = ["--pretty=commit-format-full"]
+file_header = "stat"
+start_folded = true
+diff_renderer.feature_keys = { line-numbers = "L", side-by-side = "S", keep-plus-minus-markers = "K" }
 
 [bindings]
 root.discard = ["k"]
@@ -27,8 +24,8 @@ root.move_up = ["ctrl+up"]
 root.move_up_line = ["up"]
 
 # Added in fork
-# root.hide_file = ["ctrl+k"]
-# rebase_todo.rebase_todo_drop = ["ctrl+k"]
+root.hide_file = ["ctrl+k"]
+rebase_todo.rebase_todo_drop = ["ctrl+k"]
 
 [style]
 # GitHub light theme palette:
