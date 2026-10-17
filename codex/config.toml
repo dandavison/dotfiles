@@ -4,6 +4,10 @@ model = "gpt-6-luna"
 model_reasoning_effort = "medium"
 approvals_reviewer = "user"
 service_tier = "default"
+# Read AGENTS.md from ~/src/temporalio etc. down; elsewhere only the cwd's AGENTS.md is read.
+project_root_markers = [".agents-root"]
+# The default (32 KiB) truncates the Temporal AGENTS.md.
+project_doc_max_bytes = 131072
 
 [sandbox_workspace_write]
 writable_roots = [
