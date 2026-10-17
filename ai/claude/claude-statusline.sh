@@ -35,6 +35,8 @@ fi
     end' "$transcript" 2>/dev/null)
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
+effort=$(echo "$input" | jq -r '.effort.level // empty')
+[ -n "$effort" ] && model="$model ($effort)"
 case "$(echo "$input" | jq -r '.model.id // empty')" in
   *opus*) model_color=$dim ;;
   *) model_color=$red ;;
