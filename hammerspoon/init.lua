@@ -8,6 +8,10 @@ Logger = hs.logger.new('dan', "debug")
 package.path = package.path .. ";/Users/dan/src/wormhole/hammerspoon/?.lua"
 local wormhole = require("wormhole")
 
+-- Load tide module from tide repo
+package.path = package.path .. ";/Users/dan/src/tide/hammerspoon/?.lua"
+local tide = require("tide")
+
 -- Terminal toggle
 local function terminal()
     local app = hs.application.find("alacritty")
@@ -40,67 +44,6 @@ local function code()
     end
 end
 
--- Resolve tmux via a login shell (hs.execute(_, true)) so GUI-launched
--- Hammerspoon picks up Homebrew's PATH rather than launchd's minimal one.
-local tmux = hs.execute("command -v tmux", true):gsub("%s+$", "")
-
-local tasks = {} -- retain tasks so GC doesn't drop their completion callbacks
-
-local function run(binary, args, done)
-    local task
-    task = hs.task.new(binary, function()
-        tasks[task] = nil
-        if done then done() end
-    end, args)
-    tasks[task] = true
-    task:start()
-end
-
-local function focusAlacritty()
-    local app = hs.application.find("alacritty")
-    if not (app and app:isFrontmost()) then
-        hs.application.launchOrFocus("/Applications/Alacritty.app")
-    end
-end
-
--- Alacritty, not tmux, must own the mouse while a popup is up. A popup is not a
--- pane: tmux forwards mouse events to the popup's program only if that program
--- asked for mouse mode and drops them otherwise (popup_key_cb), yet `mouse on`
--- still enables mouse reporting on the client -- so double-click would select
--- nothing. With mouse off the popup's own screen mode drives reporting, so a
--- plain shell gets native Alacritty selection while a TUI in the popup still
--- gets mouse. display-popup blocks the command queue until the popup is
--- dismissed, so the trailing set restores pane behavior on close.
-local function withMouseOff(args)
-    local argv = { "set", "-g", "mouse", "off", ";" }
-    table.move(args, 1, #args, #argv + 1, argv)
-    for _, arg in ipairs({ ";", "set", "-g", "mouse", "on" }) do
-        argv[#argv + 1] = arg
-    end
-    return argv
-end
-
--- tmux display-popup, focusing alacritty first if needed. When the popup is
--- dismissed, focus returns to the previously frontmost app, unless focus has
--- been switched or keepFocus is set (for popups whose action leaves you
--- somewhere in tmux).
-local function tmuxPopup(args, keepFocus)
-    local prev = hs.application.frontmostApplication()
-    focusAlacritty()
-    run(tmux, withMouseOff(args), function()
-        local front = hs.application.frontmostApplication()
-        if not keepFocus
-            and prev
-            and prev:bundleID() ~= "org.alacritty"
-            and prev:isRunning()
-            and front
-            and front:bundleID() == "org.alacritty"
-        then
-            prev:activate()
-        end
-    end)
-end
-
 -- Project hotkey mappings (personal config)
 local keymap = {
     [0] = "projects",
@@ -120,31 +63,11 @@ wormhole.bindKeys(keymap)
 hs.hotkey.bind({}, "f16", terminal)
 hs.hotkey.bind({}, "f17", code)
 
--- Full-screen scratch zsh popup
-hs.hotkey.bind({ "alt" }, "space", function()
-    tmuxPopup({ "display-popup", "-d", "#{pane_current_path}", "-E", "-w", "100%", "-h", "100%", "-b", "rounded", "-T", "", "SKIP_XOLMIS=1 zsh" })
-end)
--- The pickers run under an interactive shell: a popup's shell is otherwise
--- non-interactive, so it would miss shell/env.sh, and fzf would fall back to
--- its own defaults rather than FZF_DEFAULT_OPTS.
-local function picker(command)
-    return "zsh -ic '" .. os.getenv("HOME") .. "/bin/" .. command .. "'"
-end
+tide.bindKeys()
 
 -- App launcher popup
-hs.hotkey.bind({ "cmd" }, "space", function()
-    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-open-app") })
-end)
--- Project picker popup that lands in the project's tide files browser, i.e.
--- tmux M-j in the chosen project's window.
-hs.hotkey.bind({ "cmd" }, "j", function()
-    tmuxPopup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", picker("f-tide files") }, true)
-end)
--- tide's git view in the current tmux window, i.e. tmux M-l there: given no
--- context, tide reads the current pane's.
-hs.hotkey.bind({ "cmd" }, "m", function()
-    focusAlacritty()
-    run(os.getenv("HOME") .. "/.local/bin/tide", { "git" })
+hs.hotkey.bind({ "cmd" }, "x", function()
+    tide.popup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", tide.picker("f-open-app") })
 end)
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()
     hs.reload()
