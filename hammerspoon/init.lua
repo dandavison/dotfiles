@@ -66,7 +66,7 @@ hs.hotkey.bind({}, "f17", code)
 tide.bindKeys()
 
 -- App launcher popup
-hs.hotkey.bind({ "cmd" }, "x", function()
+hs.hotkey.bind({ "cmd" }, "space", function()
     tide.popup({ "display-popup", "-E", "-w", "60%", "-h", "70%", "-b", "rounded", "-T", "", tide.picker("f-open-app") })
 end)
 hs.hotkey.bind({ "cmd", "alt" }, "r", function()

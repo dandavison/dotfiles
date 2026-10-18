@@ -5,6 +5,22 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "caps_lock (f13 via simple_modifications) => hyper when held without other modifiers, f13 when tapped alone; cmd+caps_lock stays cmd+f13",
+            "manipulators": [
+              {
+                "from": { "key_code": "f13" },
+                "to": [
+                  {
+                    "key_code": "left_command",
+                    "modifiers": ["left_shift", "left_option", "left_control"]
+                  }
+                ],
+                "to_if_alone": [{ "key_code": "f13" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "left_cmd/right_cmd+right_shift => f16 (terminalToggle)",
             "manipulators": [
               {
