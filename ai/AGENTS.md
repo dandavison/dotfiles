@@ -72,6 +72,8 @@ reference must be a GitHub URL linking to the relevant lines. Format:
 https://github.com/{org}/{repo}/blob/main/{path}#L{start}-L{end}
 Never use bare file:line references in GitHub-destined output.
 
+When writing issue comments in my log repo the first line must be an H1.
+
 Use the /d2 skill for diagrams. Just post raw d2 code blocks; I have a browser extension that will render them.
 
 You should typically not look at any commit other than those ancestral to the currently checked out commit.
