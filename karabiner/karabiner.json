@@ -12,7 +12,8 @@
                 "to": [
                   {
                     "key_code": "left_command",
-                    "modifiers": ["left_shift", "left_option", "left_control"]
+                    "modifiers": ["left_shift", "left_option", "left_control"],
+                    "lazy": true
                   }
                 ],
                 "to_if_alone": [{ "key_code": "f13" }],
