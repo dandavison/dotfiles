@@ -1,7 +1,7 @@
 #!/bin/bash
 # Claude Code status line: show the conversation name in the footer and the
 # terminal tab/pane title. Prefers an explicit session name (--name / /rename),
-# falling back to the auto-generated ai-title from the transcript.
+# falling back to the auto-generated ai-title from the transcript, truncated.
 input=$(cat)
 
 bold=$'\033[1m'
@@ -18,8 +18,13 @@ transcript=$(echo "$input" | jq -r '.transcript_path // empty')
 cwd=$(echo "$input" | jq -r '.cwd // empty')
 
 name=$(echo "$input" | jq -r '.session_name // empty')
+# /rename records a custom-title in the transcript but does not set session_name.
+if [ -z "$name" ] && [ -n "$transcript" ]; then
+  name=$(jq -r 'select(.type=="custom-title") | .customTitle' "$transcript" 2>/dev/null | tail -1)
+fi
 if [ -z "$name" ] && [ -n "$transcript" ]; then
   name=$(jq -r 'select(.type=="ai-title") | .aiTitle' "$transcript" 2>/dev/null | tail -1)
+  [ ${#name} -gt 24 ] && name="${name:0:23}…"
 fi
 [ -z "$name" ] && name="claude"
 
@@ -33,6 +38,35 @@ fi
       ($ts | sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601 | localtime) as $lt
       | $lt | strftime("%b %d %H:%M")
     end' "$transcript" 2>/dev/null)
+
+# The number of turns I typed, the turn of the last write-back to a GitHub issue,
+# and, if the session was started from an `agent ctx` context (its first message),
+# that context's recipe and sources by kind.
+[ -n "$transcript" ] && stats=$(jq -rn '
+  def typed: .type=="user" and (.message.content|type)=="string"
+    and (.message.content|test("^\\s*<(local-command|task-notification|system-reminder|bash-)")|not);
+  def kind: if startswith("issue:") or test("^https://github.com/") then "issue"
+    elif startswith("slack:") or test("^https://[^/]+\\.slack\\.com/") then "slack"
+    else split(":")[0] end;
+  reduce inputs as $r ({turn: 0, wb: null, ctx: null};
+    if ($r|typed) then
+      .turn += 1
+      | if .turn == 1 and ($r.message.content|test("^\\s*(<pasted_content[^>]*>\\s*)?# Context\n"))
+        then .ctx = $r.message.content else . end
+    elif $r.type=="assistant" and any($r.message.content[]?;
+        .type=="tool_use" and ((.input.command // "")|test("gh issue (comment|edit|create)")))
+    then .wb = .turn
+    else . end)
+  | "turn \(.turn) [written back \(.wb // "never")]",
+    (.ctx // "" | [splits("\n")] as $lines
+     | ($lines | map(capture("^Recipe: \\S*/(?<n>[^/]+)\\.toml ")) | first | .n // "") as $recipe
+     | ($lines | map(capture("^\\| (?<uri>.*) \\| raw \\| (?<t>[0-9]+) \\|$"))) as $rows
+     | if ($rows|length) == 0 then "" else
+         ($rows | group_by(.uri|kind) | map("\(.[0].uri|kind)×\(length)") | join(" ")) as $kinds
+         | "\($recipe)\(if $recipe == "" then "" else " " end)[\($kinds), \(($rows | map(.t|tonumber) | add) / 1000 | floor)k]"
+       end)' "$transcript" 2>/dev/null)
+turns=$(sed -n 1p <<<"$stats")
+sources=$(sed -n 2p <<<"$stats")
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
 effort=$(echo "$input" | jq -r '.effort.level // empty')
@@ -104,6 +138,8 @@ identity="$bold$link_open$name$link_close$reset  $dim#$session_code$reset"
 line=""
 [ -n "$task" ] && line="$cyan$task$reset | "
 line="$line$identity"
+[ -n "$turns" ] && line="$line │ $dim$turns$reset"
+[ -n "$sources" ] && line="$line │ $cyan$sources$reset"
 
 [ -n "$model" ] && line="$line │ $model_color$model$reset"
 billing="${cost:+$dim$cost$reset}${cost:+${payer:+ }}$payer"
