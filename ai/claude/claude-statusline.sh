@@ -81,11 +81,22 @@ if [ -n "$ANTHROPIC_API_KEY" ]; then
   payer="${yellow}api-key$reset"
 else
   email=$(jq -r '.oauthAccount.emailAddress // empty' "${CLAUDE_CONFIG_DIR:-$HOME}/.claude.json" 2>/dev/null)
+  # The default store is the work account's; any other store is personal.
+  if [ -z "$CLAUDE_CONFIG_DIR" ]; then store=temporal; else store=personal; fi
   case "$email" in
-    *@temporal.io) payer="${dim}temporal$reset" ;;
-    "") payer="" ;;
-    *) payer="$bold${yellow}personal$reset" ;;
+    *@temporal.io) login=temporal ;;
+    "") login="" ;;
+    *) login=personal ;;
   esac
+  if [ -n "$login" ] && [ "$login" != "$store" ]; then
+    payer="$bold$red$login login in $store store$reset"
+  elif [ "$login" = personal ]; then
+    payer="$bold${yellow}personal$reset"
+  elif [ "$login" = temporal ]; then
+    payer="${dim}temporal$reset"
+  else
+    payer=""
+  fi
 fi
 
 pct=$(echo "$input" | jq -r '
