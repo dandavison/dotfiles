@@ -13,7 +13,9 @@ log_args = ["--stat", "--date=relative", "--pretty=commit-format"]
 show_args = ["--pretty=commit-format-full"]
 file_header = "stat"
 start_folded = true
-diff_renderer.feature_keys = { line-numbers = "L", side-by-side = "S", keep-plus-minus-markers = "K" }
+diff_renderer.features = [ "*" ]
+diff_renderer.feature_keys = { keep-plus-minus-markers = "+", line-numbers = "L", side-by-side-hunk = "S" }
+#diff_renderer.feature_keys = { line-numbers = "L", side-by-side = "S", keep-plus-minus-markers = "K" }
 
 [bindings]
 root.discard = ["k"]
