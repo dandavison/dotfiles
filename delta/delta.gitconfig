@@ -13,27 +13,30 @@
     diffFilter = delta --color-only
 
 [include]
-    path = /Users/dan/src/delta/themes.gitconfig
+    # path = /Users/dan/src/delta/themes.gitconfig
+    path = /Users/dan/worktrees/delta/gitu/delta/themes.gitconfig
+    
 
 [delta]
-    light = true
-    context-lines = 3
-    features = navigate whole-file-hunks
+    navigate = true
     hyperlinks = true
-    relative-paths = true
     hyperlinks-file-link-format = "http://wormhole:7117/file/{path}:{line}?land-in=editor"
+    wrap-max-lines = unlimited
+    commit-regex = ^(▸|commit )
+    relative-paths = true
     grep-file-style = red
     commit-decoration-style = blue ol
     commit-style = raw
     # The custom log format and git's own, so delta marks the commit in either
     # and gitu can make the rows of both navigable.
-    commit-regex = ^(▸|commit )
     side-by-side-fill-empty = true
+
+[delta "dan-light"]
     minus-style = normal "#ffe9e9"
     minus-emph-style = normal "#ffd0d0"
     plus-style = syntax "#dfffe0"
     plus-emph-style = syntax "#bcf2bd"
-    wrap-max-lines = unlimited
+
 
 [delta "side-by-side-hunk"]
     side-by-side = hunk
