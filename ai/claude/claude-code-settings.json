@@ -63,6 +63,11 @@
     ]
   },
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "promptSuggestionEnabled": false,
   "tui": "fullscreen",
   "autoMemoryEnabled": false,
@@ -70,8 +75,8 @@
   "theme": "custom:github-light",
   "verbose": false,
   "autoCompactEnabled": false,
-  "fileCheckpointingEnabled": false,
   "idleCompaction": false,
+  "fileCheckpointingEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
   },

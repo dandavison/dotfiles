@@ -66,7 +66,21 @@ local commit that I'll push. Always confirm with me.
 All repos are under ~/src.
 
 
-# Markdown output
+# Your output
+
+When I ask for an explanation that includes references to code, first determine the type of client
+that I am using, and what type of output I have requested.
+
+When writing content destined for GitHub (issues, PR descriptions, comments) see instructions above.
+
+wormhole is my tmux-based git worktree manager: it opens projects and tasks (one worktree per
+branch) in tmux windows and my editor. Run `wormhole -h` (and `wormhole <subcommand> -h`) for usage.
+Output all code links in wormhole format (http://wormhole:7117/file/{absolute_path}:{line}?land-in=editor).
+
+When outputting text that I will copy do not quote it. This causes the claude TUI to insert vertical
+bars at the left margin which get copied.
+
+## Markdown output
 When writing content destined for GitHub (issues, PR descriptions, comments), every code
 reference must be a GitHub URL linking to the relevant lines. Format:
 https://github.com/{org}/{repo}/blob/main/{path}#L{start}-L{end}
@@ -78,16 +92,6 @@ Use the /d2 skill for diagrams. Just post raw d2 code blocks; I have a browser e
 
 You should typically not look at any commit other than those ancestral to the currently checked out commit.
 
-# Your output
-
-When I ask for an explanation that includes references to code, first determine the type of client
-that I am using, and what type of output I have requested.
-
-When writing content destined for GitHub (issues, PR descriptions, comments) see instructions above.
-
-wormhole is my tmux-based git worktree manager: it opens projects and tasks (one worktree per
-branch) in tmux windows and my editor. Run `wormhole -h` (and `wormhole <subcommand> -h`) for usage.
-Output all code links in wormhole format (http://wormhole:7117/file/{absolute_path}:{line}?land-in=editor).
 
 
 
@@ -149,35 +153,6 @@ I'm a software engineer, not a salesperson.
 When you are ready to commit, read over all prose, check these rules, and rewrite any violations.
 
 
-# How to write code
-
-Write terse, minimal code, intended for an expert reader. Use comments only where code would be hard
-to understand. In general, instead of comments, use tasteful, thoughtfully-chosen names that allow
-an expert reader to understand the code without comments. Docstrings should not explain
-implementation unless the code is very hard to understand, which it should never be.
-
-Your changes must be surgically targeted to achieve the requested outcome, idiomatically,
-and stylishly, but with absolutely no changes to unrelated code: do not change any line of
-code that is not directly required by this task. If you find you have violated this rule,
-you must go back and fix it.
-
-In general, do not try to solve problems by writing "fallback" code. Our aim should be to build
-systems in which all functionality is achieved via a single path of execution that works perfectly
-all the time. If reality makes that challenging in a particular project, then ask me whether some
-sort of fallback is appropriate.
-
-Functions should be short; use helper functions for meaningful transformations with meaningful input
-and output types; place them after the code that uses them.
-
-Do not leave any trailing whitespace in files.
-
-After editing code always do the following:
-- Run type checkers, linters, and formatters, and tests
-
-Always commit your work once you have any self-contained change, without asking.
-
-If you have written tests, always include the commands to run the tests from the root of the
-relevant repo in the commit message, and also print them out for me when you're done.
 
 
 # Temporal instructions
