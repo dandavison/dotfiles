@@ -1,3 +1,10 @@
+[pretty]
+# Shared by shell log aliases (_gl) and gitu's log renderer.
+commit-format = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)
+# With whole message; shared by gs and gitu's commit view.
+commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n%w(0,4,4)%C(green)%s%C(reset)%n%+b
+
+
 # delta --gitu (the TUI). A key is its gitu config path, with dashes for
 # underscores; no subsection means "general". A list is one line per item.
 [delta-tui]
