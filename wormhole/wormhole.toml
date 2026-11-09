@@ -16,6 +16,8 @@ search_paths = [
 projects = [
 	"~/tmp/3p/ai",
 	"/Users/dan/tmp/3p/ai/restate",
+	"~/tmp/3p/ai/temporalio--internal-ai-prototypes/",
+	"~/tmp/3p/betamax",
 ]
 
 card_commands = [
