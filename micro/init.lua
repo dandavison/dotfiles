@@ -1,8 +1,20 @@
 local micro = import("micro")
+local config = import("micro/config")
 local clip  = import("micro/clipboard")
 local shell = import("micro/shell")
 local util  = import("micro/util")
 local time  = import("time")
+
+-- Append each opened file's absolute path to recent-files, which tide's
+-- `f-tide recent` reads, most recent last. The log grows without bound.
+local function recordOpen(buf)
+    if buf.Path == "" or buf.Type.Scratch then
+        return
+    end
+    local f = assert(io.open(config.ConfigDir .. "/recent-files", "a"))
+    f:write(buf.AbsPath, "\n")
+    f:close()
+end
 
 -- Files run as `uv` scripts start with `#!/usr/bin/env -S uv run --script`; this
 -- is Python, but the file usually has no `.py` extension and the shebang ends in
@@ -11,6 +23,7 @@ function onBufferOpen(buf)
     if buf.Settings["filetype"] == "unknown" and buf:Line(0):match("^#!.*uv run") then
         buf:SetOptionNative("filetype", "python")
     end
+    recordOpen(buf)
     return true
 end
 
