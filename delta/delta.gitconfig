@@ -2,19 +2,19 @@
     pager = delta
 
 [pager]
-    log = delta --gitu --pager
-    diff = delta --gitu --pager
-    show = delta --gitu --pager
+    log = delta --tui
+    diff = delta --tui
+    show = delta --tui
 
 [sequence]
-    editor = delta --gitu sequence-editor
+    editor = delta --tui sequence-editor
 
 [interactive]
     diffFilter = delta --color-only
 
 [include]
-    # path = /Users/dan/src/delta/themes.gitconfig
-    path = /Users/dan/worktrees/delta/gitu/delta/themes.gitconfig
+    path = /Users/dan/src/delta/themes.gitconfig
+    # path = /Users/dan/worktrees/delta/gitu/delta/themes.gitconfig
     
 
 [delta]
@@ -27,9 +27,22 @@
     grep-file-style = red
     commit-decoration-style = blue ol
     commit-style = raw
-    # The custom log format and git's own, so delta marks the commit in either
-    # and gitu can make the rows of both navigable.
     side-by-side-fill-empty = true
+    file-style="bold cyan #EEEEEE"
+    file-decoration-style="magenta ul"
+    file-added-label = •
+    file-modified-label = •
+    file-removed-label = •
+    file-renamed-label = •
+    navigate-regex = ^•
+    # line-numbers-left-format = "{nm:^4}│"
+    # line-numbers-minus-left-format = "{nm:^4}┃"
+    # line-numbers-plus-left-format = "{nm:^4}┃"
+    # line-numbers-right-format = "│{np:^4}│"
+    # line-numbers-minus-right-format = "┃{np:^4}┃"
+    # line-numbers-plus-right-format = "┃{np:^4}┃"
+
+    
 
 [delta "dan-light"]
     minus-style = normal "#ffe9e9"
@@ -45,17 +58,10 @@
     # set diff.context (-U) to a large value
     # hunk-header-style = omit
     # navigate visits file boundaries only
-    file-style="bold cyan #EEEEEE"
-    file-decoration-style="magenta ul"
-    file-added-label = •
-    file-modified-label = •
-    file-removed-label = •
-    file-renamed-label = •
     line-numbers-left-format = ""
     line-numbers-right-format = "{np:^4}│"
     line-numbers-minus-right-format = "{np:^4}┃"
     line-numbers-plus-right-format = "{np:^4}┃"
-    navigate-regex = ^•
 
 [delta "hunk-header-with-filepath"]
     file-style = omit

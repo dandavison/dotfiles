@@ -5,17 +5,26 @@ commit-format = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%
 commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n%w(0,4,4)%C(green)%s%C(reset)%n%+b
 
 
-# delta --gitu (the TUI). A key is its gitu config path, with dashes for
-# underscores; no subsection means "general". A list is one line per item.
 [delta-tui]
-    collapsed-sections = branch_status
-    recent-commits-limit = 0
-    stash-list-limit = 0
-    max-input-bytes = 3000000
-    # The --pretty formats are defined in git config.
+    file-header = stat
+    start-folded = true
     log-args = --stat
     log-args = --date=relative
     log-args = --pretty=commit-format
     show-args = --pretty=commit-format-full
-    file-header = stat
-    start-folded = true
+    recent-commits-limit = 0
+    stash-list-limit = 0
+    # collapsed-sections = branch_status
+
+
+[delta-tui "general.views"]
+	diff = git diff {commit}...
+
+[delta-tui "general.commands"]
+	html = {command} --color=always | delta | aha > /tmp/diff.html && open /tmp/diff.html
+
+[delta-tui "general.diff-renderer.feature-keys"]
+	line-numbers = L
+	side-by-side = S
+	diff = D
+	html = %
