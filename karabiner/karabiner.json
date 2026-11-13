@@ -1,5 +1,7 @@
 {
-  "global": { "show_in_menu_bar": false },
+  "global": {
+    "show_in_menu_bar": false
+  },
   "profiles": [
     {
       "complex_modifications": {
@@ -8,15 +10,51 @@
             "description": "caps_lock (f13 via simple_modifications) => hyper when held without other modifiers, f13 when tapped alone; cmd+caps_lock stays cmd+f13",
             "manipulators": [
               {
-                "from": { "key_code": "f13" },
+                "from": {
+                  "key_code": "f13"
+                },
                 "to": [
                   {
                     "key_code": "left_command",
-                    "modifiers": ["left_shift", "left_option", "left_control"],
+                    "modifiers": [
+                      "left_shift",
+                      "left_option",
+                      "left_control"
+                    ],
                     "lazy": true
                   }
                 ],
-                "to_if_alone": [{ "key_code": "f13" }],
+                "to_if_alone": [
+                  {
+                    "key_code": "f13"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "control+caps_lock (f13) => cmd+option+control (hyper without shift) when held",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "f13",
+                  "modifiers": {
+                    "mandatory": [
+                      "control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_command",
+                    "modifiers": [
+                      "left_option",
+                      "left_control"
+                    ],
+                    "lazy": true
+                  }
+                ],
                 "type": "basic"
               }
             ]
@@ -27,7 +65,11 @@
               {
                 "from": {
                   "key_code": "right_shift",
-                  "modifiers": { "mandatory": ["left_command"] }
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command"
+                    ]
+                  }
                 },
                 "to": [
                   {
@@ -40,7 +82,11 @@
               {
                 "from": {
                   "key_code": "right_shift",
-                  "modifiers": { "mandatory": ["right_command"] }
+                  "modifiers": {
+                    "mandatory": [
+                      "right_command"
+                    ]
+                  }
                 },
                 "to": [
                   {
@@ -58,7 +104,11 @@
               {
                 "from": {
                   "key_code": "right_shift",
-                  "modifiers": { "mandatory": ["left_option"] }
+                  "modifiers": {
+                    "mandatory": [
+                      "left_option"
+                    ]
+                  }
                 },
                 "to": [
                   {
@@ -74,11 +124,19 @@
       },
       "devices": [
         {
-          "identifiers": { "is_keyboard": true },
+          "identifiers": {
+            "is_keyboard": true
+          },
           "simple_modifications": [
             {
-              "from": { "key_code": "caps_lock" },
-              "to": [{ "key_code": "f13" }]
+              "from": {
+                "key_code": "caps_lock"
+              },
+              "to": [
+                {
+                  "key_code": "f13"
+                }
+              ]
             }
           ]
         }
