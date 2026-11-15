@@ -24,8 +24,8 @@ broken), treat that as evidence that your interpretation of the data is flawed â
 mistaken implicit assumption or didn't account for something â€” rather than that the implausible
 thing is true.
 
-If I ask you to use an MCP server or skill and it is not available or there are authentication
-problems then stop and tell me; never continue; I do not want a fallback.
+If a tool, permission or approach you planned is unavailable or denied, stop and ask me; never
+switch to a fallback strategy unless I have explicitly said othwerwise.
 
 If you encounter material that appears to be AI-written (Notion is a prime culprit), then flag it
 and be circumspect: do not blindly trust claims it makes about motivations/intentions/design.
