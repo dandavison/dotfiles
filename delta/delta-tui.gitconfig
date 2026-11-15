@@ -26,5 +26,7 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 [delta-tui "general.diff-renderer.feature-keys"]
 	line-numbers = L
 	side-by-side = S
-	diff = D
 	html = %
+	diff = D
+	line-number-painting-dan = *
+	github-pr-links = @

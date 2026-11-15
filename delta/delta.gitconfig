@@ -18,9 +18,9 @@
     
 
 [delta]
+    features = dan dan-light line-numbers
     navigate = true
     hyperlinks = true
-    hyperlinks-file-link-format = "http://wormhole:7117/file/{path}:{line}?land-in=editor"
     wrap-max-lines = unlimited
     commit-regex = ^(▸|commit )
     relative-paths = true
@@ -51,8 +51,29 @@
     plus-emph-style = syntax "#bcf2bd"
 
 
-[delta "side-by-side-hunk"]
-    side-by-side = hunk
+[delta "dan"]
+    hyperlinks-file-link-format = "http://wormhole:7117/file/{path}:{line}?land-in=editor"
+    line-numbers = true
+    side-by-side = hunk,140
+
+# Links go to the line in the worktree's GitHub PR instead of the editor, for reviewing.
+# A feature rather than a [delta] setting, since [delta] settings override features.
+[delta "github-pr-links"]
+    hyperlinks-file-link-format = "http://wormhole:7117/file/{path}:{line}?land-in=github-pr"
+
+[delta "line-numbers"]
+    # Requires a delta built from dandavison:line-numbers-style-line (6b262740)
+    line-numbers = true
+    line-numbers-minus-style = red bold
+    line-numbers-plus-style = green bold
+    line-numbers-zero-style = "#999999"
+    line-numbers-left-style = line
+    line-numbers-right-style = line
+    line-numbers-left-format = "│{nm:^4}┃"
+    line-numbers-right-format = "{np:^4}┃"
+
+[delta "side-by-side"]
+    line-numbers-right-format = "│{np:^4}┃"
 
 [delta "whole-file-hunks"]
     # set diff.context (-U) to a large value
