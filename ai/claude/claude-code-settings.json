@@ -55,7 +55,7 @@
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true
   },
-  "spinnerTipsEnabled": false,
+  "spinnerTipsEnabled": true,
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
