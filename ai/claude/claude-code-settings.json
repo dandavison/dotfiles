@@ -72,7 +72,7 @@
   "tui": "fullscreen",
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
-  "theme": "custom:github-light",
+  "theme": "custom:github-dark",
   "verbose": false,
   "autoCompactEnabled": false,
   "idleCompaction": false,
