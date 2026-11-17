@@ -14,11 +14,10 @@
 
 [include]
     path = /Users/dan/src/delta/themes.gitconfig
-    # path = /Users/dan/worktrees/delta/gitu/delta/themes.gitconfig
     
 
 [delta]
-    features = dan dan-light line-numbers
+    features = dan line-numbers
     navigate = true
     hyperlinks = true
     wrap-max-lines = unlimited
@@ -26,10 +25,9 @@
     relative-paths = true
     grep-file-style = red
     commit-decoration-style = blue ol
+    file-decoration-style="magenta ul"
     commit-style = raw
     side-by-side-fill-empty = true
-    file-style="bold cyan #EEEEEE"
-    file-decoration-style="magenta ul"
     file-added-label = •
     file-modified-label = •
     file-removed-label = •
@@ -49,6 +47,7 @@
     minus-emph-style = normal "#ffd0d0"
     plus-style = syntax "#dfffe0"
     plus-emph-style = syntax "#bcf2bd"
+    file-style="bold cyan #EEEEEE"
 
 
 [delta "dan"]

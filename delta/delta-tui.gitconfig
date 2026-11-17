@@ -16,6 +16,16 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     stash-list-limit = 0
     # collapsed-sections = branch_status
 
+ # [delta-tui "bindings.root"]
+ #     discard = k
+ #     quit = q
+ #     quit = esc
+ #     quit = left
+ #     move-down = ctrl+down
+ #     move-down-line = down
+ #     move-up = ctrl+up
+ #     move-up-line = up
+ #     hide-file = ctrl+k
 
 [delta-tui "general.views"]
 	diff = git diff {commit}...
