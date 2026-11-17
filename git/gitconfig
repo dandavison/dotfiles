@@ -60,6 +60,11 @@ path = ~/src/devenv/dotfiles/delta/delta-tui-demo.gitconfig
 # path = ~/src/devenv/dotfiles/delta/delta.gitconfig
 # path = ~/src/devenv/dotfiles/delta/delta-tui.gitconfig
 
+# Light or dark: bin/theme copies delta/themes/light.gitconfig or dark.gitconfig to delta/themes/current.gitconfig.
+# delta cannot detect the terminal background when its output is piped, e.g. in rgi.
+[include]
+path = ~/src/devenv/dotfiles/delta/themes/current.gitconfig
+
 [init]
 defaultBranch = main
 

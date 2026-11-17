@@ -1,6 +1,6 @@
 {
 	"backup": false,
-    "colorscheme": "github",
+    "colorscheme": "current",
     "cursorline": false,
     "reload": "auto",
     "ruler": false,

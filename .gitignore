@@ -1,3 +1,12 @@
 vscode/History/
 vscode/globalStorage/
 vscode/workspaceStorage/
+
+# Written by bin/theme
+alacritty/themes/current.toml
+tmux/themes/current.conf
+micro/colorschemes/current.micro
+ai/claude/themes/current.json
+theme-current
+delta/themes/current.gitconfig
+bat/themes/current.config

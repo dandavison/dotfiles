@@ -1,0 +1,7 @@
+# one-dark on a black background, to match the dark Alacritty and tmux theme.
+include "one-dark"
+
+color-link default "#ABB2BF,#000000"
+color-link current-line-number "#C6C6C6,#000000"
+color-link line-number "#636D83,#000000"
+color-link cursor-line "#121212"
