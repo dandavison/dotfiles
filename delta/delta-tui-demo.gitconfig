@@ -1,0 +1,38 @@
+[pager]
+    diff = delta --tui
+    show = delta --tui
+    log = delta --tui
+
+# The rest of this is not essential -- just suggestions to give an idea of what's available
+
+[pretty]
+commit-format = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)
+commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n%w(0,4,4)%C(green)%s%C(reset)%n%+b
+
+
+[delta-tui]
+    log-args = --stat
+    log-args = --date=relative
+    log-args = --pretty=commit-format
+    show-args = --pretty=commit-format-full
+    file-header = stat
+    start-folded = true
+
+[delta]
+    commit-regex = ^(▸|commit )
+    commit-decoration-style = blue ol
+    features = my-theme
+
+[delta "my-theme"]
+    file-decoration-style = "magenta ul"
+    file-added-label = •
+    file-modified-label = •
+    file-removed-label = •
+    file-renamed-label = •
+    navigate-regex = ^•
+
+
+[include]
+    path = /Users/dan/src/delta/themes.gitconfig
+[delta-tui "general.diff-renderer"]
+	theme = arctic-fox
