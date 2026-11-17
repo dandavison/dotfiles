@@ -131,6 +131,10 @@ GOOD: "workflow activity does not support start delay"
 
 BAD: "irreducible floor" "the residue" "the crux" "wart" "escape hatch" "where the amortization lands" "burns no retries" "rides on the item"
 
+Write commit messages and PR titles, in plain, explicit English that says what the user sees or what
+is fixed, without implementation details, and with normal word order: say "Show an error message
+when X", not "Say so when X".
+
 Don't say that something 'names' something. Software engineers rarely use that word. A model
 can or cannot 'express' something; in general 'contains' or 'uses' is often the right word.
 
