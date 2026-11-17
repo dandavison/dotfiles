@@ -1,0 +1,7 @@
+{
+  "base": "dark",
+  "overrides": {
+    "promptBorder": "#e0609a",
+    "userMessageBackground": "#1e3a46"
+  }
+}
