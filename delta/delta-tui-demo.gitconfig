@@ -18,6 +18,19 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     file-header = stat
     start-folded = true
 
+    # Not in demo config
+    recent-commits-limit = 0
+    stash-list-limit = 0
+
+[delta-tui "general.commands"]
+	pr-comments = pr-fetch-comments
+	pr-comments-remove = pr-fetch-comments --remove
+
+
+[delta-tui "general.views"]
+	diff = git diff {commit}...
+
+
 [delta]
     commit-regex = ^(▸|commit )
     commit-decoration-style = blue ol
@@ -33,6 +46,12 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 
 
 [include]
-    path = /Users/dan/src/delta/themes.gitconfig
-[delta-tui "general.diff-renderer"]
-	theme = arctic-fox
+    path = /Users/dan/src/devenv/dotfiles/delta/themes.gitconfig
+
+
+[delta-tui "general.diff-renderer.feature-keys"]
+	line-numbers = L
+	side-by-side = S
+	pr-comments = C
+	pr-comments-remove = R
+	diff = D

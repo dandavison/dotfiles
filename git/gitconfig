@@ -56,9 +56,9 @@ prompt = false
 cmd = difft "$LOCAL" "$REMOTE"
 
 [include]
-# path = ~/src/devenv/dotfiles/delta/delta-tui-demo.gitconfig
-path = ~/src/devenv/dotfiles/delta/delta.gitconfig
-path = ~/src/devenv/dotfiles/delta/delta-tui.gitconfig
+path = ~/src/devenv/dotfiles/delta/delta-tui-demo.gitconfig
+# path = ~/src/devenv/dotfiles/delta/delta.gitconfig
+# path = ~/src/devenv/dotfiles/delta/delta-tui.gitconfig
 
 [init]
 defaultBranch = main

@@ -13,7 +13,7 @@
     diffFilter = delta --color-only
 
 [include]
-    path = /Users/dan/src/delta/themes.gitconfig
+    path = /Users/dan/src/devenv/dotfiles/delta/themes.gitconfig
     
 
 [delta]

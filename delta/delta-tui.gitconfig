@@ -32,6 +32,8 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 
 [delta-tui "general.commands"]
 	html = {command} --color=always | delta | aha > /tmp/diff.html && open /tmp/diff.html
+	pr-comments = pr-fetch-comments
+	pr-comments-remove = pr-fetch-comments --remove
 
 [delta-tui "general.diff-renderer.feature-keys"]
 	line-numbers = L
@@ -40,3 +42,5 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 	diff = D
 	line-number-painting-dan = *
 	github-pr-links = @
+	pr-comments = C
+	pr-comments-remove = R
