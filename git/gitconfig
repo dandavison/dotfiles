@@ -2,7 +2,7 @@
 attributesfile = ~/src/devenv/dotfiles/git/gitattributes
 excludesfile = ~/.gitignore
 default-branch = main
-editor = micro
+editor = tui-editor
 
 [user]
 email = dandavison7@gmail.com
