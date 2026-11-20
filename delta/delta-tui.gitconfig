@@ -40,7 +40,6 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 	side-by-side = S
 	html = %
 	diff = D
-	line-number-painting-dan = *
 	github-pr-links = @
 	pr-comments = C
 	pr-comments-remove = R
