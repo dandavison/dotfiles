@@ -59,17 +59,20 @@ local keymap = {
 }
 
 -- Keybindings
-wormhole.bindKeys(keymap)
+wormhole.bindKeys(keymap, { dashboard = false })
 hs.hotkey.bind({}, "f16", terminal)
 hs.hotkey.bind({}, "f17", code)
 
 tide.bindKeys()
 
--- The agent sessions most recently active, in a picker (caps lock held is
--- hyper, via Karabiner). keepFocus: resuming one leaves you in its tmux pane.
-hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "'", function()
+-- The agent sessions most recently active, in a picker, on a tap of right
+-- option and on caps lock + ' (caps lock held is hyper, via Karabiner).
+-- keepFocus: resuming one leaves you in its tmux pane.
+local function latestSessions()
     tide.fullPopup("zsh -ic 'agent sessions latest'", true)
-end)
+end
+wormhole.onRightOptionTap(latestSessions)
+hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "'", latestSessions)
 
 -- App launcher popup
 hs.hotkey.bind({ "cmd" }, "space", function()
