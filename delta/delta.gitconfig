@@ -18,6 +18,7 @@
 
 [delta]
     features = dan line-numbers
+    width = variable
     navigate = true
     hyperlinks = true
     wrap-max-lines = unlimited
