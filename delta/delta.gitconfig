@@ -71,10 +71,12 @@
     line-numbers-zero-style = "#999999"
     line-numbers-left-style = line
     line-numbers-right-style = line
-    line-numbers-left-format = "│{nm:^4}┃"
-    line-numbers-right-format = "{np:^4}┃"
+    # Unified mode: one column showing new-file line numbers; removed lines have no number.
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│{np:^4}┃"
 
 [delta "side-by-side"]
+    line-numbers-left-format = "│{nm:^4}┃"
     line-numbers-right-format = "│{np:^4}┃"
 
 [delta "whole-file-hunks"]
