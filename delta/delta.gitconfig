@@ -55,6 +55,11 @@
     hyperlinks-file-link-format = "http://wormhole:7117/file/{path}:{line}?land-in=editor"
     line-numbers = true
     side-by-side = hunk,140
+    # Unified mode: one column showing new-file line numbers; removed lines have no number.
+    # These are here rather than in [delta "line-numbers"] because that section would beat
+    # [delta "side-by-side"], which restores the left column in side-by-side mode.
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│{np:^4}┃"
 
 # Links go to the line in the worktree's GitHub PR instead of the editor, for reviewing.
 # A feature rather than a [delta] setting, since [delta] settings override features.
@@ -71,9 +76,6 @@
     line-numbers-zero-style = "#999999"
     line-numbers-left-style = line
     line-numbers-right-style = line
-    # Unified mode: one column showing new-file line numbers; removed lines have no number.
-    line-numbers-left-format = ""
-    line-numbers-right-format = "│{np:^4}┃"
 
 [delta "side-by-side"]
     line-numbers-left-format = "│{nm:^4}┃"
