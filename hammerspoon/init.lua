@@ -66,10 +66,16 @@ hs.hotkey.bind({}, "f17", code)
 tide.bindKeys()
 
 -- The agent sessions most recently active, in a picker, on a tap of right
--- option and on caps lock + ' (caps lock held is hyper, via Karabiner).
--- keepFocus: resuming one leaves you in its tmux pane.
+-- option and on caps lock + ' (caps lock held is hyper, via Karabiner). The
+-- picker has a tmux window of its own and keeps running there, so going to a
+-- session and coming back finds it as it was. With the terminal in front the
+-- key toggles between the picker and the last window; from another app it
+-- shows the picker. A login shell, for the PATH that has tmux and agent.
 local function latestSessions()
-    tide.fullPopup("zsh -ic 'agent sessions latest'", true)
+    local app = hs.application.find("alacritty")
+    local mode = (app and app:isFrontmost()) and "toggle" or "show"
+    tide.focusAlacritty()
+    tide.run("/bin/zsh", { "-lc", "agent sessions latest --window " .. mode })
 end
 wormhole.onRightOptionTap(latestSessions)
 hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "'", latestSessions)
