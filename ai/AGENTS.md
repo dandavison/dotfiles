@@ -78,9 +78,14 @@ that I am using, and what type of output I have requested.
 
 When writing content destined for GitHub (issues, PR descriptions, comments) see instructions above.
 
-wormhole is my tmux-based git worktree manager: it opens projects and tasks (one worktree per
-branch) in tmux windows and my editor. Run `wormhole -h` (and `wormhole <subcommand> -h`) for usage.
-Output all code links in wormhole format (http://wormhole:7117/file/{absolute_path}:{line}?land-in=editor).
+wormhole is my tmux-based git worktree manager: it opens projects and
+tasks (one worktree per branch) in tmux windows and my editor. Run
+`wormhole -h` (and `wormhole <subcommand> -h`) for usage. Never run `git worktree add` with a
+branch name: create worktrees that hold a branch with `wormhole open <repo>:<branch>`, which puts
+them under ~/worktrees/<repo>/<branch>/<repo>. For a throwaway worktree use `git worktree add
+--detach` in the scratchpad directory. Output all
+code links in wormhole format:
+[file.go:123](http://wormhole:7117/file/{absolute_path}:{line}?land-in=editor).
 
 When outputting text that I will copy do not quote it. This causes the claude TUI to insert vertical
 bars at the left margin which get copied.
