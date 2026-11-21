@@ -184,6 +184,34 @@ chars = "\u000f"
 key = "O"
 mods = "Command"
 
+# Cmd-J / Cmd-K -> Down / Up arrow, to move through lists (fzf, shell history,
+# emacs) without leaving the home row. Sent as Alacritty sends the arrow keys,
+# in the form the application's cursor-key mode asks for. This replaces
+# Alacritty's default Cmd-K, which clears the scrollback.
+[[keyboard.bindings]]
+chars = "\u001bOB"
+key = "J"
+mods = "Command"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001b[B"
+key = "J"
+mods = "Command"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001bOA"
+key = "K"
+mods = "Command"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001b[A"
+key = "K"
+mods = "Command"
+mode = "~AppCursor"
+
 
 [terminal]
 
