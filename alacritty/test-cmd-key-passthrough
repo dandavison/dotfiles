@@ -16,6 +16,12 @@ understands. Two layers in between can silently eat them, and both have:
         two bytes and self-inserts the rest -- Cmd-C typed "mdc".
 
 Both failures are silent and only show up in use, so assert on them.
+
+Cmd-J and Cmd-K are the Down and Up arrow keys, for moving through lists
+without leaving the home row. They are sent as Alacritty sends the arrow keys
+themselves, in the form the application's cursor-key mode asks for, and tmux
+decodes them and sends the pane its own arrow key, so they are checked by what
+the pane receives rather than for surviving unchanged.
 """
 
 import fcntl
@@ -42,6 +48,15 @@ def main() -> int:
         sys.exit(f"no Cmd-<key> chars bindings found in {CONFIG}")
 
     failures = []
+    arrows = arrow_bindings(CONFIG)
+    for key, arrow in ARROW_KEYS.items():
+        for mode in ("AppCursor", "~AppCursor"):
+            seq = arrows.get((key, mode))
+            if seq != ARROWS[arrow][mode]:
+                failures.append(f"Command-{key} ({mode}): sends {seq!r}, not {arrow}")
+            elif (got := through_tmux(seq)) != ARROWS[arrow]["~AppCursor"]:
+                failures.append(f"Command-{key} ({mode}): tmux forwarded {got!r}, not {arrow}")
+
     for name, seq in seqs.items():
         got = through_tmux(seq)
         if got != seq:
@@ -54,8 +69,18 @@ def main() -> int:
 
     for f in failures:
         print(f"FAIL {f}")
-    print(f"{len(seqs) * 2 - len(failures)}/{len(seqs) * 2} checks passed")
+    checks = len(seqs) * 2 + len(ARROW_KEYS) * 2
+    print(f"{checks - len(failures)}/{checks} checks passed")
     return 1 if failures else 0
+
+
+# What each arrow key sends, by the cursor-key mode the application has set.
+ARROWS = {
+    "Up": {"AppCursor": "\x1bOA", "~AppCursor": "\x1b[A"},
+    "Down": {"AppCursor": "\x1bOB", "~AppCursor": "\x1b[B"},
+}
+ARROW_KEYS = {"J": "Down", "K": "Up"}
+ARROW_SEQUENCES = {seq for modes in ARROWS.values() for seq in modes.values()}
 
 
 def cmd_key_sequences(config: Path) -> dict[str, str]:
@@ -63,7 +88,20 @@ def cmd_key_sequences(config: Path) -> dict[str, str]:
     return {
         f"{b['mods'].replace('|', '-')}-{b['key']}": b["chars"]
         for b in bindings
-        if "chars" in b and b.get("mods", "").startswith("Command") and b["chars"][0] != "\x02"
+        if "chars" in b
+        and b.get("mods", "").startswith("Command")
+        and b["chars"][0] != "\x02"
+        and b["chars"] not in ARROW_SEQUENCES
+    }
+
+
+def arrow_bindings(config: Path) -> dict[tuple[str, str], str]:
+    """(key, mode) -> chars, for the Cmd bindings that send an arrow key."""
+    bindings = tomllib.loads(config.read_text())["keyboard"]["bindings"]
+    return {
+        (b["key"], b.get("mode", "")): b["chars"]
+        for b in bindings
+        if b.get("mods") == "Command" and b.get("chars") in ARROW_SEQUENCES
     }
 
 
