@@ -70,13 +70,13 @@ tide.bindKeys()
 -- picker has a tmux window of its own and keeps running there, so going to a
 -- session and coming back finds it as it was. With the terminal in front the
 -- key toggles between the picker and the last window; from another app it
--- shows the picker. A login shell, for the PATH that has tmux; agent is in
--- ~/.local/bin, which only the interactive shell's PATH has.
+-- shows the picker. agent-sessions-window is plain tmux, for speed, run by a
+-- login shell for the PATH that has tmux.
 local function latestSessions()
     local app = hs.application.find("alacritty")
     local mode = (app and app:isFrontmost()) and "toggle" or "show"
     tide.focusAlacritty()
-    tide.run("/bin/zsh", { "-lc", "~/.local/bin/agent sessions latest --window " .. mode })
+    tide.run("/bin/zsh", { "-lc", "~/src/agent-tools/src/agent_tools/libexec/agent-sessions-window " .. mode })
 end
 wormhole.onRightOptionTap(latestSessions)
 hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "'", latestSessions)
