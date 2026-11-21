@@ -60,18 +60,18 @@
 [delta "github-pr-links"]
     hyperlinks-file-link-format = "http://wormhole:7117/file/{path}:{line}?land-in=github-pr"
 
-# Styles like difftastic's own: no line has a background; a changed token is bold red or green
-# text, a line changed throughout is red or green text, and the rest is syntax-highlighted. Meant
-# for delta --tui's view of changes as difftastic sees them (*), where a line with nothing changed
-# on it looks like an unchanged line. In git's view it is less clear which lines changed, since
-# only changed tokens and the line numbers say so.
+# delta's default colors, used only where something changed: a changed token has delta's emph
+# background, a line changed throughout has delta's line background, and the rest of a changed
+# line has no background, so that it looks unchanged. All text is syntax-highlighted. Meant for
+# delta --tui's view of changes as difftastic sees them (*). In git's view it is less clear which
+# lines changed, since a changed line with no emph looks unchanged apart from its line number.
 [delta "difftastic"]
-    minus-style = red
+    minus-style = syntax auto
     minus-non-emph-style = syntax
-    minus-emph-style = red bold
-    plus-style = green
+    minus-emph-style = syntax auto
+    plus-style = syntax auto
     plus-non-emph-style = syntax
-    plus-emph-style = green bold
+    plus-emph-style = syntax auto
     zero-style = syntax
     line-numbers-minus-style = red bold
     line-numbers-plus-style = green bold
