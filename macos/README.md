@@ -41,17 +41,6 @@ ln -s ~/src/devenv/dotfiles/macos/DefaultKeyBinding.dict ~/Library/KeyBindings/D
 
 Requires logout/login to take effect.
 
-### `my.startup.plist`
-
-LaunchAgent that sets `OPEN_IN_EDITOR` env var at login.
-
-**Deploy:**
-
-```bash
-ln -s ~/src/devenv/dotfiles/macos/my.startup.plist ~/Library/LaunchAgents/my.startup.plist
-launchctl load ~/Library/LaunchAgents/my.startup.plist
-```
-
 ### `my.docker-guard.plist`, `docker-guard`, `docker-start`, `docker-stop`
 
 LaunchAgent + scripts to prevent Docker Desktop from running unless explicitly wanted.
