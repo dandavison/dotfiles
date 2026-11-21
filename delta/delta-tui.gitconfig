@@ -14,9 +14,9 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     show-args = --pretty=commit-format-full
     recent-commits-limit = 0
     stash-list-limit = 0
-    # E switches enter from $EDITOR to this: wormhole opens the file in the
-    # worktree's editor workspace.
-    editors = wormhole open
+    # alt+enter opens the file here, as in fsi and rgi: wormhole opens it in
+    # the worktree's editor workspace.
+    alt-editor = wormhole open
     # collapsed-sections = branch_status
 
  # [delta-tui "bindings.root"]
