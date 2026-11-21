@@ -68,8 +68,7 @@ tide.bindKeys()
 -- The agent sessions most recently active, in a picker (caps lock held is
 -- hyper, via Karabiner). keepFocus: resuming one leaves you in its tmux pane.
 hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "'", function()
-    tide.popup({ "display-popup", "-E", "-w", "90%", "-h", "80%", "-b", "rounded", "-T", "",
-        "zsh -ic 'agent sessions latest'" }, true)
+    tide.fullPopup("zsh -ic 'agent sessions latest'", true)
 end)
 
 -- App launcher popup
