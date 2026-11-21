@@ -14,6 +14,9 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     show-args = --pretty=commit-format-full
     recent-commits-limit = 0
     stash-list-limit = 0
+    # E switches enter from $EDITOR to this: wormhole opens the file in the
+    # worktree's editor workspace.
+    editors = wormhole open
     # collapsed-sections = branch_status
 
  # [delta-tui "bindings.root"]
@@ -37,9 +40,11 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 
 [delta-tui "general.diff-renderer.feature-keys"]
 	line-numbers = L
-	side-by-side = S
 	html = %
 	diff = D
 	github-pr-links = @
 	pr-comments = C
 	pr-comments-remove = R
+	plus-minus-markers = =
+	side-by-side = S
+	difftastic = *
