@@ -145,10 +145,10 @@ fi
 
 # wormhole task, then session identity, then run stats — each stat its own
 # "│"-separated field so the busiest/most-variable info sits at the end.
-identity="$bold$link_open$name$link_close$reset  $dim#$session_code$reset"
+identity="$bold$black$link_open$name$link_close$reset  $dim#$session_code$reset"
 
 line=""
-[ -n "$task" ] && line="$bold$black$task$reset | "
+[ -n "$task" ] && line="$cyan$task$reset | "
 line="$line$identity"
 [ -n "$turns" ] && line="$line │ $dim$turns$reset"
 [ -n "$sources" ] && line="$line │ $cyan$sources$reset"
