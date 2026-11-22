@@ -7,6 +7,7 @@ input=$(cat)
 bold=$'\033[1m'
 dim=$'\033[2m'
 cyan=$'\033[36m'
+black=$'\033[30m'
 green=$'\033[32m'
 yellow=$'\033[33m'
 red=$'\033[31m'
@@ -147,7 +148,7 @@ fi
 identity="$bold$link_open$name$link_close$reset  $dim#$session_code$reset"
 
 line=""
-[ -n "$task" ] && line="$cyan$task$reset | "
+[ -n "$task" ] && line="$bold$black$task$reset | "
 line="$line$identity"
 [ -n "$turns" ] && line="$line │ $dim$turns$reset"
 [ -n "$sources" ] && line="$line │ $cyan$sources$reset"
