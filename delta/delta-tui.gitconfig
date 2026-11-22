@@ -19,6 +19,7 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     alt-editor = wormhole open
     # collapsed-sections = branch_status
 
+
  # [delta-tui "bindings.root"]
  #     discard = k
  #     quit = q
@@ -48,3 +49,4 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 	plus-minus-markers = =
 	side-by-side = S
 	difftastic = *
+	comments-compact = W

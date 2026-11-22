@@ -17,7 +17,7 @@
     
 
 [delta]
-    features = dan line-numbers
+    features = dan line-numbers comments
     width = variable
     navigate = true
     hyperlinks = true
@@ -60,6 +60,52 @@
     # [delta "side-by-side"], which restores the left column in side-by-side mode.
     line-numbers-left-format = ""
     line-numbers-right-format = "{np:^4}┃"
+
+# PR review comments in delta --tui. delta itself does not use these options.
+# They are in a feature rather than in [delta] so that a feature turned on
+# later, such as comments-compact, can change them. The background suits a
+# light terminal.
+[delta "comments"]
+    comment-style = normal "#eef3fb"
+    comment-author-style = bold "#0550ae"
+    comment-timestamp-style = italic "#6e7781"
+    comment-count-style = bold "#0550ae"
+    comment-decoration-style = "#0550ae" box
+    # Unset: times are shown as how long ago, e.g. "an hour ago".
+    # comment-timestamp-format = "%Y-%m-%d %H:%M"
+    # The box a comment is written in (i), unless set the same as the comments.
+    # comment-editor-style = normal "#fff8e5"
+    # comment-editor-decoration-style = bold "#9a6700" box
+
+# PR review comments for a dark terminal, in GitHub's dark theme's colors.
+[delta "comments-dark"]
+    comment-style = normal "#161b22"
+    comment-author-style = bold "#58a6ff"
+    comment-timestamp-style = italic "#8b949e"
+    comment-count-style = bold "#58a6ff"
+    comment-decoration-style = "#388bfd" box
+
+# PR review comments to go with the collared-trogon theme: its navy box color and
+# grey, and Nord's blue, on a background between the theme's own.
+[delta "comments-collared-trogon"]
+    comment-style = normal "#1a2530"
+    comment-author-style = bold "#88c0d0"
+    comment-timestamp-style = italic "#999999"
+    comment-count-style = bold "#88c0d0"
+    comment-decoration-style = "#2b5f80" box
+
+# PR review comments without the box: a bar down each thread's left, and dates
+# instead of how long ago. Toggled in delta --tui with W.
+[delta "comments-compact"]
+    comment-decoration-style = "#0550ae"
+    comment-timestamp-format = "%Y-%m-%d %H:%M"
+
+# PR review comments between heavy lines over and under each thread. Toggle it
+# in delta --tui from the feature list (H).
+[delta "comments-lined"]
+    comment-decoration-style = bold "#0550ae" ul ol
+    comment-author-style = bold magenta
+    comment-count-style = bold magenta
 
 # Links go to the line in the worktree's GitHub PR instead of the editor, for reviewing.
 # A feature rather than a [delta] setting, since [delta] settings override features.
