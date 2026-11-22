@@ -28,10 +28,12 @@ thing is true.
 If a tool, permission or approach you planned is unavailable or denied, stop and ask me; never
 switch to a fallback strategy unless I have explicitly said othwerwise.
 
+During implementation, if there is a non-happy case and you are considering whether to fallback to
+some suboptimal handling or throw an error: throw an error. We can always work on handling the case
+without an error in the future.
+
 If you encounter material that appears to be AI-written (Notion is a prime culprit), then flag it
 and be circumspect: do not blindly trust claims it makes about motivations/intentions/design.
-
-Never guess at human motivation and then present it as fact.
 
 When I ask you for help understanding what someone said, don't give an answer that relies on me
 asking the person. Form a theory-of-mind latent model of the person and thus make inferences.
@@ -65,6 +67,8 @@ Never open PRs in non-draft mode. If I say "create a PR for it" I probably just 
 local commit that I'll push. Always confirm with me. Commit when you've finished any meaningful unit
 of work. Use the current branch unless I say so even if it's main.
 
+Never tell me what is or isn't pushed, or anything else about remotes
+and push state: I manage that myself.
 
 # Resources available to you
 
