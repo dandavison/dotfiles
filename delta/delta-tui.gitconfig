@@ -5,7 +5,9 @@ commit-format = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%
 commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n%w(0,4,4)%C(green)%s%C(reset)%n%+b
 
 
-[delta-tui]
+# delta --tui (the TUI). These are options in delta's config that delta itself does not use.
+# They can go in a [delta "feature"] section too, to be in force while that feature is.
+[delta]
     file-header = stat
     start-folded = true
     log-args = --stat
@@ -19,36 +21,31 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     alt-editor = wormhole open
     # collapsed-sections = branch_status
 
+    # bind = root.discard k
+    # bind = root.quit q
+    # bind = root.quit esc
+    # bind = root.quit left
+    # bind = root.move-down ctrl+down
+    # bind = root.move-down-line down
+    # bind = root.move-up ctrl+up
+    # bind = root.move-up-line up
+    # bind = root.hide-file ctrl+k
 
- # [delta-tui "bindings.root"]
- #     discard = k
- #     quit = q
- #     quit = esc
- #     quit = left
- #     move-down = ctrl+down
- #     move-down-line = down
- #     move-up = ctrl+up
- #     move-up-line = up
- #     hide-file = ctrl+k
+    view = diff git diff {commit}...
 
-[delta-tui "general.views"]
-	diff = git diff {commit}...
+    command = html {command} --color=always | delta | aha > /tmp/diff.html && open /tmp/diff.html
+    command = pr-comments pr-fetch-comments
+    command = pr-comments-remove pr-fetch-comments --remove
+    command = send-message-to-agent redis-cli XADD delta '*' message-to-agent "{input}"
 
-[delta-tui "general.commands"]
-	html = {command} --color=always | delta | aha > /tmp/diff.html && open /tmp/diff.html
-	pr-comments = pr-fetch-comments
-	pr-comments-remove = pr-fetch-comments --remove
-	send-message-to-agent = redis-cli XADD delta '*' message-to-agent "{input}"
-
-[delta-tui "general.diff-renderer.feature-keys"]
-	line-numbers = L
-	html = %
-	diff = D
-	pr-comments = C
-	pr-comments-remove = R
-	plus-minus-markers = =
-	side-by-side = S
-	comments-compact = W
-	difftastic = (
-	code = *
-	send-message-to-agent = @
+    feature-key = line-numbers L
+    feature-key = html %
+    feature-key = diff D
+    feature-key = pr-comments C
+    feature-key = pr-comments-remove R
+    feature-key = plus-minus-markers =
+    feature-key = side-by-side S
+    feature-key = comments-compact W
+    feature-key = difftastic (
+    feature-key = code *
+    feature-key = send-message-to-agent @
