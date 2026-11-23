@@ -38,6 +38,7 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 	html = {command} --color=always | delta | aha > /tmp/diff.html && open /tmp/diff.html
 	pr-comments = pr-fetch-comments
 	pr-comments-remove = pr-fetch-comments --remove
+	send-message-to-agent = redis-cli XADD delta '*' message-to-agent "{input}"
 
 [delta-tui "general.diff-renderer.feature-keys"]
 	line-numbers = L
@@ -50,3 +51,4 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 	comments-compact = W
 	difftastic = (
 	code = *
+	send-message-to-agent = @
