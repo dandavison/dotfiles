@@ -66,6 +66,7 @@
   "autoCompactEnabled": false,
   "idleCompaction": false,
   "fileCheckpointingEnabled": false,
+  "feedbackSurveyRate": 0,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
   },
