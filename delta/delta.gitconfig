@@ -61,6 +61,14 @@
     line-numbers-left-format = ""
     line-numbers-right-format = "{np:^4}┃"
 
+[delta "code"]
+    minus-style = omit
+    plus-style = syntax
+    plus-emph-style = syntax
+    plus-non-emph-style = syntax
+    side-by-side = false
+    line-numbers-left-format = ""
+
 # PR review comments in delta --tui. delta itself does not use these options.
 # They are in a feature rather than in [delta] so that a feature turned on
 # later, such as comments-compact, can change them. The background suits a

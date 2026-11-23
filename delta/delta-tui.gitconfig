@@ -43,10 +43,10 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 	line-numbers = L
 	html = %
 	diff = D
-	github-pr-links = @
 	pr-comments = C
 	pr-comments-remove = R
 	plus-minus-markers = =
 	side-by-side = S
-	difftastic = *
 	comments-compact = W
+	difftastic = (
+	code = *
