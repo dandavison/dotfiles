@@ -2,12 +2,12 @@
     pager = delta
 
 [pager]
-    log = delta --tui
-    diff = delta --tui
-    show = delta --tui
+    log = delta tui
+    diff = delta tui
+    show = delta tui
 
 [sequence]
-    editor = delta --tui sequence-editor
+    editor = delta tui sequence-editor
 
 [interactive]
     diffFilter = delta --color-only
