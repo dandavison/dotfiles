@@ -44,6 +44,7 @@
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true
   },
+  "feedbackSurveyRate": 0,
   "spinnerTipsEnabled": true,
   "spinnerVerbs": {
     "mode": "replace",
@@ -54,7 +55,7 @@
   "effortLevel": "high",
   "modelSettings": {
     "claude-opus-5-5": {
-      "effortLevel": "medium"
+      "effortLevel": "xhigh"
     }
   },
   "promptSuggestionEnabled": false,
@@ -66,7 +67,6 @@
   "autoCompactEnabled": false,
   "idleCompaction": false,
   "fileCheckpointingEnabled": false,
-  "feedbackSurveyRate": 0,
   "feedbackSurveyState": {
     "lastShownTime": 1753986113236
   },

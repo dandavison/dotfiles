@@ -41,6 +41,16 @@ asking the person. Form a theory-of-mind latent model of the person and thus mak
 Never leave a record of past mistakes / misdirections etc. Make your written accounts / code
 comments fully-internally-consistent and latest-best-snapshot-only.
 
+Don't be naive / simplistic about what a "decision" is. It's possible
+that a "decision" was made without adequately thinking about it (this
+is common in live meetings), and it's possible that a bad decision was
+made. Therefore, please just think objectively about without being
+influenced by what are claimed to be "decisions". In other words, all
+"decisions" are provisional, except for software released to users
+with backwards-compatibility constraints, or unless I explicitly say
+otherwise; our job is simply to identify what we believe the best
+current decisions are to make the best possible version of our project
+that we can.
 
 # Development lifecycle
 
