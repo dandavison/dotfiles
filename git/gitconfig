@@ -71,6 +71,12 @@ defaultBranch = main
 decorate = true
 date = relative
 
+[pretty]
+# Shared by shell log aliases (_gl) and delta tui's log renderer.
+commit-format = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)
+# With whole message; shared by gs and delta tui's commit view.
+commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n%w(0,4,4)%C(green)%s%C(reset)%n%+b
+
 [merge]
 conflictstyle = zdiff3
 renamelimit = 10000

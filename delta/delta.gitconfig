@@ -1,9 +1,3 @@
-[pretty]
-# Shared by shell log aliases (_gl) and gitu's log renderer.
-commit-format = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)
-# With whole message; shared by gs and gitu's commit view.
-commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n%w(0,4,4)%C(green)%s%C(reset)%n%+b
-
 [core]
     pager = delta
 
@@ -24,12 +18,11 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     
 
 [delta]
-    features = dan tui line-numbers comments difftastic
+    features = dan tui line-numbers comments-collared-trogon difftastic
     width = variable
     navigate = true
     hyperlinks = true
     wrap-max-lines = unlimited
-    commit-regex = ^(▸|commit )
     relative-paths = true
     grep-file-style = red
     commit-decoration-style = blue ol
@@ -41,12 +34,6 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     file-removed-label = •
     file-renamed-label = •
     navigate-regex = ^•
-    # line-numbers-left-format = "{nm:^4}│"
-    # line-numbers-minus-left-format = "{nm:^4}┃"
-    # line-numbers-plus-left-format = "{nm:^4}┃"
-    # line-numbers-right-format = "│{np:^4}│"
-    # line-numbers-minus-right-format = "┃{np:^4}┃"
-    # line-numbers-plus-right-format = "┃{np:^4}┃"
 
 [delta "tui"]
     file-header = stat
@@ -55,6 +42,7 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     log-args = --date=relative
     log-args = --pretty=commit-format
     show-args = --pretty=commit-format-full
+    commit-regex = ^(▸|commit )
     recent-commits-limit = 0
     stash-list-limit = 0
     alt-editor = wormhole open
@@ -62,7 +50,7 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     command = html {command} --color=always | delta | aha > /tmp/diff.html && open /tmp/diff.html
     command = pr-comments pr-fetch-comments
     command = pr-comments-remove pr-fetch-comments --remove
-    command = send-message-to-agent redis-cli XADD delta '*' message-to-agent {input}
+    command = send-message-to-agent redis-cli XADD {pid} '*' message-to-agent {input}
     feature-key = line-numbers L
     feature-key = html %
     feature-key = diff D
@@ -73,10 +61,7 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     feature-key = comments-compact W
     feature-key = difftastic (
     feature-key = code *
-    feature-key = send-message-to-agent @
-    pr-summary-style = bold blue
-
-    
+    pr-summary-style = bold blue    
 
 [delta "dan-light"]
     minus-style = normal "#ffe9e9"
@@ -129,6 +114,11 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     comment-submitted-style = normal "#dafbe1"
     # The text of a markdown link, which links to its URL, drawn over comment-style.
     comment-link-style = ul "#0969da"
+    # While an agent works on a message about a thread (@), the box around the thread fades to
+    # this and back, for at most comment-pulse-timeout seconds. Purple, which no comment state
+    # uses.
+    comment-pulse-style = bold "#8250df"
+    # comment-pulse-timeout = 600
 
 # PR review comments for a dark terminal, in GitHub's dark theme's colors.
 [delta "comments-dark"]
@@ -140,9 +130,9 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     comment-pending-style = normal "#112429"
     comment-submitted-style = normal "#12261e"
     comment-link-style = ul "#4493f8"
+    comment-pulse-style = "#a371f7"
 
-# PR review comments to go with the collared-trogon theme: its navy box color and
-# grey, and Nord's blue, on a background between the theme's own.
+
 [delta "comments-collared-trogon"]
     comment-style = normal "#1a2530"
     comment-author-style = bold "#88c0d0"
@@ -150,6 +140,10 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
     comment-count-style = bold "#88c0d0"
     comment-decoration-style = "#2b5f80" box
     comment-link-style = ul "#88c0d0"
+    comment-pending-style = normal "#0e3b45"
+    comment-submitted-style = normal "#16402a"
+    comment-pulse-style = bold "#b48ead"
+
 
 # PR review comments without the box: a bar down each thread's left, and dates
 # instead of how long ago. Toggled in delta --tui with W.
@@ -169,6 +163,14 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 [delta "github-pr-links"]
     hyperlinks-file-link-format = "http://wormhole:7117/file/{path}:{line}?land-in=github-pr"
 
+
+[delta "line-number-formats"]
+    # line-numbers-left-format = "{nm:^4}│"
+    # line-numbers-minus-left-format = "{nm:^4}┃"
+    # line-numbers-plus-left-format = "{nm:^4}┃"
+    # line-numbers-right-format = "│{np:^4}│"
+    # line-numbers-minus-right-format = "┃{np:^4}┃"
+    # line-numbers-plus-right-format = "┃{np:^4}┃"
 
 
 [delta "line-numbers"]
