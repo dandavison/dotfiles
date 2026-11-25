@@ -1,0 +1,299 @@
+# Themes for a dark terminal (delta-dark-N) and a light one (delta-light-N), with diff
+# backgrounds chosen in OKLCH: removed and added lines at equal lightness, and emph backgrounds
+# limited in lightness and chroma so that syntax colors on them stay readable. Only
+# delta-dark-2 and delta-light-2 (orange/blue) stay distinct under red-green color blindness.
+# delta-dark-6, -7, -8 and delta-light-6 are experiments; each theme's comment says what it is.
+
+[delta "delta-dark-1"]
+    # Red/green, equal lightness for removed and added lines.
+    # Backgrounds in OKLCH: lines L=0.235 C=0.062, emph L=0.36 C=0.1, hues 22/145.
+    dark = true
+    syntax-theme = Monokai Extended
+    minus-style = syntax "#360f10"
+    minus-emph-style = syntax "#682224"
+    plus-style = syntax "#062509"
+    plus-emph-style = syntax "#104a17"
+    line-numbers-minus-style = "#c86362"
+    line-numbers-plus-style = "#67b36a"
+    line-numbers-zero-style = "#4d4d4d"
+    line-numbers-left-style = "#333333"
+    line-numbers-right-style = "#333333"
+    file-style = bold "#b1d2f4"
+    file-decoration-style = "#44576b" ul
+    hunk-header-line-number-style = "#868686"
+    hunk-header-decoration-style = "#353e47" box
+    commit-decoration-style = "#bb9951" box
+    blame-palette = "#000000" "#0f0f0f" "#1d1d1d"
+
+[delta "delta-dark-2"]
+    # Orange/blue: removed and added stay distinct under red-green color blindness.
+    # Backgrounds in OKLCH: lines L=0.235 C=0.055, emph L=0.36 C=0.095, hues 50/255.
+    dark = true
+    syntax-theme = Coldark-Dark
+    minus-style = syntax "#321504"
+    minus-emph-style = syntax "#632b00"
+    plus-style = syntax "#0a1e37"
+    plus-emph-style = syntax "#153d6d"
+    line-numbers-minus-style = "#c36c36"
+    line-numbers-plus-style = "#64a1ee"
+    line-numbers-zero-style = "#4d4d4d"
+    line-numbers-left-style = "#333333"
+    line-numbers-right-style = "#333333"
+    file-style = bold "#b1d2f4"
+    file-decoration-style = "#44576b" ul
+    hunk-header-line-number-style = "#868686"
+    hunk-header-decoration-style = "#353e47" box
+    commit-decoration-style = "#bb9951" box
+    blame-palette = "#000000" "#0f0f0f" "#1d1d1d"
+
+[delta "delta-dark-3"]
+    # Red/green, low chroma and darker: quieter than delta-dark-1.
+    # Backgrounds in OKLCH: lines L=0.205 C=0.035, emph L=0.32 C=0.068, hues 22/145.
+    dark = true
+    syntax-theme = Catppuccin Mocha
+    minus-style = syntax "#251010"
+    minus-emph-style = syntax "#502323"
+    plus-style = syntax "#0c1b0d"
+    plus-emph-style = syntax "#1a3c1c"
+    line-numbers-minus-style = "#c86362"
+    line-numbers-plus-style = "#67b36a"
+    line-numbers-zero-style = "#4d4d4d"
+    line-numbers-left-style = "#333333"
+    line-numbers-right-style = "#333333"
+    file-style = bold "#c5caf5"
+    file-decoration-style = "#51536c" ul
+    hunk-header-line-number-style = "#868686"
+    hunk-header-decoration-style = "#3b3c48" box
+    commit-decoration-style = "#bb9951" box
+    blame-palette = "#000000" "#0f0f0f" "#1d1d1d"
+
+[delta "delta-dark-4"]
+    # Red/green, saturated, with brighter emph backgrounds: close to delta's default look.
+    # Backgrounds in OKLCH: lines L=0.225 C=0.075, emph L=0.37 C=0.125, hues 25/145.
+    dark = true
+    syntax-theme = Dracula
+    minus-style = syntax "#370808"
+    minus-emph-style = syntax "#74191b"
+    plus-style = syntax "#002402"
+    plus-emph-style = syntax "#004f08"
+    line-numbers-minus-style = "#c8635d"
+    line-numbers-plus-style = "#67b36a"
+    line-numbers-zero-style = "#4d4d4d"
+    line-numbers-left-style = "#333333"
+    line-numbers-right-style = "#333333"
+    file-style = bold "#ccc8f3"
+    file-decoration-style = "#55526a" ul
+    hunk-header-line-number-style = "#868686"
+    hunk-header-decoration-style = "#3d3b47" box
+    commit-decoration-style = "#bb9951" box
+    blame-palette = "#000000" "#0f0f0f" "#1d1d1d"
+
+[delta "delta-dark-5"]
+    # Rose/teal.
+    # Backgrounds in OKLCH: lines L=0.235 C=0.055, emph L=0.36 C=0.09, hues 8/180.
+    dark = true
+    syntax-theme = Catppuccin Mocha
+    minus-style = syntax "#331119"
+    minus-emph-style = syntax "#632534"
+    plus-style = syntax "#00261f"
+    plus-emph-style = syntax "#004b3f"
+    line-numbers-minus-style = "#c66177"
+    line-numbers-plus-style = "#00b8a1"
+    line-numbers-zero-style = "#4d4d4d"
+    line-numbers-left-style = "#333333"
+    line-numbers-right-style = "#333333"
+    file-style = bold "#c5caf5"
+    file-decoration-style = "#51536c" ul
+    hunk-header-line-number-style = "#868686"
+    hunk-header-decoration-style = "#3b3c48" box
+    commit-decoration-style = "#bb9951" box
+    blame-palette = "#000000" "#0f0f0f" "#1d1d1d"
+
+[delta "delta-dark-6"]
+    # Red/green, lighter and more colorful lines: less murky, at some cost to contrast.
+    # Backgrounds in OKLCH: lines L=0.3 C=0.08, emph L=0.39 C=0.11, hues 22/145.
+    dark = true
+    syntax-theme = Catppuccin Mocha
+    minus-style = syntax "#4f1a1b"
+    minus-emph-style = syntax "#752729"
+    plus-style = syntax "#0d3811"
+    plus-emph-style = syntax "#11531a"
+    line-numbers-minus-style = "#c86362"
+    line-numbers-plus-style = "#67b36a"
+    line-numbers-zero-style = "#4d4d4d"
+    line-numbers-left-style = "#333333"
+    line-numbers-right-style = "#333333"
+    file-style = bold "#c5caf5"
+    file-decoration-style = "#51536c" ul
+    hunk-header-line-number-style = "#868686"
+    hunk-header-decoration-style = "#3b3c48" box
+    commit-decoration-style = "#bb9951" box
+    blame-palette = "#000000" "#0f0f0f" "#1d1d1d"
+
+[delta "delta-dark-7"]
+    # Orange-red/teal: hues chosen away from those of Monokai's text (pink, green, yellow).
+    # Backgrounds in OKLCH: lines L=0.235 C=0.062, emph L=0.36 C=0.1, hues 45/180.
+    dark = true
+    syntax-theme = Monokai Extended
+    minus-style = syntax "#351202"
+    minus-emph-style = syntax "#662703"
+    plus-style = syntax "#00271f"
+    plus-emph-style = syntax "#004b3f"
+    line-numbers-minus-style = "#c56a3e"
+    line-numbers-plus-style = "#00b8a1"
+    line-numbers-zero-style = "#4d4d4d"
+    line-numbers-left-style = "#333333"
+    line-numbers-right-style = "#333333"
+    file-style = bold "#b1d2f4"
+    file-decoration-style = "#44576b" ul
+    hunk-header-line-number-style = "#868686"
+    hunk-header-decoration-style = "#353e47" box
+    commit-decoration-style = "#bb9951" box
+    blame-palette = "#000000" "#0f0f0f" "#1d1d1d"
+
+[delta "delta-dark-8"]
+    # Red/green, changed words bold and underlined, on a background only a little lighter.
+    # Backgrounds in OKLCH: lines L=0.235 C=0.062, emph L=0.275 C=0.075, hues 22/145.
+    dark = true
+    syntax-theme = Monokai Extended
+    minus-style = syntax "#360f10"
+    minus-emph-style = syntax bold ul "#461516"
+    plus-style = syntax "#062509"
+    plus-emph-style = syntax bold ul "#09310d"
+    line-numbers-minus-style = "#c86362"
+    line-numbers-plus-style = "#67b36a"
+    line-numbers-zero-style = "#4d4d4d"
+    line-numbers-left-style = "#333333"
+    line-numbers-right-style = "#333333"
+    file-style = bold "#b1d2f4"
+    file-decoration-style = "#44576b" ul
+    hunk-header-line-number-style = "#868686"
+    hunk-header-decoration-style = "#353e47" box
+    commit-decoration-style = "#bb9951" box
+    blame-palette = "#000000" "#0f0f0f" "#1d1d1d"
+
+[delta "delta-light-1"]
+    # Red/green, equal lightness for removed and added lines.
+    # Backgrounds in OKLCH: lines L=0.955 C=0.035, emph L=0.895 C=0.075, hues 22/148.
+    light = true
+    syntax-theme = Monokai Extended Light
+    minus-style = syntax "#ffe8e6"
+    minus-emph-style = syntax "#ffc9c6"
+    plus-style = syntax "#e1f7e3"
+    plus-emph-style = syntax "#bbebc1"
+    line-numbers-minus-style = "#af3c40"
+    line-numbers-plus-style = "#257c3a"
+    line-numbers-zero-style = "#929292"
+    line-numbers-left-style = "#bebebe"
+    line-numbers-right-style = "#bebebe"
+    file-style = bold "#194f81"
+    file-decoration-style = "#8da8c3" ul
+    hunk-header-line-number-style = "#636363"
+    hunk-header-decoration-style = "#bccdde" box
+    commit-decoration-style = "#a36e09" box
+    blame-palette = "#ffffff" "#f3f3f3" "#e6e6e6"
+
+[delta "delta-light-2"]
+    # Orange/blue: removed and added stay distinct under red-green color blindness.
+    # Backgrounds in OKLCH: lines L=0.96 C=0.03, emph L=0.9 C=0.07, hues 60/240.
+    light = true
+    syntax-theme = Coldark-Cold
+    minus-style = syntax "#ffeede"
+    minus-emph-style = syntax "#ffd4b0"
+    plus-style = syntax "#e1f5ff"
+    plus-emph-style = syntax "#b4e5ff"
+    line-numbers-minus-style = "#a24f00"
+    line-numbers-plus-style = "#0070ab"
+    line-numbers-zero-style = "#929292"
+    line-numbers-left-style = "#bebebe"
+    line-numbers-right-style = "#bebebe"
+    file-style = bold "#194f81"
+    file-decoration-style = "#8da8c3" ul
+    hunk-header-line-number-style = "#636363"
+    hunk-header-decoration-style = "#bccdde" box
+    commit-decoration-style = "#a36e09" box
+    blame-palette = "#ffffff" "#f3f3f3" "#e6e6e6"
+
+[delta "delta-light-3"]
+    # Red/green, low chroma and lighter: quieter than delta-light-1.
+    # Backgrounds in OKLCH: lines L=0.968 C=0.022, emph L=0.925 C=0.05, hues 22/148.
+    light = true
+    syntax-theme = Catppuccin Latte
+    minus-style = syntax "#ffefee"
+    minus-emph-style = syntax "#ffdad7"
+    plus-style = syntax "#ebf9ec"
+    plus-emph-style = syntax "#d1f0d4"
+    line-numbers-minus-style = "#af3c40"
+    line-numbers-plus-style = "#257c3a"
+    line-numbers-zero-style = "#929292"
+    line-numbers-left-style = "#bebebe"
+    line-numbers-right-style = "#bebebe"
+    file-style = bold "#434582"
+    file-decoration-style = "#9ea2c4" ul
+    hunk-header-line-number-style = "#636363"
+    hunk-header-decoration-style = "#c6c9de" box
+    commit-decoration-style = "#a36e09" box
+    blame-palette = "#ffffff" "#f3f3f3" "#e6e6e6"
+
+[delta "delta-light-4"]
+    # Red/green, saturated, with darker emph backgrounds: close to delta's default look.
+    # Backgrounds in OKLCH: lines L=0.94 C=0.05, emph L=0.86 C=0.1, hues 22/148.
+    light = true
+    syntax-theme = GitHub
+    minus-style = syntax "#ffdfdc"
+    minus-emph-style = syntax "#ffb7b4"
+    plus-style = syntax "#d6f5d9"
+    plus-emph-style = syntax "#a4e4ac"
+    line-numbers-minus-style = "#af3c40"
+    line-numbers-plus-style = "#257c3a"
+    line-numbers-zero-style = "#929292"
+    line-numbers-left-style = "#bebebe"
+    line-numbers-right-style = "#bebebe"
+    file-style = bold "#194f81"
+    file-decoration-style = "#8da8c3" ul
+    hunk-header-line-number-style = "#636363"
+    hunk-header-decoration-style = "#bccdde" box
+    commit-decoration-style = "#a36e09" box
+    blame-palette = "#ffffff" "#f3f3f3" "#e6e6e6"
+
+[delta "delta-light-5"]
+    # Rose/teal.
+    # Backgrounds in OKLCH: lines L=0.955 C=0.035, emph L=0.895 C=0.07, hues 8/185.
+    light = true
+    syntax-theme = gruvbox-light
+    minus-style = syntax "#ffe7ec"
+    minus-emph-style = syntax "#ffcad3"
+    plus-style = syntax "#d7f8f3"
+    plus-emph-style = syntax "#a7ece2"
+    line-numbers-minus-style = "#ac3a58"
+    line-numbers-plus-style = "#007d71"
+    line-numbers-zero-style = "#929292"
+    line-numbers-left-style = "#bebebe"
+    line-numbers-right-style = "#bebebe"
+    file-style = bold "#733d00"
+    file-decoration-style = "#bd9e86" ul
+    hunk-header-line-number-style = "#636363"
+    hunk-header-decoration-style = "#dac6b8" box
+    commit-decoration-style = "#a36e09" box
+    blame-palette = "#ffffff" "#f3f3f3" "#e6e6e6"
+
+[delta "delta-light-6"]
+    # Red/green, with chroma like delta's default light, at equal lightness.
+    # Backgrounds in OKLCH: lines L=0.945 C=0.065, emph L=0.875 C=0.12, hues 22/148.
+    light = true
+    syntax-theme = GitHub
+    minus-style = syntax "#ffe1de"
+    minus-emph-style = syntax "#ffbfbb"
+    plus-style = syntax "#d0fad5"
+    plus-emph-style = syntax "#9eeca9"
+    line-numbers-minus-style = "#af3c40"
+    line-numbers-plus-style = "#257c3a"
+    line-numbers-zero-style = "#929292"
+    line-numbers-left-style = "#bebebe"
+    line-numbers-right-style = "#bebebe"
+    file-style = bold "#194f81"
+    file-decoration-style = "#8da8c3" ul
+    hunk-header-line-number-style = "#636363"
+    hunk-header-decoration-style = "#bccdde" box
+    commit-decoration-style = "#a36e09" box
+    blame-palette = "#ffffff" "#f3f3f3" "#e6e6e6"

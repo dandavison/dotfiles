@@ -20,6 +20,7 @@ commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(rese
 
 [include]
     path = /Users/dan/src/devenv/dotfiles/delta/themes.gitconfig
+    path = /Users/dan/src/devenv/dotfiles/delta/delta-dark-themes.gitconfig
     
 
 [delta]
