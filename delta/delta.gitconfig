@@ -60,7 +60,6 @@
     feature-key = side-by-side S
     feature-key = comments-compact W
     feature-key = difftastic (
-    feature-key = code *
     pr-summary-style = bold blue    
 
 [delta "dan-light"]
