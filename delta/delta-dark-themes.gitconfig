@@ -3,6 +3,7 @@
 # limited in lightness and chroma so that syntax colors on them stay readable. Only
 # delta-dark-2 and delta-light-2 (orange/blue) stay distinct under red-green color blindness.
 # delta-dark-6, -7, -8 and delta-light-6 are experiments; each theme's comment says what it is.
+# delta-dark-invert-* map delta's default light theme to a dark one by different inversions.
 
 [delta "delta-dark-1"]
     # Red/green, equal lightness for removed and added lines.
@@ -297,3 +298,58 @@
     hunk-header-decoration-style = "#bccdde" box
     commit-decoration-style = "#a36e09" box
     blame-palette = "#ffffff" "#f3f3f3" "#e6e6e6"
+
+[delta "delta-dark-invert-rgb"]
+    # delta's default light theme, with its diff backgrounds mapped to dark ones as follows.
+    # Complement each sRGB channel, as an image editor's Invert does. Hue turns to its
+    # opposite.
+    dark = true
+    syntax-theme = Monokai Extended
+    minus-style = normal "#001f1f"
+    minus-emph-style = normal "#003f3f"
+    plus-style = syntax "#2f002f"
+    plus-emph-style = syntax "#5f105f"
+
+[delta "delta-dark-invert-hsl"]
+    # delta's default light theme, with its diff backgrounds mapped to dark ones as follows.
+    # Invert HSL lightness, keeping hue and saturation.
+    dark = true
+    syntax-theme = Monokai Extended
+    minus-style = normal "#1f0000"
+    minus-emph-style = normal "#3f0000"
+    plus-style = syntax "#002f00"
+    plus-emph-style = syntax "#105f10"
+
+[delta "delta-dark-invert-oklch"]
+    # delta's default light theme, with its diff backgrounds mapped to dark ones as follows.
+    # Invert OKLCH lightness, keeping hue and chroma: as far from black as the light color is
+    # from white, perceptually.
+    dark = true
+    syntax-theme = Monokai Extended
+    minus-style = normal "#050000"
+    minus-emph-style = normal "#1e0001"
+    plus-style = syntax "#000100"
+    plus-emph-style = syntax "#000a00"
+
+[delta "delta-dark-invert-luminance"]
+    # delta's default light theme, with its diff backgrounds mapped to dark ones as follows.
+    # Invert luminance Y, keeping OKLCH hue and chroma: as much light as the light color is
+    # short of white.
+    dark = true
+    syntax-theme = Monokai Extended
+    minus-style = normal "#917575"
+    minus-emph-style = normal "#d19595"
+    plus-style = syntax "#3b643d"
+    plus-emph-style = syntax "#55a157"
+
+[delta "delta-dark-invert-readability"]
+    # delta's default light theme, with its diff backgrounds mapped to dark ones as follows.
+    # Cost text the same APCA contrast on black as the light color costs it on white, keeping
+    # OKLCH hue and chroma. APCA separates text and background, so the cost is the same for
+    # any text color.
+    dark = true
+    syntax-theme = Monokai Extended
+    minus-style = normal "#533a3b"
+    minus-emph-style = normal "#8b5456"
+    plus-style = syntax "#09330e"
+    plus-emph-style = syntax "#065f15"
