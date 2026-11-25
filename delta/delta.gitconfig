@@ -1,3 +1,9 @@
+[pretty]
+# Shared by shell log aliases (_gl) and gitu's log renderer.
+commit-format = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n    %C(green)%s%C(auto)
+# With whole message; shared by gs and gitu's commit view.
+commit-format-full = tformat:%n%n▸ %h %C(blue)%an %C(blue)%ar%C(auto)%d%C(reset)%n%n%w(0,4,4)%C(green)%s%C(reset)%n%+b
+
 [core]
     pager = delta
 
@@ -17,7 +23,7 @@
     
 
 [delta]
-    features = dan line-numbers comments
+    features = dan tui line-numbers comments difftastic
     width = variable
     navigate = true
     hyperlinks = true
@@ -40,6 +46,34 @@
     # line-numbers-right-format = "│{np:^4}│"
     # line-numbers-minus-right-format = "┃{np:^4}┃"
     # line-numbers-plus-right-format = "┃{np:^4}┃"
+
+[delta "tui"]
+    file-header = stat
+    start-folded = true
+    log-args = --stat
+    log-args = --date=relative
+    log-args = --pretty=commit-format
+    show-args = --pretty=commit-format-full
+    recent-commits-limit = 0
+    stash-list-limit = 0
+    alt-editor = wormhole open
+    view = diff git diff {commit}...
+    command = html {command} --color=always | delta | aha > /tmp/diff.html && open /tmp/diff.html
+    command = pr-comments pr-fetch-comments
+    command = pr-comments-remove pr-fetch-comments --remove
+    command = send-message-to-agent redis-cli XADD delta '*' message-to-agent {input}
+    feature-key = line-numbers L
+    feature-key = html %
+    feature-key = diff D
+    feature-key = pr-comments C
+    feature-key = pr-comments-remove R
+    feature-key = plus-minus-markers =
+    feature-key = side-by-side S
+    feature-key = comments-compact W
+    feature-key = difftastic (
+    feature-key = code *
+    feature-key = send-message-to-agent @
+    pr-summary-style = bold blue
 
     
 
@@ -84,6 +118,16 @@
     # The box a comment is written in (i), unless set the same as the comments.
     # comment-editor-style = normal "#fff8e5"
     # comment-editor-decoration-style = bold "#9a6700" box
+    # Each comment is drawn over comment-style in the style of where it is, from the most
+    # private to the most public: local-only and in the draft review (comment-style's blue),
+    # in your pending review on GitHub, which only you see (teal), and in a submitted review,
+    # which everyone sees (green).
+    # comment-local-only-style =
+    # comment-draft-style =
+    comment-pending-style = normal "#dcf4f2"
+    comment-submitted-style = normal "#dafbe1"
+    # The text of a markdown link, which links to its URL, drawn over comment-style.
+    comment-link-style = ul "#0969da"
 
 # PR review comments for a dark terminal, in GitHub's dark theme's colors.
 [delta "comments-dark"]
@@ -92,6 +136,9 @@
     comment-timestamp-style = italic "#8b949e"
     comment-count-style = bold "#58a6ff"
     comment-decoration-style = "#388bfd" box
+    comment-pending-style = normal "#112429"
+    comment-submitted-style = normal "#12261e"
+    comment-link-style = ul "#4493f8"
 
 # PR review comments to go with the collared-trogon theme: its navy box color and
 # grey, and Nord's blue, on a background between the theme's own.
@@ -101,6 +148,7 @@
     comment-timestamp-style = italic "#999999"
     comment-count-style = bold "#88c0d0"
     comment-decoration-style = "#2b5f80" box
+    comment-link-style = ul "#88c0d0"
 
 # PR review comments without the box: a bar down each thread's left, and dates
 # instead of how long ago. Toggled in delta --tui with W.
