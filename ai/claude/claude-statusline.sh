@@ -7,7 +7,6 @@ input=$(cat)
 bold=$'\033[1m'
 dim=$'\033[2m'
 cyan=$'\033[36m'
-black=$'\033[30m'
 green=$'\033[32m'
 yellow=$'\033[33m'
 red=$'\033[31m'
@@ -145,7 +144,7 @@ fi
 
 # wormhole task, then session identity, then run stats — each stat its own
 # "│"-separated field so the busiest/most-variable info sits at the end.
-identity="$bold$black$link_open$name$link_close$reset  $dim#$session_code$reset"
+identity="$bold$link_open$name$link_close$reset  $dim#$session_code$reset"
 
 line=""
 [ -n "$task" ] && line="$cyan$task$reset | "
