@@ -1,0 +1,12 @@
+{
+  "preferences": {
+    "coworkLegacyRootGrantsPruned": true,
+    "chicagoEnabled": false,
+    "remoteToolsDeviceName": "daniels-macbook-pro-local",
+    "launchPreviewPersistedWorkspaces": [],
+    "launchPreviewSessionScopedSessions": [],
+    "errorReportsToIntakeLatched": true,
+    "coworkScheduledTasksEnabled": false,
+    "ccdScheduledTasksEnabled": false
+  }
+}
