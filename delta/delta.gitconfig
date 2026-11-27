@@ -50,7 +50,7 @@
     command = html {command} --color=always | delta | aha > /tmp/diff.html && open /tmp/diff.html
     command = pr-comments pr-fetch-comments
     command = pr-comments-remove pr-fetch-comments --remove
-    command = send-message-to-agent redis-cli XADD {pid} '*' message-to-agent {input}
+    # send-message-command = jq -Rs . | temporal activity start --task-queue $PWD --type AgentMessage --activity-id delta-$(uuidgen) --start-to-close-timeout 1h --retry-maximum-attempts 1 --input-file /dev/stdin
     feature-key = line-numbers L
     feature-key = html %
     feature-key = diff D
